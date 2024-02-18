@@ -35,9 +35,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added checks for different compilers in cmake lists">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added checks for different compilers in cmake lists" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,19 +168,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Doctest.unit_test" />
       <item itemvalue="CMake Application.MegaClockGameWithTimeTravelling" />
+      <item itemvalue="CMake Application.box2d" />
       <item itemvalue="CMake Application.glad" />
       <item itemvalue="CMake Application.glfw" />
       <item itemvalue="CMake Application.imgui" />
       <item itemvalue="CMake Application.sajson" />
-      <item itemvalue="CMake Application.box2d" />
-      <item itemvalue="CMake Application.testbed" />
       <item itemvalue="CMake Application.sfml-audio" />
       <item itemvalue="CMake Application.sfml-graphics" />
       <item itemvalue="CMake Application.sfml-network" />
       <item itemvalue="CMake Application.sfml-system" />
       <item itemvalue="CMake Application.sfml-window" />
-      <item itemvalue="Doctest.unit_test" />
+      <item itemvalue="CMake Application.testbed" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -195,6 +193,7 @@
       <updated>1708196468631</updated>
       <workItem from="1708196471194" duration="17724000" />
       <workItem from="1708252633830" duration="782000" />
+      <workItem from="1708267720007" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />

@@ -1,8 +1,8 @@
 ### C++ template
 
 # Build and executables
-./build
-./out
+build
+out
 
 # Prerequisites
 *.d
