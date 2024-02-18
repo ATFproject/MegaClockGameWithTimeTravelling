@@ -54,8 +54,28 @@ int main() {
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     win.setActive(true);
 
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::Texture tex;
+    tex.loadFromImage(icon);
+
+    sf::Sprite sprite;
+    sprite.setTexture(tex);
+    sprite.setPosition(250, 150);
+    sprite.setColor(sf::Color(255, 255, 255, 128)); // half transparent
+
+    sf::Font font;
+    font.loadFromFile("../resources/fonts/arialmt.ttf");
+    sf::Text text;
+
+    text.setFont(font); // font is a sf::Font
+    text.setString(L"יטאח");
+    text.setCharacterSize(24); // in pixels, not points!
+    text.setFillColor(sf::Color::Red);
+    text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+
+    sf::CircleShape shape(50.f, 7);
+    shape.setFillColor(sf::Color(100, 250, 50));
+    shape.setOutlineThickness(3);
+    shape.setOutlineColor(sf::Color::Red);
 
     while (win.isOpen()) {
         sf::Event event{};
@@ -66,11 +86,11 @@ int main() {
         }
 
         win.clear();
+        win.draw(sprite);
+        win.draw(text);
         win.draw(shape);
         win.display();
     }
-
-    return 0;
 
     return 0;
 }
