@@ -1,0 +1,20 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "sfml_tank_battleroyale-Debug.exe (C:\\DiskZ\\ForVS2022\\Test\\out\\sfml_tank_battleroyale-Debug.exe)",
+      "name": "sfml_tank_battleroyale-Debug.exe (C:\\DiskZ\\ForVS2022\\Test\\out\\sfml_tank_battleroyale-Debug.exe)",
+      "currentDir": "${workspaceRoot}"
+    },
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "sfml_tank_battleroyale-Debug.exe (Install) (bin\\sfml_tank_battleroyale-Debug.exe)",
+      "name": "sfml_tank_battleroyale-Debug.exe (Install) (bin\\sfml_tank_battleroyale-Debug.exe)",
+      "currentDir": "${workspaceRoot}"
+    }
+  ]
+}
