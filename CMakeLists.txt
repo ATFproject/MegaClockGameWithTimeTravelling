@@ -7,7 +7,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set output directory for the binary and disable shared library building
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/out)
-option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+
+if(WIN32)
+    option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+else ()
+    option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+endif ()
 
 # Include tool for content fetching
 include(FetchContent REQUIRED)
@@ -42,16 +47,33 @@ target_link_libraries(${PROJECT_NAME}
         PRIVATE sfml-audio
         PRIVATE box2d
 )
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Disable all docs and example build for SFML and Box2D
-set(BOX2D_BUILD_DOCS OFF)
-set(BOX2D_BUILD_UNIT_TESTS OFF)
-set(SFML_BUILD_DOC OFF)
-set(SFML_BUILD_EXAMPLES OFF)
-set(SFML_BUILD_TEST_SUITE OFF)
-set(SFML_USE_SYSTEM_DEPS OFF)
-set(SFML_USE_DRM OFF)
+if(WIN32)
+
+else ()
+    set(BOX2D_BUILD_DOCS OFF)
+    set(BOX2D_BUILD_UNIT_TESTS OFF)
+    set(SFML_BUILD_DOC OFF)
+    set(SFML_BUILD_EXAMPLES OFF)
+    set(SFML_BUILD_TEST_SUITE OFF)
+    set(SFML_USE_SYSTEM_DEPS OFF)
+    set(SFML_USE_DRM OFF)
+endif ()
+
+if(WIN32)
+    add_custom_command(
+            TARGET ${PROJECT_NAME}
+            COMMENT "Copy OpenAL DLL"
+            PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${SFML_SOURCE_DIR}/extlibs/bin/$<IF:$<EQUAL:${CMAKE_SIZEOF_VOID_P},8>,x64,x86>/openal32.dll $<TARGET_FILE_DIR:${PROJECT_NAME}>
+            VERBATIM)
+    add_custom_command(
+            TARGET ${PROJECT_NAME}
+            COMMENT "Copy box2d dll"
+            PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE}/_deps/box2d-build/bin/box2d.dll $<TARGET_FILE_DIR:${PROJECT_NAME}>
+            VERBATIM)
+endif()
 
 # Add all possible warnings to make sure (Шура?) our code is the best!
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")

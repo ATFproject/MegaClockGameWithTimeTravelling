@@ -50,12 +50,7 @@ int main() {
     win.setActive(true);
 
     sf::Image icon;
-#ifdef WIN32
-    icon.loadFromFile("../../../../resources/images/icon.png");
-#else
     icon.loadFromFile("../resources/images/icon.png");
-#endif /* WIN32 */
-
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     win.setActive(true);
 
