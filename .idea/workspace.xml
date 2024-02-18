@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-system" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sajson" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="glad" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="testbed" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="box2d" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="imgui" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-graphics" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-window" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="build/Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Release" ENABLED="true" GENERATION_DIR="build/Release" CONFIG_NAME="Release" />
+      <configuration PROFILE_NAME="RelWithDebInfo" ENABLED="true" GENERATION_DIR="build/RelWithDebInfo" CONFIG_NAME="RelWithDebInfo" />
+      <configuration PROFILE_NAME="MinSizeRel" ENABLED="true" GENERATION_DIR="build/MinSizeRel" CONFIG_NAME="MinSizeRel" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added checks for different compilers in cmake lists" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "frtem2008"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="121def0d-31d4-4c74-b783-56d8dbaea4fc" />
+        <option name="url" value="https://github.com/ATFproject/MegaClockGameWithTimeTravelling" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="3.3" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2cVUvKkFn8SZGv1yr3WbUrJaHj6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="box2d" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="box2d" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glad" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="glad" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="glfw" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="imgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="imgui" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sajson" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sajson" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sfml-audio" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-audio" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sfml-graphics" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-graphics" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sfml-network" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-network" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sfml-system" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-system" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sfml-window" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-window" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testbed" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="testbed" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="testbed">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.MegaClockGameWithTimeTravelling" />
+      <item itemvalue="CMake Application.glad" />
+      <item itemvalue="CMake Application.glfw" />
+      <item itemvalue="CMake Application.imgui" />
+      <item itemvalue="CMake Application.sajson" />
+      <item itemvalue="CMake Application.box2d" />
+      <item itemvalue="CMake Application.testbed" />
+      <item itemvalue="CMake Application.sfml-audio" />
+      <item itemvalue="CMake Application.sfml-graphics" />
+      <item itemvalue="CMake Application.sfml-network" />
+      <item itemvalue="CMake Application.sfml-system" />
+      <item itemvalue="CMake Application.sfml-window" />
+      <item itemvalue="Doctest.unit_test" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="" />
+      <created>1708196468631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708196468631</updated>
+      <workItem from="1708196471194" duration="17344000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
+      <option name="closed" value="true" />
+      <created>1708203001893</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708203001893</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added doc building removal for SFML and Box2D">
+      <option name="closed" value="true" />
+      <created>1708206968002</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708206968002</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Disabled unit tests for box2d">
+      <option name="closed" value="true" />
+      <created>1708207972087</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708207972087</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added doctest install">
+      <option name="closed" value="true" />
+      <created>1708208387179</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708208387179</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708208709031</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708208709032</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708209020525</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708209020525</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708209422075</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708209422075</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708209465899</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708209465899</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708209481966</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708209481966</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708209832891</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708209832891</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708210543008</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708210543008</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708210585482</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708210585482</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708210645824</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708210645824</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708210741117</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708210741117</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708210958130</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708210958130</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708211392029</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1708211392029</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708211874739</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1708211874739</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708212866053</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1708212866053</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708212983098</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1708212983099</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708213184535</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1708213184535</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708213318211</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1708213318211</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed cmake options">
+      <option name="closed" value="true" />
+      <created>1708213765384</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708213765384</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added checks for different compilers in cmake lists">
+      <option name="closed" value="true" />
+      <created>1708214285412</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708214285412</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added actual Cmake file contents and .gitignore" />
+    <MESSAGE value="Added doc building removal for SFML and Box2D" />
+    <MESSAGE value="Disabled unit tests for box2d" />
+    <MESSAGE value="Added doctest install" />
+    <MESSAGE value="Fixed cmake options" />
+    <MESSAGE value="Added checks for different compilers in cmake lists" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checks for different compilers in cmake lists" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
