@@ -10,7 +10,7 @@
 namespace game {
     class GraphicsComponent {
     public:
-        virtual void draw(GameObject *gameObject, const Game &game) = 0;
+        virtual void draw(GameObject *gameObject) = 0;
         virtual ~GraphicsComponent() = default;
     };
 }

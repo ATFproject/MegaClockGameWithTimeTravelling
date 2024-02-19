@@ -1,10 +1,14 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
+    <Objective-C>
+      <option name="SPACE_BEFORE_COLON_IN_FOREACH" value="true" />
+    </Objective-C>
     <codeStyleSettings language="ObjectiveC">
       <option name="BLANK_LINES_AROUND_CLASS" value="0" />
       <option name="BLANK_LINES_AROUND_FIELD" value="1" />
       <option name="BLANK_LINES_AROUND_METHOD" value="0" />
       <option name="BLANK_LINES_AROUND_METHOD_IN_INTERFACE" value="0" />
+      <option name="SPACE_BEFORE_QUEST" value="false" />
     </codeStyleSettings>
   </code_scheme>
 </component>

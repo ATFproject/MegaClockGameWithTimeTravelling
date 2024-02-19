@@ -5,10 +5,8 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 
-#include "SFML/Graphics.hpp"
 #include "components/Components.h"
-
-#include "Game.h"
+#include "SFML/System/Clock.hpp"
 
 namespace game {
     class GameObject {
@@ -18,13 +16,13 @@ namespace game {
         GameObject(InputComponent *input, PhysicsComponent *physics, GraphicsComponent *graphics) :
                 _input(input), _physics(physics), _graphics(graphics) {}
 
-        void tick(double dt, Game &game) {
+        void tick(sf::Time dt, Game &game) {
             _input->tick(this);
             _physics->tick(this, dt, game);
         }
 
-        void draw(const Game &game) {
-            _graphics->draw(this, game);
+        void draw() {
+            _graphics->draw(this);
         }
 
     private:

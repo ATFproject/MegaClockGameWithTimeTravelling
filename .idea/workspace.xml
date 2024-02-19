@@ -35,20 +35,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="First SFML experience">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compilerexplorer.settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/Game.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/Game.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/GameDef.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/GameObject.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/components/Components.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/components/GraphicsComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/components/InputComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/components/PhysicsComponent.h" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added GameObject component pattern">
+      <change afterPath="$PROJECT_DIR$/.idea/statistic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" beforeDir="false" afterPath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameDef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/GraphicsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/GraphicsComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/PhysicsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/PhysicsComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +112,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "Game-Initial-Structure",
-    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling",
+    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -128,6 +124,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/game" />
+      <recent name="$PROJECT_DIR$/src/game/components" />
+      <recent name="$PROJECT_DIR$/src/game/world" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -232,7 +231,7 @@
       <workItem from="1708267720007" duration="4000" />
       <workItem from="1708283460632" duration="80000" />
       <workItem from="1708283946959" duration="8000" />
-      <workItem from="1708333157384" duration="3122000" />
+      <workItem from="1708333157384" duration="5299000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -434,7 +433,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708282898573</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added GameObject component pattern">
+      <option name="closed" value="true" />
+      <created>1708336384651</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708336384651</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +484,8 @@
     <MESSAGE value="Added checks for different compilers in cmake lists" />
     <MESSAGE value="Fixed gitignore" />
     <MESSAGE value="First SFML experience" />
-    <option name="LAST_COMMIT_MESSAGE" value="First SFML experience" />
+    <MESSAGE value="Added GameObject component pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GameObject component pattern" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
