@@ -20,6 +20,10 @@ namespace game {
     class InputComponent;
     class GraphicsComponent;
     class PhysicsComponent;
+
+    class EmptyInputComponent;
+    class EmptyGraphicsComponent;
+    class EmptyPhysicsComponent;
 }
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEDEF_H

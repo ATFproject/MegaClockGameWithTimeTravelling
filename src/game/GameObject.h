@@ -5,19 +5,20 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 
-#include "components/Components.h"
-#include "SFML/System/Clock.hpp"
+#include "components/EmpyComponents.h"
 
 namespace game {
     class GameObject {
     public:
-        GameObject() = delete;
-
-        GameObject(InputComponent *input, PhysicsComponent *physics, GraphicsComponent *graphics) :
-                _input(input), _physics(physics), _graphics(graphics) {}
+        explicit GameObject(components::InputComponent *input = nullptr, components::PhysicsComponent *physics = nullptr,
+                   components::GraphicsComponent *graphics = nullptr) {
+            _input = (input)? input : &emptyInputComponent;
+            _physics = (physics)? physics : &emptyPhysicsComponent;
+            _graphics = (graphics)? graphics : &emptyGraphicsComponent;
+        }
 
         void tick(sf::Time dt, Game &game) {
-            _input->tick(this);
+            _input->tick(this, game);
             _physics->tick(this, dt, game);
         }
 
@@ -26,9 +27,12 @@ namespace game {
         }
 
     private:
-        InputComponent *_input;
-        PhysicsComponent *_physics;
-        GraphicsComponent *_graphics;
+        components::InputComponent *_input;
+        components::PhysicsComponent *_physics;
+        components::GraphicsComponent *_graphics;
+        static components::EmptyInputComponent emptyInputComponent;
+        static components::EmptyGraphicsComponent emptyGraphicsComponent;
+        static components::EmptyPhysicsComponent emptyPhysicsComponent;
     };
 } // game
 

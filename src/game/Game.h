@@ -5,11 +5,8 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAME_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAME_H
 
-#include "GameDef.h"
-
-#include "GameObject.h"
 #include "observers/Observer.h"
-#include "SFML/System/Clock.hpp"
+#include "GameObject.h"
 
 namespace game {
     class Game : public events::Observer {
@@ -37,19 +34,17 @@ namespace game {
             // TODO: Convert this to graphics component and use it
         }
 
-        void onNotify(events::GameEventType type) override {
-            std::cout << "Game received event: " + events::getTypeString(type) << std::endl;
-        }
-
+        using events::Observer::onNotify;
         void onNotify(events::GameEvent *event) override {
+            std::cout << "Game received event: " + events::getTypeString(event->type) << std::endl;
+
             switch (event->type) {
                 case events::GameEventType::WINDOW_RESIZED: {
                     auto *resizeEvent = dynamic_cast<events::WindowResizeEvent *>(event);
                     resize(resizeEvent->newSize);
                     break;
                 }
-                case events::GameEventType::WINDOW_LOST_FOCUS:
-                case events::GameEventType::WINDOW_GAINED_FOCUS:
+                default:
                     break;
             }
         }

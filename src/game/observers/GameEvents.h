@@ -13,6 +13,7 @@ namespace game::events {
         WINDOW_LOST_FOCUS,
         WINDOW_GAINED_FOCUS,
         WINDOW_RESIZED,
+        CLOSE
     };
 
     inline std::string getTypeString(GameEventType type) {
@@ -23,6 +24,8 @@ namespace game::events {
                 return "Window gained focus";
             case GameEventType::WINDOW_RESIZED:
                 return "Window resized";
+            case GameEventType::CLOSE:
+                return "Close event";
         }
 
         return "Unnown) type";

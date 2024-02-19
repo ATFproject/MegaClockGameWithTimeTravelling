@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Set output directory for the binary and disable shared library building
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/out)
 
-if(WIN32)
+if (WIN32)
     option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 else ()
     option(BUILD_SHARED_LIBS "Build shared libraries" ON)
@@ -50,7 +50,7 @@ target_link_libraries(${PROJECT_NAME}
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 
 # Disable all docs and example build for SFML and Box2D
-if(WIN32)
+if (WIN32)
 
 else ()
     set(BOX2D_BUILD_DOCS OFF)
@@ -62,7 +62,7 @@ else ()
     set(SFML_USE_DRM OFF)
 endif ()
 
-if(WIN32)
+if (WIN32)
     add_custom_command(
             TARGET ${PROJECT_NAME}
             COMMENT "Copy OpenAL DLL"
@@ -73,7 +73,7 @@ if(WIN32)
             COMMENT "Copy box2d dll"
             PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE}/_deps/box2d-build/bin/box2d.dll $<TARGET_FILE_DIR:${PROJECT_NAME}>
             VERBATIM)
-endif()
+endif ()
 
 # Add all possible warnings to make sure (Шура?) our code is the best!
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -81,7 +81,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
             -Werror -Wall -Wextra -Wpedantic -Wcast-align -Wcast-qual -Wctor-dtor-privacy
             -Wenum-compare -Wnon-virtual-dtor -Wold-style-cast -Woverloaded-virtual
             -Wredundant-decls -Wsign-promo -Wsign-conversion
-            -Wno-float-equal -Wno-unknown-pragmas -Wno-conversion
+            -Wno-float-equal -Wno-unknown-pragmas -Wno-conversion -Wno-unused-parameter
     )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
