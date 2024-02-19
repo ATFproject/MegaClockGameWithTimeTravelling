@@ -2,8 +2,8 @@
 // Created by livefish on 1/08/24.
 //
 
-#include "SFML/Graphics.hpp"
-#include "Game.h"
+#include "GameWindow.h"
+
 
 int main() {
     // set antialiasing level to 16
@@ -20,23 +20,8 @@ int main() {
     icon.loadFromFile("../resources/images/icon.png");
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-    game::Game game;
-
-    game.start();
-
-    while (win.isOpen()) {
-        sf::Event event{};
-        while (win.pollEvent(event)) {
-            if (event.type == sf::Event::Closed ||
-                sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-                win.close();
-            }
-        }
-
-
-        win.clear();
-        win.display();
-    }
+    window::GameWindow window(&win);
+    window.startRendering();
 
     return 0;
 }

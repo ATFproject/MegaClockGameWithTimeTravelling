@@ -8,7 +8,7 @@
 #include <vector>
 
 namespace game {
-    class World;
+    class Keyboard;
 
     class Game;
     class GameObject;

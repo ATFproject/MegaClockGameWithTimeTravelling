@@ -13,32 +13,33 @@
 namespace game {
     class Game {
     public:
-        Game();
+        Game() = default;
 
         void operator<<(GameObject *toAdd) {
-            gameObjects.push_back(toAdd);
+            _gameObjects.push_back(toAdd);
         }
 
-        void start() {
-            while (true) {
-                sf::Time elapsed = timer.getElapsedTime();
+        void tick() {
+            sf::Time elapsed = _timer.getElapsedTime();
 
-                // TODO: update keyboard
-
-                for (GameObject *gameObject : gameObjects) {
-                    gameObject->tick(elapsed, *this);
-                }
-
-                for (GameObject *gameObject : gameObjects) {
-                    gameObject->draw();
-                }
-                timer.restart();
+            for (GameObject *gameObject : _gameObjects) {
+                gameObject->tick(elapsed, *this);
             }
+
+            for (GameObject *gameObject : _gameObjects) {
+                gameObject->draw();
+            }
+            _timer.restart();
+        }
+
+        void resize(unsigned int w, unsigned int h) {
+            std::cout << "Test game size output! " << w << ", " << h << std::endl;
+            // TODO: Convert this to graphics component and use it
         }
 
     private:
-        sf::Clock timer;
-        std::vector<GameObject *> gameObjects;
+        sf::Clock _timer;
+        std::vector<GameObject *> _gameObjects;
     };
 
 } // game

@@ -35,16 +35,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added GameObject component pattern">
-      <change afterPath="$PROJECT_DIR$/.idea/statistic.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added basic game class">
+      <change afterPath="$PROJECT_DIR$/src/game/Keyboard.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/window/GameWindow.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" beforeDir="false" afterPath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/GameDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/GraphicsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/GraphicsComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/PhysicsComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/PhysicsComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +82,9 @@
   </component>
   <component name="NamedScopeManager">
     <scope name="src" pattern="file[MegaClockGameWithTimeTravelling]:src//*" />
+  </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Debug-sfml-window" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -231,7 +232,7 @@
       <workItem from="1708267720007" duration="4000" />
       <workItem from="1708283460632" duration="80000" />
       <workItem from="1708283946959" duration="8000" />
-      <workItem from="1708333157384" duration="5299000" />
+      <workItem from="1708333157384" duration="9700000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -441,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708336384651</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added basic game class">
+      <option name="closed" value="true" />
+      <created>1708340984933</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1708340984933</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +494,8 @@
     <MESSAGE value="Fixed gitignore" />
     <MESSAGE value="First SFML experience" />
     <MESSAGE value="Added GameObject component pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GameObject component pattern" />
+    <MESSAGE value="Added basic game class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic game class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
