@@ -1,0 +1,15 @@
+//
+// Created by livefish on 2/19/24.
+//
+
+#ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEEVENTS_H
+#define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEEVENTS_H
+
+namespace game {
+    enum class GameEvent {
+        WINDOW_LOST_FOCUS,
+        WINDOW_GAINED_FOCUS,
+    };
+}
+
+#endif //MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEEVENTS_H
