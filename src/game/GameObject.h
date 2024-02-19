@@ -5,16 +5,27 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 
-#include "components/EmpyComponents.h"
+#include "components/EmptyComponents.h"
 
 namespace game {
     class GameObject {
     public:
-        explicit GameObject(components::InputComponent *input = nullptr, components::PhysicsComponent *physics = nullptr,
-                   components::GraphicsComponent *graphics = nullptr) {
+        GameObject() {
+            _input = &emptyInputComponent;
+            _physics = &emptyPhysicsComponent;
+            _graphics = &emptyGraphicsComponent;
+        }
+
+        void setInput(components::InputComponent *input = nullptr) {
             _input = (input)? input : &emptyInputComponent;
-            _physics = (physics)? physics : &emptyPhysicsComponent;
+        }
+
+        void setGraphics(components::GraphicsComponent *graphics = nullptr) {
             _graphics = (graphics)? graphics : &emptyGraphicsComponent;
+        }
+
+        void setPhysics(components::PhysicsComponent *physics = nullptr) {
+            _physics = (physics)? physics : &emptyPhysicsComponent;
         }
 
         void tick(sf::Time dt, Game &game) {

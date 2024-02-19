@@ -2,8 +2,8 @@
 // Created by livefish on 2/19/24.
 //
 
-#ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_EMPYCOMPONENTS_H
-#define MEGACLOCKGAMEWITHTIMETRAVELLING_EMPYCOMPONENTS_H
+#ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_EMPTYCOMPONENTS_H
+#define MEGACLOCKGAMEWITHTIMETRAVELLING_EMPTYCOMPONENTS_H
 
 #include <SFML/System/Time.hpp>
 #include "ComponentInterface.h"
@@ -24,4 +24,4 @@ namespace game::components {
         void tick(GameObject *gameObject, sf::Time dt, Game &game) override {}
     };
 }
-#endif //MEGACLOCKGAMEWITHTIMETRAVELLING_EMPYCOMPONENTS_H
+#endif //MEGACLOCKGAMEWITHTIMETRAVELLING_EMPTYCOMPONENTS_H

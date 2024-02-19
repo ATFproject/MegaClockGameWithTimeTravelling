@@ -13,6 +13,7 @@ namespace game::events {
         WINDOW_LOST_FOCUS,
         WINDOW_GAINED_FOCUS,
         WINDOW_RESIZED,
+        WINDOW_MOVE,
         CLOSE
     };
 
@@ -26,6 +27,8 @@ namespace game::events {
                 return "Window resized";
             case GameEventType::CLOSE:
                 return "Close event";
+            case GameEventType::WINDOW_MOVE:
+                return "Window move";
         }
 
         return "Unnown) type";
@@ -46,6 +49,12 @@ namespace game::events {
         WindowResizeEvent(unsigned int w, unsigned int h) :
                 GameEvent(GameEventType::WINDOW_RESIZED),
                 newSize(sf::Vector2u(w, h)) {}
+    };
+
+    struct WindowMoveEvent : public GameEvent {
+        sf::Vector2i move;
+        WindowMoveEvent(int x, int y) :
+                GameEvent(GameEventType::WINDOW_MOVE), move(sf::Vector2i(x, y)) {}
     };
 }
 
