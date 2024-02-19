@@ -35,15 +35,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added basic game class">
-      <change afterPath="$PROJECT_DIR$/src/game/Keyboard.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/window/GameWindow.h" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added window and window event handler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" beforeDir="false" afterPath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Game.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/window/GameWindow.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +227,7 @@
       <workItem from="1708267720007" duration="4000" />
       <workItem from="1708283460632" duration="80000" />
       <workItem from="1708283946959" duration="8000" />
-      <workItem from="1708333157384" duration="9700000" />
+      <workItem from="1708333157384" duration="10650000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -450,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708340984933</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added window and window event handler">
+      <option name="closed" value="true" />
+      <created>1708345124165</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1708345124165</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +498,8 @@
     <MESSAGE value="First SFML experience" />
     <MESSAGE value="Added GameObject component pattern" />
     <MESSAGE value="Added basic game class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic game class" />
+    <MESSAGE value="Added window and window event handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added window and window event handler" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

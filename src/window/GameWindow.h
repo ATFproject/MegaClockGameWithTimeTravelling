@@ -72,7 +72,11 @@ namespace window {
 
             while (_win->isOpen()) {
                 _handleNewEvents();
-                _game.tick();
+
+                if (_isActive) {
+                    _game.tick();
+                }
+
                 _win->display();
             }
         }
