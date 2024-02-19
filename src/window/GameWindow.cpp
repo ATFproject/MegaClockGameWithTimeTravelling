@@ -45,17 +45,6 @@ namespace window {
                     _win->close();
                     break;
 
-                case sf::Event::KeyPressed: {
-                    if (event.key.code == sf::Keyboard::F) {
-                        input = !input;
-                        std::cout << "Input: " << input << std::endl;
-                        if (input)
-                            _game._gameObjects[0]->setInput(new game::components::WindowControlComponent(this));
-                        else
-                            _game._gameObjects[0]->setInput(new game::components::GameComponent(this));
-                    }
-                    break;
-                }
                 case sf::Event::LostFocus:
                     _isActive = false;
                     std::cout << "Lost focus" << std::endl;
