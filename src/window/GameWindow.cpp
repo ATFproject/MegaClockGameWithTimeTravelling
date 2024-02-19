@@ -3,13 +3,17 @@
 //
 
 #include "GameWindow.h"
+#include "components/GameComponent.h"
 #include "components/WindowControlComponent.h"
 
 namespace window {
     GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _isActive(false) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
-        _game << new game::GameObject(new game::components::WindowControlComponent(this));
+        auto *window_control = new game::GameObject();
+        window_control->setInput(new game::components::GameComponent(this));
+        
+        _game << window_control;
     }
 
     void GameWindow::startRendering() {
@@ -33,12 +37,25 @@ namespace window {
     void GameWindow::_handleSfmlEvents() {
         sf::Event event{};
 
+        static bool input = false;
+
         while (_win->pollEvent(event)) {
             switch (event.type) {
                 case sf::Event::Closed:
                     _win->close();
                     break;
 
+                case sf::Event::KeyPressed: {
+                    if (event.key.code == sf::Keyboard::F) {
+                        input = !input;
+                        std::cout << "Input: " << input << std::endl;
+                        if (input)
+                            _game._gameObjects[0]->setInput(new game::components::WindowControlComponent(this));
+                        else
+                            _game._gameObjects[0]->setInput(new game::components::GameComponent(this));
+                    }
+                    break;
+                }
                 case sf::Event::LostFocus:
                     _isActive = false;
                     std::cout << "Lost focus" << std::endl;
@@ -60,6 +77,13 @@ namespace window {
                 default:
                     break;
             }
+        }
+    }
+
+    void GameWindow::onNotify(game::events::GameEvent *event) {
+        if (event->type == game::events::GameEventType::WINDOW_MOVE) {
+            auto *moveEvent = dynamic_cast<game::events::WindowMoveEvent *>(event);
+            _win->setPosition(_win->getPosition() + moveEvent->move);
         }
     }
 }

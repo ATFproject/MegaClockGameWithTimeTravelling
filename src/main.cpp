@@ -4,7 +4,6 @@
 
 #include "GameWindow.h"
 
-
 int main() {
     // set antialiasing level to 16
     sf::ContextSettings winContextSettings(0, 0, 16);
@@ -22,6 +21,5 @@ int main() {
 
     window::GameWindow window(&win);
     window.startRendering();
-
     return 0;
 }

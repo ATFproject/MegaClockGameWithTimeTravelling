@@ -22,8 +22,8 @@ namespace window {
         explicit GameWindow(sf::RenderWindow *window);
         void startRendering();
 
-        using game::events::Observer::onNotify;
         void onNotify(game::events::GameEventType type) override;
+        void onNotify(game::events::GameEvent *event) override;
 
     private:
         sf::RenderWindow *_win;

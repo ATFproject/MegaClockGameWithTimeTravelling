@@ -49,9 +49,9 @@ namespace game {
             }
         }
 
+        std::vector<GameObject *> _gameObjects;
     private:
         sf::Clock _timer;
-        std::vector<GameObject *> _gameObjects;
     };
 
 } // game

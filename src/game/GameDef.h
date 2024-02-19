@@ -16,7 +16,7 @@ namespace game {
 }
 
 // Components
-namespace game {
+namespace game::components {
     class InputComponent;
     class GraphicsComponent;
     class PhysicsComponent;
