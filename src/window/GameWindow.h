@@ -44,7 +44,6 @@ namespace window {
                         break;
 
                     case sf::Event::Resized:
-                        std::cout << "Resized: " << event.size.width << ", " << event.size.height << std::endl;
                         notify(std::shared_ptr<game::events::GameEvent>(
                                 new game::events::WindowResizeEvent(event.size.width, event.size.height)
                         ));
@@ -69,6 +68,7 @@ namespace window {
 
         explicit GameWindow(sf::RenderWindow *window) : _win(window), _isActive(false) {
             std::cout << "Window created!" << std::endl;
+            addObserver(&_game);
         };
 
         void startRendering() {
