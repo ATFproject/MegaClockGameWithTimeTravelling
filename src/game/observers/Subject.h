@@ -8,9 +8,8 @@
 #include "Observer.h"
 
 #include <list>
-#include <algorithm>
 
-namespace game {
+namespace game::events {
     class Subject {
     public:
         void addObserver(Observer *toAdd) {
@@ -24,9 +23,15 @@ namespace game {
         }
 
     protected:
-        void notify(GameEvent event) {
+        void notify(const GameEventType &type) {
             for (auto &observer : _observers) {
-                observer->onNotify(event);
+                observer->onNotify(type);
+            }
+        }
+
+        void notify(const std::shared_ptr<events::GameEvent>& event) {
+            for (auto &observer : _observers) {
+                observer->onNotify(event.get());
             }
         }
 

@@ -7,11 +7,17 @@
 
 #include "GameEvents.h"
 
-namespace game {
+#include <exception>
+
+namespace game::events {
     class Observer {
     public:
         virtual ~Observer() = default;
-        virtual void onNotify(const GameEvent &event) = 0;
+        virtual void onNotify(GameEventType type) = 0;
+        virtual void onNotify(GameEvent *event) {
+            std::string error = "Received an event object to observer!" + getTypeString(event->type);
+            throw std::runtime_error(error);
+        };
     };
 } // game
 

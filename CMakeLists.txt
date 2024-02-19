@@ -93,7 +93,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${OUT_FILE_NAME})
 
 # Add header dirs for easier usage
 # EXAMPLE: set(ADDITIONAL_INCLUDE_DIRS "src/game" "src/window")
-set(ADDITIONAL_INCLUDE_DIRS "src/window" "src/game" "src/engine")
+set(ADDITIONAL_INCLUDE_DIRS "src" "src/window" "src/game")
 target_include_directories(${PROJECT_NAME} PRIVATE ${ADDITIONAL_INCLUDE_DIRS})
 
 # Compile and link the app

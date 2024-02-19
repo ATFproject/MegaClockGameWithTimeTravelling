@@ -5,14 +5,17 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWINDOW_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWINDOW_H
 
+#include <memory>
 #include <iostream>
-#include "SFML/Graphics.hpp"
 
+#include "SFML/Graphics.hpp"
 #include "Game.h"
+
 #include "Keyboard.h"
+#include "game/observers/Subject.h"
 
 namespace window {
-    class GameWindow {
+    class GameWindow : public game::events::Subject {
     private:
         sf::RenderWindow *_win;
         game::Game _game;
@@ -31,19 +34,20 @@ namespace window {
                     case sf::Event::LostFocus:
                         _isActive = false;
                         std::cout << "Lost focus" << std::endl;
-
-                        // Disable all keyboard input
-                        keyboard.reset();
+                        notify(game::events::GameEventType::WINDOW_LOST_FOCUS);
                         break;
 
                     case sf::Event::GainedFocus:
                         _isActive = true;
                         std::cout << "Gained focus" << std::endl;
+                        notify(game::events::GameEventType::WINDOW_GAINED_FOCUS);
                         break;
 
                     case sf::Event::Resized:
                         std::cout << "Resized: " << event.size.width << ", " << event.size.height << std::endl;
-                        _game.resize(event.size.width, event.size.height);
+                        notify(std::shared_ptr<game::events::GameEvent>(
+                                new game::events::WindowResizeEvent(event.size.width, event.size.height)
+                        ));
                         break;
 
                     case sf::Event::KeyPressed:
@@ -69,7 +73,6 @@ namespace window {
 
         void startRendering() {
             _isActive = true;
-
             while (_win->isOpen()) {
                 _handleNewEvents();
 
