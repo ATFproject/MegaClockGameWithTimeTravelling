@@ -3,9 +3,29 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-system" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sajson" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="glad" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="testbed" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="box2d" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="imgui" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-graphics" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-window" />
+    </generated>
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="build/Debug" CONFIG_NAME="Debug" />
@@ -15,17 +35,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed demo">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Before editing message system">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/components/ComponentDef.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/components/Demo components/GameComponent.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/game/GameDef.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-MinSizeRel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameDef.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Keyboard.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/ComponentInterface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/GameComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Demo components/GameComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/observers/GameObjectComponents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameObjectComponents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/GameObjectComponents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Demo components/GameComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/Demo components/GameComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/EmptyComponents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/WindowControlComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/WindowControl/WindowControlComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/observers/GameEvents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/GameEvents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/observers/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Observer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/window/GameWindow.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/window/GameWindow.h" afterDir="false" />
     </list>
@@ -38,12 +67,23 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="NamedScopeManager">
     <scope name="src" pattern="file[MegaClockGameWithTimeTravelling]:src//*" />
   </component>
   <component name="OCResolveContextSettings">
     <option name="configuration" value="1-Release-MegaClockGameWithTimeTravelling" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2cchCn0eAp9y5OmikTVFGNrT3TO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -51,27 +91,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Game-Initial-Structure",
-    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CMake Application.MegaClockGameWithTimeTravelling.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Game-Initial-Structure&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C/C++&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/engine/components/WindowControl" />
+      <recent name="$PROJECT_DIR$/src/engine/components/Demo components" />
+      <recent name="$PROJECT_DIR$/src/engine/game" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
@@ -160,6 +207,7 @@
       <item itemvalue="Doctest.unit_test" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="" />
@@ -179,7 +227,9 @@
       <workItem from="1708357520993" duration="4747000" />
       <workItem from="1708363839273" duration="1358000" />
       <workItem from="1708365346300" duration="2743000" />
-      <workItem from="1708411992972" duration="554000" />
+      <workItem from="1708411992972" duration="4628000" />
+      <workItem from="1708416660767" duration="729000" />
+      <workItem from="1708417453810" duration="730000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -445,7 +495,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708368517088</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Before editing message system">
+      <option name="closed" value="true" />
+      <created>1708412632365</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1708412632365</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,6 +554,7 @@
     <MESSAGE value="Added game event system" />
     <MESSAGE value="Register game as observer to GameWindow system" />
     <MESSAGE value="Removed demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed demo" />
+    <MESSAGE value="Before editing message system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Before editing message system" />
   </component>
 </project>

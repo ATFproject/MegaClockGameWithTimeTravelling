@@ -7,15 +7,13 @@
 
 #include "GameEvents.h"
 
-#include <exception>
-
-namespace game::events {
+namespace engine::events {
     class Observer {
     public:
         virtual ~Observer() = default;
-        virtual void onNotify(GameEventType type) {};
-        virtual void onNotify(GameEvent *event) {}
+        virtual void onNotify(Type type) {};
+        virtual void onNotify(Event *event) {}
     };
-} // game
+} // engine
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_OBSERVER_H

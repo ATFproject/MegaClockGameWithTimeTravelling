@@ -3,15 +3,16 @@
 //
 
 #include "GameWindow.h"
-#include "game/components/Demo components/GameComponent.h"
-#include "components/WindowControlComponent.h"
+#include "game/GameObject.h"
+#include "components/Demo components/GameComponent.h"
+#include "observers/GameEvents.h"
 
 namespace window {
     GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _isActive(false) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
-        auto *window_control = new game::GameObject();
-        window_control->setInput(new game::components::GameComponent(this));
+        auto *window_control = new engine::game::GameObject();
+        window_control->setInput(new engine::components::GameComponent(this));
 
         _game << window_control;
     }
@@ -32,7 +33,7 @@ namespace window {
     void GameWindow::_handleSfmlEvents() {
         sf::Event event{};
 
-        using namespace game::events;
+        using namespace engine::events;
 
         while (_win->pollEvent(event)) {
             switch (event.type) {
@@ -43,17 +44,17 @@ namespace window {
                 case sf::Event::LostFocus:
                     _isActive = false;
                     std::cout << "Lost focus" << std::endl;
-                    notify(GameEventType::WINDOW_LOST_FOCUS);
+                    notify(Type::WINDOW_LOST_FOCUS);
                     break;
 
                 case sf::Event::GainedFocus:
                     _isActive = true;
                     std::cout << "Gained focus" << std::endl;
-                    notify(GameEventType::WINDOW_GAINED_FOCUS);
+                    notify(Type::WINDOW_GAINED_FOCUS);
                     break;
 
                 case sf::Event::Resized:
-                    notify(std::shared_ptr<GameEvent>(
+                    notify(std::shared_ptr<Event>(
                             new WindowResizeEvent(event.size.width, event.size.height)
                     ));
                     break;
@@ -64,14 +65,14 @@ namespace window {
         }
     }
 
-    void GameWindow::onNotify(game::events::GameEventType type) {
-        if (type == game::events::GameEventType::CLOSE)
+    void GameWindow::onNotify(engine::events::Type type) {
+        if (type == engine::events::Type::CLOSE)
             _win->close();
     }
 
-    void GameWindow::onNotify(game::events::GameEvent *event) {
-        if (event->type == game::events::GameEventType::WINDOW_MOVE) {
-            auto *moveEvent = dynamic_cast<game::events::WindowMoveEvent *>(event);
+    void GameWindow::onNotify(engine::events::Event *event) {
+        if (event->type == engine::events::Type::WINDOW_MOVE) {
+            auto *moveEvent = dynamic_cast<engine::events::WindowMoveEvent *>(event);
             _win->setPosition(_win->getPosition() + moveEvent->move);
         }
     }

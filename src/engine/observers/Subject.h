@@ -7,9 +7,7 @@
 
 #include "Observer.h"
 
-#include <list>
-
-namespace game::events {
+namespace engine::events {
     class Subject {
     public:
         void addObserver(Observer *toAdd) {
@@ -17,19 +15,18 @@ namespace game::events {
         }
 
         void removeObserver(Observer *toRemove) {
-            _observers.erase(
-                    std::remove(_observers.begin(), _observers.end(), toRemove),
+            _observers.erase(std::remove(_observers.begin(), _observers.end(), toRemove),
                     _observers.end());
         }
 
     protected:
-        void notify(const GameEventType &type) {
+        void notify(const Type &type) {
             for (auto &observer : _observers) {
                 observer->onNotify(type);
             }
         }
 
-        void notify(const std::shared_ptr<events::GameEvent>& event) {
+        void notify(const std::shared_ptr<events::Event>& event) {
             for (auto &observer : _observers) {
                 observer->onNotify(event.get());
             }
@@ -38,6 +35,6 @@ namespace game::events {
     private:
         std::list<Observer *> _observers;
     };
-} // game
+} // engine
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_SUBJECT_H

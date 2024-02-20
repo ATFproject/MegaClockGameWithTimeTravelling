@@ -5,28 +5,23 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWINDOW_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWINDOW_H
 
-#include <memory>
-#include <iostream>
-
-#include "SFML/Graphics.hpp"
-#include "Game.h"
-
-#include "game/observers/Subject.h"
+#include "observers/Subject.h"
+#include "game/Game.h"
 
 namespace window {
-    class GameWindow : public game::events::Subject, public game::events::Observer {
+    class GameWindow : public engine::events::Subject, public engine::events::Observer {
     public:
         GameWindow() = delete;
 
         explicit GameWindow(sf::RenderWindow *window);
         void startRendering();
 
-        void onNotify(game::events::GameEventType type) override;
-        void onNotify(game::events::GameEvent *event) override;
+        void onNotify(engine::events::Type type) override;
+        void onNotify(engine::events::Event *event) override;
 
     private:
         sf::RenderWindow *_win;
-        game::Game _game;
+        engine::game::Game _game;
         bool _isActive;
 
         void _handleSfmlEvents();

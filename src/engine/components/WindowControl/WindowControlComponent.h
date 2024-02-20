@@ -5,12 +5,7 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_WINDOWCONTROLCOMPONENT_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_WINDOWCONTROLCOMPONENT_H
 
-#include "ComponentInterface.h"
-#include "observers/Subject.h"
-
-#include "GameWindow.h"
-
-namespace game::components {
+namespace engine::components {
     class WindowControlComponent : public InputComponent, public events::Subject {
     public:
         explicit WindowControlComponent(window::GameWindow *win) {
@@ -19,11 +14,11 @@ namespace game::components {
 
         void tick([[maybe_unused]]GameObject *gameObject, Game &game) override {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-                notify(game::events::GameEventType::CLOSE);
+                notify(engine::events::Type::CLOSE);
             }
         }
     };
 }
-// game::components
+// engine::components
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_WINDOWCONTROLCOMPONENT_H
