@@ -1,10 +1,10 @@
 ### C++ template
 
 # Build and executables
-build
-out
-out/MegaClockGameWithTimeTravelling-Debug
-out/MegaClockGameWithTimeTravelling-MinSizeRel
+build/
+out/
+
+.idea/workspace.xml
 
 # Prerequisites
 *.d
@@ -39,3 +39,4 @@ out/MegaClockGameWithTimeTravelling-MinSizeRel
 *.out
 *.app
 
+!/out/

@@ -5,7 +5,7 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMECOMPONENT_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMECOMPONENT_H
 
-#include "ComponentInterface.h"
+#include "game/components/ComponentInterface.h"
 #include "observers/Subject.h"
 
 #include "GameWindow.h"
@@ -19,23 +19,23 @@ namespace game::components {
 
         void tick([[maybe_unused]]GameObject *gameObject, Game &game) override {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-                notify(std::shared_ptr<game::events::GameEvent>(
-                        new game::events::WindowMoveEvent(10, 0)
+                notify(std::shared_ptr<events::GameEvent>(
+                        new events::WindowMoveEvent(10, 0)
                 ));
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-                notify(std::shared_ptr<game::events::GameEvent>(
-                        new game::events::WindowMoveEvent(-10, 0)
+                notify(std::shared_ptr<events::GameEvent>(
+                        new events::WindowMoveEvent(-10, 0)
                 ));
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
                 notify(std::shared_ptr<game::events::GameEvent>(
-                        new game::events::WindowMoveEvent(0, -10)
+                        new events::WindowMoveEvent(0, -10)
                 ));
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-                notify(std::shared_ptr<game::events::GameEvent>(
-                        new game::events::WindowMoveEvent(0, 10)
+                notify(std::shared_ptr<events::GameEvent>(
+                        new events::WindowMoveEvent(0, 10)
                 ));
             }
 

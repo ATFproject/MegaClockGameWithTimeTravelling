@@ -11,7 +11,6 @@
 #include "SFML/Graphics.hpp"
 #include "Game.h"
 
-#include "Keyboard.h"
 #include "game/observers/Subject.h"
 
 namespace window {
@@ -28,7 +27,6 @@ namespace window {
     private:
         sf::RenderWindow *_win;
         game::Game _game;
-        game::Keyboard keyboard;
         bool _isActive;
 
         void _handleSfmlEvents();
