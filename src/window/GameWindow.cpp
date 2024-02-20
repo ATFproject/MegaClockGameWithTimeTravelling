@@ -4,15 +4,16 @@
 
 #include "GameWindow.h"
 #include "game/GameObject.h"
-#include "components/Demo components/GameComponent.h"
 #include "observers/GameEvents.h"
+
+#include "components/WindowControl/WindowController.h"
 
 namespace window {
     GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _isActive(false) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
         auto *window_control = new engine::game::GameObject();
-        window_control->setInput(new engine::components::GameComponent(this));
+        window_control->setInput(new engine::components::WindowController(this));
 
         _game << window_control;
     }

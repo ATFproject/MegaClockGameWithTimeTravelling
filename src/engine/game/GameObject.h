@@ -5,7 +5,7 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 
-#include "GameDef.h"
+#include "WindowController"
 #include "components/ComponentDef.h"
 
 namespace engine::game {

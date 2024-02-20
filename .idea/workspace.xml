@@ -35,28 +35,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Before editing message system">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/components/ComponentDef.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/components/Demo components/GameComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/game/GameDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed header files and total game structure">
+      <change afterPath="$PROJECT_DIR$/src/engine/components/WindowControl/WindowController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameObjectComponents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/Demo components/GameComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/Demo components/GameComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/EmptyComponents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/WindowControlComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/WindowControl/WindowControlComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/observers/GameEvents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/GameEvents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/observers/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Observer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/components/WindowControl/WindowControlComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/WindowControl/WindowController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/GameDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/WindowController" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/window/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/window/GameWindow.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +54,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -75,9 +63,6 @@
   </component>
   <component name="NamedScopeManager">
     <scope name="src" pattern="file[MegaClockGameWithTimeTravelling]:src//*" />
-  </component>
-  <component name="OCResolveContextSettings">
-    <option name="configuration" value="1-Release-MegaClockGameWithTimeTravelling" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -229,7 +214,7 @@
       <workItem from="1708365346300" duration="2743000" />
       <workItem from="1708411992972" duration="4628000" />
       <workItem from="1708416660767" duration="729000" />
-      <workItem from="1708417453810" duration="730000" />
+      <workItem from="1708417453810" duration="1534000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -503,7 +488,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708412632365</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Fixed header files and total game structure">
+      <option name="closed" value="true" />
+      <created>1708418237267</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1708418237267</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +518,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Tim-test" />
+                        <option value="Game-Initial-Structure" />
                       </list>
                     </value>
                   </entry>
@@ -555,6 +548,7 @@
     <MESSAGE value="Register game as observer to GameWindow system" />
     <MESSAGE value="Removed demo" />
     <MESSAGE value="Before editing message system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Before editing message system" />
+    <MESSAGE value="Fixed header files and total game structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed header files and total game structure" />
   </component>
 </project>

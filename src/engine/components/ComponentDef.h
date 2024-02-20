@@ -15,6 +15,9 @@ namespace engine::components {
     class EmptyGraphicsComponent;
     class EmptyInputComponent;
     class EmptyPhysicsComponent;
+
+    class WindowController;
+    class WindowMovementController;
 }
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_COMPONENTDEF_H
