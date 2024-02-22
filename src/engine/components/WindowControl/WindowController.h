@@ -15,6 +15,8 @@ namespace engine::components {
     public:
         explicit WindowController(window::GameWindow *win);
         void tick(game::GameObject *gameObject, game::Game &game) override;
+    private:
+        std::shared_ptr<sf::SoundBuffer> sound;
     };
 }
 // engine::components

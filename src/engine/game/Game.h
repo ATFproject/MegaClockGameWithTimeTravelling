@@ -5,7 +5,7 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAME_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAME_H
 
-#include "WindowController"
+#include "GameDef.h"
 #include "observers/Observer.h"
 
 namespace engine::game {
@@ -19,6 +19,7 @@ namespace engine::game {
 
         using events::Observer::onNotify;
         void onNotify(events::Event *event) override;
+
     private:
         std::vector<GameObject *> _gameObjects;
         sf::Clock _timer;

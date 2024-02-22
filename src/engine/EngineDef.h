@@ -6,12 +6,15 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_ENGINEDEF_H
 
 #include <string>
-#include <iostream>
-#include <memory>
+
 #include <vector>
 #include <list>
+#include <iostream>
 #include <algorithm>
+#include <memory>
+#include <map>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_ENGINEDEF_H

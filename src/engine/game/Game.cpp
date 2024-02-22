@@ -8,6 +8,7 @@
 namespace engine::game {
     void Game::operator<<(GameObject *toAdd) {
         _gameObjects.push_back(toAdd);
+        auto tex = resources::load<sf::Texture>("icon.png");
     }
 
     void Game::tick() {

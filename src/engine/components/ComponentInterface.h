@@ -6,7 +6,7 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_COMPONENTINTERFACE_H
 
 #include "ComponentDef.h"
-#include "game/WindowController"
+#include "game/GameDef.h"
 
 namespace engine::components {
     class GraphicsComponent {

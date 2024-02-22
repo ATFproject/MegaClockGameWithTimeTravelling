@@ -14,7 +14,6 @@ namespace window {
         addObserver(&_game);
         auto *window_control = new engine::game::GameObject();
         window_control->setInput(new engine::components::WindowController(this));
-
         _game << window_control;
     }
 

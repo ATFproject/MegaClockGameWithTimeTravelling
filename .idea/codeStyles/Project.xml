@@ -1,6 +1,8 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
     <Objective-C>
+      <option name="TEMPLATE_DECLARATION_STRUCT_BODY_INDENT" value="true" />
+      <option name="TEMPLATE_DECLARATION_FUNCTION_BODY_INDENT" value="true" />
       <option name="SPACE_BEFORE_COLON_IN_FOREACH" value="true" />
     </Objective-C>
     <Objective-C-extensions>
