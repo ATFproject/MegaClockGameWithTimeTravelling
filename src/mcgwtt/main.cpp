@@ -3,6 +3,7 @@
 //
 
 #include "GameWindow.h"
+#include "components/WindowControl/WindowController.h"
 
 int main() {
     // set antialiasing level to 16
@@ -20,6 +21,9 @@ int main() {
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     window::GameWindow window(&win);
+
+    window.addGameObject(new mcgwtt::components::WindowController(&window), nullptr, nullptr);
+
     window.startRendering();
     return 0;
 }

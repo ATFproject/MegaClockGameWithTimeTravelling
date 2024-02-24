@@ -4,12 +4,12 @@
 
 #include "WindowController.h"
 
-namespace engine::components {
+namespace mcgwtt::components {
     WindowController::WindowController(window::GameWindow *win) {
         this->addObserver(win);
     }
 
-    void WindowController::tick(game::GameObject *gameObject, game::Game &game) {
+    void WindowController::tick(engine::game::GameObject *gameObject, engine::game::Game &game) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
             notify(engine::events::Type::CLOSE);
         }

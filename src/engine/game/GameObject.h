@@ -12,10 +12,11 @@ namespace engine::game {
     class GameObject {
     public:
         GameObject();
+        GameObject(components::InputComponent *ic, components::PhysicsComponent *pc, components::GraphicsComponent *gc);
 
         void setInput(components::InputComponent *input = nullptr);
-        void setGraphics(components::GraphicsComponent *graphics = nullptr);
         void setPhysics(components::PhysicsComponent *physics = nullptr);
+        void setGraphics(components::GraphicsComponent *graphics = nullptr);
 
         void tick(sf::Time dt, Game &game);
         void draw();

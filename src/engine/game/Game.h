@@ -19,7 +19,7 @@ namespace engine::game {
 
         using events::Observer::onNotify;
         void onNotify(events::Event *event) override;
-
+        ~Game() override;
     private:
         std::vector<GameObject *> _gameObjects;
         sf::Clock _timer;

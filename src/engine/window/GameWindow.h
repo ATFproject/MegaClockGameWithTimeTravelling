@@ -7,6 +7,7 @@
 
 #include "observers/Subject.h"
 #include "game/Game.h"
+#include "components/ComponentInterface.h"
 
 namespace window {
     class GameWindow : public engine::events::Subject, public engine::events::Observer {
@@ -18,6 +19,10 @@ namespace window {
 
         void onNotify(engine::events::Type type) override;
         void onNotify(engine::events::Event *event) override;
+
+        void addGameObject(engine::components::InputComponent *ic,
+                           engine::components::PhysicsComponent *pc,
+                           engine::components::GraphicsComponent *gc);
 
     private:
         sf::RenderWindow *_win;

@@ -6,15 +6,10 @@
 #include "game/GameObject.h"
 #include "observers/GameEvents.h"
 
-#include "components/WindowControl/WindowController.h"
-
 namespace window {
     GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _isActive(false) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
-        auto *window_control = new engine::game::GameObject();
-        window_control->setInput(new engine::components::WindowController(this));
-        _game << window_control;
     }
 
     void GameWindow::startRendering() {
@@ -75,5 +70,11 @@ namespace window {
             auto *moveEvent = dynamic_cast<engine::events::WindowMoveEvent *>(event);
             _win->setPosition(_win->getPosition() + moveEvent->move);
         }
+    }
+
+    void GameWindow::addGameObject(engine::components::InputComponent *ic,
+                                   engine::components::PhysicsComponent *pc,
+                                   engine::components::GraphicsComponent *gc) {
+        _game << new engine::game::GameObject(ic, pc, gc);
     }
 }

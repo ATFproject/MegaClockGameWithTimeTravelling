@@ -16,18 +16,6 @@ namespace engine::game {
         _graphics = &emptyGraphicsComponent;
     }
 
-    void GameObject::setInput(components::InputComponent *input) {
-        _input = (input)? input : &emptyInputComponent;
-    }
-
-    void GameObject::setGraphics(components::GraphicsComponent *graphics) {
-        _graphics = (graphics)? graphics : &emptyGraphicsComponent;
-    }
-
-    void GameObject::setPhysics(components::PhysicsComponent *physics) {
-        _physics = (physics)? physics : &emptyPhysicsComponent;
-    }
-
     void GameObject::tick(sf::Time dt, Game &game) {
         _input->tick(this, game);
         _physics->tick(this, dt, game);
@@ -35,5 +23,12 @@ namespace engine::game {
 
     void GameObject::draw() {
         _graphics->draw(this);
+    }
+
+    GameObject::GameObject(components::InputComponent *input, components::PhysicsComponent *physics,
+                           components::GraphicsComponent *graphics) {
+        _input = (input)? input : &emptyInputComponent;
+        _physics = (physics)? physics : &emptyPhysicsComponent;
+        _graphics = (graphics)? graphics : &emptyGraphicsComponent;
     }
 }
