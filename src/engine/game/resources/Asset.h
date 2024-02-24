@@ -9,6 +9,7 @@
 
 namespace engine::game::resources {
     extern std::map<std::string, std::string> extensionFolder;
+    
     template<typename T>
         std::shared_ptr<T> load(const std::string &FileName) {
             std::string ext = FileName.substr(FileName.find_last_of('.'));

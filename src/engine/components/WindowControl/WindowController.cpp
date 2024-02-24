@@ -7,10 +7,6 @@
 namespace engine::components {
     WindowController::WindowController(window::GameWindow *win) {
         this->addObserver(win);
-        sound = game::resources::load<sf::SoundBuffer>("music.mp3");
-        static sf::Sound go;
-        go.setBuffer(*sound);
-        go.play();
     }
 
     void WindowController::tick(game::GameObject *gameObject, game::Game &game) {
