@@ -10,15 +10,15 @@
 #include "components/ComponentInterface.h"
 
 namespace window {
-    class GameWindow : public engine::events::Subject, public engine::events::Observer {
+    class GameWindow : public engine::Subject, public engine::Observer {
     public:
         GameWindow() = delete;
 
         explicit GameWindow(sf::RenderWindow *window);
         void startRendering();
 
-        void onNotify(engine::events::Type type) override;
-        void onNotify(engine::events::Event *event) override;
+        void onNotify(events::Type type) override;
+        void onNotify(events::Event *event) override;
 
         void addGameObject(engine::components::InputComponent *ic,
                            engine::components::PhysicsComponent *pc,

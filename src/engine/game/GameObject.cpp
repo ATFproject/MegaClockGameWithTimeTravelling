@@ -26,9 +26,30 @@ namespace engine::game {
     }
 
     GameObject::GameObject(components::InputComponent *input, components::PhysicsComponent *physics,
-                           components::GraphicsComponent *graphics) {
-        _input = (input)? input : &emptyInputComponent;
-        _physics = (physics)? physics : &emptyPhysicsComponent;
-        _graphics = (graphics)? graphics : &emptyGraphicsComponent;
+                           components::GraphicsComponent *graphics)
+            : _input(&emptyInputComponent), _physics(&emptyPhysicsComponent), _graphics(&emptyGraphicsComponent) {
+        if (input) {
+            _input = input;
+            _input->addObserver(this);
+            addObserver(_input);
+        }
+        if (physics) {
+            _physics = physics;
+            _physics->addObserver(this);
+            addObserver(_physics);
+        }
+        if (graphics) {
+            _graphics = graphics;
+            _graphics->addObserver(this);
+            addObserver(_graphics);
+        }
+    }
+
+    void GameObject::onNotify(events::Type type) {
+        notify(type);
+    }
+
+    void GameObject::onNotify(events::Event *event) {
+        notify(std::shared_ptr<events::Event>(event));
     }
 }

@@ -7,11 +7,12 @@
 
 #include "Observer.h"
 
-namespace engine::events {
+namespace engine {
     class Subject {
     public:
         void addObserver(Observer *toAdd) {
-            _observers.push_back(toAdd);
+            if (toAdd != nullptr)
+                _observers.push_back(toAdd);
         }
 
         void removeObserver(Observer *toRemove) {
@@ -20,7 +21,7 @@ namespace engine::events {
         }
 
     protected:
-        void notify(const Type &type) {
+        void notify(const events::Type &type) {
             for (auto &observer : _observers) {
                 observer->onNotify(type);
             }

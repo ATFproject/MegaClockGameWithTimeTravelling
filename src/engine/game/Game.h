@@ -9,7 +9,7 @@
 #include "observers/Observer.h"
 
 namespace engine::game {
-    class Game : public events::Observer {
+    class Game : public Observer {
     public:
         Game() = default;
 
@@ -17,7 +17,7 @@ namespace engine::game {
         void tick();
         void resize(sf::Vector2u size);
 
-        using events::Observer::onNotify;
+        using Observer::onNotify;
         void onNotify(events::Event *event) override;
         ~Game() override;
     private:

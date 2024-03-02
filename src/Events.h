@@ -2,12 +2,12 @@
 // Created by livefish on 2/19/24.
 //
 
-#ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEEVENTS_H
-#define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEEVENTS_H
+#ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_EVENTS_H
+#define MEGACLOCKGAMEWITHTIMETRAVELLING_EVENTS_H
 
 #include "EngineDef.h"
 
-namespace engine::events {
+namespace events {
     enum class Type {
         WINDOW_LOST_FOCUS,
         WINDOW_GAINED_FOCUS,
@@ -43,6 +43,8 @@ namespace engine::events {
 
     struct WindowResizeEvent : public Event {
         const sf::Vector2u newSize;
+
+        WindowResizeEvent() = delete;
         WindowResizeEvent(unsigned int w, unsigned int h) :
                 Event(Type::WINDOW_RESIZED),
                 newSize(sf::Vector2u(w, h)) {}
@@ -50,9 +52,11 @@ namespace engine::events {
 
     struct WindowMoveEvent : public Event {
         sf::Vector2i move;
+
+        WindowMoveEvent() = delete;
         WindowMoveEvent(int x, int y) :
                 Event(Type::WINDOW_MOVE), move(sf::Vector2i(x, y)) {}
     };
 }
 
-#endif //MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEEVENTS_H
+#endif //MEGACLOCKGAMEWITHTIMETRAVELLING_EVENTS_H

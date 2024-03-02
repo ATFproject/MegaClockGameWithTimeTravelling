@@ -27,10 +27,7 @@ int main() {
     window::GameWindow window(&win);
 
     window.addGameObject(new mcgwtt::components::WindowController(&window), nullptr, nullptr);
-    window.addGameObject(new mcgwtt::components::WindowMovementController(&window), nullptr, nullptr);
-
     window.addGameObject(new mcgwtt::components::PaddleInput(), nullptr, nullptr);
-
 
     window.startRendering();
     return 0;

@@ -5,14 +5,14 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_OBSERVER_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_OBSERVER_H
 
-#include "GameEvents.h"
+#include "Events.h"
 
-namespace engine::events {
+namespace engine {
     class Observer {
     public:
         virtual ~Observer() = default;
-        virtual void onNotify(Type type) {};
-        virtual void onNotify(Event *event) {}
+        virtual void onNotify(events::Type type) {};
+        virtual void onNotify(events::Event *event) {}
     };
 } // engine
 

@@ -11,7 +11,7 @@ namespace mcgwtt::components {
 
     void WindowController::tick(engine::game::GameObject *gameObject, engine::game::Game &game) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-            notify(engine::events::Type::CLOSE);
+            notify(events::Type::CLOSE);
         }
     }
 }

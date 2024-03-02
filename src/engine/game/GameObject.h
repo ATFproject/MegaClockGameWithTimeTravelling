@@ -7,19 +7,19 @@
 
 #include "GameDef.h"
 #include "components/ComponentDef.h"
+#include "observers/Observer.h"
+#include "observers/Subject.h"
 
 namespace engine::game {
-    class GameObject {
+    class GameObject : public Observer, public Subject {
     public:
         GameObject();
         GameObject(components::InputComponent *ic, components::PhysicsComponent *pc, components::GraphicsComponent *gc);
 
-        void setInput(components::InputComponent *input = nullptr);
-        void setPhysics(components::PhysicsComponent *physics = nullptr);
-        void setGraphics(components::GraphicsComponent *graphics = nullptr);
-
         void tick(sf::Time dt, Game &game);
         void draw();
+        void onNotify(events::Type type) override;
+        void onNotify(events::Event *event) override;
 
     private:
         components::InputComponent *_input;

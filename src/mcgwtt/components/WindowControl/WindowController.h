@@ -11,7 +11,7 @@
 #include "engine/window/GameWindow.h"
 
 namespace mcgwtt::components {
-    class WindowController : public engine::components::InputComponent, public engine::events::Subject {
+    class WindowController : public engine::components::InputComponent {
     public:
         explicit WindowController(window::GameWindow *win);
         void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override;

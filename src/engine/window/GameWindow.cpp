@@ -4,7 +4,7 @@
 
 #include "GameWindow.h"
 #include "game/GameObject.h"
-#include "observers/GameEvents.h"
+#include "Events.h"
 
 namespace window {
     GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _isActive(false) {
@@ -28,7 +28,7 @@ namespace window {
     void GameWindow::_handleSfmlEvents() {
         sf::Event event{};
 
-        using namespace engine::events;
+        using namespace events;
 
         while (_win->pollEvent(event)) {
             switch (event.type) {
@@ -60,14 +60,14 @@ namespace window {
         }
     }
 
-    void GameWindow::onNotify(engine::events::Type type) {
-        if (type == engine::events::Type::CLOSE)
+    void GameWindow::onNotify(events::Type type) {
+        if (type == events::Type::CLOSE)
             _win->close();
     }
 
-    void GameWindow::onNotify(engine::events::Event *event) {
-        if (event->type == engine::events::Type::WINDOW_MOVE) {
-            auto *moveEvent = dynamic_cast<engine::events::WindowMoveEvent *>(event);
+    void GameWindow::onNotify(events::Event *event) {
+        if (event->type == events::Type::WINDOW_MOVE) {
+            auto *moveEvent = dynamic_cast<events::WindowMoveEvent *>(event);
             _win->setPosition(_win->getPosition() + moveEvent->move);
         }
     }
