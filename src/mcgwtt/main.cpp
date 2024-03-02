@@ -7,6 +7,7 @@
 #include "components/WindowControl/WindowController.h"
 #include "components/Demo components/WindowMovementController.h"
 
+#include "components/Pong/Paddle.h"
 
 int main() {
     // set antialiasing level to 16
@@ -27,6 +28,9 @@ int main() {
 
     window.addGameObject(new mcgwtt::components::WindowController(&window), nullptr, nullptr);
     window.addGameObject(new mcgwtt::components::WindowMovementController(&window), nullptr, nullptr);
+
+    window.addGameObject(new mcgwtt::components::PaddleInput(), nullptr, nullptr);
+
 
     window.startRendering();
     return 0;
