@@ -25,15 +25,15 @@ namespace engine::game {
 
     void Game::resize(sf::Vector2u size) {
         std::cout << "Test engine size output! " << size.x << ", " << size.y << std::endl;
-        // TODO: Convert this to graphics component and use it
+        _size = size;
     }
 
-    void Game::onNotify(events::Event *event) {
+    void Game::onNotify(const events::Event *event) {
         std::cout << "Game received event: " + to_string(event->type) << std::endl;
 
         switch (event->type) {
             case events::Type::WINDOW_RESIZED: {
-                auto *resizeEvent = dynamic_cast<window::WindowResizeEvent *>(event);
+                auto *resizeEvent = dynamic_cast<const window::WindowResizeEvent *>(event);
                 resize(resizeEvent->newSize);
                 break;
             }
@@ -46,5 +46,9 @@ namespace engine::game {
         for (auto & _gameObject : _gameObjects) {
             delete _gameObject;
         }
+    }
+
+    sf::Vector2u Game::getSize() const {
+        return _size;
     }
 }

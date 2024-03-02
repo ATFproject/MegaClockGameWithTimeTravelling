@@ -49,8 +49,8 @@ namespace engine::game {
         notify(type);
     }
 
-    void GameObject::onNotify(events::Event *event) {
-        notify(std::shared_ptr<events::Event>(event));
+    void GameObject::onNotify(const events::Event *event) {
+        notify(event);
     }
 
     GameObject::~GameObject() {

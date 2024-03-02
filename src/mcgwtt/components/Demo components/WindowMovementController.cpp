@@ -14,22 +14,22 @@ namespace mcgwtt::components {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             notify(std::shared_ptr<events::Event>(
                     new window::WindowMoveEvent(10, 0)
-            ));
+            ).get());
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
             notify(std::shared_ptr<events::Event>(
                     new window::WindowMoveEvent(-10, 0)
-            ));
+            ).get());
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
             notify(std::shared_ptr<events::Event>(
                     new window::WindowMoveEvent(0, -10)
-            ));
+            ).get());
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             notify(std::shared_ptr<events::Event>(
                     new window::WindowMoveEvent(0, 10)
-            ));
+            ).get());
         }
     }
 
@@ -37,7 +37,7 @@ namespace mcgwtt::components {
 
     }
 
-    void WindowMovementController::onNotify(events::Event *event) {
+    void WindowMovementController::onNotify(const events::Event *event) {
 
     }
 }

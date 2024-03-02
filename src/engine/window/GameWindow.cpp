@@ -15,12 +15,12 @@ namespace window {
     void GameWindow::startRendering() {
         _isActive = true;
         while (_win->isOpen()) {
+            _win->clear();
             _handleSfmlEvents();
 
             if (_isActive) {
                 _game.tick();
             }
-
             _win->display();
         }
     }
@@ -51,7 +51,7 @@ namespace window {
                 case sf::Event::Resized:
                     notify(std::shared_ptr<Event>(
                             new WindowResizeEvent(event.size.width, event.size.height)
-                    ));
+                    ).get());
                     break;
 
                 default:
@@ -65,9 +65,9 @@ namespace window {
             _win->close();
     }
 
-    void GameWindow::onNotify(events::Event *event) {
+    void GameWindow::onNotify(const events::Event *event) {
         if (event->type == events::Type::WINDOW_MOVE) {
-            auto *moveEvent = dynamic_cast<WindowMoveEvent *>(event);
+            auto *moveEvent = dynamic_cast<const WindowMoveEvent *>(event);
             _win->setPosition(_win->getPosition() + moveEvent->move);
         }
     }

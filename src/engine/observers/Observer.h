@@ -12,7 +12,7 @@ namespace engine {
     public:
         virtual ~Observer() = default;
         virtual void onNotify(events::Type type) {};
-        virtual void onNotify(events::Event *event) {}
+        virtual void onNotify(const events::Event *event) {}
     };
 } // engine
 

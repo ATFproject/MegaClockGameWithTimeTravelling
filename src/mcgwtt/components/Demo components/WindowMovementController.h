@@ -17,7 +17,7 @@ namespace mcgwtt::components {
         explicit WindowMovementController(window::GameWindow *win);
         void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override;
         void onNotify(events::Type type) override;
-        void onNotify(events::Event *event) override;
+        void onNotify(const events::Event *event) override;
     };
 }
 // engine::components

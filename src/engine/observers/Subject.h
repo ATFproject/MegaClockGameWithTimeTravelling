@@ -17,7 +17,7 @@ namespace engine {
 
         void removeObserver(Observer *toRemove) {
             _observers.erase(std::remove(_observers.begin(), _observers.end(), toRemove),
-                    _observers.end());
+                             _observers.end());
         }
 
     protected:
@@ -27,9 +27,9 @@ namespace engine {
             }
         }
 
-        void notify(const std::shared_ptr<events::Event>& event) {
+        void notify(const events::Event *event) {
             for (auto &observer : _observers) {
-                observer->onNotify(event.get());
+                observer->onNotify(event);
             }
         }
 

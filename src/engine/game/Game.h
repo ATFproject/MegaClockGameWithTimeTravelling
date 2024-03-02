@@ -17,11 +17,16 @@ namespace engine::game {
         void tick();
         void resize(sf::Vector2u size);
 
+        sf::Vector2u getSize() const;
+
         using Observer::onNotify;
-        void onNotify(events::Event *event) override;
+        void onNotify(const events::Event *event) override;
+
         ~Game() override;
+
     private:
         std::vector<GameObject *> _gameObjects;
+        sf::Vector2u _size;
         sf::Clock _timer;
     };
 } // engine

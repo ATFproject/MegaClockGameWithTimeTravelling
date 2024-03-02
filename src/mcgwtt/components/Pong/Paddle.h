@@ -19,28 +19,41 @@ namespace mcgwtt::components {
     class PaddlePhysics : public engine::components::PhysicsComponent {
     private:
         float x, y;
+        bool init = false;
 
     public:
-        PaddlePhysics(int startX, int startY) : x(startX), y(startY) {
+        PaddlePhysics(float startX, float startY) : x(startX), y(startY) {
             notify(std::shared_ptr<events::Event>(
                     new PaddleMovedEvent(x, y)
-            ));
+            ).get());
         }
 
         void tick(engine::game::GameObject *gameObject, sf::Time dt, engine::game::Game &game) override {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            if (!init) {
                 notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(x, y - 2)
-                ));
+                        new PaddleMovedEvent(x, y)
+                ).get());
+                init = true;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+
+            const int paddleSpeed = 250;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+                y -= paddleSpeed * dt.asSeconds();
+                y = std::max(0.f, y);
                 notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(x, y + 2)
-                ));
+                        new PaddleMovedEvent(x, y)
+                ).get());
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                y += paddleSpeed * dt.asSeconds();
+                y = std::min(game.getSize().y * 1.f - 32, y);
+                notify(std::shared_ptr<events::Event>(
+                        new PaddleMovedEvent(x, y + paddleSpeed * dt.asSeconds())
+                ).get());
             }
         }
 
-        void onNotify(events::Event *event) override {
+        void onNotify(const events::Event *event) override {
         }
 
         void onNotify(events::Type type) override {
@@ -63,9 +76,9 @@ namespace mcgwtt::components {
             win->draw(paddle);
         }
 
-        void onNotify(events::Event *event) override {
+        void onNotify(const events::Event *event) override {
             if (event->type == events::Type::PADDLE_MOVE) {
-                sf::Vector2f newCoords = dynamic_cast<PaddleMovedEvent *>(event)->newPos;
+                sf::Vector2f newCoords = dynamic_cast<const PaddleMovedEvent *>(event)->newPos;
                 paddle.setPosition(newCoords.x, newCoords.y);
             }
         }
