@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include "GameObject.h"
+#include "GameWindow.h"
 
 namespace engine::game {
     void Game::operator<<(GameObject *toAdd) {
@@ -28,11 +29,11 @@ namespace engine::game {
     }
 
     void Game::onNotify(events::Event *event) {
-        std::cout << "Game received event: " + events::getTypeString(event->type) << std::endl;
+        std::cout << "Game received event: " + to_string(event->type) << std::endl;
 
         switch (event->type) {
             case events::Type::WINDOW_RESIZED: {
-                auto *resizeEvent = dynamic_cast<events::WindowResizeEvent *>(event);
+                auto *resizeEvent = dynamic_cast<window::WindowResizeEvent *>(event);
                 resize(resizeEvent->newSize);
                 break;
             }

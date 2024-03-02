@@ -67,7 +67,7 @@ namespace window {
 
     void GameWindow::onNotify(events::Event *event) {
         if (event->type == events::Type::WINDOW_MOVE) {
-            auto *moveEvent = dynamic_cast<events::WindowMoveEvent *>(event);
+            auto *moveEvent = dynamic_cast<WindowMoveEvent *>(event);
             _win->setPosition(_win->getPosition() + moveEvent->move);
         }
     }

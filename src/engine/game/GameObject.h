@@ -15,6 +15,7 @@ namespace engine::game {
     public:
         GameObject();
         GameObject(components::InputComponent *ic, components::PhysicsComponent *pc, components::GraphicsComponent *gc);
+        ~GameObject() override;
 
         void tick(sf::Time dt, Game &game);
         void draw();

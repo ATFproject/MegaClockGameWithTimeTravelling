@@ -17,4 +17,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include "external/smartenum.hpp"
+
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_ENGINEDEF_H

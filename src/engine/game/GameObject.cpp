@@ -52,4 +52,13 @@ namespace engine::game {
     void GameObject::onNotify(events::Event *event) {
         notify(std::shared_ptr<events::Event>(event));
     }
+
+    GameObject::~GameObject() {
+        if (_input != &emptyInputComponent)
+            delete _input;
+        if (_physics != &emptyPhysicsComponent)
+            delete _physics;
+        if (_graphics != &emptyGraphicsComponent)
+            delete _graphics;
+    }
 }

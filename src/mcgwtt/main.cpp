@@ -25,9 +25,11 @@ int main() {
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     window::GameWindow window(&win);
-
+    sf::String myString("Hello World");
     window.addGameObject(new mcgwtt::components::WindowController(&window), nullptr, nullptr);
-    window.addGameObject(new mcgwtt::components::PaddleInput(), nullptr, nullptr);
+    window.addGameObject(nullptr,
+                         new mcgwtt::components::PaddlePhysics(100, 200),
+                         new mcgwtt::components::PaddleGraphics(&win));
 
     window.startRendering();
     return 0;

@@ -31,6 +31,22 @@ namespace window {
 
         void _handleSfmlEvents();
     };
+
+
+    struct WindowResizeEvent : public events::Event {
+        const sf::Vector2u newSize;
+
+        WindowResizeEvent(unsigned int w, unsigned int h) :
+                Event(events::Type::WINDOW_RESIZED),
+                newSize(sf::Vector2u(w, h)) {}
+    };
+
+    struct WindowMoveEvent : public events::Event {
+        sf::Vector2i move;
+
+        WindowMoveEvent(int x, int y) :
+                Event(events::Type::WINDOW_MOVE), move(sf::Vector2i(x, y)) {}
+    };
 }
 
 
