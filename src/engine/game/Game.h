@@ -19,7 +19,6 @@ namespace engine::game {
 
         sf::Vector2u getSize() const;
 
-        using Observer::onNotify;
         void onNotify(const events::Event *event) override;
 
         ~Game() override;

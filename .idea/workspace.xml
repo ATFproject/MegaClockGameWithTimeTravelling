@@ -35,9 +35,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added moving paddle">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Paddles with 2 different colors">
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +230,7 @@
       <workItem from="1708807174499" duration="623000" />
       <workItem from="1708807940300" duration="3931000" />
       <workItem from="1709406380674" duration="4755000" />
-      <workItem from="1709413126859" duration="2825000" />
+      <workItem from="1709413126859" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -561,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709415719446</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Paddles with 2 different colors">
+      <option name="closed" value="true" />
+      <created>1709416025353</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1709416025353</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,6 +627,7 @@
     <MESSAGE value="Game structure example" />
     <MESSAGE value="Game objects transmit events between their components" />
     <MESSAGE value="Added moving paddle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added moving paddle" />
+    <MESSAGE value="Paddles with 2 different colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Paddles with 2 different colors" />
   </component>
 </project>

@@ -33,7 +33,7 @@ namespace mcgwtt::components {
         }
     }
 
-    void WindowMovementController::onNotify(events::Type type) {
+    void WindowMovementController::onNotifyType(events::Type type) {
 
     }
 

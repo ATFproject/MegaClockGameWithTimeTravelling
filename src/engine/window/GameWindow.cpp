@@ -60,7 +60,7 @@ namespace window {
         }
     }
 
-    void GameWindow::onNotify(events::Type type) {
+    void GameWindow::onNotifyType(events::Type type) {
         if (type == events::Type::CLOSE)
             _win->close();
     }

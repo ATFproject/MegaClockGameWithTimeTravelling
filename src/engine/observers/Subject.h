@@ -23,7 +23,7 @@ namespace engine {
     protected:
         void notify(const events::Type &type) {
             for (auto &observer : _observers) {
-                observer->onNotify(type);
+                observer->onNotifyType(type);
             }
         }
 

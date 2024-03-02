@@ -19,7 +19,7 @@ namespace engine::game {
 
         void tick(sf::Time dt, Game &game);
         void draw();
-        void onNotify(events::Type type) override;
+        void onNotifyType(events::Type type) override;
         void onNotify(const events::Event *event) override;
 
     private:

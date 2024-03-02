@@ -18,45 +18,39 @@ namespace mcgwtt::components {
 
     class PaddlePhysics : public engine::components::PhysicsComponent {
     private:
-        float x, y;
-        bool init = false;
+        float _x, _y;
+        bool _init = false;
 
     public:
-        PaddlePhysics(float startX, float startY) : x(startX), y(startY) {
+        PaddlePhysics(float startX, float startY) : _x(startX), _y(startY) {
             notify(std::shared_ptr<events::Event>(
-                    new PaddleMovedEvent(x, y)
+                    new PaddleMovedEvent(_x, _y)
             ).get());
         }
 
         void tick(engine::game::GameObject *gameObject, sf::Time dt, engine::game::Game &game) override {
-            if (!init) {
+            if (!_init) {
                 notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(x, y)
+                        new PaddleMovedEvent(_x, _y)
                 ).get());
-                init = true;
+                _init = true;
             }
 
             const int paddleSpeed = 250;
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-                y -= paddleSpeed * dt.asSeconds();
-                y = std::max(0.f, y);
+                _y -= paddleSpeed * dt.asSeconds();
+                _y = std::max(0.f, _y);
                 notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(x, y)
+                        new PaddleMovedEvent(_x, _y)
                 ).get());
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-                y += paddleSpeed * dt.asSeconds();
-                y = std::min(game.getSize().y * 1.f - 32, y);
+                _y += paddleSpeed * dt.asSeconds();
+                _y = std::min(game.getSize().y * 1.f - 32, _y);
                 notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(x, y + paddleSpeed * dt.asSeconds())
+                        new PaddleMovedEvent(_x, _y + paddleSpeed * dt.asSeconds())
                 ).get());
             }
-        }
-
-        void onNotify(const events::Event *event) override {
-        }
-
-        void onNotify(events::Type type) override {
         }
     };
 
@@ -82,9 +76,6 @@ namespace mcgwtt::components {
                 sf::Vector2f newCoords = dynamic_cast<const PaddleMovedEvent *>(event)->newPos;
                 paddle.setPosition(newCoords.x, newCoords.y);
             }
-        }
-
-        void onNotify(events::Type type) override {
         }
     };
 }

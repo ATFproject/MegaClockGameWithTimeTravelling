@@ -17,7 +17,7 @@ namespace window {
         explicit GameWindow(sf::RenderWindow *window);
         void startRendering();
 
-        void onNotify(events::Type type) override;
+        void onNotifyType(events::Type type) override;
         void onNotify(const events::Event *event) override;
 
         void addGameObject(engine::components::InputComponent *ic,
