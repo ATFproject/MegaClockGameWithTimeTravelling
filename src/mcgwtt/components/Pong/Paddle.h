@@ -66,10 +66,11 @@ namespace mcgwtt::components {
         sf::RenderWindow *win;
 
     public:
-        explicit PaddleGraphics(sf::RenderWindow *window) : win(window) {
+        PaddleGraphics(sf::RenderWindow *window, const sf::Color &col) : win(window) {
             static sf::Texture paddleTex;
             auto tex = engine::game::resources::load<sf::Texture>("paddle.png");
             paddle.setTexture(*tex);
+            paddle.setColor(col);
         }
 
         void draw(engine::game::GameObject *gameObject) override {

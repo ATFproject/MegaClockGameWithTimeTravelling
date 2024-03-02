@@ -27,8 +27,12 @@ int main() {
     window::GameWindow window(&win);
     sf::String myString("Hello World");
     window.addGameObject(new mcgwtt::components::WindowController(&window), nullptr, nullptr);
+
     window.addGameObject(nullptr, new mcgwtt::components::PaddlePhysics(100, 200),
-                         new mcgwtt::components::PaddleGraphics(&win));
+                         new mcgwtt::components::PaddleGraphics(&win, sf::Color::Red));
+
+    window.addGameObject(nullptr, new mcgwtt::components::PaddlePhysics(700, 200),
+                         new mcgwtt::components::PaddleGraphics(&win, sf::Color::Blue));
 
     window.startRendering();
     return 0;
