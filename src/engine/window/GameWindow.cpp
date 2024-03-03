@@ -49,9 +49,7 @@ namespace window {
                     break;
 
                 case sf::Event::Resized:
-                    notify(std::shared_ptr<Event>(
-                            new WindowResizeEvent(event.size.width, event.size.height)
-                    ).get());
+                    notify(WindowResizeEvent(event.size.width, event.size.height));
                     break;
 
                 default:
@@ -65,10 +63,10 @@ namespace window {
             _win->close();
     }
 
-    void GameWindow::onNotify(const events::Event *event) {
-        if (event->type == events::Type::WINDOW_MOVE) {
-            auto *moveEvent = dynamic_cast<const WindowMoveEvent *>(event);
-            _win->setPosition(_win->getPosition() + moveEvent->move);
+    void GameWindow::onNotify(const events::Event &event) {
+        if (event.type == events::Type::WINDOW_MOVE) {
+            auto moveEvent = dynamic_cast<const WindowMoveEvent &>(event);
+            _win->setPosition(_win->getPosition() + moveEvent.move);
         }
     }
 

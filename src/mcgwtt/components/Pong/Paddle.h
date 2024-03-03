@@ -23,16 +23,12 @@ namespace mcgwtt::components {
 
     public:
         PaddlePhysics(float startX, float startY) : _x(startX), _y(startY) {
-            notify(std::shared_ptr<events::Event>(
-                    new PaddleMovedEvent(_x, _y)
-            ).get());
+            notify(PaddleMovedEvent(_x, _y));
         }
 
         void tick(engine::game::GameObject *gameObject, sf::Time dt, engine::game::Game &game) override {
             if (!_init) {
-                notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(_x, _y)
-                ).get());
+                notify(PaddleMovedEvent(_x, _y));
                 _init = true;
             }
 
@@ -40,16 +36,12 @@ namespace mcgwtt::components {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
                 _y -= paddleSpeed * dt.asSeconds();
                 _y = std::max(0.f, _y);
-                notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(_x, _y)
-                ).get());
+                notify(PaddleMovedEvent(_x, _y));
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
                 _y += paddleSpeed * dt.asSeconds();
                 _y = std::min(game.getSize().y * 1.f - 32, _y);
-                notify(std::shared_ptr<events::Event>(
-                        new PaddleMovedEvent(_x, _y + paddleSpeed * dt.asSeconds())
-                ).get());
+                notify(PaddleMovedEvent(_x, _y + paddleSpeed * dt.asSeconds()));
             }
         }
     };
@@ -71,9 +63,9 @@ namespace mcgwtt::components {
             win->draw(paddle);
         }
 
-        void onNotify(const events::Event *event) override {
-            if (event->type == events::Type::PADDLE_MOVE) {
-                sf::Vector2f newCoords = dynamic_cast<const PaddleMovedEvent *>(event)->newPos;
+        void onNotify(const events::Event &event) override {
+            if (event.type == events::Type::PADDLE_MOVE) {
+                sf::Vector2f newCoords = dynamic_cast<const PaddleMovedEvent &>(event).newPos;
                 paddle.setPosition(newCoords.x, newCoords.y);
             }
         }

@@ -49,7 +49,7 @@ namespace engine::game {
         notify(type);
     }
 
-    void GameObject::onNotify(const events::Event *event) {
+    void GameObject::onNotify(const events::Event &event) {
         notify(event);
     }
 

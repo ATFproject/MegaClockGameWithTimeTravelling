@@ -18,7 +18,7 @@ namespace window {
         void startRendering();
 
         void onNotifyType(events::Type type) override;
-        void onNotify(const events::Event *event) override;
+        void onNotify(const events::Event &event) override;
 
         void addGameObject(engine::components::InputComponent *ic,
                            engine::components::PhysicsComponent *pc,

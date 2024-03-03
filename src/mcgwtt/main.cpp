@@ -5,7 +5,6 @@
 #include "GameWindow.h"
 
 #include "components/WindowControl/WindowController.h"
-#include "components/Demo components/WindowMovementController.h"
 
 #include "components/Pong/Paddle.h"
 

@@ -28,13 +28,13 @@ namespace engine::game {
         _size = size;
     }
 
-    void Game::onNotify(const events::Event *event) {
-        std::cout << "Game received event: " + to_string(event->type) << std::endl;
+    void Game::onNotify(const events::Event &event) {
+        std::cout << "Game received event: " + to_string(event.type) << std::endl;
 
-        switch (event->type) {
+        switch (event.type) {
             case events::Type::WINDOW_RESIZED: {
-                auto *resizeEvent = dynamic_cast<const window::WindowResizeEvent *>(event);
-                resize(resizeEvent->newSize);
+                auto resizeEvent = dynamic_cast<const window::WindowResizeEvent &>(event);
+                resize(resizeEvent.newSize);
                 break;
             }
             default:
@@ -43,7 +43,7 @@ namespace engine::game {
     }
 
     Game::~Game() {
-        for (auto & _gameObject : _gameObjects) {
+        for (auto &_gameObject : _gameObjects) {
             delete _gameObject;
         }
     }
