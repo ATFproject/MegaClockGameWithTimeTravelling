@@ -60,9 +60,6 @@ namespace mcgwtt::components {
 
         void draw(engine::game::GameObject *gameObject) override {
             win->draw(paddle);
-            for (int i = 0; i < 10; ++i) {
-
-            }
         }
 
         void onNotify(const events::Event &event) override {
