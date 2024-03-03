@@ -16,6 +16,12 @@ namespace mcgwtt::components {
                 Event(events::Type::PADDLE_MOVE), newPos(sf::Vector2f(x, y)) {}
     };
 
+    struct PaddleEvent : public events::Event {
+        sf::Vector2f newPos;
+        PaddleEvent(float x, float y) :
+                Event(events::Type::CLOSE), newPos(-1, -1) {}
+    };
+
     class PaddlePhysics : public engine::components::PhysicsComponent {
     private:
         float _x, _y;
@@ -64,8 +70,8 @@ namespace mcgwtt::components {
         }
 
         void onNotify(const events::Event &event) override {
-            if (event.type == events::Type::PADDLE_MOVE) {
-                sf::Vector2f newCoords = dynamic_cast<const PaddleMovedEvent &>(event).newPos;
+            if (auto e = dynamic_cast<const PaddleMovedEvent *>(&event)) {
+                sf::Vector2f newCoords = e->newPos;
                 paddle.setPosition(newCoords.x, newCoords.y);
             }
         }

@@ -35,20 +35,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added resources">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/observers/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Observer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.h" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="NORMAL EVENT SYSTEM!">
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +229,7 @@
       <workItem from="1708807940300" duration="3931000" />
       <workItem from="1709406380674" duration="4755000" />
       <workItem from="1709413126859" duration="3747000" />
-      <workItem from="1709460016815" duration="4071000" />
+      <workItem from="1709460016815" duration="5165000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -595,7 +583,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709416872355</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="NORMAL EVENT SYSTEM!">
+      <option name="closed" value="true" />
+      <created>1709465175780</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1709465175780</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +626,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Disabled unit tests for box2d" />
     <MESSAGE value="Added doctest install" />
     <MESSAGE value="Fixed cmake options" />
     <MESSAGE value="Added checks for different compilers in cmake lists" />
@@ -655,6 +650,7 @@
     <MESSAGE value="Paddles with 2 different colors" />
     <MESSAGE value="Changed onNotify to onNotifyType in one case to remove ambiguous code" />
     <MESSAGE value="Added resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added resources" />
+    <MESSAGE value="NORMAL EVENT SYSTEM!" />
+    <option name="LAST_COMMIT_MESSAGE" value="NORMAL EVENT SYSTEM!" />
   </component>
 </project>
