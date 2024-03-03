@@ -24,13 +24,5 @@ namespace mcgwtt::components {
             notify(window::WindowMoveEvent(0, 10));
         }
     }
-
-    void WindowMovementController::onNotifyType(events::Type type) {
-
-    }
-
-    void WindowMovementController::onNotify(const events::Event &event) {
-
-    }
 }
 

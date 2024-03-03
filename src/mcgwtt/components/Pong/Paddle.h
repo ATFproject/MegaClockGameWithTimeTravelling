@@ -12,14 +12,7 @@ namespace mcgwtt::components {
     struct PaddleMovedEvent : public events::Event {
         sf::Vector2f newPos;
 
-        PaddleMovedEvent(float x, float y) :
-                Event(events::Type::PADDLE_MOVE), newPos(sf::Vector2f(x, y)) {}
-    };
-
-    struct PaddleEvent : public events::Event {
-        sf::Vector2f newPos;
-        PaddleEvent(float x, float y) :
-                Event(events::Type::CLOSE), newPos(-1, -1) {}
+        PaddleMovedEvent(float x, float y) : newPos(sf::Vector2f(x, y)) {}
     };
 
     class PaddlePhysics : public engine::components::PhysicsComponent {
@@ -67,13 +60,17 @@ namespace mcgwtt::components {
 
         void draw(engine::game::GameObject *gameObject) override {
             win->draw(paddle);
+            for (int i = 0; i < 10; ++i) {
+
+            }
         }
 
         void onNotify(const events::Event &event) override {
-            if (auto e = dynamic_cast<const PaddleMovedEvent *>(&event)) {
-                sf::Vector2f newCoords = e->newPos;
-                paddle.setPosition(newCoords.x, newCoords.y);
-            }
+            ENGINE_CHECK_EVENT(PaddleMovedEvent,
+                               sf::Vector2f newCoords = e->newPos;
+                                       paddle.setPosition(newCoords.x, newCoords.y);
+                                       paddle.setPosition(newCoords.x, newCoords.y);
+            )
         }
     };
 }

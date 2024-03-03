@@ -45,10 +45,6 @@ namespace engine::game {
         }
     }
 
-    void GameObject::onNotifyType(events::Type type) {
-        notify(type);
-    }
-
     void GameObject::onNotify(const events::Event &event) {
         notify(event);
     }

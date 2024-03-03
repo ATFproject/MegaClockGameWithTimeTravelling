@@ -21,12 +21,6 @@ namespace engine {
         }
 
     protected:
-        void notify(const events::Type &type) {
-            for (auto &observer : _observers) {
-                observer->onNotifyType(type);
-            }
-        }
-
         void notify(const events::Event &event) {
             for (auto &observer : _observers) {
                 observer->onNotify(event);

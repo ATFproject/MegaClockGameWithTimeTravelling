@@ -7,11 +7,24 @@
 
 #include "Events.h"
 
+
+/* Usage:
+   ENGINE_CHECK_EVENT(PaddleMovedEvent,
+               sf::Vector2f newCoords = e->newPos;
+               paddle.setPosition(newCoords.x, newCoords.y);
+               paddle.setPosition(newCoords.x, newCoords.y);
+            )
+ */
+#define ENGINE_CHECK_EVENT(EVENT_TYPE, code) \
+            if (auto e = dynamic_cast<const EVENT_TYPE *>(&event)) { \
+                code                      \
+                return;                   \
+            }
+
 namespace engine {
     class Observer {
     public:
         virtual ~Observer() = default;
-        virtual void onNotifyType(events::Type type) {};
         virtual void onNotify(const events::Event &event) {}
     };
 } // engine

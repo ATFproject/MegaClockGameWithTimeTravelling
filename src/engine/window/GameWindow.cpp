@@ -39,13 +39,13 @@ namespace window {
                 case sf::Event::LostFocus:
                     _isActive = false;
                     std::cout << "Lost focus" << std::endl;
-                    notify(Type::WINDOW_LOST_FOCUS);
+                    notify(WindowFocusChangeEvent{false});
                     break;
 
                 case sf::Event::GainedFocus:
                     _isActive = true;
                     std::cout << "Gained focus" << std::endl;
-                    notify(Type::WINDOW_GAINED_FOCUS);
+                    notify(WindowFocusChangeEvent{true});
                     break;
 
                 case sf::Event::Resized:
@@ -58,16 +58,13 @@ namespace window {
         }
     }
 
-    void GameWindow::onNotifyType(events::Type type) {
-        if (type == events::Type::CLOSE)
-            _win->close();
-    }
-
     void GameWindow::onNotify(const events::Event &event) {
-        if (event.type == events::Type::WINDOW_MOVE) {
-            auto moveEvent = dynamic_cast<const WindowMoveEvent &>(event);
-            _win->setPosition(_win->getPosition() + moveEvent.move);
-        }
+        ENGINE_CHECK_EVENT(WindowCloseEvent,
+                           _win->close();
+        )
+        ENGINE_CHECK_EVENT(WindowMoveEvent,
+                           _win->setPosition(_win->getPosition() + e->move);
+        )
     }
 
     void GameWindow::addGameObject(engine::components::InputComponent *ic,

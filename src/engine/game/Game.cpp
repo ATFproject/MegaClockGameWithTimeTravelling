@@ -29,17 +29,9 @@ namespace engine::game {
     }
 
     void Game::onNotify(const events::Event &event) {
-        std::cout << "Game received event: " + to_string(event.type) << std::endl;
-
-        switch (event.type) {
-            case events::Type::WINDOW_RESIZED: {
-                auto resizeEvent = dynamic_cast<const window::WindowResizeEvent &>(event);
-                resize(resizeEvent.newSize);
-                break;
-            }
-            default:
-                break;
-        }
+        ENGINE_CHECK_EVENT(window::WindowResizeEvent,
+                           resize(e->newSize);
+        )
     }
 
     Game::~Game() {
