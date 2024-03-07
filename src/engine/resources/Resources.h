@@ -13,7 +13,7 @@ namespace engine {
     extern std::map<std::string, std::string> extensionFolder;
 
     template<typename T>
-        T* loadResource(const std::string &FileName) {
+        T *loadResource(const std::string &FileName) {
             if (FileName.empty())
                 throw std::runtime_error("Empty filename for resource loading");
             std::string ext = FileName.substr(FileName.find_last_of('.'));
@@ -124,12 +124,13 @@ namespace engine {
             _music = loadResource<sf::Music>(_path);
         }
 
-        sf::Music *get() {
-            return _music;
+        void play() {
+            if (_music->getStatus() != sf::SoundStream::Status::Playing)
+                _music->play();
         }
 
-        operator sf::Music *() { // NOLINT(*-explicit-constructor)
-            return _music;
+        void setVolume(float volume) {
+            _music->setVolume(volume);
         }
     };
 

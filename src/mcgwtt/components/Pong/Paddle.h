@@ -56,9 +56,8 @@ namespace mcgwtt::components {
     public:
         PaddleGraphics(sf::RenderWindow *window, const sf::Color &col) : win(window) {
             auto music = engine::resourceHandler.addRes(new engine::Music("music.mp3"));
-            music->get()->setVolume(100);
-            music->get()->play();
-
+            music->setVolume(25);
+            music->play();
             paddle.setTexture(*engine::resourceHandler.addRes(new engine::Texture("paddle.png")));
             paddle.setColor(col);
         }
