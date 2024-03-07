@@ -20,9 +20,11 @@ namespace mcgwtt::components {
     private:
         float _x, _y;
         bool _init = false;
+        sf::Keyboard::Key _keyUp, _keyDown;
 
     public:
-        PaddlePhysics(float startX, float startY) : _x(startX), _y(startY) {
+        PaddlePhysics(float startX, float startY, sf::Keyboard::Key up, sf::Keyboard::Key down)
+                : _x(startX), _y(startY), _keyUp(up), _keyDown(down) {
             notify(PaddleMovedEvent(_x, _y));
         }
 
@@ -33,12 +35,12 @@ namespace mcgwtt::components {
             }
 
             const int paddleSpeed = 250;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            if (sf::Keyboard::isKeyPressed(_keyUp)) {
                 _y -= paddleSpeed * dt.asSeconds();
                 _y = std::max(0.f, _y);
                 notify(PaddleMovedEvent(_x, _y));
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            if (sf::Keyboard::isKeyPressed(_keyDown)) {
                 _y += paddleSpeed * dt.asSeconds();
                 _y = std::min(game.getSize().y * 1.f - 32, _y);
                 notify(PaddleMovedEvent(_x, _y + paddleSpeed * dt.asSeconds()));

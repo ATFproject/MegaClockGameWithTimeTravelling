@@ -35,10 +35,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Resource manager!">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Correct music handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +233,7 @@
       <workItem from="1709413126859" duration="3747000" />
       <workItem from="1709460016815" duration="5165000" />
       <workItem from="1709832851061" duration="5016000" />
-      <workItem from="1709837947268" duration="792000" />
+      <workItem from="1709837947268" duration="2689000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />
@@ -611,7 +611,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709836811319</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Fixed res manager map lookup">
+      <option name="closed" value="true" />
+      <created>1709838751693</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1709838751693</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Correct music handling">
+      <option name="closed" value="true" />
+      <created>1709840210954</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1709840210954</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,8 +662,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added checks for different compilers in cmake lists" />
-    <MESSAGE value="Fixed gitignore" />
     <MESSAGE value="First SFML experience" />
     <MESSAGE value="Added GameObject component pattern" />
     <MESSAGE value="Added basic game class" />
@@ -671,7 +685,20 @@
     <MESSAGE value="NORMAL EVENT SYSTEM!" />
     <MESSAGE value="Remade event system" />
     <MESSAGE value="Resource manager!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resource manager!" />
+    <MESSAGE value="Fixed res manager map lookup" />
+    <MESSAGE value="Correct music handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct music handling" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h</url>
+          <line>61</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
