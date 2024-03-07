@@ -16,7 +16,7 @@ int main() {
             "MegaClockGameWithTimeTravelling 0.0.1 from ATFProject Game studio!",
             sf::Style::Default,
             winContextSettings);
-    win.setVerticalSyncEnabled(false);
+    win.setVerticalSyncEnabled(true);
     win.setActive(true);
 
     sf::Image icon;

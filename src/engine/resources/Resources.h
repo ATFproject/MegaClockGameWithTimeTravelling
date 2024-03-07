@@ -13,13 +13,13 @@ namespace engine {
     extern std::map<std::string, std::string> extensionFolder;
 
     template<typename T>
-        std::shared_ptr<T> loadResource(const std::string &FileName) {
+        T* loadResource(const std::string &FileName) {
             if (FileName.empty())
                 throw std::runtime_error("Empty filename for resource loading");
             std::string ext = FileName.substr(FileName.find_last_of('.'));
             std::string folder = "../resources/" + extensionFolder[ext] + "/";
             std::string path = folder + FileName;
-            auto data = std::make_shared<T>();
+            auto data = new T();
             bool res;
 
             if constexpr (requires { data->loadFromFile(path); }) {
@@ -49,7 +49,7 @@ namespace engine {
 
         virtual ~Resource() {
             allocated--;
-            std::cout << "Res free! (" << allocated << " allocated)\n";
+            std::cout << "Res free (\"" << _path << "\") (" << allocated << " allocated)\n";
         };
 
         explicit Resource(std::string LoadPath) : _path(std::move(LoadPath)) {
@@ -76,6 +76,7 @@ namespace engine {
         sf::Texture _tex;
 
     public:
+        Texture() = default;
         explicit Texture(const std::string &FileName) : Resource(FileName) {
             _tex = *loadResource<sf::Texture>(_path);
         }
@@ -94,7 +95,7 @@ namespace engine {
         sf::SoundBuffer _soundBuffer;
 
     public:
-        SoundBuffer() {}
+        SoundBuffer() = default;
 
         explicit SoundBuffer(const std::string &FileName) : Resource(FileName) {
             _soundBuffer = *loadResource<sf::SoundBuffer>(FileName);
@@ -114,18 +115,21 @@ namespace engine {
         sf::Music *_music;
 
     public:
-        Music() {}
+        Music() = default;
         explicit Music(const std::string &FileName) : Resource(FileName) {
-            _music = loadResource<sf::Music>("sounds/" + FileName).get();
+            _music = loadResource<sf::Music>(FileName);
         }
 
         void load() override {
-            _music = loadResource<sf::Music>("sounds/" + _path).get();
+            _music = loadResource<sf::Music>(_path);
         }
 
+        sf::Music *get() {
+            return _music;
+        }
 
-        operator sf::Music &() const { // NOLINT(*-explicit-constructor)
-            return *_music;
+        operator sf::Music *() { // NOLINT(*-explicit-constructor)
+            return _music;
         }
     };
 
@@ -133,7 +137,7 @@ namespace engine {
     public:
         sf::Font _font;
 
-        Font() {}
+        Font() = default;
         explicit Font(const std::string &FileName) : Resource(FileName) {
             _font = *loadResource<sf::Font>(FileName);
         }

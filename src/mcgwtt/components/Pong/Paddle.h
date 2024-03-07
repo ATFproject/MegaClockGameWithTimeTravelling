@@ -53,9 +53,11 @@ namespace mcgwtt::components {
 
     public:
         PaddleGraphics(sf::RenderWindow *window, const sf::Color &col) : win(window) {
-            static sf::Texture paddleTex;
-            auto tex = engine::resourceHandler.addRes(new engine::Texture("paddle.png"));
-            paddle.setTexture(*tex);
+            auto music = engine::resourceHandler.addRes(new engine::Music("music.mp3"));
+            music->get()->setVolume(100);
+            music->get()->play();
+
+            paddle.setTexture(*engine::resourceHandler.addRes(new engine::Texture("paddle.png")));
             paddle.setColor(col);
         }
 
@@ -65,9 +67,9 @@ namespace mcgwtt::components {
 
         void onNotify(const engine::events::Event &event) override {
             ENGINE_CHECK_EVENT(PaddleMovedEvent,
-                   sf::Vector2f newCoords = e->newPos;
-                   paddle.setPosition(newCoords.x, newCoords.y);
-                   paddle.setPosition(newCoords.x, newCoords.y);
+                               sf::Vector2f newCoords = e->newPos;
+                                       paddle.setPosition(newCoords.x, newCoords.y);
+                                       paddle.setPosition(newCoords.x, newCoords.y);
             )
         }
     };
