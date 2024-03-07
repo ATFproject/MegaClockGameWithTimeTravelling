@@ -14,6 +14,8 @@ namespace window {
 
     void GameWindow::startRendering() {
         _isActive = true;
+        std::cout << "Started!" << std::endl;
+
         while (_win->isOpen()) {
             _win->clear();
             _handleSfmlEvents();

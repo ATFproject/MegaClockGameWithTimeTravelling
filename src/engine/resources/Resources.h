@@ -41,9 +41,22 @@ namespace engine {
         friend class ResourceHandler;
 
     public:
-        Resource() {}
-        explicit Resource(std::string LoadPath) : _path(std::move(LoadPath)) {}
-        virtual ~Resource() = default;
+        inline static int allocated = 0;
+        Resource() {
+            allocated++;
+            std::cout << "Res created (" << allocated << " allocated)\n";
+        }
+
+        virtual ~Resource() {
+            allocated--;
+            std::cout << "Res free! (" << allocated << " allocated)\n";
+        };
+
+        explicit Resource(std::string LoadPath) : _path(std::move(LoadPath)) {
+            allocated++;
+            std::cout << "Res created (\"" << _path << "\") (" << allocated << " allocated)\n";
+        }
+
         virtual void load() = 0;
 
         void setPath(const std::string &Path) {
@@ -63,7 +76,6 @@ namespace engine {
         sf::Texture _tex;
 
     public:
-        Texture() {}
         explicit Texture(const std::string &FileName) : Resource(FileName) {
             _tex = *loadResource<sf::Texture>(_path);
         }
@@ -143,6 +155,7 @@ namespace engine {
 
     public:
         template<typename T>
+            requires std::is_base_of_v<Resource, T>
             T *getResource(const std::string &name) {
                 auto ptr = dynamic_cast<T *>(_res.find(name)->second);
                 if (!ptr)
@@ -151,18 +164,32 @@ namespace engine {
             }
 
         template<typename T>
+            requires std::is_base_of_v<Resource, T>
             T *addRes(T *mem, const std::string &FileName = "", const std::string &Name = "") {
-                if (!FileName.empty())
-                    mem->setPath(FileName);
-                else if (mem->_path.empty())
+                std::string resName;
+                if (!Name.empty())
+                    resName = Name;
+                else if (!FileName.empty())
+                    resName = FileName;
+                else if (!mem->getResourcePath().empty())
+                    resName = mem->getResourcePath();
+                else
                     throw std::runtime_error("No name provided for resource!");
 
-                mem->load();
+                if (!FileName.empty())
+                    mem->setPath(FileName);
 
-                if (Name.empty())
-                    _res.emplace(FileName, resource_ptr(mem));
-                else
-                    _res.emplace(Name, resource_ptr(mem));
+                auto find = _res.find(resName);
+                if (find != _res.end()) {
+                    auto ptr = dynamic_cast<T *>(find->second.get());
+                    if (ptr) {
+                        delete mem;
+                        return ptr;
+                    }
+                }
+
+                mem->load();
+                _res.emplace(resName, resource_ptr(mem));
 
                 return mem;
             }
