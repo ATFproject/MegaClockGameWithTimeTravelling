@@ -7,7 +7,7 @@
 
 #include "EngineDef.h"
 
-namespace events {
+namespace engine::events {
     struct Event {
     protected:
         Event() = default;

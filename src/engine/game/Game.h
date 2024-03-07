@@ -17,10 +17,9 @@ namespace engine::game {
         void tick();
         void resize(sf::Vector2u size);
 
-        sf::Vector2u getSize() const;
+        [[nodiscard]] sf::Vector2u getSize() const;
 
         void onNotify(const events::Event &event) override;
-
         ~Game() override;
 
     private:

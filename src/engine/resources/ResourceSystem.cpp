@@ -2,9 +2,9 @@
 // Created by livefish on 2/20/24.
 //
 
-#include "Asset.h"
+#include "Resources.h"
 
-namespace engine::game::resources {
+namespace engine{
     std::map<std::string, std::string> extensionFolder = {
             {".png", "images"},
             {".jpg", "images"},
@@ -16,4 +16,6 @@ namespace engine::game::resources {
 
             {".ttf", "fonts"},
     };
+
+    ResourceHandler resourceHandler;
 }

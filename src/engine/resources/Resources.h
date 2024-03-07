@@ -1,0 +1,174 @@
+//
+// Created by livefish on 2/20/24.
+//
+
+#ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
+#define MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
+
+#include <utility>
+
+#include "EngineDef.h"
+
+namespace engine {
+    extern std::map<std::string, std::string> extensionFolder;
+
+    template<typename T>
+        std::shared_ptr<T> loadResource(const std::string &FileName) {
+            if (FileName.empty())
+                throw std::runtime_error("Empty filename for resource loading");
+            std::string ext = FileName.substr(FileName.find_last_of('.'));
+            std::string folder = "../resources/" + extensionFolder[ext] + "/";
+            std::string path = folder + FileName;
+            auto data = std::make_shared<T>();
+            bool res;
+
+            if constexpr (requires { data->loadFromFile(path); }) {
+                res = data->loadFromFile(path);
+            } else if constexpr (requires { data->openFromFile(path); }) {
+                res = data->openFromFile(path);
+            } else {
+                std::cerr << "No matching loadResource function found!" << std::endl;
+                res = false;
+            }
+            if (!res) {
+                std::cerr << "Failed to loadResource \"" << path << "\", exiting'" << std::endl;
+                exit(30);
+            }
+            return data;
+        }
+
+    class Resource {
+        friend class ResourceHandler;
+
+    public:
+        Resource() {}
+        explicit Resource(std::string LoadPath) : _path(std::move(LoadPath)) {}
+        virtual ~Resource() = default;
+        virtual void load() = 0;
+
+        void setPath(const std::string &Path) {
+            _path = Path;
+        }
+
+        [[nodiscard]] std::string getResourcePath() const {
+            return _path;
+        }
+
+    protected:
+        std::string _path;
+    };
+
+    class Texture : public Resource {
+    private:
+        sf::Texture _tex;
+
+    public:
+        Texture() {}
+        explicit Texture(const std::string &FileName) : Resource(FileName) {
+            _tex = *loadResource<sf::Texture>(_path);
+        }
+
+        void load() override {
+            _tex = *loadResource<sf::Texture>(_path);
+        }
+
+        operator const sf::Texture &() const { // NOLINT(*-explicit-constructor)
+            return _tex;
+        }
+    };
+
+    class SoundBuffer : public Resource {
+    private:
+        sf::SoundBuffer _soundBuffer;
+
+    public:
+        SoundBuffer() {}
+
+        explicit SoundBuffer(const std::string &FileName) : Resource(FileName) {
+            _soundBuffer = *loadResource<sf::SoundBuffer>(FileName);
+        }
+
+        void load() override {
+            _soundBuffer = *loadResource<sf::SoundBuffer>(_path);
+        }
+
+        operator const sf::SoundBuffer &() const { // NOLINT(*-explicit-constructor)
+            return _soundBuffer;
+        }
+    };
+
+    class Music : public Resource {
+    private:
+        sf::Music *_music;
+
+    public:
+        Music() {}
+        explicit Music(const std::string &FileName) : Resource(FileName) {
+            _music = loadResource<sf::Music>("sounds/" + FileName).get();
+        }
+
+        void load() override {
+            _music = loadResource<sf::Music>("sounds/" + _path).get();
+        }
+
+
+        operator sf::Music &() const { // NOLINT(*-explicit-constructor)
+            return *_music;
+        }
+    };
+
+    class Font : public Resource {
+    public:
+        sf::Font _font;
+
+        Font() {}
+        explicit Font(const std::string &FileName) : Resource(FileName) {
+            _font = *loadResource<sf::Font>(FileName);
+        }
+
+        void load() override {
+            _font = *loadResource<sf::Font>(_path);
+        }
+
+        operator sf::Font() const { // NOLINT(*-explicit-constructor)
+            return _font;
+        }
+    };
+
+    using resource_ptr = std::unique_ptr<Resource>;
+
+    class ResourceHandler {
+    private:
+        std::unordered_map<std::string, resource_ptr> _res;
+
+    public:
+        template<typename T>
+            T *getResource(const std::string &name) {
+                auto ptr = dynamic_cast<T *>(_res.find(name)->second);
+                if (!ptr)
+                    throw std::runtime_error("Res: " + name + " not found!");
+                return ptr;
+            }
+
+        template<typename T>
+            T *addRes(T *mem, const std::string &FileName = "", const std::string &Name = "") {
+                if (!FileName.empty())
+                    mem->setPath(FileName);
+                else if (mem->_path.empty())
+                    throw std::runtime_error("No name provided for resource!");
+
+                mem->load();
+
+                if (Name.empty())
+                    _res.emplace(FileName, resource_ptr(mem));
+                else
+                    _res.emplace(Name, resource_ptr(mem));
+
+                return mem;
+            }
+    };
+
+    extern ResourceHandler resourceHandler;
+} // engine
+
+#endif //MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H

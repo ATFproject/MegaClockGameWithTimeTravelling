@@ -35,9 +35,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Remade event system">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed empty for loop">
+      <change afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compilerexplorer.settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compilerexplorer.settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/Events.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/GameDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameDef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/resources/Asset.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/resources/ExtensionMap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/ResourceSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +104,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "First-game-steps",
-    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/resources",
+    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,19 +117,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/engine" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/components" />
       <recent name="$PROJECT_DIR$/src/mcgwtt" />
-      <recent name="$PROJECT_DIR$/src/engine" />
       <recent name="$PROJECT_DIR$/src/engine/components/WindowControl" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -129,6 +132,11 @@
       </method>
     </configuration>
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -237,6 +245,7 @@
       <workItem from="1709406380674" duration="4755000" />
       <workItem from="1709413126859" duration="3747000" />
       <workItem from="1709460016815" duration="5165000" />
+      <workItem from="1709832851061" duration="3874000" />
     </task>
     <task id="LOCAL-00001" summary="Added actual Cmake file contents and .gitignore">
       <option name="closed" value="true" />

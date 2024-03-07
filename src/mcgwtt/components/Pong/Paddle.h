@@ -7,9 +7,10 @@
 
 #include "components/ComponentInterface.h"
 #include "observers/Subject.h"
+#include "Events.h"
 
 namespace mcgwtt::components {
-    struct PaddleMovedEvent : public events::Event {
+    struct PaddleMovedEvent : public engine::events::Event {
         sf::Vector2f newPos;
 
         PaddleMovedEvent(float x, float y) : newPos(sf::Vector2f(x, y)) {}
@@ -53,7 +54,7 @@ namespace mcgwtt::components {
     public:
         PaddleGraphics(sf::RenderWindow *window, const sf::Color &col) : win(window) {
             static sf::Texture paddleTex;
-            auto tex = engine::game::resources::load<sf::Texture>("paddle.png");
+            auto tex = engine::resourceHandler.addRes(new engine::Texture("paddle.png"));
             paddle.setTexture(*tex);
             paddle.setColor(col);
         }
@@ -62,11 +63,11 @@ namespace mcgwtt::components {
             win->draw(paddle);
         }
 
-        void onNotify(const events::Event &event) override {
+        void onNotify(const engine::events::Event &event) override {
             ENGINE_CHECK_EVENT(PaddleMovedEvent,
-                               sf::Vector2f newCoords = e->newPos;
-                                       paddle.setPosition(newCoords.x, newCoords.y);
-                                       paddle.setPosition(newCoords.x, newCoords.y);
+                   sf::Vector2f newCoords = e->newPos;
+                   paddle.setPosition(newCoords.x, newCoords.y);
+                   paddle.setPosition(newCoords.x, newCoords.y);
             )
         }
     };

@@ -28,8 +28,6 @@ namespace window {
     void GameWindow::_handleSfmlEvents() {
         sf::Event event{};
 
-        using namespace events;
-
         while (_win->pollEvent(event)) {
             switch (event.type) {
                 case sf::Event::Closed:
@@ -58,18 +56,18 @@ namespace window {
         }
     }
 
-    void GameWindow::onNotify(const events::Event &event) {
+    void GameWindow::addGameObject(engine::components::InputComponent *ic,
+                                   engine::components::PhysicsComponent *pc,
+                                   engine::components::GraphicsComponent *gc) {
+        _game << new engine::game::GameObject(ic, pc, gc);
+    }
+
+    void GameWindow::onNotify(const engine::events::Event &event) {
         ENGINE_CHECK_EVENT(WindowCloseEvent,
                            _win->close();
         )
         ENGINE_CHECK_EVENT(WindowMoveEvent,
                            _win->setPosition(_win->getPosition() + e->move);
         )
-    }
-
-    void GameWindow::addGameObject(engine::components::InputComponent *ic,
-                                   engine::components::PhysicsComponent *pc,
-                                   engine::components::GraphicsComponent *gc) {
-        _game << new engine::game::GameObject(ic, pc, gc);
     }
 }
