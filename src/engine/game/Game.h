@@ -6,16 +6,22 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAME_H
 
 #include "GameDef.h"
-#include "observers/Observer.h"
+#include "observers/Subject.h"
 
 namespace engine::game {
-    class Game : public Observer {
+    struct GameResizeEvent : public events::Event {
+        sf::Vector2u _size;
+        explicit GameResizeEvent(const sf::Vector2u &size) : _size(size) {}
+    };
+
+    class Game : public Observer, public Subject {
     public:
+        b2World *_world{};
+
         Game() = default;
 
         void operator<<(GameObject *toAdd);
         void tick();
-        void resize(sf::Vector2u size);
 
         [[nodiscard]] sf::Vector2u getSize() const;
 

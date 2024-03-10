@@ -5,8 +5,10 @@
       <w>componentdef</w>
       <w>emptycomponents</w>
       <w>enginedef</w>
+      <w>iters</w>
       <w>mcgwtt</w>
       <w>resourcedef</w>
+      <w>timestep</w>
       <w>windowcontroller</w>
       <w>windowmovementcontroller</w>
     </words>

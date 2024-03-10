@@ -9,12 +9,13 @@
 namespace engine::game {
     void Game::operator<<(GameObject *toAdd) {
         _gameObjects.push_back(toAdd);
+        addObserver(toAdd);
+        toAdd->init(*this);
     }
 
     void Game::tick() {
-        sf::Time elapsed = _timer.getElapsedTime();
         for (GameObject *gameObject : _gameObjects) {
-            gameObject->tick(elapsed, *this);
+            gameObject->tick(*this);
         }
 
         for (GameObject *gameObject : _gameObjects) {
@@ -23,14 +24,9 @@ namespace engine::game {
         _timer.restart();
     }
 
-    void Game::resize(sf::Vector2u size) {
-        std::cout << "Test engine size output! " << size.x << ", " << size.y << std::endl;
-        _size = size;
-    }
-
     void Game::onNotify(const events::Event &event) {
         ENGINE_CHECK_EVENT(window::WindowResizeEvent,
-                           resize(e->newSize);
+                           notify(GameResizeEvent(e->newSize));
         )
     }
 

@@ -20,7 +20,7 @@ namespace engine::components {
 
     class EmptyPhysicsComponent : public PhysicsComponent {
     public:
-        void tick(game::GameObject *gameObject, sf::Time dt, game::Game &game) override {}
+        void tick(game::GameObject *gameObject, game::Game &game) override {}
     };
 }
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_EMPTYCOMPONENTS_H

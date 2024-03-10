@@ -72,4 +72,8 @@ namespace window {
                            _win->setPosition(_win->getPosition() + e->move);
         )
     }
+
+    void GameWindow::addWorld(b2World *world) {
+        _game._world = world;
+    }
 }

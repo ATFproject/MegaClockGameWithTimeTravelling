@@ -16,9 +16,15 @@ namespace engine::game {
         _graphics = &emptyGraphicsComponent;
     }
 
-    void GameObject::tick(sf::Time dt, Game &game) {
+    void GameObject::init(Game &game) {
+        _input->init(this, game);
+        _physics->init(this, game);
+        _graphics->init(this, game);
+    }
+
+    void GameObject::tick(Game &game) {
         _input->tick(this, game);
-        _physics->tick(this, dt, game);
+        _physics->tick(this, game);
     }
 
     void GameObject::draw() {

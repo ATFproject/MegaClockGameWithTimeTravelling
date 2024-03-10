@@ -24,6 +24,8 @@ namespace window {
                            engine::components::PhysicsComponent *pc,
                            engine::components::GraphicsComponent *gc);
 
+        void addWorld(b2World *world);
+
     private:
         sf::RenderWindow *_win;
         engine::game::Game _game;

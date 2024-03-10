@@ -12,8 +12,11 @@
 
 namespace mcgwtt::components {
     class WindowController : public engine::components::InputComponent {
+    private:
+        sf::RenderWindow *_window;
     public:
-        explicit WindowController(window::GameWindow *win);
+        WindowController(window::GameWindow *win, sf::RenderWindow *window);
+        void onNotify(const engine::events::Event &event) override;
         void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override;
     };
 }

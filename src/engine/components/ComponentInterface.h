@@ -12,19 +12,25 @@
 namespace engine::components {
     class GraphicsComponent : public Observer, public Subject {
     public:
+        virtual void init(game::GameObject *gameObject, game::Game &game) {}
+
         virtual void draw(game::GameObject *gameObject) = 0;
         ~GraphicsComponent() override = default;
     };
 
     class InputComponent : public Observer, public Subject {
     public:
+        virtual void init(game::GameObject *gameObject, game::Game &game) {}
+
         virtual void tick(game::GameObject *gameObject, game::Game &game) = 0;
         ~InputComponent() override = default;
     };
 
     class PhysicsComponent : public Observer, public Subject {
     public:
-        virtual void tick(game::GameObject *gameObject, sf::Time dt, game::Game &game) = 0;
+        virtual void init(game::GameObject *gameObject, game::Game &game) {}
+
+        virtual void tick(game::GameObject *gameObject, game::Game &game) = 0;
         ~PhysicsComponent() override = default;
     };
 }
