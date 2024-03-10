@@ -20,21 +20,21 @@ int main() {
     win.setActive(true);
 
     sf::Image icon;
+    win.setPosition(sf::Vector2i(550, 50));
     icon.loadFromFile("../resources/images/icon.png");
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     window::GameWindow window(&win);
     window.addGameObject(new mcgwtt::components::WindowController(&window, &win), nullptr, nullptr);
 
-    window.addGameObject(nullptr,
-                         new mcgwtt::components::WorldPhysics(
-                                 window, b2Vec2(0, 9.8), 1 / 165.f, 8, 3),
-                         nullptr
-    );
-
-    window.addGameObject(nullptr,
-                         new mcgwtt::components::BoxPhysics(1000, 600,400),
-                         new mcgwtt::components::BoxGraphics(&win, sf::Color::Blue));
+    auto worldPhysics = new mcgwtt::components::WorldPhysics(
+            window, b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
+    window.addGameObject(nullptr, worldPhysics, nullptr);
+    window.addGameObject(
+            nullptr,
+            new mcgwtt::components::BoxPhysics(worldPhysics, 1000, 600, 400),
+            new mcgwtt::components::BoxGraphics(
+                    &win, sf::Color(99, 34, 112, 128)));
 
 
     window.startRendering();

@@ -112,7 +112,7 @@ namespace engine {
 
     class Music : public Resource {
     private:
-        sf::Music *_music;
+        sf::Music *_music{};
 
     public:
         Music() = default;
@@ -145,10 +145,6 @@ namespace engine {
 
         void load() override {
             _font = *loadResource<sf::Font>(_path);
-        }
-
-        operator sf::Font() const { // NOLINT(*-explicit-constructor)
-            return _font;
         }
     };
 
