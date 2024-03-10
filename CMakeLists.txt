@@ -62,19 +62,6 @@ else ()
     set(SFML_USE_DRM OFF)
 endif ()
 
-if (WIN32)
-    add_custom_command(
-            TARGET ${PROJECT_NAME}
-            COMMENT "Copy OpenAL DLL"
-            PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${SFML_SOURCE_DIR}/extlibs/bin/$<IF:$<EQUAL:${CMAKE_SIZEOF_VOID_P},8>,x64,x86>/openal32.dll $<TARGET_FILE_DIR:${PROJECT_NAME}>
-            VERBATIM)
-    add_custom_command(
-            TARGET ${PROJECT_NAME}
-            COMMENT "Copy box2d dll"
-            PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/build/${CMAKE_BUILD_TYPE}/_deps/box2d-build/bin/box2d.dll $<TARGET_FILE_DIR:${PROJECT_NAME}>
-            VERBATIM)
-endif ()
-
 # Add all possible warnings to make sure (Шура?) our code is the best!
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_compile_options(${PROJECT_NAME} PRIVATE
@@ -84,7 +71,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
             -Wno-unused-variable -Wno-float-equal -Wno-unknown-pragmas -Wno-conversion -Wno-unused-parameter
     )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W3 /WX)
 endif ()
 
 # Set output file name

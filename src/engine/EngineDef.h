@@ -21,4 +21,8 @@
 
 #include "external/smartenum.hpp"
 
+#ifdef WIN32
+typedef unsigned uint;
+#endif
+
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_ENGINEDEF_H

@@ -25,7 +25,6 @@ int main() {
     win.setPosition(sf::Vector2i(550, 50));
     win.setFramerateLimit(165);
     win.setActive(true);
-
     
     window.addGameObject(new mcgwtt::components::WindowController(&window, &win), nullptr, nullptr);
 
