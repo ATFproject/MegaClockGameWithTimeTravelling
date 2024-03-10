@@ -85,7 +85,7 @@ namespace engine {
             _tex = loadResource<sf::Texture>(_path);
         }
 
-        operator const sf::Texture &() const { // NOLINT(*-explicit-constructor)
+        [[nodiscard]] sf::Texture &getTex() const {
             return *_tex;
         }
 
@@ -106,7 +106,7 @@ namespace engine {
             _soundBuffer = loadResource<sf::SoundBuffer>(_path);
         }
 
-        operator const sf::SoundBuffer &() const { // NOLINT(*-explicit-constructor)
+        [[nodiscard]] const sf::SoundBuffer &getBuffer() const {
             return *_soundBuffer;
         }
     };
@@ -136,12 +136,16 @@ namespace engine {
     };
 
     class Font : public Resource {
-    public:
+    private:
         std::unique_ptr<sf::Font> _font;
-
+    public:
         Font() = default;
         explicit Font(const std::string &FileName) : Resource(FileName) {
             _font = loadResource<sf::Font>(FileName);
+        }
+
+        const sf::Font &getFont() {
+            return *_font;
         }
 
         void load() override {

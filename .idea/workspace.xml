@@ -35,9 +35,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added box controls and text">
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Memtest.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed resource system memory leak">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" afterDir="false" />
@@ -51,7 +49,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -90,7 +88,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Valgrind",
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
     "Makefile Target.Makefile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -253,23 +251,7 @@
       <workItem from="1710000656894" duration="9127000" />
       <workItem from="1710053487304" duration="4455000" />
       <workItem from="1710057970030" duration="10873000" />
-      <workItem from="1710074621454" duration="6445000" />
-    </task>
-    <task id="LOCAL-00005" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708208709031</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1708208709032</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708209020525</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1708209020525</updated>
+      <workItem from="1710074621454" duration="7072000" />
     </task>
     <task id="LOCAL-00007" summary="Fixed cmake options">
       <option name="closed" value="true" />
@@ -647,7 +629,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710080209624</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Fixed resource system memory leak">
+      <option name="closed" value="true" />
+      <created>1710081286305</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1710081286305</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Fixed resource system memory leak">
+      <option name="closed" value="true" />
+      <created>1710081293781</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1710081293781</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Game is now updated only if window is active" />
     <MESSAGE value="Added observer pattern base classes" />
     <MESSAGE value="Added game event system" />
     <MESSAGE value="Register game as observer to GameWindow system" />
@@ -707,7 +704,8 @@
     <MESSAGE value="Fixed music playing multiple times" />
     <MESSAGE value="Added box2d test" />
     <MESSAGE value="Added box controls and text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added box controls and text" />
+    <MESSAGE value="Fixed resource system memory leak" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed resource system memory leak" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
