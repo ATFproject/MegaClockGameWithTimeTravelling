@@ -20,6 +20,8 @@ namespace engine::game {
         void init(Game &game);
         void tick(Game &game);
         void draw();
+        void preDraw();
+        void postDraw();
         void onNotify(const events::Event &event) override;
 
     private:

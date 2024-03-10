@@ -14,6 +14,8 @@ namespace engine::components {
     public:
         virtual void init(game::GameObject *gameObject, game::Game &game) {}
 
+        virtual void preDraw(game::GameObject *gameObject) {}
+        virtual void postDraw(game::GameObject *gameObject) {}
         virtual void draw(game::GameObject *gameObject) = 0;
         ~GraphicsComponent() override = default;
     };

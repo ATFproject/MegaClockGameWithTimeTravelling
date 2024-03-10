@@ -30,7 +30,7 @@ namespace mcgwtt::components {
         sf::Clock _pauseClock;
 
     public:
-        BoxPhysics(WorldPhysics *_worldPh, int maxBoxes, float x, float y) : _x(x / 30.0), _y(y / 30.0),
+        BoxPhysics(WorldPhysics *_worldPh, int maxBoxes, float x, float y) : _x(x / 30.0f), _y(y / 30.0f),
                                                                              _maxBoxes(maxBoxes), _boxCount(0) {
             addObserver(_worldPh);
         }
@@ -128,6 +128,10 @@ namespace mcgwtt::components {
             hintText.setCharacterSize(16);
         }
 
+        void preDraw(engine::game::GameObject *gameObject) override {
+            _win->clear(sf::Color(89, 90, 107));
+        }
+
         void draw(engine::game::GameObject *gameObject) override {
             if (_fpsClock.getElapsedTime().asSeconds() > 0.5) {
                 std::cout << "FPS: " << _frames * 2 << ", boxes: " << _blocks.size() << "\n";
@@ -136,7 +140,6 @@ namespace mcgwtt::components {
             }
 
             _frames++;
-            _win->clear(sf::Color(89, 90, 107));
             sf::RectangleShape bSprite;
             bSprite.setFillColor(sf::Color(122, 0, 100, 128));
             bSprite.setOutlineColor(sf::Color(122, 0, 100, 240));

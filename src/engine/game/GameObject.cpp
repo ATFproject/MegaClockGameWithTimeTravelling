@@ -31,6 +31,13 @@ namespace engine::game {
         _graphics->draw(this);
     }
 
+    void GameObject::preDraw() {
+        _graphics->preDraw(this);
+    }
+    void GameObject::postDraw() {
+        _graphics->postDraw(this);
+    }
+
     GameObject::GameObject(components::InputComponent *input, components::PhysicsComponent *physics,
                            components::GraphicsComponent *graphics)
             : _input(&emptyInputComponent), _physics(&emptyPhysicsComponent), _graphics(&emptyGraphicsComponent) {

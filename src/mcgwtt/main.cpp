@@ -33,10 +33,18 @@ int main() {
             window, b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
     window.addGameObject(nullptr, worldPhysics, nullptr);
 
+
     window.addGameObject(nullptr,
-                         new mcgwtt::components::BoxPhysics(worldPhysics, 1000, 600, 400),
+                         new mcgwtt::components::BoxPhysics(worldPhysics, 200, 250, 400),
                          new mcgwtt::components::BoxGraphics(
                                  &win, sf::Color(99, 34, 112, 128)));
+
+
+    window.addGameObject(nullptr,
+                         new mcgwtt::components::BoxPhysics(worldPhysics, 200, 1200, 400),
+                         new mcgwtt::components::BoxGraphics(
+                                 &win, sf::Color(0, 34, 112, 128)));
+
 
     window.startRendering();
 

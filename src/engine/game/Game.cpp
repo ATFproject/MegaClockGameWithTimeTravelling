@@ -19,8 +19,15 @@ namespace engine::game {
         }
 
         for (GameObject *gameObject : _gameObjects) {
+            gameObject->preDraw();
+        }
+        for (GameObject *gameObject : _gameObjects) {
             gameObject->draw();
         }
+        for (GameObject *gameObject : _gameObjects) {
+            gameObject->postDraw();
+        }
+
         _timer.restart();
     }
 
