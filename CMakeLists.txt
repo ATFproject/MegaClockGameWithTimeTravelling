@@ -71,7 +71,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
             -Wno-unused-variable -Wno-float-equal -Wno-unknown-pragmas -Wno-conversion -Wno-unused-parameter
     )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(${PROJECT_NAME} PRIVATE /W3 /WX)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W3)
 endif ()
 
 # Set output file name
