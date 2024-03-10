@@ -35,9 +35,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added pre- and post- draw to graphics game object. Added 2 boxes">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Vitman test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +124,11 @@
       </method>
     </configuration>
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -250,15 +255,7 @@
       <workItem from="1710053487304" duration="4455000" />
       <workItem from="1710057970030" duration="10873000" />
       <workItem from="1710074621454" duration="7072000" />
-      <workItem from="1710084151178" duration="3216000" />
-    </task>
-    <task id="LOCAL-00008" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708209465899</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1708209465899</updated>
+      <workItem from="1710084151178" duration="4625000" />
     </task>
     <task id="LOCAL-00009" summary="Fixed cmake options">
       <option name="closed" value="true" />
@@ -644,7 +641,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710083020489</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Vitman test">
+      <option name="closed" value="true" />
+      <created>1710101314349</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1710101314351</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +684,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added game event system" />
     <MESSAGE value="Register game as observer to GameWindow system" />
     <MESSAGE value="Removed demo" />
     <MESSAGE value="Before editing message system" />
@@ -704,7 +708,8 @@
     <MESSAGE value="Added box controls and text" />
     <MESSAGE value="Fixed resource system memory leak" />
     <MESSAGE value="Added pre- and post- draw to graphics game object. Added 2 boxes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pre- and post- draw to graphics game object. Added 2 boxes" />
+    <MESSAGE value="Vitman test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vitman test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

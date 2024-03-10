@@ -76,9 +76,6 @@ namespace mcgwtt::components {
                 bd.position.Set(_x, _y);
                 b2Body *body = game._world->CreateBody(&bd);
 
-                body->GetPosition();
-                body->GetAngle();
-
                 b2PolygonShape shape;
                 shape.SetAsBox(0.125f, 0.125f);
                 body->CreateFixture(&shape, 1.0f);
@@ -153,7 +150,6 @@ namespace mcgwtt::components {
                 _win->draw(bSprite);
             }
 
-
             for (auto fix = _box->GetFixtureList(); fix; fix = fix->GetNext()) {
                 auto *shape = dynamic_cast<b2PolygonShape *>(fix->GetShape());
                 sf::ConvexShape side(4);
@@ -167,6 +163,9 @@ namespace mcgwtt::components {
                 side.setPosition(sf::Vector2f(pos.x, pos.y) * SCALE);
                 _win->draw(side);
             }
+        }
+
+        void postDraw(engine::game::GameObject *gameObject) override {
             _win->draw(hintText);
         }
 
