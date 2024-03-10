@@ -6,8 +6,6 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_SPINNING_BOX_H
 
 #include "components/ComponentInterface.h"
-#include "observers/Subject.h"
-#include "Events.h"
 #include "World.h"
 
 namespace mcgwtt::components {
@@ -124,7 +122,7 @@ namespace mcgwtt::components {
             _blockTex = engine::resourceHandler.addRes(new engine::Texture("icon.png"));
             _font = engine::resourceHandler.addRes(new engine::Font("arialmt.ttf"));;
             hintText.setFillColor(sf::Color(26, 140, 121));
-            hintText.setFont(_font->_font);
+            hintText.setFont(*(_font->_font));
             hintText.setString("Use A and D keys to control box rotation");
             hintText.setPosition(50, 10);
             hintText.setCharacterSize(16);

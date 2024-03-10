@@ -13,13 +13,13 @@ namespace engine {
     extern std::map<std::string, std::string> extensionFolder;
 
     template<typename T>
-        T *loadResource(const std::string &FileName) {
+        std::unique_ptr<T> loadResource(const std::string &FileName) {
             if (FileName.empty())
                 throw std::runtime_error("Empty filename for resource loading");
             std::string ext = FileName.substr(FileName.find_last_of('.'));
             std::string folder = "../resources/" + extensionFolder[ext] + "/";
             std::string path = folder + FileName;
-            auto data = new T();
+            auto data = std::unique_ptr<T>(new T());
             bool res;
 
             if constexpr (requires { data->loadFromFile(path); }) {
@@ -73,46 +73,47 @@ namespace engine {
 
     class Texture : public Resource {
     private:
-        sf::Texture _tex;
+        std::unique_ptr<sf::Texture> _tex{};
 
     public:
         Texture() = default;
         explicit Texture(const std::string &FileName) : Resource(FileName) {
-            _tex = *loadResource<sf::Texture>(_path);
+            _tex = loadResource<sf::Texture>(_path);
         }
 
         void load() override {
-            _tex = *loadResource<sf::Texture>(_path);
+            _tex = loadResource<sf::Texture>(_path);
         }
 
         operator const sf::Texture &() const { // NOLINT(*-explicit-constructor)
-            return _tex;
+            return *_tex;
         }
+
     };
 
     class SoundBuffer : public Resource {
     private:
-        sf::SoundBuffer _soundBuffer;
+        std::unique_ptr<sf::SoundBuffer> _soundBuffer{};
 
     public:
         SoundBuffer() = default;
 
         explicit SoundBuffer(const std::string &FileName) : Resource(FileName) {
-            _soundBuffer = *loadResource<sf::SoundBuffer>(FileName);
+            _soundBuffer = loadResource<sf::SoundBuffer>(FileName);
         }
 
         void load() override {
-            _soundBuffer = *loadResource<sf::SoundBuffer>(_path);
+            _soundBuffer = loadResource<sf::SoundBuffer>(_path);
         }
 
         operator const sf::SoundBuffer &() const { // NOLINT(*-explicit-constructor)
-            return _soundBuffer;
+            return *_soundBuffer;
         }
     };
 
     class Music : public Resource {
     private:
-        sf::Music *_music{};
+        std::unique_ptr<sf::Music> _music{};
 
     public:
         Music() = default;
@@ -136,15 +137,15 @@ namespace engine {
 
     class Font : public Resource {
     public:
-        sf::Font _font;
+        std::unique_ptr<sf::Font> _font;
 
         Font() = default;
         explicit Font(const std::string &FileName) : Resource(FileName) {
-            _font = *loadResource<sf::Font>(FileName);
+            _font = loadResource<sf::Font>(FileName);
         }
 
         void load() override {
-            _font = *loadResource<sf::Font>(_path);
+            _font = loadResource<sf::Font>(_path);
         }
     };
 

@@ -6,7 +6,8 @@
 
 #include "components/WindowControl/WindowController.h"
 #include "components/Box2d Test/World.h"
-#include "mcgwtt/components/Box2d Test/Spinning box.h"
+#include "components/Box2d Test/Spinning box.h"
+#include "components/Box2d Test/Memtest.h"
 
 int main() {
     // set antialiasing level to 16
@@ -27,15 +28,17 @@ int main() {
     window::GameWindow window(&win);
     window.addGameObject(new mcgwtt::components::WindowController(&window, &win), nullptr, nullptr);
 
+/*
     auto worldPhysics = new mcgwtt::components::WorldPhysics(
             window, b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
     window.addGameObject(nullptr, worldPhysics, nullptr);
-    window.addGameObject(
-            nullptr,
-            new mcgwtt::components::BoxPhysics(worldPhysics, 1000, 600, 400),
-            new mcgwtt::components::BoxGraphics(
-                    &win, sf::Color(99, 34, 112, 128)));
 
+    window.addGameObject(nullptr,
+                         new mcgwtt::components::BoxPhysics(worldPhysics, 1000, 600, 400),
+                         new mcgwtt::components::BoxGraphics(
+                                 &win, sf::Color(99, 34, 112, 128)));
+*/
+    window.addGameObject(nullptr, nullptr, new mcgwtt::components::MemoryTest());
 
     window.startRendering();
 
