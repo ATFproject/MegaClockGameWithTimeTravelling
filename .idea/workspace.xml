@@ -37,7 +37,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added tgui main menu example" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Merged GitHub workflow file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +57,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="Add-box2d" />
+    <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/First-game-steps" />
@@ -275,15 +277,7 @@
       <workItem from="1710074621454" duration="7072000" />
       <workItem from="1710084151178" duration="4625000" />
       <workItem from="1710106212757" duration="65000" />
-      <workItem from="1710482160042" duration="8826000" />
-    </task>
-    <task id="LOCAL-00011" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708210543008</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1708210543008</updated>
+      <workItem from="1710482160042" duration="9357000" />
     </task>
     <task id="LOCAL-00012" summary="Fixed cmake options">
       <option name="closed" value="true" />
@@ -669,7 +663,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710490767905</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Merged GitHub workflow file">
+      <option name="closed" value="true" />
+      <created>1710491024596</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1710491024597</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -704,7 +706,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Before editing message system" />
     <MESSAGE value="Fixed header files and total game structure" />
     <MESSAGE value="Final structure before res system" />
     <MESSAGE value="Res system first ver" />
@@ -729,7 +730,8 @@
     <MESSAGE value="Vitman test" />
     <MESSAGE value="Removed warnings as errors for windows" />
     <MESSAGE value="Added tgui main menu example" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tgui main menu example" />
+    <MESSAGE value="Merged GitHub workflow file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged GitHub workflow file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
