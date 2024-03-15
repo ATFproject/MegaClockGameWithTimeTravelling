@@ -89,7 +89,7 @@ namespace mcgwtt::components {
                 _joint->SetMotorSpeed(-0.1f * b2_pi);
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
                 _joint->SetMotorSpeed(0.1f * b2_pi);
-            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P) ) {
+            else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
                 if (_pauseClock.getElapsedTime().asSeconds() > 0.2) {
                     _pauseClock.restart();
                     _paused = !_paused;
@@ -140,8 +140,8 @@ namespace mcgwtt::components {
             sf::RectangleShape bSprite;
             bSprite.setFillColor(sf::Color(122, 0, 100, 128));
             bSprite.setOutlineColor(sf::Color(122, 0, 100, 240));
-            bSprite.setOutlineThickness(1);
-            bSprite.setSize(sf::Vector2f(6, 6));
+            bSprite.setOutlineThickness(-1);
+            bSprite.setSize(sf::Vector2f(8, 8));
             bSprite.setOrigin(4, 4);
 
             for (auto &block : _blocks) {

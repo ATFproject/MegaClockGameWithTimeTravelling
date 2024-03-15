@@ -32,6 +32,17 @@ FetchContent_Declare(box2d SYSTEM
         GIT_TAG v2.4.1)
 FetchContent_MakeAvailable(box2d)
 
+# Fetch and compile TGUI library
+set(TGUI_BACKEND "SFML_GRAPHICS")
+set(TGUI_SHARED_LIBS ON)
+set(TGUI_BUILD_GUI_BUILDER ON)
+
+message(STATUS "Downloading TGUI")
+FetchContent_Declare(tgui SYSTEM
+        GIT_REPOSITORY https://github.com/texus/TGUI.git
+        GIT_TAG v1.1.0)
+FetchContent_MakeAvailable(tgui)
+
 set(CMAKE_CXX_CPPCHECK "cppcheck")
 find_program(${PROJECT_NAME} NAMES cppcheck)
 
@@ -41,13 +52,14 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 # Add all cpp files to compilation and add prefix
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-# Link SFML and Box2D to final binary and set C++ standard for it
+# Link SFML and Box2D and TGUI to final binary and set C++ standard for it
 target_link_libraries(${PROJECT_NAME}
         PRIVATE sfml-graphics
         PRIVATE sfml-audio
         PRIVATE box2d
+        PRIVATE tgui
 )
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
 
 # Disable all docs and example build for SFML and Box2D
 if (WIN32)

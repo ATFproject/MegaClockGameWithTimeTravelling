@@ -20,14 +20,20 @@ namespace window {
 
         void onNotify(const engine::events::Event &event) override;
 
-        void addGameObject(engine::components::InputComponent *ic,
-                           engine::components::PhysicsComponent *pc,
-                           engine::components::GraphicsComponent *gc);
+        engine::game::GameObject *addGameObject(engine::components::InputComponent *ic,
+                                                engine::components::PhysicsComponent *pc,
+                                                engine::components::GraphicsComponent *gc);
+
+        void removeGameObject(engine::game::GameObject *obj);
 
         void addWorld(b2World *world);
 
+        tgui::Gui &getGui();
+
     private:
         sf::RenderWindow *_win;
+        tgui::Gui _gui;
+
         engine::game::Game _game;
         bool _isActive;
 

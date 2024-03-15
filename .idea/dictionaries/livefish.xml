@@ -8,7 +8,9 @@
       <w>iters</w>
       <w>mcgwtt</w>
       <w>memtest</w>
+      <w>menuscreen</w>
       <w>resourcedef</w>
+      <w>tgui</w>
       <w>timestep</w>
       <w>windowcontroller</w>
       <w>windowmovementcontroller</w>

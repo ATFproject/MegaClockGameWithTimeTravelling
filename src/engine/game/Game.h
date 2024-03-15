@@ -21,7 +21,9 @@ namespace engine::game {
         Game() = default;
 
         void operator<<(GameObject *toAdd);
+        void removeGameObject(GameObject *toRemove);
         void tick();
+        void draw();
 
         [[nodiscard]] sf::Vector2u getSize() const;
 
@@ -30,8 +32,8 @@ namespace engine::game {
 
     private:
         std::vector<GameObject *> _gameObjects;
+        std::vector<GameObject *> _gameObjectsToDelete;
         sf::Vector2u _size;
-        sf::Clock _timer;
     };
 } // engine
 

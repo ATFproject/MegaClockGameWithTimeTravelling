@@ -17,10 +17,12 @@
       <config projectName="MegaClockGameWithTimeTravelling" targetName="testbed" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="tgui" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="box2d" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="gui-builder" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="imgui" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-graphics" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-window" />
@@ -35,7 +37,79 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Moved text rendering to post draw" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed warnings as errors for windows">
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/BabyBlue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/BabyBlue.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/Black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/Black.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/More themes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/TransparentGrey.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/Black.txt.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/generate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowDownHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowUp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowUpHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/Background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackgroundDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackgroundFocused.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackgroundHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxChecked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxCheckedFocused.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxCheckedHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxUnchecked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxUncheckedFocused.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxUncheckedHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CloseButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CloseButtonDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CloseButtonHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ComboBoxArrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ComboBoxArrowHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/EditBoxBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/EditBoxBackgroundFocused.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/EditBoxBackgroundHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MaximizeButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MaximizeButtonDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MaximizeButtonHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MenuBarItem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MenuBarItemSelected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MenuBarMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MinimizeButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MinimizeButtonDown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MinimizeButtonHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ProgressBarBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ProgressBarForeground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonChecked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonCheckedFocused.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonCheckedHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonUnchecked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonUncheckedFocused.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonUncheckedHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarThumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarThumbHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarTrack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarTrackHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/SliderThumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/SliderTrack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/SliderTrackHover.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/TabBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/TabBackgroundSelected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/TitleBar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/TGUI test/MenuScreen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +135,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="First-game-steps" />
+        <entry key="$PROJECT_DIR$" value="Add-box2d" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,8 +169,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/build/Debug/_deps/box2d-src/testbed",
+    "git-widget-placeholder": "Add-TGUI",
+    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/resources/tgui/forms",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,20 +182,18 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/tgui/forms" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/out" />
       <recent name="$PROJECT_DIR$/src/engine" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/components" />
       <recent name="$PROJECT_DIR$/src/mcgwtt" />
-      <recent name="$PROJECT_DIR$/src/engine/components/WindowControl" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -129,6 +201,11 @@
       </method>
     </configuration>
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -144,6 +221,11 @@
       </method>
     </configuration>
     <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="glfw" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gui-builder" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="gui-builder" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="gui-builder">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -188,6 +270,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="tgui" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Makefile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/build/Debug/_deps/box2d-build/testbed/Makefile" target="" workingDirectory="" arguments="">
         <envs />
@@ -206,6 +293,8 @@
       <item itemvalue="CMake Application.sfml-network" />
       <item itemvalue="CMake Application.sfml-system" />
       <item itemvalue="CMake Application.sfml-window" />
+      <item itemvalue="CMake Application.gui-builder" />
+      <item itemvalue="CMake Application.tgui" />
       <item itemvalue="CMake Application.testbed" />
       <item itemvalue="Doctest.unit_test" />
       <item itemvalue="Makefile Target.Makefile" />
@@ -258,14 +347,7 @@
       <workItem from="1710074621454" duration="7072000" />
       <workItem from="1710084151178" duration="4625000" />
       <workItem from="1710106212757" duration="65000" />
-    </task>
-    <task id="LOCAL-00009" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708209481966</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1708209481966</updated>
+      <workItem from="1710482160042" duration="8521000" />
     </task>
     <task id="LOCAL-00010" summary="Fixed cmake options">
       <option name="closed" value="true" />
@@ -651,7 +733,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710101314351</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Removed warnings as errors for windows">
+      <option name="closed" value="true" />
+      <created>1710106575420</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1710106575420</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +776,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Register game as observer to GameWindow system" />
     <MESSAGE value="Removed demo" />
     <MESSAGE value="Before editing message system" />
     <MESSAGE value="Fixed header files and total game structure" />
@@ -711,7 +800,15 @@
     <MESSAGE value="Fixed resource system memory leak" />
     <MESSAGE value="Added pre- and post- draw to graphics game object. Added 2 boxes" />
     <MESSAGE value="Vitman test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vitman test" />
+    <MESSAGE value="Removed warnings as errors for windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed warnings as errors for windows" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

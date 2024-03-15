@@ -13,11 +13,24 @@ namespace engine::game {
         toAdd->init(*this);
     }
 
+    void Game::removeGameObject(GameObject *toRemove) {
+        _gameObjectsToDelete.push_back(toRemove);
+    }
+
     void Game::tick() {
         for (GameObject *gameObject : _gameObjects) {
             gameObject->tick(*this);
         }
 
+        for (auto &toDelete : _gameObjectsToDelete) {
+            _gameObjects.erase(std::find(_gameObjects.begin(), _gameObjects.end(), toDelete));
+            removeObserver(toDelete);
+            delete toDelete;
+        }
+        _gameObjectsToDelete.clear();
+    }
+
+    void Game::draw() {
         for (GameObject *gameObject : _gameObjects) {
             gameObject->preDraw();
         }
@@ -27,8 +40,6 @@ namespace engine::game {
         for (GameObject *gameObject : _gameObjects) {
             gameObject->postDraw();
         }
-
-        _timer.restart();
     }
 
     void Game::onNotify(const events::Event &event) {
@@ -42,7 +53,6 @@ namespace engine::game {
             delete _gameObject;
         }
     }
-
     sf::Vector2u Game::getSize() const {
         return _size;
     }
