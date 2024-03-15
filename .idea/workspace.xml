@@ -37,79 +37,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed warnings as errors for windows">
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/BabyBlue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/BabyBlue.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/Black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/Black.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/More themes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/TransparentGrey.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/Black.txt.in" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/generate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowDownHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowUp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ArrowUpHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/Background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackgroundDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackgroundFocused.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ButtonBackgroundHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxChecked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxCheckedFocused.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxCheckedHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxUnchecked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxUncheckedFocused.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CheckBoxUncheckedHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CloseButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CloseButtonDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/CloseButtonHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ComboBoxArrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ComboBoxArrowHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/EditBoxBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/EditBoxBackgroundFocused.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/EditBoxBackgroundHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MaximizeButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MaximizeButtonDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MaximizeButtonHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MenuBarItem.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MenuBarItemSelected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MenuBarMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MinimizeButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MinimizeButtonDown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/MinimizeButtonHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ProgressBarBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ProgressBarForeground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonChecked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonCheckedFocused.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonCheckedHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonUnchecked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonUncheckedFocused.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/RadioButtonUncheckedHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarThumb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarThumbHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarTrack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/ScrollbarTrackHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/SliderThumb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/SliderTrack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/SliderTrackHover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/TabBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/TabBackgroundSelected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/themes/development/Black/images/TitleBar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/TGUI test/MenuScreen.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added tgui main menu example" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -347,15 +275,7 @@
       <workItem from="1710074621454" duration="7072000" />
       <workItem from="1710084151178" duration="4625000" />
       <workItem from="1710106212757" duration="65000" />
-      <workItem from="1710482160042" duration="8521000" />
-    </task>
-    <task id="LOCAL-00010" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708209832891</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1708209832891</updated>
+      <workItem from="1710482160042" duration="8826000" />
     </task>
     <task id="LOCAL-00011" summary="Fixed cmake options">
       <option name="closed" value="true" />
@@ -741,7 +661,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710106575420</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Added tgui main menu example">
+      <option name="closed" value="true" />
+      <created>1710490767905</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1710490767905</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -763,7 +691,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/First-game-steps" />
+                        <option value="Add-TGUI" />
                       </list>
                     </value>
                   </entry>
@@ -776,7 +704,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed demo" />
     <MESSAGE value="Before editing message system" />
     <MESSAGE value="Fixed header files and total game structure" />
     <MESSAGE value="Final structure before res system" />
@@ -801,7 +728,8 @@
     <MESSAGE value="Added pre- and post- draw to graphics game object. Added 2 boxes" />
     <MESSAGE value="Vitman test" />
     <MESSAGE value="Removed warnings as errors for windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed warnings as errors for windows" />
+    <MESSAGE value="Added tgui main menu example" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tgui main menu example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
