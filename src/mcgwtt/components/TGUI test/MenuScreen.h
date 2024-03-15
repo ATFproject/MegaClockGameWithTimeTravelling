@@ -32,15 +32,15 @@ namespace mcgwtt::components {
         void onNotify(const engine::events::Event &event) override {
             ENGINE_CHECK_EVENT(GameStartedEvent,
                                _window->removeGameObject(e->caller);
-                               auto worldPhysics = new mcgwtt::components::WorldPhysics(*_window,
-                                                                                        b2Vec2(0, 9.8),
-                                                                                        1 / 165.f, 8, 3);
-                               _window->addGameObject(nullptr, worldPhysics, nullptr);
-                               _window->addGameObject(nullptr,
-                                                      new mcgwtt::components::BoxPhysics(worldPhysics, 1200,
-                                                                                         600, 400),
-                                                      new mcgwtt::components::BoxGraphics(
-                                                              _win, sf::Color(99, 34, 112, 128)));
+                                       auto worldPhysics = new mcgwtt::components::WorldPhysics(*_window,
+                                                                                                b2Vec2(0, 9.8),
+                                                                                                1 / 165.f, 8, 3);
+                                       _window->addGameObject(nullptr, worldPhysics, nullptr);
+                                       _window->addGameObject(nullptr,
+                                                              new mcgwtt::components::BoxPhysics(worldPhysics, 1200,
+                                                                                                 1920 / 2, 1080 / 2),
+                                                              new mcgwtt::components::BoxGraphics(
+                                                                      _win, _window, sf::Color(99, 34, 112, 128)));
             )
         }
 

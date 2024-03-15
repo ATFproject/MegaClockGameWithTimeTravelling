@@ -19,10 +19,15 @@ namespace mcgwtt::components {
         explicit AddedBox(b2Body *box) : _box(box) {}
     };
 
+    struct MotorSpeedChanged : public engine::events::Event {
+        double _newSpeed;
+        explicit MotorSpeedChanged(double newSpeed) : _newSpeed(newSpeed) {}
+    };
+
 
     class BoxPhysics : public engine::components::PhysicsComponent {
     private:
-        float _x, _y;
+        float _x, _y, _speed;
         int _maxBoxes, _boxCount;
         sf::Clock _spawnTimer;
         b2RevoluteJoint *_joint{};
@@ -30,7 +35,7 @@ namespace mcgwtt::components {
         sf::Clock _pauseClock;
 
     public:
-        BoxPhysics(WorldPhysics *_worldPh, int maxBoxes, float x, float y) : _x(x / 30.0f), _y(y / 30.0f),
+        BoxPhysics(WorldPhysics *_worldPh, int maxBoxes, float x, float y) : _x(x / 30.0f), _y(y / 30.0f), _speed(0.1),
                                                                              _maxBoxes(maxBoxes), _boxCount(0) {
             addObserver(_worldPh);
         }
@@ -86,9 +91,9 @@ namespace mcgwtt::components {
             }
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-                _joint->SetMotorSpeed(-0.1f * b2_pi);
+                _joint->SetMotorSpeed(-abs(_joint->GetMotorSpeed()));
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-                _joint->SetMotorSpeed(0.1f * b2_pi);
+                _joint->SetMotorSpeed(abs(_joint->GetMotorSpeed()));
             else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
                 if (_pauseClock.getElapsedTime().asSeconds() > 0.2) {
                     _pauseClock.restart();
@@ -96,6 +101,10 @@ namespace mcgwtt::components {
                     notify(GamePausedEvent(_paused));
                 }
             }
+        }
+        void onNotify(const engine::events::Event &event) override {
+            ENGINE_CHECK_EVENT(MotorSpeedChanged,
+                               _joint->SetMotorSpeed(e->_newSpeed * b2_pi);)
         }
     };
 
@@ -111,18 +120,16 @@ namespace mcgwtt::components {
         sf::Clock _fpsClock;
         int _frames;
 
-        engine::Font *_font;
-        sf::Text hintText;
-
     public:
-        BoxGraphics(sf::RenderWindow *window, const sf::Color &col) : _win(window), _col(col), _frames(0) {
+        BoxGraphics(sf::RenderWindow *win, window::GameWindow *window, const sf::Color &col)
+                : _win(win), _col(col), _frames(0) {
             _blockTex = engine::resourceHandler.addRes(new engine::Texture("icon.png"));
-            _font = engine::resourceHandler.addRes(new engine::Font("arialmt.ttf"));;
-            hintText.setFillColor(sf::Color(26, 140, 121));
-            hintText.setFont(_font->getFont());
-            hintText.setString("Use A and D keys to control box rotation");
-            hintText.setPosition(50, 10);
-            hintText.setCharacterSize(16);
+
+            window->getGui().loadWidgetsFromFile("forms/spinning box/box test.txt");
+            auto speedControl = window->getGui().get<tgui::Knob>("Speed knob");
+            speedControl->onValueChange([&](float newRotation) {
+                notify(MotorSpeedChanged(newRotation / 360));
+            });
         }
 
         void preDraw(engine::game::GameObject *gameObject) override {
@@ -163,10 +170,6 @@ namespace mcgwtt::components {
                 side.setPosition(sf::Vector2f(pos.x, pos.y) * SCALE);
                 _win->draw(side);
             }
-        }
-
-        void postDraw(engine::game::GameObject *gameObject) override {
-            _win->draw(hintText);
         }
 
         void onNotify(const engine::events::Event &event) override {

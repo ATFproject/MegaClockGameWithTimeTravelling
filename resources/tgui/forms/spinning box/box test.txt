@@ -1,0 +1,53 @@
+Label."Control hints" {
+    AutoSize = true;
+    Position = (10, 10);
+    Size = (472, 30);
+    Text = "Use A and D keys to control box rotation";
+    TextSize = 23;
+
+    Renderer {
+        BackgroundColor = transparent;
+        BorderColor = #3C3C3C;
+        Borders = (0, 0, 0, 0);
+        TextColor = #7F7CFF;
+        TextureBackground = None;
+
+        Scrollbar {
+            ArrowBackgroundColor = #F5F5F5;
+            ArrowBackgroundColorHover = white;
+            ArrowColor = #3C3C3C;
+            ArrowColorHover = black;
+            TextureArrowDown = None;
+            TextureArrowDownHover = None;
+            TextureArrowUp = None;
+            TextureArrowUpHover = None;
+            TextureThumb = None;
+            TextureThumbHover = None;
+            TextureTrack = None;
+            TextureTrackHover = None;
+            ThumbColor = #DCDCDC;
+            ThumbColorHover = #E6E6E6;
+            TrackColor = #F5F5F5;
+        }
+    }
+}
+
+Knob."Speed knob" {
+    ClockwiseTurning = true;
+    EndRotation = 100;
+    Maximum = 359;
+    Minimum = 10;
+    Position = (20, 50);
+    Size = (100, 100);
+    StartRotation = 90;
+    Value = 10;
+
+    Renderer {
+        BackgroundColor = #7F7CFF;
+        BorderColor = black;
+        Borders = 2;
+        TextureBackground = None;
+        TextureForeground = None;
+        ThumbColor = rgba(255, 255, 255, 215);
+    }
+}
