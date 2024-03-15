@@ -31,19 +31,18 @@
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="build/Debug" CONFIG_NAME="Debug" />
-      <configuration PROFILE_NAME="Release" ENABLED="true" GENERATION_DIR="build/Release" CONFIG_NAME="Release" />
+      <configuration PROFILE_NAME="Release" ENABLED="true" GENERATION_DIR="build/Release" CONFIG_NAME="Release" BUILD_OPTIONS="-- -j7" />
       <configuration PROFILE_NAME="RelWithDebInfo" ENABLED="true" GENERATION_DIR="build/RelWithDebInfo" CONFIG_NAME="RelWithDebInfo" />
       <configuration PROFILE_NAME="MinSizeRel" ENABLED="true" GENERATION_DIR="build/MinSizeRel" CONFIG_NAME="MinSizeRel" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed sf::Text in box test">
-      <change afterPath="$PROJECT_DIR$/resources/tgui/forms/spinning box/box test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added fps and time string to box test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Debug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Release" beforeDir="false" afterPath="$PROJECT_DIR$/out/MegaClockGameWithTimeTravelling-Release" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/tgui/forms/spinning box/box test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/tgui/forms/spinning box/box test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/TGUI test/MenuScreen.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/TGUI test/MenuScreen.h" afterDir="false" />
     </list>
@@ -79,12 +78,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "frtem2008"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;frtem2008&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -133,7 +132,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "CMakeSettings",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -739,9 +738,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Game structure example" />
     <MESSAGE value="Game objects transmit events between their components" />
     <MESSAGE value="Added moving paddle" />
     <MESSAGE value="Paddles with 2 different colors" />
@@ -766,7 +763,8 @@
     <MESSAGE value="Small renaming" />
     <MESSAGE value="Removed cppcheck because it is unnecessary" />
     <MESSAGE value="Removed sf::Text in box test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed sf::Text in box test" />
+    <MESSAGE value="Added fps and time string to box test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fps and time string to box test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

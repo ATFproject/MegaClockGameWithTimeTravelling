@@ -104,7 +104,8 @@ namespace mcgwtt::components {
         }
         void onNotify(const engine::events::Event &event) override {
             ENGINE_CHECK_EVENT(MotorSpeedChanged,
-                               _joint->SetMotorSpeed(e->_newSpeed * b2_pi);)
+                               _joint->SetMotorSpeed(e->_newSpeed * b2_pi * (_joint->GetMotorSpeed() > 0? 1 : -1));
+            )
         }
     };
 
@@ -118,7 +119,9 @@ namespace mcgwtt::components {
 
         const float SCALE = 30.f;
         sf::Clock _fpsClock;
-        int _frames;
+        int _frames, _FPS;
+
+        std::shared_ptr<tgui::Label> fpsLabel;
 
     public:
         BoxGraphics(sf::RenderWindow *win, window::GameWindow *window, const sf::Color &col)
@@ -130,6 +133,8 @@ namespace mcgwtt::components {
             speedControl->onValueChange([&](float newRotation) {
                 notify(MotorSpeedChanged(newRotation / 360));
             });
+
+            fpsLabel = window->getGui().get<tgui::Label>("FPS Label");
         }
 
         void preDraw(engine::game::GameObject *gameObject) override {
@@ -138,10 +143,23 @@ namespace mcgwtt::components {
 
         void draw(engine::game::GameObject *gameObject) override {
             if (_fpsClock.getElapsedTime().asSeconds() > 0.5) {
-                std::cout << "FPS: " << _frames * 2 << ", boxes: " << _blocks.size() << "\n";
+                _FPS = _frames * 2;
+                std::cout << "FPS: " << _FPS << ", boxes: " << _blocks.size() << "\n";
                 _frames = 0;
                 _fpsClock.restart();
             }
+
+            auto now = std::chrono::system_clock::now();
+            auto time = std::chrono::system_clock::to_time_t(now);
+            auto *localTime = std::localtime(&time);
+            int y = localTime->tm_year + 1900;
+            int m = localTime->tm_mon + 1;
+            int d = localTime->tm_mday;
+            int h = localTime->tm_hour;
+            int min = localTime->tm_min;
+            int sec = localTime->tm_sec;
+
+            fpsLabel->setText(std::format("Time: {}:{}:{} {}.{}.{}    FPS: {}", h, min, sec, d, m, y, _FPS));
 
             _frames++;
             sf::RectangleShape bSprite;

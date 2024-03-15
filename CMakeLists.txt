@@ -92,5 +92,11 @@ set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${OUT_FILE_NAME})
 set(ADDITIONAL_INCLUDE_DIRS "src" "src/engine/window" "src/engine")
 target_include_directories(${PROJECT_NAME} PRIVATE ${ADDITIONAL_INCLUDE_DIRS})
 
+target_precompile_headers(
+        ${PROJECT_NAME}
+        PUBLIC
+        "src/engine/EngineDef.h"
+)
+
 # Compile and link the app
 install(TARGETS ${PROJECT_NAME})

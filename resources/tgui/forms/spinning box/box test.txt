@@ -1,8 +1,8 @@
 Label."Control hints" {
     AutoSize = true;
     Position = (10, 10);
-    Size = (472, 30);
-    Text = "Use A and D keys to control box rotation";
+    Size = (530, 111);
+    Text = "Use A and D keys to control box rotation\nUse the knob below to control box speed\n\nNOTICE: high speeds decrease performance!";
     TextSize = 23;
 
     Renderer {
@@ -37,7 +37,7 @@ Knob."Speed knob" {
     EndRotation = 100;
     Maximum = 359;
     Minimum = 10;
-    Position = (20, 50);
+    Position = (20, 140);
     Size = (100, 100);
     StartRotation = 90;
     Value = 10;
@@ -48,6 +48,41 @@ Knob."Speed knob" {
         Borders = 2;
         TextureBackground = None;
         TextureForeground = None;
-        ThumbColor = rgba(255, 255, 255, 215);
+        ThumbColor = #4CC8FFD7;
+    }
+}
+
+Label."FPS Label" {
+    Position = (1410, 10);
+    ScrollbarPolicy = Never;
+    Size = (736, 31);
+    Text = "Time: %s    FPS: 150";
+    TextSize = 24;
+
+    Renderer {
+        BackgroundColor = transparent;
+        BorderColor = #3C3C3C;
+        Borders = (0, 0, 0, 0);
+        TextColor = #FF9A00;
+        TextStyle = Bold | Underlined;
+        TextureBackground = None;
+
+        Scrollbar {
+            ArrowBackgroundColor = #F5F5F5;
+            ArrowBackgroundColorHover = white;
+            ArrowColor = #3C3C3C;
+            ArrowColorHover = black;
+            TextureArrowDown = None;
+            TextureArrowDownHover = None;
+            TextureArrowUp = None;
+            TextureArrowUpHover = None;
+            TextureThumb = None;
+            TextureThumbHover = None;
+            TextureTrack = None;
+            TextureTrackHover = None;
+            ThumbColor = #DCDCDC;
+            ThumbColorHover = #E6E6E6;
+            TrackColor = #F5F5F5;
+        }
     }
 }

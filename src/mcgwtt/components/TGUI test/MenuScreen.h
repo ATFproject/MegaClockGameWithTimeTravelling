@@ -37,7 +37,7 @@ namespace mcgwtt::components {
                                                                                                 1 / 165.f, 8, 3);
                                        _window->addGameObject(nullptr, worldPhysics, nullptr);
                                        _window->addGameObject(nullptr,
-                                                              new mcgwtt::components::BoxPhysics(worldPhysics, 1200,
+                                                              new mcgwtt::components::BoxPhysics(worldPhysics, 800,
                                                                                                  1920 / 2, 1080 / 2),
                                                               new mcgwtt::components::BoxGraphics(
                                                                       _win, _window, sf::Color(99, 34, 112, 128)));
