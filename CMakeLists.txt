@@ -43,9 +43,6 @@ FetchContent_Declare(tgui SYSTEM
         GIT_TAG v1.1.0)
 FetchContent_MakeAvailable(tgui)
 
-set(CMAKE_CXX_CPPCHECK "cppcheck")
-find_program(${PROJECT_NAME} NAMES cppcheck)
-
 # Get all cpp files in the project recursively to a variable
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 

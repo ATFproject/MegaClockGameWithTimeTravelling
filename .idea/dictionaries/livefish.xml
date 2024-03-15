@@ -10,6 +10,7 @@
       <w>memtest</w>
       <w>menuscreen</w>
       <w>resourcedef</w>
+      <w>smartenum</w>
       <w>tgui</w>
       <w>timestep</w>
       <w>windowcontroller</w>
