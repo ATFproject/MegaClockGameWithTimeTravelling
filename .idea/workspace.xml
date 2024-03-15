@@ -37,8 +37,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed output directory">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed g++ version in ubuntu workflow">
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,14 +302,6 @@
       <workItem from="1710492110160" duration="50000" />
       <workItem from="1710515705074" duration="2970000" />
       <workItem from="1710519838978" duration="5589000" />
-    </task>
-    <task id="LOCAL-00017" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708211874739</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1708211874739</updated>
     </task>
     <task id="LOCAL-00018" summary="Fixed cmake options">
       <option name="closed" value="true" />
@@ -695,7 +687,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710530521508</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Fixed g++ version in ubuntu workflow">
+      <option name="closed" value="true" />
+      <created>1710531416096</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1710531416097</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -731,7 +731,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Paddles with 2 different colors" />
     <MESSAGE value="Changed onNotify to onNotifyType in one case to remove ambiguous code" />
     <MESSAGE value="Added resources" />
     <MESSAGE value="NORMAL EVENT SYSTEM!" />
@@ -756,7 +755,8 @@
     <MESSAGE value="Added fps and time string to box test" />
     <MESSAGE value="Added fps &amp; time on screen. Added precompiled header" />
     <MESSAGE value="Removed output directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed output directory" />
+    <MESSAGE value="Fixed g++ version in ubuntu workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed g++ version in ubuntu workflow" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

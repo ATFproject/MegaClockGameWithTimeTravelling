@@ -53,7 +53,7 @@ Knob."Speed knob" {
 }
 
 Label."FPS Label" {
-    Position = (1410, 10);
+    Position = (1380, 10);
     ScrollbarPolicy = Never;
     Size = (736, 31);
     Text = "Time: %s    FPS: 150";

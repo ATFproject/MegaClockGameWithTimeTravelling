@@ -158,8 +158,9 @@ namespace mcgwtt::components {
             int h = localTime->tm_hour;
             int min = localTime->tm_min;
             int sec = localTime->tm_sec;
-
-            fpsLabel->setText(std::format("Time: {}:{}:{} {}.{}.{}    FPS: {}", h, min, sec, d, m, y, _FPS));
+            char buf[256];
+            std::sprintf(buf, "Time — %02i:%02i:%02i %02i.%02i.%04i   FPS: %i", h, min, sec, d, m, y, _FPS);
+            fpsLabel->setText(buf);
 
             _frames++;
             sf::RectangleShape bSprite;
