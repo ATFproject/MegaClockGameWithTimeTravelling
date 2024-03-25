@@ -86,3 +86,15 @@ Label."FPS Label" {
         }
     }
 }
+
+Picture.Icon {
+    Position = (150, 140);
+    Size = (102, 102);
+    UserData = "";
+
+    Renderer {
+        Opacity = 0.8;
+        Texture = "../../../images/icon.png" NoSmooth;
+        TransparentTexture = false;
+    }
+}

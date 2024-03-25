@@ -29,12 +29,10 @@ int main() {
 
     window.addGameObject(new mcgwtt::components::WindowController(&window, &win), nullptr, nullptr);
 
-    auto UIController = new mcgwtt::components::UIController(&window, &win);
-    window.addGameObject(UIController, nullptr, nullptr);
+    auto uiController = new mcgwtt::components::UIController(&window, &win);
+    window.addGameObject(uiController, nullptr, nullptr);
 
-    window.addGameObject(nullptr, nullptr, new mcgwtt::components::MenuScreenGraphics(&window, UIController));
-
-
+    window.addGameObject(nullptr, nullptr, new mcgwtt::components::MenuScreenGraphics(&window, uiController));
     window.startRendering();
 
     return 0;
