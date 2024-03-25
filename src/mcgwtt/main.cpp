@@ -4,11 +4,8 @@
 
 #include "GameWindow.h"
 
-#include "components/WindowControl/WindowController.h"
-
-#include "components/Box2d Test/Memtest.h"
-
-#include "components/TGUI test/MenuScreen.h"
+#include "WindowControl/WindowController.h"
+#include "TGUI test/MenuScreen.h"
 
 int main() {
     // set antialiasing level to 16
@@ -32,7 +29,7 @@ int main() {
     auto uiController = new mcgwtt::components::UIController(&window, &win);
     window.addGameObject(uiController, nullptr, nullptr);
 
-    window.addGameObject(nullptr, nullptr, new mcgwtt::components::MenuScreenGraphics(&window, uiController));
+
     window.startRendering();
 
     return 0;

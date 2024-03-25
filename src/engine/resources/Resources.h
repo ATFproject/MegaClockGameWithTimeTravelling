@@ -5,9 +5,9 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
 
-#include <utility>
-
 #include "EngineDef.h"
+
+#include <utility>
 
 namespace engine {
     extern std::map<std::string, std::string> extensionFolder;
