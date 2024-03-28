@@ -57,6 +57,13 @@ namespace engine::game {
         ENGINE_CHECK_EVENT(window::KeyReleasedEvent,
                            _keys[e->_keyEvent.scancode] = false;
         )
+        ENGINE_CHECK_EVENT(window::WindowFocusChangeEvent,
+                           if (!e->_inFocus) {
+                               memset(_keys, 0, 256);
+                               memset(_keysOld, 0, 256);
+                               memset(_click, 0, 256);
+                           }
+        )
     }
 
     Game::~Game() {

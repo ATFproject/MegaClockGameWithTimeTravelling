@@ -45,7 +45,12 @@ namespace mcgwtt::components {
         }
 
 
-        void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {}
+        void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+            if (game.isKeyPressed(sf::Keyboard::Scancode::A))
+                std::cout << "A pressed\n";
+            if (game.wasKeyClicked(sf::Keyboard::Scancode::B))
+                std::cout << "B clicked\n";
+        }
     };
 
     class MenuScreenGraphics : public engine::components::GraphicsComponent {
