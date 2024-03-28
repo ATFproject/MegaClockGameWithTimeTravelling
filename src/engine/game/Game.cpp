@@ -18,6 +18,11 @@ namespace engine::game {
     }
 
     void Game::tick() {
+        for (int i = 0; i < 256; ++i) {
+            _click[i] = _keys[i] && !_keysOld[i];
+        }
+        memcpy(_keysOld, _keys, 256);
+
         for (GameObject *gameObject : _gameObjects) {
             gameObject->tick(*this);
         }
@@ -44,16 +49,31 @@ namespace engine::game {
 
     void Game::onNotify(const events::Event &event) {
         ENGINE_CHECK_EVENT(window::WindowResizeEvent,
-                           notify(GameResizeEvent(e->newSize));
+                           notify(GameResizeEvent(e->_newSize));
+        )
+        ENGINE_CHECK_EVENT(window::KeyPressedEvent,
+                           _keys[e->_keyEvent.scancode] = true;
+        )
+        ENGINE_CHECK_EVENT(window::KeyReleasedEvent,
+                           _keys[e->_keyEvent.scancode] = false;
         )
     }
 
     Game::~Game() {
-        for (auto &_gameObject : _gameObjects) {
-            delete _gameObject;
+        for (auto &gameObject : _gameObjects) {
+            delete gameObject;
         }
     }
+
     sf::Vector2u Game::getSize() const {
         return _size;
+    }
+
+    bool Game::isKeyPressed(const sf::Keyboard::Scancode &k) {
+        return _keys[k];
+    }
+
+    bool Game::wasKeyClicked(const sf::Keyboard::Scancode &k) {
+        return _click[k];
     }
 }

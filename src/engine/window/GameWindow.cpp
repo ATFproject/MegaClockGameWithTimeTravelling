@@ -18,7 +18,7 @@ namespace window {
 
         while (_win->isOpen()) {
             _win->clear();
-            _handleSfmlEvents();
+            handleSfmlEvents();
 
             if (_isActive) {
                 _game.tick();
@@ -30,7 +30,7 @@ namespace window {
         }
     }
 
-    void GameWindow::_handleSfmlEvents() {
+    void GameWindow::handleSfmlEvents() {
         sf::Event event{};
 
         while (_win->pollEvent(event)) {
@@ -57,6 +57,14 @@ namespace window {
                     notify(WindowResizeEvent(event.size.width, event.size.height));
                     break;
 
+                case sf::Event::KeyPressed:
+                    notify(KeyPressedEvent(event.key));
+                    break;
+
+                case sf::Event::KeyReleased:
+                    notify(KeyReleasedEvent(event.key));
+                    break;
+
                 default:
                     break;
             }
@@ -80,7 +88,7 @@ namespace window {
                            _win->close();
         )
         ENGINE_CHECK_EVENT(WindowMoveEvent,
-                           _win->setPosition(_win->getPosition() + e->move);
+                           _win->setPosition(_win->getPosition() + e->_move);
         )
     }
 

@@ -25,6 +25,9 @@ namespace engine::game {
         void tick();
         void draw();
 
+        bool isKeyPressed(const sf::Keyboard::Scancode &k);
+        bool wasKeyClicked(const sf::Keyboard::Scancode &k);
+
         [[nodiscard]] sf::Vector2u getSize() const;
 
         void onNotify(const events::Event &event) override;
@@ -34,6 +37,10 @@ namespace engine::game {
         std::vector<GameObject *> _gameObjects;
         std::vector<GameObject *> _gameObjectsToDelete;
         sf::Vector2u _size;
+
+        bool _keys[256] {};
+        bool _click[256] {};
+        bool _keysOld[256] {};
     };
 } // engine
 

@@ -37,7 +37,7 @@ namespace window {
         engine::game::Game _game;
         bool _isActive;
 
-        void _handleSfmlEvents();
+        void handleSfmlEvents();
     };
 
     struct WindowCloseEvent : public engine::events::Event {
@@ -45,18 +45,28 @@ namespace window {
     };
 
     struct WindowResizeEvent : public engine::events::Event {
-        const sf::Vector2u newSize;
-        explicit WindowResizeEvent(uint x, uint y) : newSize(sf::Vector2u(x, y)) {}
+        const sf::Vector2u _newSize;
+        explicit WindowResizeEvent(uint x, uint y) : _newSize(sf::Vector2u(x, y)) {}
     };
 
     struct WindowMoveEvent : public engine::events::Event {
-        const sf::Vector2i move;
-        explicit WindowMoveEvent(int x, int y) : move(sf::Vector2i(x, y)) {}
+        const sf::Vector2i _move;
+        explicit WindowMoveEvent(int x, int y) : _move(sf::Vector2i(x, y)) {}
     };
 
     struct WindowFocusChangeEvent : public engine::events::Event {
-        bool inFocus;
-        explicit WindowFocusChangeEvent(bool inFocus) : inFocus(inFocus) {}
+        bool _inFocus;
+        explicit WindowFocusChangeEvent(bool inFocus) : _inFocus(inFocus) {}
+    };
+
+    struct KeyPressedEvent : public engine::events::Event {
+        sf::Event::KeyEvent _keyEvent;
+        explicit KeyPressedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
+    };
+
+    struct KeyReleasedEvent : public engine::events::Event {
+        sf::Event::KeyEvent _keyEvent;
+        explicit KeyReleasedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
     };
 }
 
