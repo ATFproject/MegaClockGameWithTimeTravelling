@@ -7,6 +7,9 @@
 #include "WindowControl/WindowController.h"
 #include "TGUI test/MenuScreen.h"
 
+#include "game/GameWorld.h"
+#include "game/Player.h"
+
 int main() {
     // set antialiasing level to 16
     sf::ContextSettings winContextSettings(0, 0, 16);
@@ -26,8 +29,13 @@ int main() {
 
     window.addGameObject(new mcgwtt::components::WindowController(&window, &win), nullptr, nullptr);
 
-    auto uiController = new mcgwtt::components::UIController(&window, &win);
-    window.addGameObject(uiController, nullptr, nullptr);
+    auto world = new mcgwtt::components::game::GameWorldPhysics(
+            window, b2Vec2(0, 0.25), 1 / 165.f, 8, 3);
+
+    window.addGameObject(nullptr, world, nullptr);
+
+    window.addGameObject(nullptr, new mcgwtt::components::game::PlayerPhysics(world, 10, 100),
+                         new mcgwtt::components::game::PlayerGraphics(&win));
 
 
     window.startRendering();

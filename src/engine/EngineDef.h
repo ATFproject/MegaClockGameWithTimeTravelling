@@ -30,4 +30,6 @@
 typedef unsigned uint;
 #endif
 
+constexpr const float SCALE = 30.f;
+
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_ENGINEDEF_H

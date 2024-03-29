@@ -17,7 +17,7 @@ namespace window {
         std::cout << "Started!" << std::endl;
 
         while (_win->isOpen()) {
-            _win->clear();
+            _win->clear(sf::Color(64, 64, 64));
             handleSfmlEvents();
 
             if (_isActive) {

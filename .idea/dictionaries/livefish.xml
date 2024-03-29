@@ -3,6 +3,7 @@
     <words>
       <w>arialmt</w>
       <w>componentdef</w>
+      <w>drawablerect</w>
       <w>emptycomponents</w>
       <w>enginedef</w>
       <w>gameworld</w>
@@ -10,6 +11,7 @@
       <w>mcgwtt</w>
       <w>memtest</w>
       <w>menuscreen</w>
+      <w>prefs</w>
       <w>resourcedef</w>
       <w>smartenum</w>
       <w>tgui</w>

@@ -35,9 +35,9 @@ namespace mcgwtt::components {
         sf::Clock _pauseClock;
 
     public:
-        BoxPhysics(WorldPhysics *_worldPh, int maxBoxes, float x, float y) : _x(x / 30.0f), _y(y / 30.0f), _speed(0.1),
-                                                                             _maxBoxes(maxBoxes), _boxCount(0) {
-            addObserver(_worldPh);
+        BoxPhysics(WorldPhysics *worldPh, int maxBoxes, float x, float y)
+                : _x(x / 30.0f), _y(y / 30.0f), _speed(0.1), _maxBoxes(maxBoxes), _boxCount(0) {
+            addObserver(worldPh);
         }
 
         void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
@@ -125,7 +125,7 @@ namespace mcgwtt::components {
 
     public:
         BoxGraphics(sf::RenderWindow *win, window::GameWindow *window, const sf::Color &col)
-                : _win(win), _col(col), _frames(0) {
+                : _win(win), _col(col), _frames(0), _FPS(30) {
             _blockTex = engine::resourceHandler.addRes(new engine::Texture("icon.png"));
 
             window->getGui().loadWidgetsFromFile("forms/spinning box/box test.txt");
