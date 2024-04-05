@@ -33,9 +33,8 @@ namespace mcgwtt::drawing {
         }
 
         sprite.setScale(w / texW, h / texH); // set texture w and h to equal w and h from fixture
-        sprite.scale(SCALE, SCALE);
-        sprite.setPosition(sf::Vector2f(x, y) * SCALE);
-        sprite.move(sf::Vector2f(fix.GetBody()->GetPosition().x, fix.GetBody()->GetPosition().y) * SCALE);
+        sprite.setPosition(sf::Vector2f(x, y));
+        sprite.move(sf::Vector2f(fix.GetBody()->GetPosition().x, fix.GetBody()->GetPosition().y));
         win->draw(sprite);
     }
 }

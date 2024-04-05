@@ -34,6 +34,4 @@
 typedef unsigned uint;
 #endif
 
-constexpr const float SCALE = 60.f;
-
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_ENGINEDEF_H

@@ -39,8 +39,8 @@ namespace engine::game {
     };
 
     struct GameResizeEvent : public events::Event {
-        sf::Vector2u _size;
-        explicit GameResizeEvent(const sf::Vector2u &size) : _size(size) {}
+        sf::Vector2u _newSize;
+        explicit GameResizeEvent(const sf::Vector2u &size) : _newSize(size) {}
     };
 } // engine
 

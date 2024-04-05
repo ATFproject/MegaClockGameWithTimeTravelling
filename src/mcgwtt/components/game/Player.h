@@ -29,7 +29,7 @@ namespace mcgwtt::components::game {
 
     public:
         PlayerPhysics(GameWorldPhysics *worldPh, float x, float y)
-                : _body(nullptr), _x(x / SCALE), _y(y / SCALE), _speed(0, 0) {
+                : _body(nullptr), _x(x), _y(y), _speed(0, 0) {
             addObserver(worldPh);
         }
 

@@ -12,12 +12,16 @@
 
 namespace mcgwtt::components {
     class WindowController : public engine::components::InputComponent {
-    private:
-        sf::RenderWindow *_window;
     public:
-        WindowController(window::GameWindow *win, sf::RenderWindow *window);
-        void onNotify(const engine::events::Event &event) override;
-        void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override;
+        explicit WindowController(window::GameWindow *win) {
+            this->addObserver(win);
+        }
+
+        void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
+                notify(window::WindowCloseEvent());
+            }
+        }
     };
 }
 // engine::components

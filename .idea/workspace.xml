@@ -37,13 +37,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Refactoring (failure)">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed UB in GameWorldPhysics">
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/observers/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Observer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/box2dsfml/Drawing.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/box2dsfml/Drawing.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -316,15 +320,7 @@
       <workItem from="1711611596702" duration="1772000" />
       <workItem from="1711718392423" duration="7204000" />
       <workItem from="1712337980513" duration="502000" />
-      <workItem from="1712338859543" duration="5580000" />
-    </task>
-    <task id="LOCAL-00024" summary="Fixed gitignore">
-      <option name="closed" value="true" />
-      <created>1708267790165</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1708267790165</updated>
+      <workItem from="1712338859543" duration="8949000" />
     </task>
     <task id="LOCAL-00025" summary="First SFML experience">
       <option name="closed" value="true" />
@@ -710,7 +706,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712341022775</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Fixed UB in GameWorldPhysics">
+      <option name="closed" value="true" />
+      <created>1712345094026</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1712345094027</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -746,7 +750,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Correct music handling" />
     <MESSAGE value="Added control customization" />
     <MESSAGE value="Fixed music playing multiple times" />
     <MESSAGE value="Added box2d test" />
@@ -771,7 +774,8 @@
     <MESSAGE value="Added player drawing" />
     <MESSAGE value="Made scale larger" />
     <MESSAGE value="Refactoring (failure)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring (failure)" />
+    <MESSAGE value="Fixed UB in GameWorldPhysics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed UB in GameWorldPhysics" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

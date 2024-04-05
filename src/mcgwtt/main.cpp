@@ -5,10 +5,10 @@
 #include "GameWindow.h"
 
 #include "WindowControl/WindowController.h"
-#include "TGUI test/MenuScreen.h"
 
 #include "game/GameWorld.h"
 #include "game/Player.h"
+#include "game/CameraController.h"
 
 int main() {
     // set antialiasing level to 16
@@ -27,14 +27,15 @@ int main() {
     win.setFramerateLimit(165);
     win.setActive(true);
 
-    window.addGameObject(new mcgwtt::components::WindowController(&window, &win), nullptr, nullptr);
+    window.addGameObject(new mcgwtt::components::WindowController(&window), nullptr, nullptr);
 
     auto world = new mcgwtt::components::game::GameWorldPhysics(
             window, b2Vec2(0, 0.25), 1 / 165.f, 8, 3);
 
     window.addGameObject(nullptr, world, nullptr);
+    window.addGameObject(nullptr, nullptr, new mcgwtt::components::game::CameraController(&win, 30));
 
-    window.addGameObject(nullptr, new mcgwtt::components::game::PlayerPhysics(world, 50, 100),
+    window.addGameObject(nullptr, new mcgwtt::components::game::PlayerPhysics(world, 0, 0),
                          new mcgwtt::components::game::PlayerGraphics(&win));
 
 
