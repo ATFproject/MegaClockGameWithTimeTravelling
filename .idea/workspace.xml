@@ -37,20 +37,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Made scale larger">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Refactoring (failure)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/ResourceSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/ResourceSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/World.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/World.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/observers/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Observer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/box2dsfml/Drawing.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/box2dsfml/Drawing.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +55,7 @@
     <option name="formatViaClangd" value="false" />
     <option name="completeInNamespacesByDefault" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -120,7 +114,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Debug",
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
     "Makefile Target.Makefile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -137,7 +131,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+    "settings.editor.selected.configurable": "CMakeSettings",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -322,15 +316,7 @@
       <workItem from="1711611596702" duration="1772000" />
       <workItem from="1711718392423" duration="7204000" />
       <workItem from="1712337980513" duration="502000" />
-      <workItem from="1712338859543" duration="1964000" />
-    </task>
-    <task id="LOCAL-00023" summary="Added checks for different compilers in cmake lists">
-      <option name="closed" value="true" />
-      <created>1708214285412</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1708214285412</updated>
+      <workItem from="1712338859543" duration="5580000" />
     </task>
     <task id="LOCAL-00024" summary="Fixed gitignore">
       <option name="closed" value="true" />
@@ -716,7 +702,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712339307757</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Refactoring (failure)">
+      <option name="closed" value="true" />
+      <created>1712341022774</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1712341022775</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -752,7 +746,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Fixed res manager map lookup" />
     <MESSAGE value="Correct music handling" />
     <MESSAGE value="Added control customization" />
     <MESSAGE value="Fixed music playing multiple times" />
@@ -777,7 +770,8 @@
     <MESSAGE value="Set engine def to be the first included file in all headers" />
     <MESSAGE value="Added player drawing" />
     <MESSAGE value="Made scale larger" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made scale larger" />
+    <MESSAGE value="Refactoring (failure)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring (failure)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

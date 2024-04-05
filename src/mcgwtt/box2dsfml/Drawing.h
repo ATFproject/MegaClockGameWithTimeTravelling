@@ -13,6 +13,7 @@ namespace mcgwtt::drawing {
         sprite.setTexture(tex);
 
         float x, y, w, h;
+        x = y = w = h = 0;
         float texW = tex.getSize().x;
         float texH = tex.getSize().y;
 

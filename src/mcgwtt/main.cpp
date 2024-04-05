@@ -12,7 +12,7 @@
 
 int main() {
     // set antialiasing level to 16
-    sf::ContextSettings winContextSettings(24, 8, 16, 3, 0);
+    sf::ContextSettings winContextSettings(0, 0, 16);
     sf::RenderWindow win(
             sf::VideoMode::getFullscreenModes()[0],
             "MegaClockGameWithTimeTravelling 0.0.1 from ATFProject Game studio!",

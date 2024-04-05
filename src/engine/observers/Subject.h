@@ -11,8 +11,10 @@ namespace engine {
     class Subject {
     public:
         void addObserver(Observer *toAdd) {
-            if (toAdd != nullptr)
+            if (toAdd != nullptr) {
                 _observers.push_back(toAdd);
+                std::cout << "Adding observer: " << toAdd << "\n";
+            }
         }
 
         void removeObserver(Observer *toRemove) {

@@ -28,7 +28,7 @@ namespace mcgwtt::components::game {
         }
 
         void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
-            game._world = b2World(_gravity);
+            game._world.emplace(_gravity);
             _world = &game._world.value();
         }
 

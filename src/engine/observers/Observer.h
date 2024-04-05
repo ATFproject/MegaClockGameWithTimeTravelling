@@ -25,7 +25,7 @@ namespace engine {
     class Observer {
     public:
         virtual ~Observer() = default;
-        virtual void onNotify(const events::Event &event) {}
+        virtual void onNotify(const events::Event &event) {};
     };
 } // engine
 
