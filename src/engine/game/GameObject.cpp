@@ -6,16 +6,6 @@
 #include "components/EmptyComponents.h"
 
 namespace engine::game {
-    components::EmptyInputComponent GameObject::emptyInputComponent;
-    components::EmptyGraphicsComponent GameObject::emptyGraphicsComponent;
-    components::EmptyPhysicsComponent GameObject::emptyPhysicsComponent;
-
-    GameObject::GameObject() {
-        _input = &emptyInputComponent;
-        _physics = &emptyPhysicsComponent;
-        _graphics = &emptyGraphicsComponent;
-    }
-
     void GameObject::init(Game &game) {
         _input->init(this, game);
         _physics->init(this, game);
@@ -39,8 +29,7 @@ namespace engine::game {
     }
 
     GameObject::GameObject(components::InputComponent *input, components::PhysicsComponent *physics,
-                           components::GraphicsComponent *graphics)
-            : _input(&emptyInputComponent), _physics(&emptyPhysicsComponent), _graphics(&emptyGraphicsComponent) {
+                           components::GraphicsComponent *graphics) {
         if (input) {
             _input = input;
             _input->addObserver(this);

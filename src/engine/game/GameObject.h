@@ -6,14 +6,13 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 
 #include "GameDef.h"
-#include "components/ComponentDef.h"
-#include "observers/Observer.h"
+#include "components/EmptyComponents.h"
 #include "observers/Subject.h"
 
 namespace engine::game {
     class GameObject : public Observer, public Subject {
     public:
-        GameObject();
+        GameObject() = default;
         GameObject(components::InputComponent *ic, components::PhysicsComponent *pc, components::GraphicsComponent *gc);
         ~GameObject() override;
 
@@ -25,13 +24,13 @@ namespace engine::game {
         void onNotify(const events::Event &event) override;
 
     private:
-        components::InputComponent *_input;
-        components::PhysicsComponent *_physics;
-        components::GraphicsComponent *_graphics;
+        components::InputComponent *_input = &emptyInputComponent;
+        components::PhysicsComponent *_physics = &emptyPhysicsComponent;
+        components::GraphicsComponent *_graphics = &emptyGraphicsComponent;
 
-        static components::EmptyInputComponent emptyInputComponent;
-        static components::EmptyGraphicsComponent emptyGraphicsComponent;
-        static components::EmptyPhysicsComponent emptyPhysicsComponent;
+        static inline components::EmptyInputComponent emptyInputComponent;
+        static inline components::EmptyGraphicsComponent emptyGraphicsComponent;
+        static inline components::EmptyPhysicsComponent emptyPhysicsComponent;
     };
 } // engine
 

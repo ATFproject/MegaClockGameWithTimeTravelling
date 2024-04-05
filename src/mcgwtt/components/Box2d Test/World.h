@@ -16,15 +16,21 @@ namespace mcgwtt::components {
 
     class WorldPhysics : public engine::components::PhysicsComponent {
     private:
-        b2World _world;
+        b2World *_world;
+        b2Vec2 _gravity;
         float _timestep;
         int _velIters, _posIters;
         bool _paused;
 
     public:
         WorldPhysics(window::GameWindow &win, b2Vec2 gravity, float timestep, int velIters, int posIters)
-                : _world(gravity), _timestep(timestep), _velIters(velIters), _posIters(posIters), _paused(false) {
-            win.addWorld(&_world);
+                : _world(nullptr), _gravity(gravity), _timestep(timestep),
+                  _velIters(velIters), _posIters(posIters), _paused(false) {
+        }
+
+        void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+            game._world = b2World(_gravity);
+            _world = &game._world.value();
         }
 
         void onNotify(const engine::events::Event &event) override {
@@ -35,7 +41,7 @@ namespace mcgwtt::components {
 
         void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {
             if (!_paused)
-                _world.Step(_timestep, _velIters, _posIters);
+                _world->Step(_timestep, _velIters, _posIters);
         }
     };
 }

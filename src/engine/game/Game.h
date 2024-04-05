@@ -9,14 +9,9 @@
 #include "observers/Subject.h"
 
 namespace engine::game {
-    struct GameResizeEvent : public events::Event {
-        sf::Vector2u _size;
-        explicit GameResizeEvent(const sf::Vector2u &size) : _size(size) {}
-    };
-
     class Game : public Observer, public Subject {
     public:
-        b2World *_world{};
+        std::optional<b2World> _world{};
 
         Game() = default;
 
@@ -41,6 +36,11 @@ namespace engine::game {
         bool _keys[256] {};
         bool _click[256] {};
         bool _keysOld[256] {};
+    };
+
+    struct GameResizeEvent : public events::Event {
+        sf::Vector2u _size;
+        explicit GameResizeEvent(const sf::Vector2u &size) : _size(size) {}
     };
 } // engine
 

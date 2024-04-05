@@ -92,10 +92,6 @@ namespace window {
         )
     }
 
-    void GameWindow::addWorld(b2World *world) {
-        _game._world = world;
-    }
-
     tgui::Gui &GameWindow::getGui() {
         return _gui;
     }

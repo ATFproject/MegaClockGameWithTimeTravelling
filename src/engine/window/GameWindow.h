@@ -26,8 +26,6 @@ namespace window {
 
         void removeGameObject(engine::game::GameObject *obj);
 
-        void addWorld(b2World *world);
-
         tgui::Gui &getGui();
 
     private:
@@ -40,9 +38,7 @@ namespace window {
         void handleSfmlEvents();
     };
 
-    struct WindowCloseEvent : public engine::events::Event {
-
-    };
+    struct WindowCloseEvent : public engine::events::Event {};
 
     struct WindowResizeEvent : public engine::events::Event {
         const sf::Vector2u _newSize;

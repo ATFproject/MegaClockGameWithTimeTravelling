@@ -11,16 +11,19 @@ namespace engine::components {
     class EmptyGraphicsComponent : public GraphicsComponent {
     public:
         void draw(game::GameObject *gameObject) override {};
+        void onNotify(const events::Event &event) override {}
     };
 
     class EmptyInputComponent : public InputComponent {
     public:
         void tick(game::GameObject *gameObject, game::Game &game) override {}
+        void onNotify(const events::Event &event) override {}
     };
 
     class EmptyPhysicsComponent : public PhysicsComponent {
     public:
         void tick(game::GameObject *gameObject, game::Game &game) override {}
+        void onNotify(const events::Event &event) override {}
     };
 }
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_EMPTYCOMPONENTS_H

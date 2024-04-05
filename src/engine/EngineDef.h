@@ -14,6 +14,8 @@
 #include <memory>
 #include <map>
 #include <chrono>
+#include <optional>
+#include <variant>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -25,7 +27,6 @@
 
 
 #include "external/smartenum.hpp"
-
 #ifdef WIN32
 typedef unsigned uint;
 #endif
