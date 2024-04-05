@@ -8,7 +8,6 @@
 #include "components/ComponentInterface.h"
 #include "game/Game.h"
 
-#include <sys/resource.h>
 
 namespace mcgwtt::components::game {
     class CameraController : public engine::components::GraphicsComponent {
