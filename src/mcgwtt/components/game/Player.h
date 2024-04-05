@@ -37,7 +37,6 @@ namespace mcgwtt::components::game {
             b2BodyDef bd;
             bd.type = b2_dynamicBody;
             bd.position.Set(_x, _y);
-            bd.fixedRotation = true;
 
             _body = game._world->CreateBody(&bd);
 

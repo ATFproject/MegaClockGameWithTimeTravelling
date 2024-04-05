@@ -12,7 +12,7 @@
 
 int main() {
     // set antialiasing level to 16
-    sf::ContextSettings winContextSettings(0, 0, 16);
+    sf::ContextSettings winContextSettings(24, 8, 16, 3, 0);
     sf::RenderWindow win(
             sf::VideoMode::getFullscreenModes()[0],
             "MegaClockGameWithTimeTravelling 0.0.1 from ATFProject Game studio!",
@@ -34,7 +34,7 @@ int main() {
 
     window.addGameObject(nullptr, world, nullptr);
 
-    window.addGameObject(nullptr, new mcgwtt::components::game::PlayerPhysics(world, 10, 100),
+    window.addGameObject(nullptr, new mcgwtt::components::game::PlayerPhysics(world, 50, 100),
                          new mcgwtt::components::game::PlayerGraphics(&win));
 
 
