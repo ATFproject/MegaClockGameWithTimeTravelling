@@ -37,17 +37,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed UB in GameWorldPhysics">
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/CameraController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added camera controller. Removed scale variable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/box2dsfml/Drawing.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/box2dsfml/Drawing.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/World.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/World.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/CameraController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +128,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "CMakeSettings",
+    "settings.editor.selected.configurable": "dynamic.analysis.tools.clion.profiler",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -160,11 +153,6 @@
       </method>
     </configuration>
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -320,15 +308,8 @@
       <workItem from="1711611596702" duration="1772000" />
       <workItem from="1711718392423" duration="7204000" />
       <workItem from="1712337980513" duration="502000" />
-      <workItem from="1712338859543" duration="8949000" />
-    </task>
-    <task id="LOCAL-00025" summary="First SFML experience">
-      <option name="closed" value="true" />
-      <created>1708282898573</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1708282898573</updated>
+      <workItem from="1712338859543" duration="10950000" />
+      <workItem from="1712350508212" duration="3662000" />
     </task>
     <task id="LOCAL-00026" summary="Added GameObject component pattern">
       <option name="closed" value="true" />
@@ -714,7 +695,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712345094027</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Added camera controller. Removed scale variable">
+      <option name="closed" value="true" />
+      <created>1712348455664</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1712348455664</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -736,7 +725,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="MCGWTT-Base" />
+                        <option value="Add-TGUI" />
                       </list>
                     </value>
                   </entry>
@@ -750,7 +739,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Added control customization" />
     <MESSAGE value="Fixed music playing multiple times" />
     <MESSAGE value="Added box2d test" />
     <MESSAGE value="Added box controls and text" />
@@ -775,7 +763,8 @@
     <MESSAGE value="Made scale larger" />
     <MESSAGE value="Refactoring (failure)" />
     <MESSAGE value="Fixed UB in GameWorldPhysics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed UB in GameWorldPhysics" />
+    <MESSAGE value="Added camera controller. Removed scale variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added camera controller. Removed scale variable" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

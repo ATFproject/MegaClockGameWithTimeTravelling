@@ -10,6 +10,10 @@
 #include "game/Player.h"
 #include "game/CameraController.h"
 
+#include "components/Box2d Test/Memtest.h"
+
+#include "components/TGUI test/MenuScreen.h"
+
 int main() {
     // set antialiasing level to 16
     sf::ContextSettings winContextSettings(0, 0, 16);
@@ -18,6 +22,7 @@ int main() {
             "MegaClockGameWithTimeTravelling 0.0.1 from ATFProject Game studio!",
             sf::Style::Default,
             winContextSettings);
+
     window::GameWindow window(&win);
 
     sf::Image icon;
@@ -37,7 +42,6 @@ int main() {
 
     window.addGameObject(nullptr, new mcgwtt::components::game::PlayerPhysics(world, 0, 0),
                          new mcgwtt::components::game::PlayerGraphics(&win));
-
 
     window.startRendering();
 
