@@ -9,14 +9,14 @@
 #include "GameWorld.h"
 #include "game/Game.h"
 
-#include "mcgwtt/box2dsfml/Drawing.h"
+#include "mcgwtt/components/Box2dGraphics.h"
 
 namespace mcgwtt {
-    struct PlayerBodyPrefs : engine::events::Event {
-        float _w, _h, _headR;
-        b2Body *_body;
-
-        PlayerBodyPrefs(float w, float h, float headR, b2Body *body) : _w(w), _h(h), _headR(headR), _body(body) {}
+    struct PlayerData : engine::events::Event {
+        b2Body *_playerBody;
+        b2Fixture *_body, *_head;
+        PlayerData(b2Body *playerBody, b2Fixture *body, b2Fixture *head)
+                : _playerBody(playerBody), _body(body), _head(head) {}
     };
 
 
@@ -43,13 +43,13 @@ namespace mcgwtt {
             b2PolygonShape shapeBody;
             shapeBody.SetAsBox(_w, _h - _headR * 2,
                                b2Vec2(_x + _w / 2, _y + _h), 0);
-            _body->CreateFixture(&shapeBody, 5.0f);
+            auto body = _body->CreateFixture(&shapeBody, 5.0f);
 
             b2CircleShape shapeHead;
             shapeHead.m_p.Set(_x + _w / 2, _y + _headR);
             shapeHead.m_radius = _headR;
-            _body->CreateFixture(&shapeHead, 5.0f);
-            notify(PlayerBodyPrefs(_w, _h, _headR, _body));
+            auto head = _body->CreateFixture(&shapeHead, 5.0f);
+            notify(PlayerData(_body, body, head));
         }
 
         void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {
@@ -57,28 +57,24 @@ namespace mcgwtt {
         }
     };
 
-    class PlayerGraphics : public engine::components::GraphicsComponent {
+    class PlayerGraphics : public BodyGraphics {
     private:
-        sf::RenderWindow *_win;
-        engine::Texture *_bodyTex, *_headTex;
-        b2Body *_player = nullptr;
-        float _w{}, _h{}, _headR{};
+        void initSprites(const PlayerData *prefs) {
+            _body = prefs->_playerBody;
 
+            sf::Sprite body;
+            body.setTexture(engine::resourceHandler.addRes(new engine::Texture("player body 2.png"))->getTex());
+            _sprites[prefs->_body] = body;
+
+            sf::Sprite head;
+            head.setTexture(engine::resourceHandler.addRes(new engine::Texture("player head.png"))->getTex());
+            _sprites[prefs->_head] = head;
+        }
     public:
-        explicit PlayerGraphics(sf::RenderWindow *win) : _win(win) {
-            _bodyTex = engine::resourceHandler.addRes(new engine::Texture("player body 2.png"));
-            _headTex = engine::resourceHandler.addRes(new engine::Texture("player head.png"));
-        }
-
-        void draw(engine::game::GameObject *gameObject) override {
-            for (auto fix = _player->GetFixtureList(); fix; fix = fix->GetNext()) {
-                auto tex = fix->GetShape()->GetType() == b2Shape::Type::e_circle ? _headTex : _bodyTex;
-                drawing::drawFixture(_win, *fix, tex->getTex());
-            }
-        }
+        explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
 
         void onNotify(const engine::events::Event &event) override {
-            ENGINE_CHECK_EVENT(PlayerBodyPrefs, _w = e->_w; _h = e->_h; _headR = e->_headR; _player = e->_body;)
+            ENGINE_CHECK_EVENT(PlayerData, initSprites(e););
         }
     };
 }

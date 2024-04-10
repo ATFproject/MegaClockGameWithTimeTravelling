@@ -4,11 +4,11 @@
 
 #include "GameWindow.h"
 
-#include "WindowControl/WindowController.h"
+#include "WindowController.h"
 
-#include "game/GameWorld.h"
-#include "game/Player.h"
-#include "game/CameraController.h"
+#include "GameWorld.h"
+#include "Player.h"
+#include "CameraController.h"
 
 int main() {
     sf::ContextSettings winContextSettings(0, 0, 16);
