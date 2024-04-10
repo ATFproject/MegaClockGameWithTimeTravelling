@@ -85,10 +85,9 @@ namespace engine {
             _tex = loadResource<sf::Texture>(_path);
         }
 
-        [[nodiscard]] sf::Texture &getTex() const {
-            return *_tex;
+        [[nodiscard]] sf::Texture * getTex() const {
+            return _tex.get();
         }
-
     };
 
     class SoundBuffer : public Resource {

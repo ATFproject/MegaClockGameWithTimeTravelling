@@ -11,38 +11,31 @@ namespace mcgwtt {
     class BodyGraphics : public engine::components::GraphicsComponent {
     protected:
         sf::RenderWindow *_win{};
-        std::map<b2Fixture *, sf::Sprite> _sprites;
+        std::map<b2Fixture *, sf::ConvexShape> _shapes;
         b2Body *_body{};
 
         void drawFixture(b2Fixture *fix) {
-            auto sprite = _sprites[fix];
-
-            float x, y, w, h;
-            x = y = w = h = 0;
-            float texW = static_cast<float>(sprite.getTexture()->getSize().x);
-            float texH = static_cast<float>(sprite.getTexture()->getSize().y);
-
+            auto shape = _shapes[fix];
             if (fix->GetType() == b2PolygonShape::Type::e_polygon) {
-                auto shape = dynamic_cast<b2PolygonShape *>(fix->GetShape());
-                assert(shape);
-                x = shape->m_vertices[0].x;
-                y = shape->m_vertices[0].y;
-                w = shape->m_vertices[1].x - shape->m_vertices[0].x;
-                h = shape->m_vertices[2].y - shape->m_vertices[1].y;
+                auto polygon = dynamic_cast<b2PolygonShape *>(fix->GetShape());
+                std::size_t pointCount = static_cast<std::size_t>(polygon->m_count);
+                shape.setPointCount(pointCount);
+                for (std::size_t i = 0; i < pointCount; ++i) {
+                    shape.setPoint(i, sf::Vector2f(polygon->m_vertices[i].x, polygon->m_vertices[i].y));
+                }
             }
 
             if (fix->GetType() == b2PolygonShape::Type::e_circle) {
-                auto shape = dynamic_cast<b2CircleShape *>(fix->GetShape());
-                assert(shape);
-                x = shape->m_p.x - shape->m_radius;
-                y = shape->m_p.y - shape->m_radius;
-                w = h = shape->m_radius * 2;
+                auto circle = dynamic_cast<b2CircleShape *>(fix->GetShape());
+                shape.setPointCount(20);
+                sf::CircleShape ref(circle->m_radius, 20);
+                for (std::size_t i = 0; i < 20; ++i) {
+                    shape.setPoint(i, ref.getPoint(i) - sf::Vector2f(circle->m_radius, 0));
+                }
             }
-
-            sprite.setScale(w / texW, h / texH); // set texture w and h to equal w and h from fixture
-            sprite.setPosition(sf::Vector2f(x, y));
-            sprite.move(sf::Vector2f(fix->GetBody()->GetPosition().x, fix->GetBody()->GetPosition().y));
-            _win->draw(sprite);
+            shape.setPosition(_body->GetPosition().x, _body->GetPosition().y);
+            shape.setRotation(_body->GetAngle() / b2_pi * 180.0);
+            _win->draw(shape);
         }
 
     public:

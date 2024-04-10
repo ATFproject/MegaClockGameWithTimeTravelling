@@ -35,7 +35,6 @@ namespace mcgwtt {
             b2BodyDef bd;
             bd.type = b2_dynamicBody;
             bd.position.Set(_x, _y);
-            bd.fixedRotation = true;
 
             _body = game._world->CreateBody(&bd);
 
@@ -71,17 +70,21 @@ namespace mcgwtt {
         void initSprites(const PlayerData *prefs) {
             _body = prefs->_playerBody;
 
-            sf::Sprite body;
-            body.setTexture(engine::resourceHandler.addRes(new engine::Texture("player body.png"))->getTex());
-            _sprites[prefs->_body] = std::move(body);
+            sf::ConvexShape body;
+            sf::Texture *tex = engine::resourceHandler.addRes(new engine::Texture("player body.png"))->getTex();
+            body.setTexture(tex);
+            _shapes[prefs->_body] = std::move(body);
 
-            sf::Sprite head;
-            head.setTexture(engine::resourceHandler.addRes(new engine::Texture("player head.png"))->getTex());
-            _sprites[prefs->_head] = std::move(head);
+            sf::ConvexShape head;
+            tex = engine::resourceHandler.addRes(new engine::Texture("player head.png"))->getTex();
+            head.setTexture(tex);
+            _shapes[prefs->_head] = std::move(head);
         }
     public:
         explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
-
+        void draw() override {
+            BodyGraphics::draw();
+        }
         void onNotify(const engine::events::Event &event) override {
             ENGINE_CHECK_EVENT(PlayerData, initSprites(e);)
         }

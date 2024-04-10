@@ -23,7 +23,7 @@ int main() {
     window::GameWindow window(&win);
 
     sf::Image icon;
-    icon = engine::resourceHandler.addRes(new engine::Texture("icon.png"))->getTex().copyToImage();
+    icon = engine::resourceHandler.addRes(new engine::Texture("icon.png"))->getTex()->copyToImage();
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     win.setPosition(sf::Vector2i(550, 50));
     win.setFramerateLimit(165);
@@ -44,9 +44,9 @@ int main() {
                          new mcgwtt::PlatformGraphics(&win));
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win));
-//    window.addGameObject(nullptr,
-//                         new mcgwtt::PlatformPhysics(world, 0, 0, 1, 1),
-//                         new mcgwtt::PlatformGraphics(&win));
+    window.addGameObject(nullptr,
+                         new mcgwtt::PlatformPhysics(world, 0, 0, 1, 1),
+                         new mcgwtt::PlatformGraphics(&win));
 
     window.startRendering();
 
