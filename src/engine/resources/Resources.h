@@ -73,11 +73,11 @@ namespace engine {
 
     class Texture : public Resource {
     private:
-        std::unique_ptr<sf::Texture> _tex{};
+        std::unique_ptr<sf::Texture> _tex;
 
     public:
         Texture() = default;
-        explicit Texture(const std::string &FileName) : Resource(FileName) {
+        explicit Texture(const std::string &fileName) : Resource(fileName) {
             _tex = loadResource<sf::Texture>(_path);
         }
 
@@ -93,13 +93,13 @@ namespace engine {
 
     class SoundBuffer : public Resource {
     private:
-        std::unique_ptr<sf::SoundBuffer> _soundBuffer{};
+        std::unique_ptr<sf::SoundBuffer> _soundBuffer;
 
     public:
         SoundBuffer() = default;
 
-        explicit SoundBuffer(const std::string &FileName) : Resource(FileName) {
-            _soundBuffer = loadResource<sf::SoundBuffer>(FileName);
+        explicit SoundBuffer(const std::string &fileName) : Resource(fileName) {
+            _soundBuffer = loadResource<sf::SoundBuffer>(fileName);
         }
 
         void load() override {
@@ -113,12 +113,12 @@ namespace engine {
 
     class Music : public Resource {
     private:
-        std::unique_ptr<sf::Music> _music{};
+        std::unique_ptr<sf::Music> _music;
 
     public:
         Music() = default;
-        explicit Music(const std::string &FileName) : Resource(FileName) {
-            _music = loadResource<sf::Music>(FileName);
+        explicit Music(const std::string &fileName) : Resource(fileName) {
+            _music = loadResource<sf::Music>(fileName);
         }
 
         void load() override {
@@ -140,8 +140,8 @@ namespace engine {
         std::unique_ptr<sf::Font> _font;
     public:
         Font() = default;
-        explicit Font(const std::string &FileName) : Resource(FileName) {
-            _font = loadResource<sf::Font>(FileName);
+        explicit Font(const std::string &fileName) : Resource(fileName) {
+            _font = loadResource<sf::Font>(fileName);
         }
 
         const sf::Font &getFont() {

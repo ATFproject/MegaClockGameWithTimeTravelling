@@ -45,11 +45,6 @@ namespace window {
         explicit WindowResizeEvent(uint x, uint y) : _newSize(sf::Vector2u(x, y)) {}
     };
 
-    struct WindowMoveEvent : public engine::events::Event {
-        const sf::Vector2i _move;
-        explicit WindowMoveEvent(int x, int y) : _move(sf::Vector2i(x, y)) {}
-    };
-
     struct WindowFocusChangeEvent : public engine::events::Event {
         bool _inFocus;
         explicit WindowFocusChangeEvent(bool inFocus) : _inFocus(inFocus) {}

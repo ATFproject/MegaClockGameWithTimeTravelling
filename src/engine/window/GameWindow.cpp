@@ -87,9 +87,6 @@ namespace window {
         ENGINE_CHECK_EVENT(WindowCloseEvent,
                            _win->close();
         )
-        ENGINE_CHECK_EVENT(WindowMoveEvent,
-                           _win->setPosition(_win->getPosition() + e->_move);
-        )
     }
 
     tgui::Gui &GameWindow::getGui() {

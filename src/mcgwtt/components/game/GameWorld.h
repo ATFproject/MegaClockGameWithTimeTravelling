@@ -15,16 +15,16 @@ namespace mcgwtt {
 
     class GameWorldPhysics : public engine::components::PhysicsComponent {
     private:
-        b2World *_world;
+        b2World *_world{nullptr};
         b2Vec2 _gravity;
         float _timestep;
         int _velIters, _posIters;
-        bool _paused;
+        bool _paused{false};
 
     public:
-        GameWorldPhysics(window::GameWindow &win, b2Vec2 gravity, float timestep, int velIters, int posIters)
-                : _world(nullptr), _gravity(gravity), _timestep(timestep),
-                  _velIters(velIters), _posIters(posIters), _paused(false) {
+        GameWorldPhysics(b2Vec2 gravity, float timestep, int velIters, int posIters)
+                : _gravity(gravity), _timestep(timestep),
+                  _velIters(velIters), _posIters(posIters) {
         }
 
         void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {

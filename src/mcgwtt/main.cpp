@@ -29,8 +29,7 @@ int main() {
 
     window.addGameObject(new mcgwtt::WindowController(&window), nullptr, nullptr);
 
-    auto world = new mcgwtt::GameWorldPhysics(
-            window, b2Vec2(0, 0.25), 1 / 165.f, 8, 3);
+    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 0.25), 1 / 165.f, 8, 3);
 
     window.addGameObject(nullptr, world, nullptr);
     window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(&win, 30));

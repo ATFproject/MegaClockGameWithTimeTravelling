@@ -11,7 +11,7 @@
 namespace engine::game {
     class Game : public Observer, public Subject {
     public:
-        std::optional<b2World> _world{};
+        std::optional<b2World> _world;
 
         Game() = default;
 

@@ -19,8 +19,8 @@ namespace mcgwtt {
 
             float x, y, w, h;
             x = y = w = h = 0;
-            uint texW = sprite.getTexture()->getSize().x;
-            uint texH = sprite.getTexture()->getSize().y;
+            float texW = static_cast<float>(sprite.getTexture()->getSize().x);
+            float texH = static_cast<float>(sprite.getTexture()->getSize().y);
 
             if (fix->GetType() == b2PolygonShape::Type::e_polygon) {
                 auto shape = dynamic_cast<b2PolygonShape *>(fix->GetShape());
@@ -49,7 +49,7 @@ namespace mcgwtt {
         void draw() override {
             assert(_body);
 
-            for (auto fix = _body->GetFixtureList(); fix; fix = fix->GetNext()) {
+            for (auto fix = _body->GetFixtureList(); fix != nullptr; fix = fix->GetNext()) {
                 drawFixture(fix);
             }
         }

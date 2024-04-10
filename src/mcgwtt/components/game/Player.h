@@ -22,14 +22,13 @@ namespace mcgwtt {
 
     class PlayerPhysics : public engine::components::PhysicsComponent {
     private:
-        b2Body *_body;
+        b2Body *_body{nullptr};
         float _x, _y;
-        b2Vec2 _speed;
         const float _w = 0.5, _h = 1.7, _headR = 0.25;
 
     public:
         PlayerPhysics(GameWorldPhysics *worldPh, float x, float y)
-                : _body(nullptr), _x(x), _y(y), _speed(0, 0) {
+                : _x(x), _y(y){
             addObserver(worldPh);
         }
 
@@ -74,7 +73,7 @@ namespace mcgwtt {
         explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
 
         void onNotify(const engine::events::Event &event) override {
-            ENGINE_CHECK_EVENT(PlayerData, initSprites(e););
+            ENGINE_CHECK_EVENT(PlayerData, initSprites(e);)
         }
     };
 }

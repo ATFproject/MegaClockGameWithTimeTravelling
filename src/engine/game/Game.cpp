@@ -18,10 +18,11 @@ namespace engine::game {
     }
 
     void Game::tick() {
-        for (int i = 0; i < 256; ++i) {
+        const int keyboardKeyCount = 256;
+        for (int i = 0; i < keyboardKeyCount; ++i) {
             _click[i] = _keys[i] && !_keysOld[i];
         }
-        memcpy(_keysOld, _keys, 256);
+        memcpy(_keysOld, _keys, keyboardKeyCount);
 
         for (GameObject *gameObject : _gameObjects) {
             gameObject->tick(*this);

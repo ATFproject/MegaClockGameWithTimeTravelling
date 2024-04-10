@@ -39,9 +39,9 @@ namespace smart_enum {
         } else {
             result = trimWhitespace(valuesString);
             valuesString = "";
-        };
+        }
         return result;
-    };
+    }
 
     inline std::unordered_map<int32_t, std::string> makeEnumNameMap(std::string enumValuesString) {
         std::unordered_map<int32_t, std::string> nameMap;

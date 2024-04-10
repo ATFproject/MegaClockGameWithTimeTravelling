@@ -22,13 +22,13 @@ namespace engine::game {
         void onNotify(const events::Event &event) override;
 
     private:
-        components::InputComponent *_input = &emptyInputComponent;
-        components::PhysicsComponent *_physics = &emptyPhysicsComponent;
-        components::GraphicsComponent *_graphics = &emptyGraphicsComponent;
+        components::InputComponent *_input = &_emptyInputComponent;
+        components::PhysicsComponent *_physics = &_emptyPhysicsComponent;
+        components::GraphicsComponent *_graphics = &_emptyGraphicsComponent;
 
-        static inline components::EmptyInputComponent emptyInputComponent;
-        static inline components::EmptyGraphicsComponent emptyGraphicsComponent;
-        static inline components::EmptyPhysicsComponent emptyPhysicsComponent;
+        static inline components::EmptyInputComponent _emptyInputComponent;
+        static inline components::EmptyGraphicsComponent _emptyGraphicsComponent;
+        static inline components::EmptyPhysicsComponent _emptyPhysicsComponent;
     };
 } // engine
 

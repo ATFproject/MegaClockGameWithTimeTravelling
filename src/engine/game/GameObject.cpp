@@ -45,11 +45,11 @@ namespace engine::game {
     }
 
     GameObject::~GameObject() {
-        if (_input != &emptyInputComponent)
+        if (_input != &_emptyInputComponent)
             delete _input;
-        if (_physics != &emptyPhysicsComponent)
+        if (_physics != &_emptyPhysicsComponent)
             delete _physics;
-        if (_graphics != &emptyGraphicsComponent)
+        if (_graphics != &_emptyGraphicsComponent)
             delete _graphics;
     }
 }
