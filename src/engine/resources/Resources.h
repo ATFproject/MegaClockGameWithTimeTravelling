@@ -19,7 +19,7 @@ namespace engine {
             std::string ext = fileName.substr(fileName.find_last_of('.'));
             std::string folder = "../resources/" + extensionFolder[ext] + "/";
             std::string path = folder + fileName;
-            auto data = std::unique_ptr<T>(new T());
+            auto data = std::make_unique<T>();
             bool res;
 
             if constexpr (requires { data->loadFromFile(path); }) {
@@ -163,6 +163,9 @@ namespace engine {
         template<typename T>
             requires std::is_base_of_v<Resource, T>
             T *getResource(const std::string &name) {
+                auto find = _res.find(name);
+                if (find != _res.end())
+                    throw std::runtime_error("Res: " + name + " not found!");
                 auto ptr = dynamic_cast<T *>(_res.find(name)->second);
                 if (!ptr)
                     throw std::runtime_error("Res: " + name + " not found!");
@@ -195,7 +198,7 @@ namespace engine {
                 }
 
                 mem->load();
-                _res.emplace(resName, resourcePtr(mem));
+                _res.try_emplace(resName, resourcePtr(mem));
 
                 return mem;
             }

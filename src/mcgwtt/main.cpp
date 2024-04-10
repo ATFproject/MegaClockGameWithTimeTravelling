@@ -1,14 +1,13 @@
-//
-// Created by livefish on 1/08/24.
-//
-
-#include "GameWindow.h"
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 #include "WindowController.h"
 
 #include "GameWorld.h"
 #include "Player.h"
 #include "CameraController.h"
+
+#include "window/GameWindow.h"
 
 int main() {
     sf::ContextSettings winContextSettings(0, 0, 16);

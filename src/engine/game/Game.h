@@ -20,8 +20,8 @@ namespace engine::game {
         void tick();
         void draw();
 
-        bool isKeyPressed(const sf::Keyboard::Scancode &k);
-        bool wasKeyClicked(const sf::Keyboard::Scancode &k);
+        bool isKeyPressed(const sf::Keyboard::Scancode k);
+        bool wasKeyClicked(const sf::Keyboard::Scancode k);
 
         [[nodiscard]] sf::Vector2u getSize() const;
 

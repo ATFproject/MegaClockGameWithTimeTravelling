@@ -28,7 +28,7 @@ namespace mcgwtt {
 
     public:
         PlayerPhysics(GameWorldPhysics *worldPh, float x, float y)
-                : _x(x), _y(y){
+                : _x(x), _y(y) {
             addObserver(worldPh);
         }
 
@@ -63,11 +63,11 @@ namespace mcgwtt {
 
             sf::Sprite body;
             body.setTexture(engine::resourceHandler.addRes(new engine::Texture("player body 2.png"))->getTex());
-            _sprites[prefs->_body] = body;
+            _sprites[prefs->_body] = std::move(body);
 
             sf::Sprite head;
             head.setTexture(engine::resourceHandler.addRes(new engine::Texture("player head.png"))->getTex());
-            _sprites[prefs->_head] = head;
+            _sprites[prefs->_head] = std::move(head);
         }
     public:
         explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
@@ -77,4 +77,5 @@ namespace mcgwtt {
         }
     };
 }
+
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H

@@ -37,21 +37,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed unnecessary self pointer to game object in physics and input tick call">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added resources">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/ResourceSystem.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/external/smartenum.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/external/smartenum.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/WindowController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +67,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
+        <option value="CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -87,20 +87,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOLUCZLs5pLbvS",
-        "number": 1
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOLUCZLs5pLbvS&quot;,
+        &quot;number&quot;: 1
       },
-      "lastSeen": 1712754193729
+      &quot;lastSeen&quot;: 1712754193729
     }
   ]
-}]]></component>
+}</component>
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
@@ -111,12 +111,12 @@
     <option name="currentCommit" value="1" />
     <option name="onto" value="77671ddfe9f10d60a876e00a48df974cef891fbb" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/frtem2008/MegaClockGameWithTimeTravelling.git",
-    "accountId": "121def0d-31d4-4c74-b783-56d8dbaea4fc"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/frtem2008/MegaClockGameWithTimeTravelling.git&quot;,
+    &quot;accountId&quot;: &quot;121def0d-31d4-4c74-b783-56d8dbaea4fc&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -150,14 +150,14 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "Add-Depthbuffer",
-    "last_opened_file_path": "/home/livefish/Development/C++/Test",
+    "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "PVS-Studio.Settings",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -167,20 +167,14 @@
       <recent name="$PROJECT_DIR$/resources/tgui/forms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/mcgwtt" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/components/game" />
       <recent name="$PROJECT_DIR$/out" />
       <recent name="$PROJECT_DIR$/src/engine" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/components" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
-    <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -256,6 +250,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="unit_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Makefile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/build/Debug/_deps/box2d-build/testbed/Makefile" target="" workingDirectory="" arguments="">
         <envs />
@@ -264,20 +263,20 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.MegaClockGameWithTimeTravelling" />
-      <item itemvalue="CMake Application.box2d" />
       <item itemvalue="CMake Application.glad" />
       <item itemvalue="CMake Application.glfw" />
-      <item itemvalue="CMake Application.gui-builder" />
       <item itemvalue="CMake Application.imgui" />
       <item itemvalue="CMake Application.sajson" />
+      <item itemvalue="CMake Application.box2d" />
+      <item itemvalue="CMake Application.testbed" />
+      <item itemvalue="CMake Application.unit_test" />
       <item itemvalue="CMake Application.sfml-audio" />
       <item itemvalue="CMake Application.sfml-graphics" />
       <item itemvalue="CMake Application.sfml-network" />
       <item itemvalue="CMake Application.sfml-system" />
       <item itemvalue="CMake Application.sfml-window" />
-      <item itemvalue="CMake Application.testbed" />
+      <item itemvalue="CMake Application.gui-builder" />
       <item itemvalue="CMake Application.tgui" />
-      <item itemvalue="Doctest.unit_test" />
       <item itemvalue="Makefile Target.Makefile" />
     </list>
     <recent_temporary>
@@ -348,23 +347,14 @@
       <workItem from="1712509047979" duration="152000" />
       <workItem from="1712750628401" duration="689000" />
       <workItem from="1712751321695" duration="2553000" />
-      <workItem from="1712753981779" duration="1689000" />
-    </task>
-    <task id="LOCAL-00033" summary="Removed demo">
-      <option name="closed" value="true" />
-      <created>1708368517087</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1708368517088</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Before editing message system">
-      <option name="closed" value="true" />
-      <created>1708412632365</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1708412632365</updated>
+      <workItem from="1712753981779" duration="2333000" />
+      <workItem from="1712756342173" duration="781000" />
+      <workItem from="1712757133215" duration="1406000" />
+      <workItem from="1712758554883" duration="826000" />
+      <workItem from="1712759395894" duration="150000" />
+      <workItem from="1712759557847" duration="1931000" />
+      <workItem from="1712761499093" duration="572000" />
+      <workItem from="1712762304134" duration="2168000" />
     </task>
     <task id="LOCAL-00035" summary="Fixed header files and total game structure">
       <option name="closed" value="true" />
@@ -742,7 +732,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712753598241</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Refactoring after new compiler checks">
+      <option name="closed" value="true" />
+      <created>1712755848719</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1712755848719</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Added resources">
+      <option name="closed" value="true" />
+      <created>1712755872099</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1712755872099</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,8 +784,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Added tgui main menu example" />
-    <MESSAGE value="Merged GitHub workflow file" />
     <MESSAGE value="Added forgotten theme files" />
     <MESSAGE value="Small renaming" />
     <MESSAGE value="Removed cppcheck because it is unnecessary" />
@@ -803,7 +807,9 @@
     <MESSAGE value="Added box2d graphics component" />
     <MESSAGE value="Removed unnecessary self pointer to game object in draw call" />
     <MESSAGE value="Removed unnecessary self pointer to game object in physics and input tick call" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary self pointer to game object in physics and input tick call" />
+    <MESSAGE value="Refactoring after new compiler checks" />
+    <MESSAGE value="Added resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added resources" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

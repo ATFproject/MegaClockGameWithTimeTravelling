@@ -24,6 +24,7 @@ namespace mcgwtt {
 
             if (fix->GetType() == b2PolygonShape::Type::e_polygon) {
                 auto shape = dynamic_cast<b2PolygonShape *>(fix->GetShape());
+                assert(shape);
                 x = shape->m_vertices[0].x;
                 y = shape->m_vertices[0].y;
                 w = shape->m_vertices[1].x - shape->m_vertices[0].x;
@@ -32,6 +33,7 @@ namespace mcgwtt {
 
             if (fix->GetType() == b2PolygonShape::Type::e_circle) {
                 auto shape = dynamic_cast<b2CircleShape *>(fix->GetShape());
+                assert(shape);
                 x = shape->m_p.x - shape->m_radius;
                 y = shape->m_p.y - shape->m_radius;
                 w = h = shape->m_radius * 2;

@@ -7,6 +7,8 @@
 
 #include "components/ComponentInterface.h"
 
+#include "game/Game.h"
+
 namespace mcgwtt {
     struct GamePausedEvent : public engine::events::Event {
         bool _paused;
@@ -29,7 +31,7 @@ namespace mcgwtt {
 
         void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
             game._world.emplace(_gravity);
-            _world = &game._world.value();
+            _world = &*game._world;
         }
 
         void onNotify(const engine::events::Event &event) override {

@@ -1,10 +1,9 @@
-//
-// Created by livefish on 2/20/24.
-//
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 #include "Game.h"
 #include "GameObject.h"
-#include "GameWindow.h"
+#include "window/GameWindow.h"
 
 namespace engine::game {
     void Game::operator<<(GameObject *toAdd) {
@@ -23,7 +22,6 @@ namespace engine::game {
             _click[i] = _keys[i] && !_keysOld[i];
         }
         memcpy(_keysOld, _keys, keyboardKeyCount);
-
         for (GameObject *gameObject : _gameObjects) {
             gameObject->tick(*this);
         }
@@ -71,11 +69,11 @@ namespace engine::game {
         return _size;
     }
 
-    bool Game::isKeyPressed(const sf::Keyboard::Scancode &k) {
+    bool Game::isKeyPressed(const sf::Keyboard::Scancode k) {
         return _keys[k];
     }
 
-    bool Game::wasKeyClicked(const sf::Keyboard::Scancode &k) {
+    bool Game::wasKeyClicked(const sf::Keyboard::Scancode k) {
         return _click[k];
     }
 }
