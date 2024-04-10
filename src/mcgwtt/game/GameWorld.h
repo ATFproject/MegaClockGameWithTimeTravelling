@@ -10,7 +10,7 @@
 #include "game/Game.h"
 
 namespace mcgwtt {
-    struct GamePausedEvent : public engine::events::Event {
+    struct GamePausedEvent : public engine::Event {
         bool _paused;
         explicit GamePausedEvent(bool paused) : _paused(paused) {}
     };
@@ -29,12 +29,12 @@ namespace mcgwtt {
                   _velIters(velIters), _posIters(posIters) {
         }
 
-        void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+        void init(engine::game::Game &game) override {
             game._world.emplace(_gravity);
             _world = &*game._world;
         }
 
-        void onNotify(const engine::events::Event &event) override {
+        void onNotify(const engine::Event &event) override {
             ENGINE_CHECK_EVENT(GamePausedEvent,
                                _paused = e->_paused;
             )

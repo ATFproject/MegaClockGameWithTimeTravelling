@@ -6,9 +6,9 @@
 
 namespace engine::game {
     void GameObject::init(Game &game) {
-        _input->init(this, game);
-        _physics->init(this, game);
-        _graphics->init(this, game);
+        _input->init(game);
+        _physics->init(game);
+        _graphics->init(game);
     }
 
     void GameObject::tick(Game &game) {
@@ -39,7 +39,7 @@ namespace engine::game {
         }
     }
 
-    void GameObject::onNotify(const events::Event &event) {
+    void GameObject::onNotify(const Event &event) {
         notify(event);
     }
 

@@ -40,7 +40,7 @@ namespace engine::game {
         }
     }
 
-    void Game::onNotify(const events::Event &event) {
+    void Game::onNotify(const Event &event) {
         ENGINE_CHECK_EVENT(window::WindowResizeEvent,
                            notify(GameResizeEvent(e->_newSize));
         )

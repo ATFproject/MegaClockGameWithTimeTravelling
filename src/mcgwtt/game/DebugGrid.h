@@ -44,11 +44,11 @@ namespace mcgwtt {
     public:
         explicit DebugGridGraphics(sf::RenderWindow *win) : _win(win) {}
 
-        void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+        void init(engine::game::Game &game) override {
             game.addObserver(this);
         }
 
-        void onNotify(const engine::events::Event &event) override {
+        void onNotify(const engine::Event &event) override {
             ENGINE_CHECK_EVENT(engine::game::GameResizeEvent, resizeAxis(e->_newSize);)
         }
 

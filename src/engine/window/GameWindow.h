@@ -18,7 +18,7 @@ namespace window {
         explicit GameWindow(sf::RenderWindow *window);
         void startRendering();
 
-        void onNotify(const engine::events::Event &event) override;
+        void onNotify(const engine::Event &event) override;
 
         engine::game::GameObject *addGameObject(engine::components::InputComponent *ic,
                                                 engine::components::PhysicsComponent *pc,
@@ -38,24 +38,24 @@ namespace window {
         void handleSfmlEvents();
     };
 
-    struct WindowCloseEvent : public engine::events::Event {};
+    struct WindowCloseEvent : public engine::Event {};
 
-    struct WindowResizeEvent : public engine::events::Event {
+    struct WindowResizeEvent : public engine::Event {
         const sf::Vector2u _newSize;
         explicit WindowResizeEvent(uint x, uint y) : _newSize(sf::Vector2u(x, y)) {}
     };
 
-    struct WindowFocusChangeEvent : public engine::events::Event {
+    struct WindowFocusChangeEvent : public engine::Event {
         bool _inFocus;
         explicit WindowFocusChangeEvent(bool inFocus) : _inFocus(inFocus) {}
     };
 
-    struct KeyPressedEvent : public engine::events::Event {
+    struct KeyPressedEvent : public engine::Event {
         sf::Event::KeyEvent _keyEvent;
         explicit KeyPressedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
     };
 
-    struct KeyReleasedEvent : public engine::events::Event {
+    struct KeyReleasedEvent : public engine::Event {
         sf::Event::KeyEvent _keyEvent;
         explicit KeyReleasedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
     };

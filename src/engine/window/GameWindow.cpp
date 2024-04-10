@@ -82,7 +82,7 @@ namespace window {
         _game.removeGameObject(obj);
     }
 
-    void GameWindow::onNotify(const engine::events::Event &event) {
+    void GameWindow::onNotify(const engine::Event &event) {
         ENGINE_CHECK_EVENT(WindowCloseEvent,
                            _win->close();
         )

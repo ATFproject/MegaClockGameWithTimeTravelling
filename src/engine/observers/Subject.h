@@ -21,7 +21,7 @@ namespace engine {
         }
 
     protected:
-        void notify(const events::Event &event) {
+        void notify(const Event &event) {
             for (auto &observer : _observers) {
                 observer->onNotify(event);
             }

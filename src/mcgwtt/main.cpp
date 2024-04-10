@@ -44,9 +44,6 @@ int main() {
                          new mcgwtt::PlatformGraphics(&win));
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win));
-    window.addGameObject(nullptr,
-                         new mcgwtt::PlatformPhysics(world, 0, 0, 1, 1),
-                         new mcgwtt::PlatformGraphics(&win));
 
     window.startRendering();
 

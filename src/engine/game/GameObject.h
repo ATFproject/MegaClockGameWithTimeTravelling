@@ -19,7 +19,7 @@ namespace engine::game {
         void init(Game &game);
         void tick(Game &game);
         void draw();
-        void onNotify(const events::Event &event) override;
+        void onNotify(const Event &event) override;
 
     private:
         components::InputComponent *_input = &_emptyInputComponent;

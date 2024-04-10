@@ -31,7 +31,7 @@ namespace mcgwtt {
         void draw() override {
         }
 
-        void onNotify(const engine::events::Event &event) override {
+        void onNotify(const engine::Event &event) override {
             ENGINE_CHECK_EVENT(engine::game::GameResizeEvent, resize(e->_newSize.x, e->_newSize.y);)
         }
     };

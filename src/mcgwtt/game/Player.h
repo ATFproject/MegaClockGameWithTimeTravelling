@@ -11,7 +11,7 @@
 #include "mcgwtt/components/Box2dGraphics.h"
 
 namespace mcgwtt {
-    struct PlayerData : engine::events::Event {
+    struct PlayerData : engine::Event {
         b2Body *_playerBody;
         b2Fixture *_body, *_head;
         PlayerData(b2Body *playerBody, b2Fixture *body, b2Fixture *head)
@@ -31,7 +31,7 @@ namespace mcgwtt {
             addObserver(worldPh);
         }
 
-        void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+        void init(engine::game::Game &game) override {
             b2BodyDef bd;
             bd.type = b2_dynamicBody;
             bd.position.Set(_x, _y);
@@ -46,7 +46,7 @@ namespace mcgwtt {
             b2CircleShape shapeHead;
             shapeHead.m_p.Set(_x, _y + _headR);
             shapeHead.m_radius = _headR;
-            auto head = _body->CreateFixture(&shapeHead, 5.0f);
+            auto head = _body->CreateFixture(&shapeHead, 2.0f);
             notify(PlayerData(_body, body, head));
         }
 
@@ -82,10 +82,8 @@ namespace mcgwtt {
         }
     public:
         explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
-        void draw() override {
-            BodyGraphics::draw();
-        }
-        void onNotify(const engine::events::Event &event) override {
+
+        void onNotify(const engine::Event &event) override {
             ENGINE_CHECK_EVENT(PlayerData, initSprites(e);)
         }
     };

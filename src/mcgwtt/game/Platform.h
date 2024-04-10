@@ -10,7 +10,7 @@
 #include "GameWorld.h"
 
 namespace mcgwtt {
-    struct PlatformData : engine::events::Event {
+    struct PlatformData : engine::Event {
         b2Body *_body;
         b2Fixture *_fixture;
         PlatformData(b2Body *body, b2Fixture *fixture) : _body(body), _fixture(fixture) {}
@@ -29,7 +29,7 @@ namespace mcgwtt {
             addObserver(worldPh);
         }
 
-        void init(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+        void init(engine::game::Game &game) override {
             b2BodyDef bd;
             bd.type = b2_kinematicBody;
             bd.position.Set(_x, _y);
@@ -43,16 +43,13 @@ namespace mcgwtt {
             notify(PlatformData(_body, _fixture));
         }
 
-        void tick(engine::game::Game &game) override {
-
-        }
+        void tick(engine::game::Game &game) override {}
     };
 
     class PlatformGraphics : public BodyGraphics {
     private:
         void initSprites(const PlatformData *prefs) {
             _body = prefs->_body;
-
             sf::ConvexShape body;
             body.setTexture(engine::resourceHandler.addRes(new engine::Texture("ground tile.png"))->getTex());
             _shapes[prefs->_fixture] = std::move(body);
@@ -60,7 +57,7 @@ namespace mcgwtt {
     public:
         explicit PlatformGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
 
-        void onNotify(const engine::events::Event &event) override {
+        void onNotify(const engine::Event &event) override {
             ENGINE_CHECK_EVENT(PlatformData, initSprites(e);)
         }
     };

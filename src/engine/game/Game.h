@@ -25,7 +25,7 @@ namespace engine::game {
 
         [[nodiscard]] sf::Vector2u getSize() const;
 
-        void onNotify(const events::Event &event) override;
+        void onNotify(const Event &event) override;
         ~Game() override;
 
     private:
@@ -38,7 +38,7 @@ namespace engine::game {
         bool _keysOld[256] {};
     };
 
-    struct GameResizeEvent : public events::Event {
+    struct GameResizeEvent : public Event {
         sf::Vector2u _newSize;
         explicit GameResizeEvent(const sf::Vector2u &size) : _newSize(size) {}
     };
