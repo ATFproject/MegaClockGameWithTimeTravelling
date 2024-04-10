@@ -53,10 +53,15 @@ namespace mcgwtt {
 
         void tick(engine::game::Game &game) override {
             if (game.isKeyPressed(sf::Keyboard::Scancode::D)) {
-                _body->SetLinearVelocity(b2Vec2(1, _body->GetLinearVelocity().y));
+                _body->SetLinearVelocity(b2Vec2(2, _body->GetLinearVelocity().y));
             }
             if (game.isKeyPressed(sf::Keyboard::Scancode::A)) {
-                _body->SetLinearVelocity(b2Vec2(-1, _body->GetLinearVelocity().y));
+                _body->SetLinearVelocity(b2Vec2(-2, _body->GetLinearVelocity().y));
+            }
+            if (game.wasKeyClicked(sf::Keyboard::Scancode::R)) {
+                _body->SetTransform(b2Vec2(0, 0), 0);
+                _body->SetLinearVelocity(b2Vec2_zero);
+                _body->SetAngularVelocity(0);
             }
         }
     };
