@@ -5,21 +5,21 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
 
-#include <utility>
-
 #include "EngineDef.h"
+
+#include <utility>
 
 namespace engine {
     extern std::map<std::string, std::string> extensionFolder;
 
     template<typename T>
-        std::unique_ptr<T> loadResource(const std::string &FileName) {
-            if (FileName.empty())
+        std::unique_ptr<T> loadResource(const std::string &fileName) {
+            if (fileName.empty())
                 throw std::runtime_error("Empty filename for resource loading");
-            std::string ext = FileName.substr(FileName.find_last_of('.'));
+            std::string ext = fileName.substr(fileName.find_last_of('.'));
             std::string folder = "../resources/" + extensionFolder[ext] + "/";
-            std::string path = folder + FileName;
-            auto data = std::unique_ptr<T>(new T());
+            std::string path = folder + fileName;
+            auto data = std::make_unique<T>();
             bool res;
 
             if constexpr (requires { data->loadFromFile(path); }) {
@@ -31,8 +31,7 @@ namespace engine {
                 res = false;
             }
             if (!res) {
-                std::cerr << "Failed to loadResource \"" << path << "\", exiting'" << std::endl;
-                exit(30);
+                throw std::runtime_error("Failed to loadResource \"" + path + "\"");
             }
             return data;
         }
@@ -41,26 +40,27 @@ namespace engine {
         friend class ResourceHandler;
 
     public:
-        inline static int allocated = 0;
+        inline static int _allocated = 0;
+
         Resource() {
-            allocated++;
-            std::cout << "Res created (" << allocated << " allocated)\n";
+            _allocated++;
+            std::cout << "Res created (" << _allocated << " allocated)\n";
         }
 
         virtual ~Resource() {
-            allocated--;
-            std::cout << "Res free (\"" << _path << "\") (" << allocated << " allocated)\n";
+            _allocated--;
+            std::cout << "Res free (\"" << _path << "\") (" << _allocated << " allocated)\n";
         };
 
-        explicit Resource(std::string LoadPath) : _path(std::move(LoadPath)) {
-            allocated++;
-            std::cout << "Res created (\"" << _path << "\") (" << allocated << " allocated)\n";
+        explicit Resource(std::string loadPath) : _path(std::move(loadPath)) {
+            _allocated++;
+            std::cout << "Res created (\"" << _path << "\") (" << _allocated << " allocated)\n";
         }
 
         virtual void load() = 0;
 
-        void setPath(const std::string &Path) {
-            _path = Path;
+        void setPath(const std::string &path) {
+            _path = path;
         }
 
         [[nodiscard]] std::string getResourcePath() const {
@@ -73,11 +73,11 @@ namespace engine {
 
     class Texture : public Resource {
     private:
-        std::unique_ptr<sf::Texture> _tex{};
+        std::unique_ptr<sf::Texture> _tex;
 
     public:
         Texture() = default;
-        explicit Texture(const std::string &FileName) : Resource(FileName) {
+        explicit Texture(const std::string &fileName) : Resource(fileName) {
             _tex = loadResource<sf::Texture>(_path);
         }
 
@@ -85,21 +85,20 @@ namespace engine {
             _tex = loadResource<sf::Texture>(_path);
         }
 
-        [[nodiscard]] sf::Texture &getTex() const {
-            return *_tex;
+        [[nodiscard]] sf::Texture * getTex() const {
+            return _tex.get();
         }
-
     };
 
     class SoundBuffer : public Resource {
     private:
-        std::unique_ptr<sf::SoundBuffer> _soundBuffer{};
+        std::unique_ptr<sf::SoundBuffer> _soundBuffer;
 
     public:
         SoundBuffer() = default;
 
-        explicit SoundBuffer(const std::string &FileName) : Resource(FileName) {
-            _soundBuffer = loadResource<sf::SoundBuffer>(FileName);
+        explicit SoundBuffer(const std::string &fileName) : Resource(fileName) {
+            _soundBuffer = loadResource<sf::SoundBuffer>(fileName);
         }
 
         void load() override {
@@ -113,12 +112,12 @@ namespace engine {
 
     class Music : public Resource {
     private:
-        std::unique_ptr<sf::Music> _music{};
+        std::unique_ptr<sf::Music> _music;
 
     public:
         Music() = default;
-        explicit Music(const std::string &FileName) : Resource(FileName) {
-            _music = loadResource<sf::Music>(FileName);
+        explicit Music(const std::string &fileName) : Resource(fileName) {
+            _music = loadResource<sf::Music>(fileName);
         }
 
         void load() override {
@@ -140,8 +139,8 @@ namespace engine {
         std::unique_ptr<sf::Font> _font;
     public:
         Font() = default;
-        explicit Font(const std::string &FileName) : Resource(FileName) {
-            _font = loadResource<sf::Font>(FileName);
+        explicit Font(const std::string &fileName) : Resource(fileName) {
+            _font = loadResource<sf::Font>(fileName);
         }
 
         const sf::Font &getFont() {
@@ -153,16 +152,19 @@ namespace engine {
         }
     };
 
-    using resource_ptr = std::unique_ptr<Resource>;
+    using resourcePtr = std::unique_ptr<Resource>;
 
     class ResourceHandler {
     private:
-        std::unordered_map<std::string, resource_ptr> _res;
+        std::unordered_map<std::string, resourcePtr> _res;
 
     public:
         template<typename T>
             requires std::is_base_of_v<Resource, T>
             T *getResource(const std::string &name) {
+                auto find = _res.find(name);
+                if (find != _res.end())
+                    throw std::runtime_error("Res: " + name + " not found!");
                 auto ptr = dynamic_cast<T *>(_res.find(name)->second);
                 if (!ptr)
                     throw std::runtime_error("Res: " + name + " not found!");
@@ -171,19 +173,19 @@ namespace engine {
 
         template<typename T>
             requires std::is_base_of_v<Resource, T>
-            T *addRes(T *mem, const std::string &FileName = "", const std::string &Name = "") {
+            T *addRes(T *mem, const std::string &fileName = "", const std::string &name = "") {
                 std::string resName;
-                if (!Name.empty())
-                    resName = Name;
-                else if (!FileName.empty())
-                    resName = FileName;
+                if (!name.empty())
+                    resName = name;
+                else if (!fileName.empty())
+                    resName = fileName;
                 else if (!mem->getResourcePath().empty())
                     resName = mem->getResourcePath();
                 else
                     throw std::runtime_error("No name provided for resource!");
 
-                if (!FileName.empty())
-                    mem->setPath(FileName);
+                if (!fileName.empty())
+                    mem->setPath(fileName);
 
                 auto find = _res.find(resName);
                 if (find != _res.end()) {
@@ -195,13 +197,24 @@ namespace engine {
                 }
 
                 mem->load();
-                _res.emplace(resName, resource_ptr(mem));
+                _res.try_emplace(resName, resourcePtr(mem));
 
                 return mem;
             }
     };
 
-    extern ResourceHandler resourceHandler;
+    inline ResourceHandler resourceHandler;
+    inline std::map<std::string, std::string> extensionFolder = {
+            {".png", "images"},
+            {".jpg", "images"},
+            {".gif", "images"},
+
+            {".wav", "sounds"},
+            {".mp3", "sounds"},
+            {".ogg", "sounds"},
+
+            {".ttf", "fonts"},
+    };
 } // engine
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H

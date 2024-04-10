@@ -17,10 +17,12 @@
       <config projectName="MegaClockGameWithTimeTravelling" targetName="testbed" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="tgui" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="box2d" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="gui-builder" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="imgui" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-graphics" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-window" />
@@ -29,13 +31,22 @@
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="build/Debug" CONFIG_NAME="Debug" />
-      <configuration PROFILE_NAME="Release" ENABLED="true" GENERATION_DIR="build/Release" CONFIG_NAME="Release" />
+      <configuration PROFILE_NAME="Release" ENABLED="true" GENERATION_DIR="build/Release" CONFIG_NAME="Release" BUILD_OPTIONS="-- -j7" />
       <configuration PROFILE_NAME="RelWithDebInfo" ENABLED="true" GENERATION_DIR="build/RelWithDebInfo" CONFIG_NAME="RelWithDebInfo" />
       <configuration PROFILE_NAME="MinSizeRel" ENABLED="true" GENERATION_DIR="build/MinSizeRel" CONFIG_NAME="MinSizeRel" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Moved text rendering to post draw" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed draw method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/DebugGrid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/DebugGrid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,34 +54,71 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+    <option name="completeInNamespacesByDefault" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
+        <option value="CMakeLists.txt" />
       </list>
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="Add-box2d" />
+    <option name="BRANCH" value="origin/master" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/First-game-steps" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="First-game-steps" />
+        <entry key="$PROJECT_DIR$" value="MCGWTT-Base" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOLUCZLs5pLbvS&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1712754193729
+    }
+  ]
+}</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Temp save" />
+        <option name="rewordedMessage" value="Fixed draw method" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="be57007794d7bc09b6c2e63419564b725aa39a7c" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/frtem2008/MegaClockGameWithTimeTravelling.git&quot;,
+    &quot;accountId&quot;: &quot;121def0d-31d4-4c74-b783-56d8dbaea4fc&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="NamedScopeManager">
-    <scope name="src" pattern="file[MegaClockGameWithTimeTravelling]:src//*" />
+    <scope name="src" pattern="file[MegaClockGameWithTimeTravelling]:src//*&amp;&amp;!file[MegaClockGameWithTimeTravelling]:src/external//*||file:CMakeLists.txt||file:.gitignore||file[MegaClockGameWithTimeTravelling]:resources/*" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -95,40 +143,38 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/livefish/Development/ATF Project/MegaClockGameWithTimeTravelling/build/Debug/_deps/box2d-src/testbed",
+    "git-widget-placeholder": "Shape-drawing",
+    "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CPPToolchains",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "structure.view.defaults.are.configured": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/tgui/forms" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/mcgwtt" />
+      <recent name="$PROJECT_DIR$/src/mcgwtt/components/game" />
+      <recent name="$PROJECT_DIR$/out" />
       <recent name="$PROJECT_DIR$/src/engine" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/components" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt" />
-      <recent name="$PROJECT_DIR$/src/engine/components/WindowControl" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
+    <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -144,6 +190,11 @@
       </method>
     </configuration>
     <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="glfw" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gui-builder" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="gui-builder" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="gui-builder">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -188,6 +239,16 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tgui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="tgui" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unit_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Makefile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/build/Debug/_deps/box2d-build/testbed/Makefile" target="" workingDirectory="" arguments="">
         <envs />
@@ -196,18 +257,20 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.MegaClockGameWithTimeTravelling" />
-      <item itemvalue="CMake Application.box2d" />
       <item itemvalue="CMake Application.glad" />
       <item itemvalue="CMake Application.glfw" />
       <item itemvalue="CMake Application.imgui" />
       <item itemvalue="CMake Application.sajson" />
+      <item itemvalue="CMake Application.box2d" />
+      <item itemvalue="CMake Application.testbed" />
+      <item itemvalue="CMake Application.unit_test" />
       <item itemvalue="CMake Application.sfml-audio" />
       <item itemvalue="CMake Application.sfml-graphics" />
       <item itemvalue="CMake Application.sfml-network" />
       <item itemvalue="CMake Application.sfml-system" />
       <item itemvalue="CMake Application.sfml-window" />
-      <item itemvalue="CMake Application.testbed" />
-      <item itemvalue="Doctest.unit_test" />
+      <item itemvalue="CMake Application.gui-builder" />
+      <item itemvalue="CMake Application.tgui" />
       <item itemvalue="Makefile Target.Makefile" />
     </list>
     <recent_temporary>
@@ -218,6 +281,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="" />
@@ -258,262 +324,33 @@
       <workItem from="1710074621454" duration="7072000" />
       <workItem from="1710084151178" duration="4625000" />
       <workItem from="1710106212757" duration="65000" />
-    </task>
-    <task id="LOCAL-00009" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708209481966</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1708209481966</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708209832891</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1708209832891</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708210543008</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1708210543008</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708210585482</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1708210585482</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708210645824</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1708210645824</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708210741117</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1708210741117</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708210958130</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1708210958130</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708211392029</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1708211392029</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708211874739</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1708211874739</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708212866053</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1708212866053</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708212983098</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1708212983099</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708213184535</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1708213184535</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708213318211</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1708213318211</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Fixed cmake options">
-      <option name="closed" value="true" />
-      <created>1708213765384</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1708213765384</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Added checks for different compilers in cmake lists">
-      <option name="closed" value="true" />
-      <created>1708214285412</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1708214285412</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Fixed gitignore">
-      <option name="closed" value="true" />
-      <created>1708267790165</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1708267790165</updated>
-    </task>
-    <task id="LOCAL-00025" summary="First SFML experience">
-      <option name="closed" value="true" />
-      <created>1708282898573</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1708282898573</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Added GameObject component pattern">
-      <option name="closed" value="true" />
-      <created>1708336384651</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1708336384651</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Added basic game class">
-      <option name="closed" value="true" />
-      <created>1708340984933</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1708340984933</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Added window and window event handler">
-      <option name="closed" value="true" />
-      <created>1708345124165</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1708345124165</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Game is now updated only if window is active">
-      <option name="closed" value="true" />
-      <created>1708346194851</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1708346194851</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Added observer pattern base classes">
-      <option name="closed" value="true" />
-      <created>1708347046737</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1708347046737</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Added game event system">
-      <option name="closed" value="true" />
-      <created>1708352618146</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1708352618146</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Register game as observer to GameWindow system">
-      <option name="closed" value="true" />
-      <created>1708355609675</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1708355609675</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Removed demo">
-      <option name="closed" value="true" />
-      <created>1708368517087</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1708368517088</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Before editing message system">
-      <option name="closed" value="true" />
-      <created>1708412632365</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1708412632365</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Fixed header files and total game structure">
-      <option name="closed" value="true" />
-      <created>1708418237267</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1708418237267</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Final structure before res system">
-      <option name="closed" value="true" />
-      <created>1708419285774</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1708419285774</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Res system first ver">
-      <option name="closed" value="true" />
-      <created>1708624571555</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1708624571555</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Final commit before starting game">
-      <option name="closed" value="true" />
-      <created>1708807665496</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1708807665496</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Game structure example">
-      <option name="closed" value="true" />
-      <created>1708809931376</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1708809931376</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Game objects transmit events between their components">
-      <option name="closed" value="true" />
-      <created>1709402810555</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1709402810555</updated>
+      <workItem from="1710482160042" duration="9710000" />
+      <workItem from="1710492110160" duration="50000" />
+      <workItem from="1710515705074" duration="2970000" />
+      <workItem from="1710519838978" duration="5589000" />
+      <workItem from="1710624278420" duration="22000" />
+      <workItem from="1711225738630" duration="2000" />
+      <workItem from="1711359961665" duration="2486000" />
+      <workItem from="1711364145533" duration="1387000" />
+      <workItem from="1711611596702" duration="1772000" />
+      <workItem from="1711718392423" duration="7204000" />
+      <workItem from="1712337980513" duration="502000" />
+      <workItem from="1712338859543" duration="10950000" />
+      <workItem from="1712350508212" duration="3690000" />
+      <workItem from="1712354430440" duration="608000" />
+      <workItem from="1712509047979" duration="152000" />
+      <workItem from="1712750628401" duration="689000" />
+      <workItem from="1712751321695" duration="2553000" />
+      <workItem from="1712753981779" duration="2333000" />
+      <workItem from="1712756342173" duration="781000" />
+      <workItem from="1712757133215" duration="1406000" />
+      <workItem from="1712758554883" duration="826000" />
+      <workItem from="1712759395894" duration="150000" />
+      <workItem from="1712759557847" duration="1931000" />
+      <workItem from="1712761499093" duration="572000" />
+      <workItem from="1712762304134" duration="17366000" />
+      <workItem from="1712782335714" duration="9000" />
+      <workItem from="1712784561413" duration="1109000" />
     </task>
     <task id="LOCAL-00041" summary="Added moving paddle">
       <option name="closed" value="true" />
@@ -651,7 +488,263 @@
       <option name="project" value="LOCAL" />
       <updated>1710101314351</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Removed warnings as errors for windows">
+      <option name="closed" value="true" />
+      <created>1710106575420</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1710106575420</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Added tgui main menu example">
+      <option name="closed" value="true" />
+      <created>1710490767905</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1710490767905</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Merged GitHub workflow file">
+      <option name="closed" value="true" />
+      <created>1710491024596</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1710491024597</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Added forgotten theme files">
+      <option name="closed" value="true" />
+      <created>1710491817857</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1710491817857</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Small renaming">
+      <option name="closed" value="true" />
+      <created>1710519977582</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1710519977583</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Removed cppcheck because it is unnecessary">
+      <option name="closed" value="true" />
+      <created>1710523424916</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1710523424916</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Added fps &amp; time on screen. Added precompiled header">
+      <option name="closed" value="true" />
+      <created>1710530372617</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1710530372617</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Removed output directory">
+      <option name="closed" value="true" />
+      <created>1710530521508</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1710530521508</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Fixed g++ version in ubuntu workflow">
+      <option name="closed" value="true" />
+      <created>1710531416096</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1710531416097</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Removed std format">
+      <option name="closed" value="true" />
+      <created>1710532056044</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1710532056045</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Added picture test">
+      <option name="closed" value="true" />
+      <created>1711363257727</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1711363257727</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Set engine def to be the first included file in all headers">
+      <option name="closed" value="true" />
+      <created>1711363573115</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1711363573115</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Added player drawing">
+      <option name="closed" value="true" />
+      <created>1711724478162</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1711724478162</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Made scale larger">
+      <option name="closed" value="true" />
+      <created>1712339307757</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1712339307757</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Refactoring (failure)">
+      <option name="closed" value="true" />
+      <created>1712341022774</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1712341022775</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Fixed UB in GameWorldPhysics">
+      <option name="closed" value="true" />
+      <created>1712345094026</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1712345094027</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Added camera controller. Removed scale variable">
+      <option name="closed" value="true" />
+      <created>1712348455664</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1712348455664</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Attempted to add stats, fixed UB in old component">
+      <option name="closed" value="true" />
+      <created>1712354195543</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1712354195544</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Fixed unnecessary header, which broke windows build">
+      <option name="closed" value="true" />
+      <created>1712354474573</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1712354474573</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Removed unneeded namespaces">
+      <option name="closed" value="true" />
+      <created>1712751141994</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1712751141995</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Removed old test components">
+      <option name="closed" value="true" />
+      <created>1712751216401</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1712751216402</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Added box2d graphics component">
+      <option name="closed" value="true" />
+      <created>1712752720218</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1712752720218</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Removed unnecessary self pointer to game object in draw call">
+      <option name="closed" value="true" />
+      <created>1712753544908</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1712753544908</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Removed unnecessary self pointer to game object in physics and input tick call">
+      <option name="closed" value="true" />
+      <created>1712753598241</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1712753598241</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Refactoring after new compiler checks">
+      <option name="closed" value="true" />
+      <created>1712755848719</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1712755848719</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Added resources">
+      <option name="closed" value="true" />
+      <created>1712755872099</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1712755872099</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Added pvs studio comments">
+      <option name="closed" value="true" />
+      <created>1712764555915</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1712764555916</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Removed unnecessary textures">
+      <option name="closed" value="true" />
+      <created>1712764706635</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1712764706635</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Fixed tex name">
+      <option name="closed" value="true" />
+      <created>1712764747375</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1712764747375</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Added debug grid &amp; fixed player positioning">
+      <option name="closed" value="true" />
+      <created>1712767466945</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1712767466945</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Added player and a platform">
+      <option name="closed" value="true" />
+      <created>1712777391565</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1712777391565</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Fixed rotation player works">
+      <option name="closed" value="true" />
+      <created>1712780981386</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1712780981386</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,7 +766,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/First-game-steps" />
+                        <option value="Add-Depthbuffer" />
                       </list>
                     </value>
                   </entry>
@@ -686,32 +779,41 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Register game as observer to GameWindow system" />
-    <MESSAGE value="Removed demo" />
-    <MESSAGE value="Before editing message system" />
-    <MESSAGE value="Fixed header files and total game structure" />
-    <MESSAGE value="Final structure before res system" />
-    <MESSAGE value="Res system first ver" />
-    <MESSAGE value="Final commit before starting game" />
-    <MESSAGE value="Game structure example" />
-    <MESSAGE value="Game objects transmit events between their components" />
-    <MESSAGE value="Added moving paddle" />
-    <MESSAGE value="Paddles with 2 different colors" />
-    <MESSAGE value="Changed onNotify to onNotifyType in one case to remove ambiguous code" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Fixed g++ version in ubuntu workflow" />
+    <MESSAGE value="Removed std format" />
+    <MESSAGE value="Added picture test" />
+    <MESSAGE value="Set engine def to be the first included file in all headers" />
+    <MESSAGE value="Added player drawing" />
+    <MESSAGE value="Made scale larger" />
+    <MESSAGE value="Refactoring (failure)" />
+    <MESSAGE value="Fixed UB in GameWorldPhysics" />
+    <MESSAGE value="Added camera controller. Removed scale variable" />
+    <MESSAGE value="Attempted to add stats, fixed UB in old component" />
+    <MESSAGE value="Fixed unnecessary header, which broke windows build" />
+    <MESSAGE value="Removed unneeded namespaces" />
+    <MESSAGE value="Removed old test components" />
+    <MESSAGE value="Added box2d graphics component" />
+    <MESSAGE value="Removed unnecessary self pointer to game object in draw call" />
+    <MESSAGE value="Removed unnecessary self pointer to game object in physics and input tick call" />
+    <MESSAGE value="Refactoring after new compiler checks" />
     <MESSAGE value="Added resources" />
-    <MESSAGE value="NORMAL EVENT SYSTEM!" />
-    <MESSAGE value="Remade event system" />
-    <MESSAGE value="Resource manager!" />
-    <MESSAGE value="Fixed res manager map lookup" />
-    <MESSAGE value="Correct music handling" />
-    <MESSAGE value="Added control customization" />
-    <MESSAGE value="Fixed music playing multiple times" />
-    <MESSAGE value="Added box2d test" />
-    <MESSAGE value="Added box controls and text" />
-    <MESSAGE value="Fixed resource system memory leak" />
-    <MESSAGE value="Added pre- and post- draw to graphics game object. Added 2 boxes" />
-    <MESSAGE value="Vitman test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vitman test" />
+    <MESSAGE value="Added pvs studio comments" />
+    <MESSAGE value="Fixed tex name" />
+    <MESSAGE value="Removed unnecessary textures" />
+    <MESSAGE value="Added debug grid &amp; fixed player positioning" />
+    <MESSAGE value="Added player and a platform" />
+    <MESSAGE value="Fixed rotation player works" />
+    <MESSAGE value="Fixed draw method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed draw method" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

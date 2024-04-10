@@ -1,46 +1,27 @@
-//
-// Created by livefish on 2/19/24.
-//
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 #include "GameObject.h"
 #include "components/EmptyComponents.h"
 
 namespace engine::game {
-    components::EmptyInputComponent GameObject::emptyInputComponent;
-    components::EmptyGraphicsComponent GameObject::emptyGraphicsComponent;
-    components::EmptyPhysicsComponent GameObject::emptyPhysicsComponent;
-
-    GameObject::GameObject() {
-        _input = &emptyInputComponent;
-        _physics = &emptyPhysicsComponent;
-        _graphics = &emptyGraphicsComponent;
-    }
-
     void GameObject::init(Game &game) {
-        _input->init(this, game);
-        _physics->init(this, game);
-        _graphics->init(this, game);
+        _input->init(game);
+        _physics->init(game);
+        _graphics->init(game);
     }
 
     void GameObject::tick(Game &game) {
-        _input->tick(this, game);
-        _physics->tick(this, game);
+        _input->tick(game);
+        _physics->tick(game);
     }
 
     void GameObject::draw() {
-        _graphics->draw(this);
-    }
-
-    void GameObject::preDraw() {
-        _graphics->preDraw(this);
-    }
-    void GameObject::postDraw() {
-        _graphics->postDraw(this);
+        _graphics->draw();
     }
 
     GameObject::GameObject(components::InputComponent *input, components::PhysicsComponent *physics,
-                           components::GraphicsComponent *graphics)
-            : _input(&emptyInputComponent), _physics(&emptyPhysicsComponent), _graphics(&emptyGraphicsComponent) {
+                           components::GraphicsComponent *graphics) {
         if (input) {
             _input = input;
             _input->addObserver(this);
@@ -58,16 +39,16 @@ namespace engine::game {
         }
     }
 
-    void GameObject::onNotify(const events::Event &event) {
+    void GameObject::onNotify(const Event &event) {
         notify(event);
     }
 
     GameObject::~GameObject() {
-        if (_input != &emptyInputComponent)
+        if (_input != &_emptyInputComponent)
             delete _input;
-        if (_physics != &emptyPhysicsComponent)
+        if (_physics != &_emptyPhysicsComponent)
             delete _physics;
-        if (_graphics != &emptyGraphicsComponent)
+        if (_graphics != &_emptyGraphicsComponent)
             delete _graphics;
     }
 }

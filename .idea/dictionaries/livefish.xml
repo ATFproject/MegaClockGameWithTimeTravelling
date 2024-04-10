@@ -2,13 +2,24 @@
   <dictionary name="livefish">
     <words>
       <w>arialmt</w>
+      <w>cameracontroller</w>
       <w>componentdef</w>
+      <w>debuggrid</w>
+      <w>dgraphics</w>
+      <w>drawablerect</w>
       <w>emptycomponents</w>
       <w>enginedef</w>
+      <w>errorfile</w>
+      <w>gameworld</w>
       <w>iters</w>
       <w>mcgwtt</w>
       <w>memtest</w>
+      <w>menuscreen</w>
+      <w>plog</w>
+      <w>prefs</w>
       <w>resourcedef</w>
+      <w>smartenum</w>
+      <w>tgui</w>
       <w>timestep</w>
       <w>windowcontroller</w>
       <w>windowmovementcontroller</w>

@@ -1,0 +1,100 @@
+Label."Control hints" {
+    AutoSize = true;
+    Position = (10, 10);
+    Size = (530, 111);
+    Text = "Use A and D keys to control box rotation\nUse the knob below to control box speed\n\nNOTICE: high speeds decrease performance!";
+    TextSize = 23;
+
+    Renderer {
+        BackgroundColor = transparent;
+        BorderColor = #3C3C3C;
+        Borders = (0, 0, 0, 0);
+        TextColor = #7F7CFF;
+        TextureBackground = None;
+
+        Scrollbar {
+            ArrowBackgroundColor = #F5F5F5;
+            ArrowBackgroundColorHover = white;
+            ArrowColor = #3C3C3C;
+            ArrowColorHover = black;
+            TextureArrowDown = None;
+            TextureArrowDownHover = None;
+            TextureArrowUp = None;
+            TextureArrowUpHover = None;
+            TextureThumb = None;
+            TextureThumbHover = None;
+            TextureTrack = None;
+            TextureTrackHover = None;
+            ThumbColor = #DCDCDC;
+            ThumbColorHover = #E6E6E6;
+            TrackColor = #F5F5F5;
+        }
+    }
+}
+
+Knob."Speed knob" {
+    ClockwiseTurning = true;
+    EndRotation = 100;
+    Maximum = 359;
+    Minimum = 10;
+    Position = (20, 140);
+    Size = (100, 100);
+    StartRotation = 90;
+    Value = 10;
+
+    Renderer {
+        BackgroundColor = #7F7CFF;
+        BorderColor = black;
+        Borders = 2;
+        TextureBackground = None;
+        TextureForeground = None;
+        ThumbColor = #4CC8FFD7;
+    }
+}
+
+Label."FPS Label" {
+    Position = (1380, 10);
+    ScrollbarPolicy = Never;
+    Size = (736, 31);
+    Text = "Time: %s    FPS: 150";
+    TextSize = 24;
+
+    Renderer {
+        BackgroundColor = transparent;
+        BorderColor = #3C3C3C;
+        Borders = (0, 0, 0, 0);
+        TextColor = #FF9A00;
+        TextStyle = Bold | Underlined;
+        TextureBackground = None;
+
+        Scrollbar {
+            ArrowBackgroundColor = #F5F5F5;
+            ArrowBackgroundColorHover = white;
+            ArrowColor = #3C3C3C;
+            ArrowColorHover = black;
+            TextureArrowDown = None;
+            TextureArrowDownHover = None;
+            TextureArrowUp = None;
+            TextureArrowUpHover = None;
+            TextureThumb = None;
+            TextureThumbHover = None;
+            TextureTrack = None;
+            TextureTrackHover = None;
+            ThumbColor = #DCDCDC;
+            ThumbColorHover = #E6E6E6;
+            TrackColor = #F5F5F5;
+        }
+    }
+}
+
+Picture.Icon {
+    Position = (150, 140);
+    Size = (102, 102);
+    UserData = "";
+
+    Renderer {
+        Opacity = 0.8;
+        Texture = "../../../images/icon.png" NoSmooth;
+        TransparentTexture = false;
+    }
+}

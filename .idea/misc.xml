@@ -6,6 +6,7 @@
       <file path="$PROJECT_DIR$/src" />
     </sourceRoots>
     <excludeRoots>
+      <file path="$PROJECT_DIR$/.PVS-Studio" />
       <file path="$PROJECT_DIR$/out" />
     </excludeRoots>
   </component>

@@ -18,39 +18,46 @@ namespace window {
         explicit GameWindow(sf::RenderWindow *window);
         void startRendering();
 
-        void onNotify(const engine::events::Event &event) override;
+        void onNotify(const engine::Event &event) override;
 
-        void addGameObject(engine::components::InputComponent *ic,
-                           engine::components::PhysicsComponent *pc,
-                           engine::components::GraphicsComponent *gc);
+        engine::game::GameObject *addGameObject(engine::components::InputComponent *ic,
+                                                engine::components::PhysicsComponent *pc,
+                                                engine::components::GraphicsComponent *gc);
 
-        void addWorld(b2World *world);
+        void removeGameObject(engine::game::GameObject *obj);
+
+        tgui::Gui &getGui();
 
     private:
         sf::RenderWindow *_win;
+        tgui::Gui _gui;
+
         engine::game::Game _game;
         bool _isActive;
 
-        void _handleSfmlEvents();
+        void handleSfmlEvents();
     };
 
-    struct WindowCloseEvent : public engine::events::Event {
+    struct WindowCloseEvent : public engine::Event {};
 
+    struct WindowResizeEvent : public engine::Event {
+        const sf::Vector2u _newSize;
+        explicit WindowResizeEvent(uint x, uint y) : _newSize(sf::Vector2u(x, y)) {}
     };
 
-    struct WindowResizeEvent : public engine::events::Event {
-        const sf::Vector2u newSize;
-        explicit WindowResizeEvent(uint x, uint y) : newSize(sf::Vector2u(x, y)) {}
+    struct WindowFocusChangeEvent : public engine::Event {
+        bool _inFocus;
+        explicit WindowFocusChangeEvent(bool inFocus) : _inFocus(inFocus) {}
     };
 
-    struct WindowMoveEvent : public engine::events::Event {
-        const sf::Vector2i move;
-        explicit WindowMoveEvent(int x, int y) : move(sf::Vector2i(x, y)) {}
+    struct KeyPressedEvent : public engine::Event {
+        sf::Event::KeyEvent _keyEvent;
+        explicit KeyPressedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
     };
 
-    struct WindowFocusChangeEvent : public engine::events::Event {
-        bool inFocus;
-        explicit WindowFocusChangeEvent(bool inFocus) : inFocus(inFocus) {}
+    struct KeyReleasedEvent : public engine::Event {
+        sf::Event::KeyEvent _keyEvent;
+        explicit KeyReleasedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
     };
 }
 
