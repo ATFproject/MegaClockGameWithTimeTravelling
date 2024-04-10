@@ -38,7 +38,7 @@ namespace mcgwtt {
             )
         }
 
-        void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+        void tick(engine::game::Game &game) override {
             if (!_paused)
                 _world->Step(_timestep, _velIters, _posIters);
         }

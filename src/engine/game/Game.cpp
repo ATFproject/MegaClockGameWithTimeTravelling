@@ -37,13 +37,7 @@ namespace engine::game {
 
     void Game::draw() {
         for (GameObject *gameObject : _gameObjects) {
-            gameObject->preDraw();
-        }
-        for (GameObject *gameObject : _gameObjects) {
             gameObject->draw();
-        }
-        for (GameObject *gameObject : _gameObjects) {
-            gameObject->postDraw();
         }
     }
 

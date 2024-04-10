@@ -14,9 +14,7 @@ namespace engine::components {
     public:
         virtual void init(game::GameObject *gameObject, game::Game &game) {}
 
-        virtual void preDraw(game::GameObject *gameObject) {}
-        virtual void postDraw(game::GameObject *gameObject) {}
-        virtual void draw(game::GameObject *gameObject) = 0;
+        virtual void draw() = 0;
         ~GraphicsComponent() override = default;
     };
 
@@ -24,7 +22,7 @@ namespace engine::components {
     public:
         virtual void init(game::GameObject *gameObject, game::Game &game) {}
 
-        virtual void tick(game::GameObject *gameObject, game::Game &game) = 0;
+        virtual void tick(game::Game &game) = 0;
         ~InputComponent() override = default;
     };
 
@@ -32,7 +30,7 @@ namespace engine::components {
     public:
         virtual void init(game::GameObject *gameObject, game::Game &game) {}
 
-        virtual void tick(game::GameObject *gameObject, game::Game &game) = 0;
+        virtual void tick(game::Game &game) = 0;
         ~PhysicsComponent() override = default;
     };
 }

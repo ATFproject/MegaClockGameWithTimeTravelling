@@ -46,7 +46,7 @@ namespace mcgwtt {
     public:
         explicit BodyGraphics(sf::RenderWindow *win) : _win(win) {}
 
-        void draw(engine::game::GameObject *gameObject) override {
+        void draw() override {
             assert(_body);
 
             for (auto fix = _body->GetFixtureList(); fix; fix = fix->GetNext()) {

@@ -52,7 +52,7 @@ namespace mcgwtt {
             notify(PlayerData(_body, body, head));
         }
 
-        void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+        void tick(engine::game::Game &game) override {
 
         }
     };

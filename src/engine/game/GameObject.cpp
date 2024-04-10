@@ -13,19 +13,12 @@ namespace engine::game {
     }
 
     void GameObject::tick(Game &game) {
-        _input->tick(this, game);
-        _physics->tick(this, game);
+        _input->tick(game);
+        _physics->tick(game);
     }
 
     void GameObject::draw() {
-        _graphics->draw(this);
-    }
-
-    void GameObject::preDraw() {
-        _graphics->preDraw(this);
-    }
-    void GameObject::postDraw() {
-        _graphics->postDraw(this);
+        _graphics->draw();
     }
 
     GameObject::GameObject(components::InputComponent *input, components::PhysicsComponent *physics,

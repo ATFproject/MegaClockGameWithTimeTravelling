@@ -15,7 +15,6 @@ namespace mcgwtt {
         sf::RenderWindow *_win;
         sf::View _view;
         float _zoom;
-        sf::Text _stats;
 
         void resize(float newW, float newH) {
             _view.setCenter(0, 0);
@@ -27,18 +26,9 @@ namespace mcgwtt {
     public:
         CameraController(sf::RenderWindow *win, float initialZoom)
                 : _win(win), _view(win->getDefaultView()), _zoom(initialZoom) {
-            _stats.setFont(engine::resourceHandler.addRes(new engine::Font("arialmt.ttf"))->getFont());
-            _stats.setString("STATS HERE");
-            _stats.setStyle(sf::Text::Bold | sf::Text::Underlined);
-            _stats.setCharacterSize(24);
         }
 
-        void draw(engine::game::GameObject *gameObject) override {
-            sf::View view = _win->getView();
-            _win->setView(_win->getDefaultView());
-            _stats.setString("No stats here(((");
-            _win->draw(_stats);
-            _win->setView(view);
+        void draw() override {
         }
 
         void onNotify(const engine::events::Event &event) override {

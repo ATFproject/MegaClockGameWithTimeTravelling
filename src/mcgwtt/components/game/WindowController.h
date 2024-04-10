@@ -17,7 +17,7 @@ namespace mcgwtt {
             this->addObserver(win);
         }
 
-        void tick(engine::game::GameObject *gameObject, engine::game::Game &game) override {
+        void tick(engine::game::Game &game) override {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
                 notify(window::WindowCloseEvent());
             }
