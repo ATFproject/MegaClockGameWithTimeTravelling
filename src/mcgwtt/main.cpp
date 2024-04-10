@@ -10,12 +10,7 @@
 #include "game/Player.h"
 #include "game/CameraController.h"
 
-#include "components/Box2d Test/Memtest.h"
-
-#include "components/TGUI test/MenuScreen.h"
-
 int main() {
-    // set antialiasing level to 16
     sf::ContextSettings winContextSettings(0, 0, 16);
     sf::RenderWindow win(
             sf::VideoMode::getFullscreenModes()[0],
@@ -32,16 +27,16 @@ int main() {
     win.setFramerateLimit(165);
     win.setActive(true);
 
-    window.addGameObject(new mcgwtt::components::WindowController(&window), nullptr, nullptr);
+    window.addGameObject(new mcgwtt::WindowController(&window), nullptr, nullptr);
 
-    auto world = new mcgwtt::components::game::GameWorldPhysics(
+    auto world = new mcgwtt::GameWorldPhysics(
             window, b2Vec2(0, 0.25), 1 / 165.f, 8, 3);
 
     window.addGameObject(nullptr, world, nullptr);
-    window.addGameObject(nullptr, nullptr, new mcgwtt::components::game::CameraController(&win, 30));
+    window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(&win, 30));
 
-    window.addGameObject(nullptr, new mcgwtt::components::game::PlayerPhysics(world, 0, 0),
-                         new mcgwtt::components::game::PlayerGraphics(&win));
+    window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, 0, 0),
+                         new mcgwtt::PlayerGraphics(&win));
 
     window.startRendering();
 

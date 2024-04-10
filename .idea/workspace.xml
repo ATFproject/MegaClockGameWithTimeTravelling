@@ -37,10 +37,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added camera controller. Removed scale variable">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed unnecessary header, which broke windows build">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Memtest.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Memtest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/Spinning box.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/World.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2d Test/World.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Demo components/WindowMovementController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Pong/Paddle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/TGUI test/MenuScreen.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/TGUI test/MenuScreen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/WindowControl/WindowController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/game/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +79,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Add-TGUI" />
+        <entry key="$PROJECT_DIR$" value="MCGWTT-Base" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,7 +129,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "MCGWTT-Base",
+    "git-widget-placeholder": "Add-Depthbuffer",
     "last_opened_file_path": "/home/livefish/Development/C++/Test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -309,23 +318,10 @@
       <workItem from="1711718392423" duration="7204000" />
       <workItem from="1712337980513" duration="502000" />
       <workItem from="1712338859543" duration="10950000" />
-      <workItem from="1712350508212" duration="3662000" />
-    </task>
-    <task id="LOCAL-00026" summary="Added GameObject component pattern">
-      <option name="closed" value="true" />
-      <created>1708336384651</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1708336384651</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Added basic game class">
-      <option name="closed" value="true" />
-      <created>1708340984933</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1708340984933</updated>
+      <workItem from="1712350508212" duration="3690000" />
+      <workItem from="1712354430440" duration="608000" />
+      <workItem from="1712509047979" duration="152000" />
+      <workItem from="1712750628401" duration="498000" />
     </task>
     <task id="LOCAL-00028" summary="Added window and window event handler">
       <option name="closed" value="true" />
@@ -703,7 +699,23 @@
       <option name="project" value="LOCAL" />
       <updated>1712348455664</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Attempted to add stats, fixed UB in old component">
+      <option name="closed" value="true" />
+      <created>1712354195543</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1712354195544</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Fixed unnecessary header, which broke windows build">
+      <option name="closed" value="true" />
+      <created>1712354474573</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1712354474573</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -739,8 +751,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Fixed music playing multiple times" />
-    <MESSAGE value="Added box2d test" />
     <MESSAGE value="Added box controls and text" />
     <MESSAGE value="Fixed resource system memory leak" />
     <MESSAGE value="Added pre- and post- draw to graphics game object. Added 2 boxes" />
@@ -764,7 +774,9 @@
     <MESSAGE value="Refactoring (failure)" />
     <MESSAGE value="Fixed UB in GameWorldPhysics" />
     <MESSAGE value="Added camera controller. Removed scale variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added camera controller. Removed scale variable" />
+    <MESSAGE value="Attempted to add stats, fixed UB in old component" />
+    <MESSAGE value="Fixed unnecessary header, which broke windows build" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed unnecessary header, which broke windows build" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

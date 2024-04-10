@@ -9,7 +9,7 @@
 #include "observers/Subject.h"
 #include "Events.h"
 
-namespace mcgwtt::components {
+namespace mcgwtt {
     struct PaddleMovedEvent : public engine::events::Event {
         sf::Vector2f newPos;
 

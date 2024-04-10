@@ -11,7 +11,7 @@
 #include "../../components/Box2d Test/World.h"
 #include "../../components/Box2d Test/Spinning box.h"
 
-namespace mcgwtt::components {
+namespace mcgwtt {
     struct GameStartedEvent : public engine::events::Event {
         engine::game::GameObject *caller;
         explicit GameStartedEvent(engine::game::GameObject *caller) : caller(caller) {}

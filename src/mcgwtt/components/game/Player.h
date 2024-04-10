@@ -11,7 +11,7 @@
 
 #include "mcgwtt/box2dsfml/Drawing.h"
 
-namespace mcgwtt::components::game {
+namespace mcgwtt {
     struct PlayerBodyPrefs : engine::events::Event {
         float _w, _h, _headR;
         b2Body *_body;

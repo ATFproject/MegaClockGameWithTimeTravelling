@@ -10,7 +10,7 @@
 
 #include "GameWindow.h"
 
-namespace mcgwtt::components {
+namespace mcgwtt {
     class WindowMovementController
             : public engine::components::InputComponent {
     public:

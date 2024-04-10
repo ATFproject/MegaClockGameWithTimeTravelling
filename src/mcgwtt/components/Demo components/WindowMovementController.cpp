@@ -5,7 +5,7 @@
 #include "WindowMovementController.h"
 #include "game/Game.h"
 
-namespace mcgwtt::components {
+namespace mcgwtt {
     WindowMovementController::WindowMovementController(window::GameWindow *win) {
         this->addObserver(win);
     }

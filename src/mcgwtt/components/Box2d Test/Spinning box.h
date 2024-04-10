@@ -8,7 +8,7 @@
 #include "components/ComponentInterface.h"
 #include "World.h"
 
-namespace mcgwtt::components {
+namespace mcgwtt: {
     struct AddedBlock : public engine::events::Event {
         b2Body *_block;
         explicit AddedBlock(b2Body *block) : _block(block) {}

@@ -9,7 +9,7 @@
 #include "game/Game.h"
 
 
-namespace mcgwtt::components::game {
+namespace mcgwtt {
     class CameraController : public engine::components::GraphicsComponent {
     private:
         sf::RenderWindow *_win;

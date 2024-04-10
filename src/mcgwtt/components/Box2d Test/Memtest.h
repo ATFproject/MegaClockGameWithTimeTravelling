@@ -7,7 +7,7 @@
 
 #include "components/ComponentInterface.h"
 
-namespace mcgwtt::components {
+namespace mcgwtt {
     class MemoryTest : public engine::components::GraphicsComponent {
     public:
         void draw(engine::game::GameObject *gameObject) override {

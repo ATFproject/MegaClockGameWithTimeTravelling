@@ -7,7 +7,7 @@
 
 #include "components/ComponentInterface.h"
 
-namespace mcgwtt::components::game {
+namespace mcgwtt {
     struct GamePausedEvent : public engine::events::Event {
         bool _paused;
         explicit GamePausedEvent(bool paused) : _paused(paused) {}

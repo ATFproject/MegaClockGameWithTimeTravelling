@@ -10,7 +10,7 @@
 
 #include "engine/window/GameWindow.h"
 
-namespace mcgwtt::components {
+namespace mcgwtt {
     class WindowController : public engine::components::InputComponent {
     public:
         explicit WindowController(window::GameWindow *win) {
