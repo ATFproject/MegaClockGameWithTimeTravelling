@@ -5,7 +5,6 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 
-#include "components/ComponentInterface.h"
 #include "GameWorld.h"
 #include "game/Game.h"
 
@@ -41,11 +40,11 @@ namespace mcgwtt {
 
             b2PolygonShape shapeBody;
             shapeBody.SetAsBox(_w, _h - _headR * 2,
-                               b2Vec2(_x + _w / 2, _y + _h), 0);
+                               b2Vec2(_x, _y + _h), 0);
             auto body = _body->CreateFixture(&shapeBody, 5.0f);
 
             b2CircleShape shapeHead;
-            shapeHead.m_p.Set(_x + _w / 2, _y + _headR);
+            shapeHead.m_p.Set(_x, _y + _headR);
             shapeHead.m_radius = _headR;
             auto head = _body->CreateFixture(&shapeHead, 5.0f);
             notify(PlayerData(_body, body, head));

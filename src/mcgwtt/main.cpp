@@ -5,6 +5,9 @@
 
 #include "GameWorld.h"
 #include "Player.h"
+#include "Platform.h"
+#include "DebugGrid.h"
+
 #include "CameraController.h"
 
 #include "window/GameWindow.h"
@@ -28,13 +31,22 @@ int main() {
 
     window.addGameObject(new mcgwtt::WindowController(&window), nullptr, nullptr);
 
-    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 0.25), 1 / 165.f, 8, 3);
+    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
 
     window.addGameObject(nullptr, world, nullptr);
     window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(&win, 30));
 
     window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, 0, 0),
                          new mcgwtt::PlayerGraphics(&win));
+
+    window.addGameObject(nullptr,
+                         new mcgwtt::PlatformPhysics(world, 0, 6, 1, 1),
+                         new mcgwtt::PlatformGraphics(&win));
+
+    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win));
+//    window.addGameObject(nullptr,
+//                         new mcgwtt::PlatformPhysics(world, 0, 0, 1, 1),
+//                         new mcgwtt::PlatformGraphics(&win));
 
     window.startRendering();
 
