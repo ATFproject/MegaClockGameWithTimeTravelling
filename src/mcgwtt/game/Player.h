@@ -35,6 +35,7 @@ namespace mcgwtt {
             b2BodyDef bd;
             bd.type = b2_dynamicBody;
             bd.position.Set(_x, _y);
+            bd.fixedRotation = true;
 
             _body = game._world->CreateBody(&bd);
 
@@ -51,7 +52,12 @@ namespace mcgwtt {
         }
 
         void tick(engine::game::Game &game) override {
-
+            if (game.isKeyPressed(sf::Keyboard::Scancode::D)) {
+                _body->SetLinearVelocity(b2Vec2(1, _body->GetLinearVelocity().y));
+            }
+            if (game.isKeyPressed(sf::Keyboard::Scancode::A)) {
+                _body->SetLinearVelocity(b2Vec2(-1, _body->GetLinearVelocity().y));
+            }
         }
     };
 

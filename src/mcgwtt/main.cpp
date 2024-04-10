@@ -40,7 +40,7 @@ int main() {
                          new mcgwtt::PlayerGraphics(&win));
 
     window.addGameObject(nullptr,
-                         new mcgwtt::PlatformPhysics(world, 0, 6, 1, 1),
+                         new mcgwtt::PlatformPhysics(world, 0, 6, 4, 1),
                          new mcgwtt::PlatformGraphics(&win));
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win));
