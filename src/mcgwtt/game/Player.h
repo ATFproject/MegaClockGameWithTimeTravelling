@@ -62,7 +62,7 @@ namespace mcgwtt {
             _body = prefs->_playerBody;
 
             sf::Sprite body;
-            body.setTexture(engine::resourceHandler.addRes(new engine::Texture("player body 2.png"))->getTex());
+            body.setTexture(engine::resourceHandler.addRes(new engine::Texture("player body.png"))->getTex());
             _sprites[prefs->_body] = std::move(body);
 
             sf::Sprite head;
