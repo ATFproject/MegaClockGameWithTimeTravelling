@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "GameObject.h"
 #include "window/GameWindow.h"
+#include "ViewController.h"
 
 namespace engine::game {
     void Game::operator<<(GameObject *toAdd) {
