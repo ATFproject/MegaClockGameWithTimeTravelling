@@ -40,3 +40,4 @@ out/
 *.app
 
 !/out/
+/.PVS-Studio/
