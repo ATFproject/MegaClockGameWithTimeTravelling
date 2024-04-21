@@ -9,6 +9,7 @@
 #include "DebugGrid.h"
 
 #include "CameraController.h"
+#include "ViewController.h"
 
 #include "window/GameWindow.h"
 
@@ -35,6 +36,7 @@ int main() {
 
     window.addGameObject(nullptr, world, nullptr);
     window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(&win, 30));
+    window.addGameObject(nullptr, nullptr, new mcgwtt::ViewController());
 
     window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, 0, 0),
                          new mcgwtt::PlayerGraphics(&win));

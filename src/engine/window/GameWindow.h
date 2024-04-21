@@ -38,7 +38,8 @@ namespace window {
         void handleSfmlEvents();
     };
 
-    struct WindowCloseEvent : public engine::Event {};
+    struct WindowCloseEvent : public engine::Event {
+    };
 
     struct WindowResizeEvent : public engine::Event {
         const sf::Vector2u _newSize;
@@ -48,6 +49,11 @@ namespace window {
     struct WindowFocusChangeEvent : public engine::Event {
         bool _inFocus;
         explicit WindowFocusChangeEvent(bool inFocus) : _inFocus(inFocus) {}
+    };
+
+    struct WindowViewChangedEvent : public engine::Event {
+        sf::View _newView;
+        explicit WindowViewChangedEvent(const sf::View &newView) : _newView(newView) {}
     };
 
     struct KeyPressedEvent : public engine::Event {

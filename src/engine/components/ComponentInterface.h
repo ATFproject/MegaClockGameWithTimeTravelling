@@ -10,14 +10,6 @@
 #include "game/GameDef.h"
 
 namespace engine::components {
-    class GraphicsComponent : public Observer, public Subject {
-    public:
-        virtual void init(game::Game &game) {}
-
-        virtual void draw() = 0;
-        ~GraphicsComponent() override = default;
-    };
-
     class InputComponent : public Observer, public Subject {
     public:
         virtual void init(game::Game &game) {}
@@ -32,6 +24,14 @@ namespace engine::components {
 
         virtual void tick(game::Game &game) = 0;
         ~PhysicsComponent() override = default;
+    };
+
+    class GraphicsComponent : public Observer, public Subject {
+    public:
+        virtual void init(game::Game &game) {}
+
+        virtual void draw() = 0;
+        ~GraphicsComponent() override = default;
     };
 }
 

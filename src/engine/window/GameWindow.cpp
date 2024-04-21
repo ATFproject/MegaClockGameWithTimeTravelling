@@ -86,6 +86,9 @@ namespace window {
         ENGINE_CHECK_EVENT(WindowCloseEvent,
                            _win->close();
         )
+        ENGINE_CHECK_EVENT(WindowViewChangedEvent,
+                           _win->setView(e->_newView);
+        )
     }
 
     tgui::Gui &GameWindow::getGui() {
