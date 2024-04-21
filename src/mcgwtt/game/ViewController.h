@@ -6,7 +6,7 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_VIEWCONTROLLER_H
 
 #include "components/ComponentInterface.h"
-#include "game/Game.h"
+#include "window/GameWindow.h"
 
 namespace mcgwtt {
     struct PushViewEvent : engine::Event {
@@ -31,6 +31,11 @@ namespace mcgwtt {
         }
 
         void popView() {
+            if (_views.empty()) {
+                setFullScreenView();
+                return;
+            }
+
             _view = _views.top();
             _views.pop();
             notify(window::WindowViewChangedEvent(_view));
@@ -59,8 +64,20 @@ namespace mcgwtt {
             ENGINE_CHECK_EVENT(SetViewEvent, setView(e->_view);)
             ENGINE_CHECK_EVENT(SetFullScreenViewEvent, setFullScreenView();)
         }
+        void init(engine::game::Game &game) override {
+            addObserver(&game);
+        }
 
         void draw() override {
+        }
+    };
+
+    class AbleToControlViewComponent : public engine::components::GraphicsComponent {
+    public:
+        AbleToControlViewComponent() = delete;
+
+        explicit AbleToControlViewComponent(ViewController *viewController) {
+            addObserver(viewController);
         }
     };
 }

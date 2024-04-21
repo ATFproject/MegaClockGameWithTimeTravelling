@@ -10,22 +10,20 @@
 
 
 namespace mcgwtt {
-    class CameraController : public engine::components::GraphicsComponent {
+    class CameraController : public AbleToControlViewComponent {
     private:
-        sf::RenderWindow *_win;
-        sf::View _view;
         float _zoom;
 
         void resize(float newW, float newH) {
-            _view.setCenter(0, 0);
-            _view.setSize(newW / _zoom, newH / _zoom);
-
-            _win->setView(_view);
+            sf::View view;
+            view.setCenter(0, 0);
+            view.setSize(newW / _zoom, newH / _zoom);
+            notify(SetViewEvent(view));
         }
 
     public:
-        CameraController(sf::RenderWindow *win, float initialZoom)
-                : _win(win), _view(win->getDefaultView()), _zoom(initialZoom) {
+        CameraController(ViewController *viewController, float initialZoom)
+                : AbleToControlViewComponent(viewController), _zoom(initialZoom) {
         }
 
         void draw() override {
