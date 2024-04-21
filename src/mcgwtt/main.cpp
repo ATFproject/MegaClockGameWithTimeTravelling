@@ -9,6 +9,7 @@
 #include "DebugGrid.h"
 
 #include "CameraController.h"
+#include "ViewController.h"
 
 #include "window/GameWindow.h"
 
@@ -34,7 +35,11 @@ int main() {
     auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
 
     window.addGameObject(nullptr, world, nullptr);
-    window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(&win, 30));
+
+    auto view = new mcgwtt::ViewController();
+    window.addGameObject(nullptr, nullptr, view);
+    window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(view, 30));
+
 
     window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, 0, 0),
                          new mcgwtt::PlayerGraphics(&win));
@@ -43,7 +48,7 @@ int main() {
                          new mcgwtt::PlatformPhysics(world, 0, 6, 4, 1),
                          new mcgwtt::PlatformGraphics(&win));
 
-    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win));
+    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
 
     window.startRendering();
 

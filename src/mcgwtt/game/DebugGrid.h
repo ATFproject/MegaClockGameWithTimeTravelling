@@ -6,9 +6,10 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_DEBUGGRID_H
 
 #include "components/ComponentInterface.h"
+#include "ViewController.h"
 
 namespace mcgwtt {
-    class DebugGridGraphics : public engine::components::GraphicsComponent {
+    class DebugGridGraphics : public AbleToControlViewComponent {
     private:
         sf::RectangleShape _xAxis, _yAxis;
         std::vector<sf::RectangleShape> _points;
@@ -35,14 +36,15 @@ namespace mcgwtt {
 
             for (uint i = 0; i < newSize.y; i += zoom) {
                 sf::RectangleShape shape(sf::Vector2f(newSize.x, _lineWidth));
-                shape.setPosition(0, i - _lineWidth / 2.f );
+                shape.setPosition(0, i - _lineWidth / 2.f);
                 shape.setFillColor(sf::Color::Black);
                 _points.push_back(shape);
             }
         }
 
     public:
-        explicit DebugGridGraphics(sf::RenderWindow *win) : _win(win) {}
+        DebugGridGraphics(sf::RenderWindow *win, ViewController *viewController)
+                : AbleToControlViewComponent(viewController), _win(win) {}
 
         void init(engine::game::Game &game) override {
             game.addObserver(this);
@@ -53,11 +55,8 @@ namespace mcgwtt {
         }
 
         void draw() override {
-            auto viewBackup = _win->getView();
-            const auto &size = _win->getSize();
-            sf::View view(sf::Vector2f(size.x / 2, size.y / 2),
-                          sf::Vector2f(size.x, size.y));
-            _win->setView(view);
+            notify(PushViewEvent());
+            notify(SetFullScreenViewEvent());
 
             for (auto &p : _points)
                 _win->draw(p);
@@ -65,7 +64,7 @@ namespace mcgwtt {
             _win->draw(_xAxis);
             _win->draw(_yAxis);
 
-            _win->setView(viewBackup);
+            notify(PopViewEvent());
         }
     };
 }
