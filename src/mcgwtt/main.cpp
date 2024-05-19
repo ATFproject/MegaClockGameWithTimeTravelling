@@ -4,9 +4,11 @@
 #include "WindowController.h"
 
 #include "GameWorld.h"
-#include "Player.h"
-#include "Platform.h"
 #include "DebugGrid.h"
+
+#include "Player.h"
+
+#include "Cars.h"
 
 #include "CameraController.h"
 
@@ -34,16 +36,25 @@ int main() {
     auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
 
     window.addGameObject(nullptr, world, nullptr);
-    window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(&win, 30));
+    window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(&win, 6));
 
-    window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, 0, 0),
-                         new mcgwtt::PlayerGraphics(&win));
+    for (int i = 0; i < 8; ++i) {
+        window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, -6 + i * 2, -42),
+                             new mcgwtt::PlayerGraphics(&win));
+    }
 
+    /*
     window.addGameObject(nullptr,
                          new mcgwtt::PlatformPhysics(world, 0, 6, 4, 1),
                          new mcgwtt::PlatformGraphics(&win));
+                         */
+
+
+    window.addGameObject(nullptr, new mcgwtt::CarMapPhysics("Cars/Map.png"),
+                         new mcgwtt::CarMapGraphics(&win, "Cars/Road.png", "Cars/Wtf.png"));
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win));
+
 
     window.startRendering();
 

@@ -42,11 +42,14 @@ namespace mcgwtt {
             shapeBody.SetAsBox(_w, _h - _headR * 2,
                                b2Vec2(_x, _y + _h), 0);
             auto body = _body->CreateFixture(&shapeBody, 5.0f);
+            body->SetRestitution(std::numeric_limits<uint64_t>().max());
+
 
             b2CircleShape shapeHead;
             shapeHead.m_p.Set(_x, _y + _headR);
             shapeHead.m_radius = _headR;
             auto head = _body->CreateFixture(&shapeHead, 2.0f);
+            _body->SetTransform(b2Vec2(0, 0), 0);
             notify(PlayerData(_body, body, head));
         }
 

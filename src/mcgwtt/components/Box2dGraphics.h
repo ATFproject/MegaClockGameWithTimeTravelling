@@ -30,7 +30,8 @@ namespace mcgwtt {
                 shape.setPointCount(20);
                 sf::CircleShape ref(circle->m_radius, 20);
                 for (std::size_t i = 0; i < 20; ++i) {
-                    shape.setPoint(i, ref.getPoint(i) - sf::Vector2f(circle->m_radius, 0));
+                    shape.setPoint(i, ref.getPoint(i) +
+                                      sf::Vector2f(circle->m_p.x - circle->m_radius, circle->m_p.y - circle->m_radius));
                 }
             }
             shape.setPosition(_body->GetPosition().x, _body->GetPosition().y);
