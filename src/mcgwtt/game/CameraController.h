@@ -14,12 +14,20 @@ namespace mcgwtt {
     private:
         sf::View _view;
         float _zoom;
+        float _saveW{}, _saveH{};
 
-        void resize(float newW, float newH) {
-            sf::View view;
-            view.setCenter(0, 0);
-            view.setSize(newW / _zoom, newH / _zoom);
-            notify(SetViewEvent(view));
+        void rezoom(float newZoom) {
+            _zoom = newZoom;
+            resize(_saveW, _saveH, _view.getCenter().x, _view.getCenter().y);
+            std::cout << "New zoom: " << newZoom << "'\n";
+        }
+
+        void resize(float newW, float newH, float x = 0, float y = 0) {
+            _saveW = newW;
+            _saveH = newH;
+            _view.setCenter(x, y);
+            _view.setSize(newW / _zoom, newH / _zoom);
+            notify(SetViewEvent(_view));
         }
 
     public:
@@ -28,6 +36,30 @@ namespace mcgwtt {
         }
 
         void draw() override {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+                _view.move({0, -0.1f});
+                rezoom(_zoom);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+                _view.move({0, 0.1f});
+                rezoom(_zoom);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+                _view.move({-0.1f, 0});
+                rezoom(_zoom);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+                _view.move({0.1f, 0});
+                rezoom(_zoom);
+            }
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::PageUp))
+                rezoom(_zoom * 1.05);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::PageDown))
+                rezoom(_zoom / 1.05);
         }
 
         void onNotify(const engine::Event &event) override {

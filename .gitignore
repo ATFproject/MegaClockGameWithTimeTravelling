@@ -1,11 +1,12 @@
 ### C++ template
 
 # Build and executables
-build/
-out/
+/build/
+/out/
 
 .idea/workspace.xml
-.PVS-Studio/
+/.idea/dictionaries/
+/.PVS-Studio/
 
 # Prerequisites
 *.d
@@ -40,5 +41,3 @@ out/
 *.out
 *.app
 
-!/out/
-/.PVS-Studio/
