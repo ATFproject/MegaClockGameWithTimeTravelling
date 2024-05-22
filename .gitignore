@@ -5,6 +5,7 @@ build/
 out/
 
 .idea/workspace.xml
+.PVS-Studio/
 
 # Prerequisites
 *.d

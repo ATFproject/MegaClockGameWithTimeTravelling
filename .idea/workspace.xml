@@ -38,12 +38,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed draw method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/DebugGrid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/DebugGrid.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/GameWorld.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/Cars.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/CameraController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
@@ -143,7 +140,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Shape-drawing",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -170,11 +167,6 @@
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>

@@ -4,9 +4,11 @@
 #include "WindowController.h"
 
 #include "GameWorld.h"
-#include "Player.h"
 #include "Platform.h"
 #include "DebugGrid.h"
+
+#include "Player.h"
+#include "Cars.h"
 
 #include "CameraController.h"
 
