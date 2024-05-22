@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "GameObject.h"
 #include "window/GameWindow.h"
+#include "ViewController.h"
 
 namespace engine::game {
     void Game::operator<<(GameObject *toAdd) {
@@ -41,6 +42,8 @@ namespace engine::game {
     }
 
     void Game::onNotify(const Event &event) {
+        ENGINE_CHECK_EVENT(window::WindowViewChangedEvent, notify(*e);)
+
         ENGINE_CHECK_EVENT(window::WindowResizeEvent,
                            notify(GameResizeEvent(e->_newSize));
         )

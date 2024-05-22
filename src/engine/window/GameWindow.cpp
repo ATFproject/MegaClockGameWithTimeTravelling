@@ -9,6 +9,7 @@ namespace window {
     GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _gui(*window), _isActive(false) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
+        _game.addObserver(this);
     }
 
     void GameWindow::startRendering() {
@@ -85,6 +86,9 @@ namespace window {
     void GameWindow::onNotify(const engine::Event &event) {
         ENGINE_CHECK_EVENT(WindowCloseEvent,
                            _win->close();
+        )
+        ENGINE_CHECK_EVENT(WindowViewChangedEvent,
+                           _win->setView(e->_newView);
         )
     }
 
