@@ -42,6 +42,12 @@ FetchContent_Declare(tgui SYSTEM
         GIT_TAG v1.1.0)
 FetchContent_MakeAvailable(tgui)
 
+message(STATUS "Downloading nlohmann/json")
+FetchContent_Declare(json SYSTEM
+        GIT_REPOSITORY https://github.com/nlohmann/json.git
+        GIT_TAG v3.11.3)
+FetchContent_MakeAvailable(json)
+
 # Get all cpp files in the project recursively to a variable
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp")
 
@@ -54,6 +60,7 @@ target_link_libraries(${PROJECT_NAME}
         PRIVATE sfml-audio
         PRIVATE box2d
         PRIVATE tgui
+        PRIVATE nlohmann_json::nlohmann_json
 )
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
 

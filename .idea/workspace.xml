@@ -38,20 +38,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added debug camera controller">
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/CameraComponents.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/DebugComponents.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/SystemComponents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/Scene.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/camera/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/debug/DebugCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/debug/DebugGrid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/system/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/system/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +139,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "scenes",
     "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
