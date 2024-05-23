@@ -1,15 +1,13 @@
 // This is an open source non-commercial project. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-#include "system/WindowController.h"
-#include "system/GameWorld.h"
+#include "SystemComponents.h"
+#include "DebugComponents.h"
+#include "CameraComponents.h"
 
-#include "Platform.h"
-#include "debug/DebugGrid.h"
+#include "game/Platform.h"
+#include "game/Player.h"
 
-#include "Player.h"
-
-#include "debug/DebugCamera.h"
 #include "window/GameWindow.h"
 
 int main() {

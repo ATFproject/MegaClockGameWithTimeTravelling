@@ -37,11 +37,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Restructured components to separate dirs">
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/debug/DebugCamera.h" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added debug camera controller">
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/CameraComponents.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/DebugComponents.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/SystemComponents.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/camera/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/camera/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/debug/DebugCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/debug/DebugGrid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/system/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/system/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,11 +168,11 @@
       <recent name="$PROJECT_DIR$/resources/tgui/forms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/mcgwtt/game/system" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/game/debug" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/game/camera" />
+      <recent name="$PROJECT_DIR$/src/mcgwtt/components" />
       <recent name="$PROJECT_DIR$/src/mcgwtt" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/components/game" />
+      <recent name="$PROJECT_DIR$/src/mcgwtt/game" />
+      <recent name="$PROJECT_DIR$/src/mcgwtt/game/camera" />
+      <recent name="$PROJECT_DIR$/src/mcgwtt/game/system" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
@@ -280,15 +290,7 @@
       <workItem from="1712762304134" duration="17366000" />
       <workItem from="1712782335714" duration="9000" />
       <workItem from="1712784561413" duration="1109000" />
-      <workItem from="1716478949072" duration="2485000" />
-    </task>
-    <task id="LOCAL-00043" summary="Changed onNotify to onNotifyType in one case to remove ambiguous code">
-      <option name="closed" value="true" />
-      <created>1709416558495</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1709416558495</updated>
+      <workItem from="1716478949072" duration="3329000" />
     </task>
     <task id="LOCAL-00044" summary="Added resources">
       <option name="closed" value="true" />
@@ -674,7 +676,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716480964278</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Added debug camera controller">
+      <option name="closed" value="true" />
+      <created>1716481609652</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1716481609652</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,7 +720,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Added picture test" />
     <MESSAGE value="Set engine def to be the first included file in all headers" />
     <MESSAGE value="Added player drawing" />
     <MESSAGE value="Made scale larger" />
@@ -735,7 +744,8 @@
     <MESSAGE value="Fixed draw method" />
     <MESSAGE value="Added view zoom and move support to camera controller" />
     <MESSAGE value="Restructured components to separate dirs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructured components to separate dirs" />
+    <MESSAGE value="Added debug camera controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added debug camera controller" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

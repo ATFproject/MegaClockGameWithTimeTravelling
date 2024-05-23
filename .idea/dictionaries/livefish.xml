@@ -2,9 +2,11 @@
   <dictionary name="livefish">
     <words>
       <w>arialmt</w>
+      <w>cameracomponents</w>
       <w>cameracontroller</w>
       <w>componentdef</w>
       <w>debugcamera</w>
+      <w>debugcomponents</w>
       <w>debuggrid</w>
       <w>dgraphics</w>
       <w>drawablerect</w>
@@ -21,6 +23,7 @@
       <w>resourcedef</w>
       <w>rezoom</w>
       <w>smartenum</w>
+      <w>systemcomponents</w>
       <w>tgui</w>
       <w>timestep</w>
       <w>windowcontroller</w>
