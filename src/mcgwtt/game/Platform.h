@@ -7,7 +7,7 @@
 
 #include "mcgwtt/components/Box2dGraphics.h"
 
-#include "GameWorld.h"
+#include "system/GameWorld.h"
 
 namespace mcgwtt {
     struct PlatformData : engine::Event {

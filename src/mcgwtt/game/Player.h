@@ -5,7 +5,7 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 
-#include "GameWorld.h"
+#include "system/GameWorld.h"
 #include "game/Game.h"
 
 #include "mcgwtt/components/Box2dGraphics.h"

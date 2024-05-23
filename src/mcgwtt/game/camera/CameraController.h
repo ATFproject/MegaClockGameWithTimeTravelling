@@ -7,7 +7,7 @@
 
 #include "components/ComponentInterface.h"
 #include "game/Game.h"
-
+#include "ViewController.h"
 
 namespace mcgwtt {
     class CameraController : public AbleToControlViewComponent {

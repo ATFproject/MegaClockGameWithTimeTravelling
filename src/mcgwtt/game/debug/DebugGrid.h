@@ -6,7 +6,7 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_DEBUGGRID_H
 
 #include "components/ComponentInterface.h"
-#include "ViewController.h"
+#include "camera/ViewController.h"
 
 namespace mcgwtt {
     class DebugGridGraphics : public AbleToControlViewComponent {

@@ -3,7 +3,6 @@
 
 #include "GameObject.h"
 #include "components/EmptyComponents.h"
-#include "ViewController.h"
 
 namespace engine::game {
     void GameObject::init(Game &game) {
