@@ -9,7 +9,7 @@
 
 #include "Player.h"
 
-#include "camera/CameraController.h"
+#include "debug/DebugCamera.h"
 #include "window/GameWindow.h"
 
 int main() {
@@ -37,7 +37,7 @@ int main() {
 
     auto view = new mcgwtt::ViewController();
     window.addGameObject(nullptr, nullptr, view);
-    window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(view, 30));
+    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 
 
     window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, 0, 0),

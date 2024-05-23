@@ -5,13 +5,11 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_CAMERACONTROLLER_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_CAMERACONTROLLER_H
 
-#include "components/ComponentInterface.h"
-#include "game/Game.h"
 #include "ViewController.h"
 
 namespace mcgwtt {
     class CameraController : public AbleToControlViewComponent {
-    private:
+    protected:
         sf::View _view;
         float _zoom;
         float _saveW{}, _saveH{};
@@ -33,33 +31,6 @@ namespace mcgwtt {
     public:
         CameraController(ViewController *viewController, float initialZoom)
                 : AbleToControlViewComponent(viewController), _zoom(initialZoom) {
-        }
-
-        void draw() override {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-                _view.move({0, -0.1f});
-                rezoom(_zoom);
-            }
-
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-                _view.move({0, 0.1f});
-                rezoom(_zoom);
-            }
-
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-                _view.move({-0.1f, 0});
-                rezoom(_zoom);
-            }
-
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-                _view.move({0.1f, 0});
-                rezoom(_zoom);
-            }
-
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::PageUp))
-                rezoom(_zoom * 1.05);
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::PageDown))
-                rezoom(_zoom / 1.05);
         }
 
         void onNotify(const engine::Event &event) override {
