@@ -37,7 +37,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added camera loading from scene file" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Set cmake standard to 23">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,23 +276,7 @@
       <workItem from="1712782335714" duration="9000" />
       <workItem from="1712784561413" duration="1109000" />
       <workItem from="1716478949072" duration="3329000" />
-      <workItem from="1716581242465" duration="866000" />
-    </task>
-    <task id="LOCAL-00046" summary="Remade event system">
-      <option name="closed" value="true" />
-      <created>1709469206637</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1709469206637</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Resource manager!">
-      <option name="closed" value="true" />
-      <created>1709836811319</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1709836811319</updated>
+      <workItem from="1716581242465" duration="1468000" />
     </task>
     <task id="LOCAL-00048" summary="Fixed res manager map lookup">
       <option name="closed" value="true" />
@@ -667,7 +654,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716581788234</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Added libfmt-dev for &lt;format&gt; header">
+      <option name="closed" value="true" />
+      <created>1716582173607</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1716582173607</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Set cmake standard to 23">
+      <option name="closed" value="true" />
+      <created>1716582435412</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1716582435412</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,8 +706,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Made scale larger" />
-    <MESSAGE value="Refactoring (failure)" />
     <MESSAGE value="Fixed UB in GameWorldPhysics" />
     <MESSAGE value="Added camera controller. Removed scale variable" />
     <MESSAGE value="Attempted to add stats, fixed UB in old component" />
@@ -728,7 +729,9 @@
     <MESSAGE value="Added debug camera controller" />
     <MESSAGE value="Added json support for scenes" />
     <MESSAGE value="Added camera loading from scene file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added camera loading from scene file" />
+    <MESSAGE value="Added libfmt-dev for &lt;format&gt; header" />
+    <MESSAGE value="Set cmake standard to 23" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set cmake standard to 23" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

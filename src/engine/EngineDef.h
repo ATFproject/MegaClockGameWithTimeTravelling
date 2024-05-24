@@ -19,7 +19,8 @@
 #include <chrono>
 #include <optional>
 #include <variant>
-#include <format>
+
+#include <fmt/format.h>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
