@@ -46,7 +46,7 @@ jobs:
         run: |
           if [ "$RUNNER_OS" == "Linux" ]; then
             sudo apt update
-            sudo apt-get install libfreetype-dev libudev-dev libflac-dev libvorbis-dev libopenal-dev libxrandr-dev libxinerama-dev libxcursor-dev libx11-dev libxi-dev freeglut3-dev cppcheck gcc g++ clang
+            sudo apt-get install libfmt-dev libfreetype-dev libudev-dev libflac-dev libvorbis-dev libopenal-dev libxrandr-dev libxinerama-dev libxcursor-dev libx11-dev libxi-dev freeglut3-dev cppcheck gcc g++ clang
           fi
       - name: Configure CMake
         # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.

@@ -37,16 +37,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added json support for scenes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scenes/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scenes/test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added camera loading from scene file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -282,15 +273,7 @@
       <workItem from="1712782335714" duration="9000" />
       <workItem from="1712784561413" duration="1109000" />
       <workItem from="1716478949072" duration="3329000" />
-      <workItem from="1716581242465" duration="485000" />
-    </task>
-    <task id="LOCAL-00045" summary="NORMAL EVENT SYSTEM!">
-      <option name="closed" value="true" />
-      <created>1709465175780</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1709465175780</updated>
+      <workItem from="1716581242465" duration="866000" />
     </task>
     <task id="LOCAL-00046" summary="Remade event system">
       <option name="closed" value="true" />
@@ -676,7 +659,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716483848136</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Added camera loading from scene file">
+      <option name="closed" value="true" />
+      <created>1716581788232</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1716581788234</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -712,7 +703,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Added player drawing" />
     <MESSAGE value="Made scale larger" />
     <MESSAGE value="Refactoring (failure)" />
     <MESSAGE value="Fixed UB in GameWorldPhysics" />
@@ -737,7 +727,8 @@
     <MESSAGE value="Restructured components to separate dirs" />
     <MESSAGE value="Added debug camera controller" />
     <MESSAGE value="Added json support for scenes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added json support for scenes" />
+    <MESSAGE value="Added camera loading from scene file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added camera loading from scene file" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
