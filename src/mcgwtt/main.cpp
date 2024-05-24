@@ -35,10 +35,15 @@ int main() {
 
     window.addGameObject(nullptr, world, nullptr);
 
+
+
     auto view = new mcgwtt::ViewController();
     window.addGameObject(nullptr, nullptr, view);
-    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
-
+    auto scene = mcgwtt::SceneLoader::load("../resources/scenes/test.json");
+    if (scene._useSavedCamera)
+        window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(scene._camera, view));
+    else
+        window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 
     window.addGameObject(nullptr, new mcgwtt::PlayerPhysics(world, 0, 0),
                          new mcgwtt::PlayerGraphics(&win));
@@ -48,8 +53,6 @@ int main() {
                          new mcgwtt::PlatformGraphics(&win));
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
-
-    mcgwtt::SceneLoader::load("../resources/scenes/test.json");
 
     window.startRendering();
 

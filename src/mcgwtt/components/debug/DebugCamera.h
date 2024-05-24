@@ -41,7 +41,12 @@ namespace mcgwtt {
                 rezoom(_zoom / 1.05);
         }
 
-        DebugCamera(mcgwtt::ViewController *controller, int i)
+        void onNotify(const engine::Event &event) override {
+            ENGINE_CHECK_EVENT(engine::game::GameResizeEvent,
+                               resize(e->_newSize.x, e->_newSize.y);)
+        }
+
+        DebugCamera(mcgwtt::ViewController *controller, float i)
                 : CameraController(controller, i) {}
     };
 }

@@ -38,13 +38,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added json support for scenes">
-      <change afterPath="$PROJECT_DIR$/resources/scenes/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/LoadableComponents.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scenes/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scenes/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +75,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MCGWTT-Base" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -176,11 +176,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="box2d" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="box2d" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -210,6 +205,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="CMake Application.MegaClockGameWithTimeTravelling" />
         <item itemvalue="CMake Application.MegaClockGameWithTimeTravelling" />
       </list>
     </recent_temporary>
@@ -286,6 +282,7 @@
       <workItem from="1712782335714" duration="9000" />
       <workItem from="1712784561413" duration="1109000" />
       <workItem from="1716478949072" duration="3329000" />
+      <workItem from="1716581242465" duration="485000" />
     </task>
     <task id="LOCAL-00045" summary="NORMAL EVENT SYSTEM!">
       <option name="closed" value="true" />

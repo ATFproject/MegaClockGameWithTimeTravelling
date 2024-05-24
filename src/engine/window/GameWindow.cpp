@@ -43,13 +43,11 @@ namespace window {
 
                 case sf::Event::LostFocus:
                     _isActive = false;
-                    std::cout << "Lost focus" << std::endl;
                     notify(WindowFocusChangeEvent{false});
                     break;
 
                 case sf::Event::GainedFocus:
                     _isActive = true;
-                    std::cout << "Gained focus" << std::endl;
                     notify(WindowFocusChangeEvent{true});
                     break;
 

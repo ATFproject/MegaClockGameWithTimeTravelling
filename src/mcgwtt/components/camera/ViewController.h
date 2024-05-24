@@ -63,6 +63,7 @@ namespace mcgwtt {
             ENGINE_CHECK_EVENT(PopViewEvent, popView();)
             ENGINE_CHECK_EVENT(SetViewEvent, setView(e->_view);)
             ENGINE_CHECK_EVENT(SetFullScreenViewEvent, setFullScreenView();)
+
         }
         void init(engine::game::Game &game) override {
             addObserver(&game);

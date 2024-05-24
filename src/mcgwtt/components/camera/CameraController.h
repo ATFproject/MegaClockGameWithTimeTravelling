@@ -17,7 +17,6 @@ namespace mcgwtt {
         void rezoom(float newZoom) {
             _zoom = newZoom;
             resize(_saveW, _saveH, _view.getCenter().x, _view.getCenter().y);
-            std::cout << "New zoom: " << newZoom << "'\n";
         }
 
         void resize(float newW, float newH, float x = 0, float y = 0) {
@@ -44,7 +43,7 @@ namespace mcgwtt {
             };
         }
 
-        friend void from_json(const nlohmann::json &j, CameraController &camera) {
+        friend void from_json(const json &j, CameraController &camera) {
             j.at("zoom").get_to(camera._zoom);
             j.at("saved width").get_to(camera._saveW);
             j.at("saved height").get_to(camera._saveH);
@@ -64,12 +63,21 @@ namespace mcgwtt {
                 : AbleToControlViewComponent(viewController), _zoom(initialZoom) {
         }
 
+        CameraController(const CameraController &old, ViewController *viewController)
+                : AbleToControlViewComponent(viewController),
+                  _view(old._view), _zoom(old._zoom), _saveW(old._saveW), _saveH(old._saveH) {
+        }
+
         void onNotify(const engine::Event &event) override {
-            ENGINE_CHECK_EVENT(engine::game::GameResizeEvent, resize(e->_newSize.x, e->_newSize.y);)
+            ENGINE_CHECK_EVENT(engine::game::GameResizeEvent,
+                               resize(e->_newSize.x, e->_newSize.y, _view.getCenter().x, _view.getCenter().y);)
         }
 
         void draw() override {
-
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                json j(*this);
+                std::cout << j.dump(2) << "\n";
+            }
         }
     };
 }

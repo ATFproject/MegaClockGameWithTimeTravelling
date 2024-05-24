@@ -1,5 +1,27 @@
 {
   "name": "Test scene",
-  "camera": "default",
+  "use saved camera": true,
+  "camera": {
+    "saved height": 1011.0,
+    "saved width": 1920.0,
+    "view": {
+      "center": {
+        "x": 0.0,
+        "y": 12.900012969970703
+      },
+      "rotation": 0.0,
+      "size": {
+        "height": 12.096356391906738,
+        "width": 22.972309112548828
+      },
+      "viewport": {
+        "height": 1.0,
+        "left": 0.0,
+        "top": 0.0,
+        "width": 1.0
+      }
+    },
+    "zoom": 83.57888793945313
+  },
   "game objects": []
 }
