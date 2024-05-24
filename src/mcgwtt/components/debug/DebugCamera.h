@@ -11,6 +11,10 @@ namespace mcgwtt {
     class DebugCamera : public CameraController {
     public:
         void draw() override {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                json j(*this);
+                std::cout << j.dump(2) << "\n";
+            }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
                 _view.move({0, -0.1f});
                 rezoom(_zoom);

@@ -37,10 +37,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added debug camera controller">
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/Scene.h" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added json support for scenes">
+      <change afterPath="$PROJECT_DIR$/resources/scenes/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/LoadableComponents.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +142,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.advertisement.text.has.clang-format": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "scenes",
@@ -157,11 +163,11 @@
       <recent name="$PROJECT_DIR$/resources/tgui/forms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/mcgwtt/components/system/scenes" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/components" />
       <recent name="$PROJECT_DIR$/src/mcgwtt" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/game" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/game/camera" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/game/system" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
@@ -280,14 +286,6 @@
       <workItem from="1712782335714" duration="9000" />
       <workItem from="1712784561413" duration="1109000" />
       <workItem from="1716478949072" duration="3329000" />
-    </task>
-    <task id="LOCAL-00044" summary="Added resources">
-      <option name="closed" value="true" />
-      <created>1709416872355</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1709416872355</updated>
     </task>
     <task id="LOCAL-00045" summary="NORMAL EVENT SYSTEM!">
       <option name="closed" value="true" />
@@ -673,7 +671,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716481609652</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Added json support for scenes">
+      <option name="closed" value="true" />
+      <created>1716483848135</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1716483848136</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -709,7 +715,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Set engine def to be the first included file in all headers" />
     <MESSAGE value="Added player drawing" />
     <MESSAGE value="Made scale larger" />
     <MESSAGE value="Refactoring (failure)" />
@@ -734,7 +739,8 @@
     <MESSAGE value="Added view zoom and move support to camera controller" />
     <MESSAGE value="Restructured components to separate dirs" />
     <MESSAGE value="Added debug camera controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added debug camera controller" />
+    <MESSAGE value="Added json support for scenes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added json support for scenes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

@@ -19,6 +19,7 @@
 #include <chrono>
 #include <optional>
 #include <variant>
+#include <format>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -28,6 +29,8 @@
 #include <TGUI/TGUI.hpp>
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
 
 #include "external/smartenum.hpp"
 #ifdef WIN32

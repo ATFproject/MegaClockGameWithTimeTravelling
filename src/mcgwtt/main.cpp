@@ -1,14 +1,14 @@
 // This is an open source non-commercial project. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-#include "nlohmann/json.hpp"
-
 #include "SystemComponents.h"
 #include "DebugComponents.h"
 #include "CameraComponents.h"
 
 #include "game/Platform.h"
 #include "game/Player.h"
+
+#include "system/scenes/Scene.h"
 
 #include "window/GameWindow.h"
 
@@ -48,6 +48,8 @@ int main() {
                          new mcgwtt::PlatformGraphics(&win));
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
+
+    mcgwtt::SceneLoader::load("../resources/scenes/test.json");
 
     window.startRendering();
 
