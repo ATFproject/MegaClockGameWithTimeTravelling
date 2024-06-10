@@ -33,9 +33,9 @@ namespace engine::game {
         std::vector<GameObject *> _gameObjectsToDelete;
         sf::Vector2u _size;
 
-        bool _keys[256] {};
-        bool _click[256] {};
-        bool _keysOld[256] {};
+        bool _keys[256]{};
+        bool _click[256]{};
+        bool _keysOld[256]{};
     };
 
     struct GameResizeEvent : public Event {

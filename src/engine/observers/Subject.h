@@ -20,6 +20,10 @@ namespace engine {
                              _observers.end());
         }
 
+        void removeAllObservers() {
+            _observers.clear();
+        }
+
     protected:
         void notify(const Event &event) {
             for (auto &observer : _observers) {

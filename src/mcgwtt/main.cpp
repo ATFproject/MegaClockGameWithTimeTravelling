@@ -36,12 +36,12 @@ int main() {
     window.addGameObject(nullptr, world, nullptr);
 
 
-
     auto view = new mcgwtt::ViewController();
     window.addGameObject(nullptr, nullptr, view);
     auto scene = mcgwtt::SceneLoader::load("../resources/scenes/test.json");
+    scene._camera.setViewController(view);
     if (scene._useSavedCamera)
-        window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(scene._camera, view));
+        window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(scene._camera));
     else
         window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 

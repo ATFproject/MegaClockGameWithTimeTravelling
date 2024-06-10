@@ -80,6 +80,11 @@ namespace mcgwtt {
         explicit AbleToControlViewComponent(ViewController *viewController) {
             addObserver(viewController);
         }
+
+        void setViewController(ViewController *viewController) {
+            removeAllObservers();
+            addObserver(viewController);
+        }
     };
 }
 

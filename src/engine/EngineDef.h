@@ -31,9 +31,11 @@
 #include <TGUI/Backend/SFML-Graphics.hpp>
 
 #include <nlohmann/json.hpp>
+
 using json = nlohmann::json;
 
 #include "external/smartenum.hpp"
+
 #ifdef WIN32
 typedef unsigned uint;
 #endif

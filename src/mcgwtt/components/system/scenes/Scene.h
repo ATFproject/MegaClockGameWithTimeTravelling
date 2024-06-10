@@ -15,7 +15,7 @@ namespace mcgwtt {
     public:
         bool _useSavedCamera;
         std::string _name;
-        CameraController _camera {nullptr, 0};
+        CameraController _camera{nullptr, 0};
         std::vector<engine::game::GameObject *> _gameObjects{};
     };
 

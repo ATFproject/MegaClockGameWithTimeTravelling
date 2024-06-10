@@ -85,7 +85,7 @@ namespace engine {
             _tex = loadResource<sf::Texture>(_path);
         }
 
-        [[nodiscard]] sf::Texture * getTex() const {
+        [[nodiscard]] sf::Texture *getTex() const {
             return _tex.get();
         }
     };
