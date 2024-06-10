@@ -37,11 +37,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Animated fixtures prototype">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added missing textures">
+      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,12 +94,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Temp save" />
-        <option name="rewordedMessage" value="Fixed draw method" />
+        <option name="originalMessage" value="Animated fixtures prototype" />
+        <option name="rewordedMessage" value="Animated fixtures prototype" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="be57007794d7bc09b6c2e63419564b725aa39a7c" />
+    <option name="onto" value="f9d8775f4f7a8c8f3a5cc9b700dc3d24dee8c4eb" />
   </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
@@ -128,32 +128,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
-    "CMake Debug.MegaClockGameWithTimeTravelling.executor": "Debug",
-    "Makefile Target.Makefile.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.advertisement.text.has.clang-format": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "animated-fixtures",
-    "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editing.templates",
-    "structure.view.defaults.are.configured": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CMake Application.MegaClockGameWithTimeTravelling.executor&quot;: &quot;Run&quot;,
+    &quot;CMake Debug.MegaClockGameWithTimeTravelling.executor&quot;: &quot;Debug&quot;,
+    &quot;Makefile Target.Makefile.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.advertisement.text.has.clang-format&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;animated-fixtures&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/tgui/forms" />
@@ -284,22 +284,6 @@
       <workItem from="1712784561413" duration="1109000" />
       <workItem from="1716478949072" duration="3329000" />
       <workItem from="1716581242465" duration="1468000" />
-    </task>
-    <task id="LOCAL-00049" summary="Correct music handling">
-      <option name="closed" value="true" />
-      <created>1709840210954</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1709840210954</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Added control customization">
-      <option name="closed" value="true" />
-      <created>1709840648605</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1709840648606</updated>
     </task>
     <task id="LOCAL-00051" summary="Fixed music playing multiple times">
       <option name="closed" value="true" />
@@ -677,7 +661,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718018672727</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Added clean methods to create animations">
+      <option name="closed" value="true" />
+      <created>1718019785309</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1718019785310</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Added missing textures">
+      <option name="closed" value="true" />
+      <created>1718019798012</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1718019798012</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,8 +701,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Added camera controller. Removed scale variable" />
-    <MESSAGE value="Attempted to add stats, fixed UB in old component" />
     <MESSAGE value="Fixed unnecessary header, which broke windows build" />
     <MESSAGE value="Removed unneeded namespaces" />
     <MESSAGE value="Removed old test components" />
@@ -725,6 +723,8 @@
     <MESSAGE value="Added camera loading from scene file" />
     <MESSAGE value="Added libfmt-dev for &lt;format&gt; header" />
     <MESSAGE value="Set cmake standard to 23" />
+    <MESSAGE value="Added missing textures" />
+    <MESSAGE value="Added clean methods to create animations" />
     <MESSAGE value="Animated fixtures prototype" />
     <option name="LAST_COMMIT_MESSAGE" value="Animated fixtures prototype" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />

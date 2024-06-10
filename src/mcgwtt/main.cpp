@@ -23,7 +23,7 @@ int main() {
     window::GameWindow window(&win);
 
     sf::Image icon;
-    icon = engine::resourceHandler.addRes(new engine::Texture("icon.png"))->getTex()->copyToImage();
+    icon = engine::resourceHandler.loadRes(new engine::Texture("icon.png"))->getTex()->copyToImage();
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     win.setPosition(sf::Vector2i(550, 50));
     win.setFramerateLimit(165);

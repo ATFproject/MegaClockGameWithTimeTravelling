@@ -71,14 +71,7 @@ namespace mcgwtt {
         void initSprites(const PlayerData *prefs) {
             _body = prefs->_playerBody;
 
-            Animation bodyAnim(2, {
-                    "player body no butt.png",
-                    "player body 1 butt.png",
-                    "player body 2 butt.png",
-                    "player body 3 butt.png",
-                    "player body 2 butt.png",
-                    "player body 1 butt.png",
-            });
+            Animation bodyAnim(3, "player body.png", 4, 2, 6);
             _animations[prefs->_body] = bodyAnim;
 
             _animations[prefs->_head] = Animation::getStaticAnimation("player head.png");

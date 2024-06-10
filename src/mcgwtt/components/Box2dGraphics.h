@@ -24,16 +24,38 @@ namespace mcgwtt {
     public:
         Animation() = default;
 
-        Animation(double fps, const std::vector<std::string> &texNames)
+        Animation(double fps, const std::string &spriteSheetName, uint rows, uint columns, uint spriteCount)
                 : _fps(fps) {
-            for (auto &name : texNames) {
-                _frames.push_back(
-                        engine::resourceHandler.addRes(new engine::Texture(name))->getTex()
+            sf::Image spriteSheet = engine::resourceHandler.loadRes(
+                    new engine::Texture(spriteSheetName))->getTex()->copyToImage();
+
+            uint x = 0, y = 0;
+            uint texW = spriteSheet.getSize().x / rows;
+            uint texH = spriteSheet.getSize().y / columns;
+            for (uint i = 0; i < spriteCount; ++i) {
+                auto *temp = new sf::Texture;
+                temp->loadFromImage(spriteSheet, sf::IntRect(
+                        static_cast<int>(x), static_cast<int>(y), static_cast<int>(texW), static_cast<int>(texH))
                 );
+
+                std::string name =
+                        "Spritesheet \"" + spriteSheetName + "\" (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+                _frames.push_back(engine::resourceHandler.addRes(name, new engine::Texture(temp, name))->getTex());
+
+                x = (x + texW) % spriteSheet.getSize().x;
+                if (x == 0 && i != 0)
+                    y += texH;
             }
         }
 
-        Animation(double fps, const std::vector<sf::Texture*>& textures)
+        Animation(double fps, const std::vector<std::string> &texNames)
+                : _fps(fps) {
+            for (auto &name : texNames) {
+                _frames.push_back(engine::resourceHandler.loadRes(new engine::Texture(name))->getTex());
+            }
+        }
+
+        Animation(double fps, const std::vector<sf::Texture *> &textures)
                 : _fps(fps) {
             for (auto &tex : textures) {
                 _frames.push_back(tex);

@@ -81,6 +81,10 @@ namespace engine {
             _tex = loadResource<sf::Texture>(_path);
         }
 
+        Texture(sf::Texture *tex, const std::string &name = "") : Resource(name) {
+            _tex.reset(tex);
+        }
+
         void load() override {
             _tex = loadResource<sf::Texture>(_path);
         }
@@ -170,10 +174,16 @@ namespace engine {
                     throw std::runtime_error("Res: " + name + " not found!");
                 return ptr;
             }
+        template<typename T>
+            requires std::is_base_of_v<Resource, T>
+            T *addRes(const std::string &Name, T *mem) {
+                _res.try_emplace(Name, resourcePtr(mem));
+                return mem;
+            }
 
         template<typename T>
             requires std::is_base_of_v<Resource, T>
-            T *addRes(T *mem, const std::string &fileName = "", const std::string &name = "") {
+            T *loadRes(T *mem, const std::string &fileName = "", const std::string &name = "") {
                 std::string resName;
                 if (!name.empty())
                     resName = name;
