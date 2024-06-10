@@ -51,8 +51,13 @@ namespace mcgwtt {
         void initSprites(const PlatformData *prefs) {
             _body = prefs->_body;
             sf::ConvexShape body;
-            body.setTexture(engine::resourceHandler.addRes(new engine::Texture("ground tile.png"))->getTex());
-            _shapes[prefs->_fixture] = std::move(body);
+
+            Animation platformAnim;
+            platformAnim._shape = std::move(body);
+            platformAnim._fps = 1;
+            platformAnim._frames.push_back(
+                    engine::resourceHandler.addRes(new engine::Texture("ground tile.png"))->getTex());
+            _animations[&prefs->_body->GetFixtureList()[0]] = platformAnim;
         }
     public:
         explicit PlatformGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}

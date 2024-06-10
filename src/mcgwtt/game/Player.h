@@ -71,15 +71,39 @@ namespace mcgwtt {
         void initSprites(const PlayerData *prefs) {
             _body = prefs->_playerBody;
 
+            Animation bodyAnim;
             sf::ConvexShape body;
-            sf::Texture *tex = engine::resourceHandler.addRes(new engine::Texture("player body.png"))->getTex();
-            body.setTexture(tex);
-            _shapes[prefs->_body] = std::move(body);
+            bodyAnim._shape = std::move(body);
+            bodyAnim._fps = 2;
+
+            sf::Texture *tex = engine::resourceHandler.addRes(new engine::Texture("player body no butt.png"))->getTex();
+            bodyAnim._frames.push_back(tex);
+
+            tex = engine::resourceHandler.addRes(new engine::Texture("player body 1 butt.png"))->getTex();
+            bodyAnim._frames.push_back(tex);
+
+            tex = engine::resourceHandler.addRes(new engine::Texture("player body 2 butt.png"))->getTex();
+            bodyAnim._frames.push_back(tex);
+
+            tex = engine::resourceHandler.addRes(new engine::Texture("player body 3 butt.png"))->getTex();
+            bodyAnim._frames.push_back(tex);
+
+            tex = engine::resourceHandler.addRes(new engine::Texture("player body 2 butt.png"))->getTex();
+            bodyAnim._frames.push_back(tex);
+
+            tex = engine::resourceHandler.addRes(new engine::Texture("player body 1 butt.png"))->getTex();
+            bodyAnim._frames.push_back(tex);
+
+            _animations[prefs->_body] = bodyAnim;
 
             sf::ConvexShape head;
             tex = engine::resourceHandler.addRes(new engine::Texture("player head.png"))->getTex();
             head.setTexture(tex);
-            _shapes[prefs->_head] = std::move(head);
+            Animation headAnim;
+            headAnim._shape = std::move(head);
+            headAnim._fps = 1;
+            headAnim._frames.push_back(tex);
+            _animations[prefs->_head] = headAnim;
         }
     public:
         explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
