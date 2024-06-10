@@ -20,7 +20,11 @@
 #include <optional>
 #include <variant>
 
+#ifdef WIN32
+#include <format>
+#else
 #include <fmt/format.h>
+#endif
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
