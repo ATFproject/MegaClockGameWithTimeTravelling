@@ -71,39 +71,17 @@ namespace mcgwtt {
         void initSprites(const PlayerData *prefs) {
             _body = prefs->_playerBody;
 
-            Animation bodyAnim;
-            sf::ConvexShape body;
-            bodyAnim._shape = std::move(body);
-            bodyAnim._fps = 2;
-
-            sf::Texture *tex = engine::resourceHandler.addRes(new engine::Texture("player body no butt.png"))->getTex();
-            bodyAnim._frames.push_back(tex);
-
-            tex = engine::resourceHandler.addRes(new engine::Texture("player body 1 butt.png"))->getTex();
-            bodyAnim._frames.push_back(tex);
-
-            tex = engine::resourceHandler.addRes(new engine::Texture("player body 2 butt.png"))->getTex();
-            bodyAnim._frames.push_back(tex);
-
-            tex = engine::resourceHandler.addRes(new engine::Texture("player body 3 butt.png"))->getTex();
-            bodyAnim._frames.push_back(tex);
-
-            tex = engine::resourceHandler.addRes(new engine::Texture("player body 2 butt.png"))->getTex();
-            bodyAnim._frames.push_back(tex);
-
-            tex = engine::resourceHandler.addRes(new engine::Texture("player body 1 butt.png"))->getTex();
-            bodyAnim._frames.push_back(tex);
-
+            Animation bodyAnim(2, {
+                    "player body no butt.png",
+                    "player body 1 butt.png",
+                    "player body 2 butt.png",
+                    "player body 3 butt.png",
+                    "player body 2 butt.png",
+                    "player body 1 butt.png",
+            });
             _animations[prefs->_body] = bodyAnim;
 
-            sf::ConvexShape head;
-            tex = engine::resourceHandler.addRes(new engine::Texture("player head.png"))->getTex();
-            head.setTexture(tex);
-            Animation headAnim;
-            headAnim._shape = std::move(head);
-            headAnim._fps = 1;
-            headAnim._frames.push_back(tex);
-            _animations[prefs->_head] = headAnim;
+            _animations[prefs->_head] = Animation::getStaticAnimation("player head.png");
         }
     public:
         explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}

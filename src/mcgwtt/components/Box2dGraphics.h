@@ -5,19 +5,42 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_BOX2DGRAPHICS_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_BOX2DGRAPHICS_H
 
+#include <utility>
+
 #include "components/ComponentInterface.h"
 
 namespace mcgwtt {
     class Animation {
     private:
         sf::Clock _clock;
-    public:
-        sf::ConvexShape _shape;
-        std::vector<sf::Texture *> _frames;
-        std::size_t _frame = 0;
-        double _fps = 0;
 
-        sf::Texture * curFrame() {
+        double _fps = 0;
+        std::size_t _frame = 0;
+        std::vector<sf::Texture *> _frames;
+
+        void nextFrame() {
+            _frame = (_frame + 1) % _frames.size();
+        }
+    public:
+        Animation() = default;
+
+        Animation(double fps, const std::vector<std::string> &texNames)
+                : _fps(fps) {
+            for (auto &name : texNames) {
+                _frames.push_back(
+                        engine::resourceHandler.addRes(new engine::Texture(name))->getTex()
+                );
+            }
+        }
+
+        Animation(double fps, const std::vector<sf::Texture*>& textures)
+                : _fps(fps) {
+            for (auto &tex : textures) {
+                _frames.push_back(tex);
+            }
+        }
+
+        sf::Texture *curFrame() {
             return _frames[_frame];
         }
 
@@ -28,8 +51,14 @@ namespace mcgwtt {
             }
         }
 
-        void nextFrame() {
-            _frame = (_frame + 1) % _frames.size();
+        static Animation getStaticAnimation(sf::Texture *singleTexture) {
+            Animation res(1, {singleTexture});
+            return res;
+        }
+
+        static Animation getStaticAnimation(const std::string &TexPath) {
+            Animation res(1, {TexPath});
+            return res;
         }
     };
 
@@ -40,7 +69,7 @@ namespace mcgwtt {
         b2Body *_body{};
 
         void drawFixture(b2Fixture *fix) {
-            auto shape = _animations[fix]._shape;
+            sf::ConvexShape shape;
             shape.setTexture(_animations[fix].curFrame());
 
             if (fix->GetType() == b2PolygonShape::Type::e_polygon) {
@@ -64,6 +93,7 @@ namespace mcgwtt {
             shape.setPosition(_body->GetPosition().x, _body->GetPosition().y);
             shape.setRotation(_body->GetAngle() / b2_pi * 180.0f);
             _win->draw(shape);
+
             _animations[fix].update();
         }
 
