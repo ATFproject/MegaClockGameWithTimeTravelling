@@ -21,6 +21,7 @@ namespace mcgwtt {
         void nextFrame() {
             _frame = (_frame + 1) % _frames.size();
         }
+
     public:
         Animation() = default;
 
@@ -39,7 +40,8 @@ namespace mcgwtt {
                 );
 
                 std::string name =
-                        "Spritesheet \"" + spriteSheetName + "\" (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+                        "Spritesheet \"" + spriteSheetName + "\" (" + std::to_string(x) + ", " + std::to_string(y) +
+                        ")";
                 _frames.push_back(engine::resourceHandler.addRes(name, new engine::Texture(temp, name))->getTex());
 
                 x = (x + texW) % spriteSheet.getSize().x;

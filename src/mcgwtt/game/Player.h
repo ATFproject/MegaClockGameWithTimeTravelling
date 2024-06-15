@@ -42,7 +42,6 @@ namespace mcgwtt {
             shapeBody.SetAsBox(_w, _h - _headR * 2,
                                b2Vec2(_x, _y + _h), 0);
             auto body = _body->CreateFixture(&shapeBody, 5.0f);
-            // body->SetRestitution(std::numeric_limits<uint64_t>().max());
 
             b2CircleShape shapeHead;
             shapeHead.m_p.Set(_x, _y + _headR);
@@ -71,10 +70,9 @@ namespace mcgwtt {
         void initSprites(const PlayerData *prefs) {
             _body = prefs->_playerBody;
 
-            Animation bodyAnim(3, "player body.png", 4, 2, 6);
+            Animation bodyAnim(3, "player/player body.png", 4, 2, 6);
             _animations[prefs->_body] = bodyAnim;
-
-            _animations[prefs->_head] = Animation::getStaticAnimation("player head.png");
+            _animations[prefs->_head] = Animation::getStaticAnimation("player/player head.png");
         }
     public:
         explicit PlayerGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}

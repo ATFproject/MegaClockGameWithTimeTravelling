@@ -1,9 +1,9 @@
-import os
 import json
 import numpy as np
-from string import Template
+import os
 from PIL import Image
 from PyTexturePacker import Packer
+from string import Template
 
 # Extrude seems to be required to properly render stretched images with smoothing.
 # Without it, stretching images (e.g. scrollbar track) will have semi-transparent edges (or the

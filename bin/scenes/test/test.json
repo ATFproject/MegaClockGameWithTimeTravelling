@@ -1,6 +1,6 @@
 {
   "name": "Test scene",
-  "use saved camera": true,
+  "use saved camera": false,
   "camera": {
     "saved height": 1011.0,
     "saved width": 1920.0,
@@ -21,7 +21,7 @@
         "width": 1.0
       }
     },
-    "zoom": 83.57888793945313
+    "zoom": 60.57888793945313
   },
   "game objects": []
 }

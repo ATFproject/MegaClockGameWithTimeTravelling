@@ -13,8 +13,9 @@
 namespace mcgwtt {
     class Scene {
     public:
-        bool _useSavedCamera;
+        bool _useSavedCamera {};
         std::string _name;
+        std::string _dir;
         CameraController _camera{nullptr, 0};
         std::vector<engine::game::GameObject *> _gameObjects{};
     };
@@ -33,12 +34,16 @@ namespace mcgwtt {
 
     class SceneLoader {
     public:
-        static Scene load(const std::string &fileName) {
-            std::ifstream f(fileName, std::ios::in);
+        static Scene load(const std::string &sceneDir) {
+            std::string path = "../bin/scenes/" + sceneDir + "/" + sceneDir + ".json";
+            std::ifstream f(path, std::ios::in);
             json scene(json::parse(f));
             Scene s;
             scene.get_to(s);
-            std::cout << "Loading scene: " << s._name << "\n";
+
+            s._dir = sceneDir;
+            std::cout << "Loading scene \"" << s._name << "\" from " << path << "\n";
+            engine::resourceHandler.setLoadPath("scenes/" + sceneDir + "/");
             return s;
         }
     };

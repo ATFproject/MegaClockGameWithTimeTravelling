@@ -50,7 +50,7 @@ namespace mcgwtt {
     private:
         void initSprites(const PlatformData *prefs) {
             _body = prefs->_body;
-            _animations[&prefs->_body->GetFixtureList()[0]] = Animation::getStaticAnimation("ground tile.png");
+            _animations[&prefs->_body->GetFixtureList()[0]] = Animation::getStaticAnimation("ground/ground tile.png");
         }
     public:
         explicit PlatformGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}

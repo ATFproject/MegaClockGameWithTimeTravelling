@@ -23,7 +23,7 @@ int main() {
     window::GameWindow window(&win);
 
     sf::Image icon;
-    icon = engine::resourceHandler.loadRes(new engine::Texture("icon.png"))->getTex()->copyToImage();
+    icon = engine::resourceHandler.loadRes(engine::Texture::loadCommon("icon.png"))->getTex()->copyToImage();
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     win.setPosition(sf::Vector2i(550, 50));
     win.setFramerateLimit(165);
@@ -38,8 +38,10 @@ int main() {
 
     auto view = new mcgwtt::ViewController();
     window.addGameObject(nullptr, nullptr, view);
-    auto scene = mcgwtt::SceneLoader::load("../resources/scenes/test.json");
+
+    auto scene = mcgwtt::SceneLoader::load("test");
     scene._camera.setViewController(view);
+
     if (scene._useSavedCamera)
         window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(scene._camera));
     else
