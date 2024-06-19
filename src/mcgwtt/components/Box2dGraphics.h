@@ -82,8 +82,8 @@ namespace mcgwtt {
             return res;
         }
 
-        static Animation getStaticAnimation(const std::string &TexPath) {
-            Animation res(1, {TexPath});
+        static Animation getStaticAnimation(const std::string &texPath) {
+            Animation res(1, {texPath});
             return res;
         }
     };

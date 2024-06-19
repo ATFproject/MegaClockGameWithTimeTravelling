@@ -6,9 +6,8 @@
     },
     "antialiasing": 8,
     "depth bits": 24,
-    "stensil bits": 0
+    "stenсil bits": 0
   },
-
   "window": {
     "title": "MegaClockGameWithTimeTravelling 0.0.1 from ATFProject Game studio!",
     "position": {
@@ -21,7 +20,6 @@
       "height": 800,
       "bits per pixel": 24
     },
-
     "style": {
       "None": false,
       "Default": true,

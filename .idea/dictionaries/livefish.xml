@@ -22,11 +22,14 @@
       <w>prefs</w>
       <w>resourcedef</w>
       <w>rezoom</w>
+      <w>settingsloader</w>
       <w>smartenum</w>
       <w>spritesheet</w>
+      <w>stenсil</w>
       <w>systemcomponents</w>
       <w>tgui</w>
       <w>timestep</w>
+      <w>titlebar</w>
       <w>windowcontroller</w>
       <w>windowmovementcontroller</w>
     </words>
