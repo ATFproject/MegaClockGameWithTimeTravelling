@@ -1,3 +1,5 @@
+// Copyright (c) 2024. ATF project organization!
+
 //
 // Created by livefish on 5/23/24.
 //

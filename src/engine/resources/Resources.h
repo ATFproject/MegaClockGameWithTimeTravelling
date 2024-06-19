@@ -1,6 +1,10 @@
+// Copyright (c) 2024. ATF project organization!
+
 //
 // Created by livefish on 2/20/24.
 //
+
+
 
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
@@ -218,7 +222,7 @@ namespace engine {
         std::unique_ptr<T> loadResource(const std::string &fileName) {
             if (fileName.empty())
                 throw std::runtime_error("Empty filename for resource loading");
-            std::string addPath = fileName.starts_with("common") ? "" : resourceHandler.getLoadPath();
+            std::string addPath = fileName.starts_with("common")? "" : resourceHandler.getLoadPath();
             std::string folder = "../bin/" + addPath;
             std::string path = folder + fileName;
             auto data = std::make_unique<T>();

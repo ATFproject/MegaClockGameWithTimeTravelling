@@ -1,3 +1,5 @@
+// Copyright (c) 2024. ATF project organization!
+
 //
 // https://github.com/therocode/smartenum?tab=readme-ov-file.
 //

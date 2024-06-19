@@ -1,3 +1,5 @@
+// Copyright (c) 2024. ATF project organization!
+
 //
 // Created by Дом on 19.06.2024.
 //
