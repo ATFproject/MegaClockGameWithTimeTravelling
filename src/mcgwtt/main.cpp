@@ -13,7 +13,9 @@
 #include "window/GameWindow.h"
 
 int main() {
-    sf::ContextSettings winContextSettings(0, 0, 16);
+    sf::ContextSettings winContextSettings(0, 0, 8);
+    winContextSettings.majorVersion = 4;
+    winContextSettings.minorVersion = 5;
     sf::RenderWindow win(
             sf::VideoMode::getFullscreenModes()[0],
             "MegaClockGameWithTimeTravelling 0.0.1 from ATFProject Game studio!",
@@ -25,7 +27,7 @@ int main() {
     sf::Image icon;
     icon = engine::resourceHandler.loadRes(engine::Texture::loadCommon("icon.png"))->getTex()->copyToImage();
     win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-    win.setPosition(sf::Vector2i(550, 50));
+    win.setPosition(sf::Vector2i(0,0));
     win.setFramerateLimit(165);
     win.setActive(true);
 

@@ -16,6 +16,11 @@ namespace window {
         _isActive = true;
         std::cout << "Started!" << std::endl;
 
+        // Fix for windows: explicit game resize on program start
+        // Without this line the game will have (0, 0) size
+        // Works perfectly on LInux without it :(
+        notify(window::WindowResizeEvent(_win->getSize().x, _win->getSize().y));
+
         while (_win->isOpen()) {
             _win->clear(sf::Color(64, 64, 64));
             handleSfmlEvents();
