@@ -1,0 +1,37 @@
+{
+  "context": {
+    "OpenGL version": {
+      "major": 4,
+      "minor": 5
+    },
+    "antialiasing": 8,
+    "depth bits": 24,
+    "stensil bits": 0
+  },
+
+  "window": {
+    "title": "MegaClockGameWithTimeTravelling 0.0.1 from ATFProject Game studio!",
+    "position": {
+      "x": 500,
+      "y": 50
+    },
+    "mode": {
+      "use fullscreen mode": false,
+      "width": 1000,
+      "height": 800,
+      "bits per pixel": 24
+    },
+
+    "style": {
+      "None": false,
+      "Default": true,
+      "Fullscreen": false,
+      "Titlebar": false,
+      "Resize": false,
+      "Close": false
+    },
+    "icon path": "icon.png",
+    "framerate limit": 165,
+    "vertical sync": false
+  }
+}
