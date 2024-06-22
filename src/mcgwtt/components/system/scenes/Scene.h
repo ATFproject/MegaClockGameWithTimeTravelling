@@ -15,7 +15,7 @@
 namespace mcgwtt {
     class Scene {
     public:
-        bool _useSavedCamera {};
+        bool _useSavedCamera{};
         std::string _name;
         std::string _dir;
         CameraController _camera{nullptr, 0};
@@ -45,7 +45,7 @@ namespace mcgwtt {
 
             s._dir = sceneDir;
             std::cout << "Loading scene \"" << s._name << "\" from " << path << "\n";
-            engine::resourceHandler.setLoadPath("scenes/" + sceneDir + "/");
+            engine::resourceHandler->setLoadPath("scenes/" + sceneDir + "/");
             return s;
         }
     };

@@ -29,7 +29,7 @@ namespace mcgwtt {
 
         Animation(double fps, const std::string &spriteSheetName, uint rows, uint columns, uint spriteCount)
                 : _fps(fps) {
-            sf::Image spriteSheet = engine::resourceHandler.loadRes(
+            sf::Image spriteSheet = engine::resourceHandler->loadRes(
                     new engine::Texture(spriteSheetName))->getTex()->copyToImage();
 
             uint x = 0, y = 0;
@@ -44,7 +44,7 @@ namespace mcgwtt {
                 std::string name =
                         "Spritesheet \"" + spriteSheetName + "\" (" + std::to_string(x) + ", " + std::to_string(y) +
                         ")";
-                _frames.push_back(engine::resourceHandler.addRes(name, new engine::Texture(temp, name))->getTex());
+                _frames.push_back(engine::resourceHandler->addRes(name, new engine::Texture(temp, name))->getTex());
 
                 x = (x + texW) % spriteSheet.getSize().x;
                 if (x == 0 && i != 0)
@@ -55,7 +55,7 @@ namespace mcgwtt {
         Animation(double fps, const std::vector<std::string> &texNames)
                 : _fps(fps) {
             for (auto &name : texNames) {
-                _frames.push_back(engine::resourceHandler.loadRes(new engine::Texture(name))->getTex());
+                _frames.push_back(engine::resourceHandler->loadRes(new engine::Texture(name))->getTex());
             }
         }
 

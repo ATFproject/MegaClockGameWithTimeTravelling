@@ -63,6 +63,10 @@ namespace engine::game {
         )
     }
 
+    Game::Game() : _resourceHandler(std::make_unique<ResourceHandler>()) {
+        resourceHandler = _resourceHandler.get();
+    }
+
     Game::~Game() {
         for (auto &gameObject : _gameObjects) {
             delete gameObject;
