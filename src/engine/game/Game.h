@@ -15,7 +15,7 @@ namespace engine::game {
     public:
         std::optional<b2World> _world;
 
-        Game() = default;
+        Game();
 
         void operator<<(GameObject *toAdd);
         void removeGameObject(GameObject *toRemove);
@@ -34,6 +34,7 @@ namespace engine::game {
         std::vector<GameObject *> _gameObjects;
         std::vector<GameObject *> _gameObjectsToDelete;
         sf::Vector2u _size;
+        std::unique_ptr<engine::ResourceHandler> _resourceHandler;
 
         bool _keys[256]{};
         bool _click[256]{};

@@ -66,8 +66,8 @@ namespace mcgwtt {
         std::ifstream f("../bin/common/settings/settings.json");
         auto window = json::parse(f)["window"];
         sf::Image icon;
-        icon = engine::resourceHandler.loadRes(
-                engine::Texture::loadCommon(window["icon path"]))->getTex()->copyToImage();
+        std::string icon_name = window["icon path"];
+        icon.loadFromFile("../bin/common/textures/" + icon_name);
         win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
         win.setPosition(sf::Vector2i(window["position"]["x"], window["position"]["y"]));
