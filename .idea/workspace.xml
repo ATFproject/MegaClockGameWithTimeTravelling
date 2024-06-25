@@ -18,7 +18,6 @@
       <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="tgui" />
-      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-main" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
@@ -39,47 +38,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added msvc build on windows">
-      <change afterPath="$PROJECT_DIR$/src/engine/observers/Subject.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/engine/resources/Resources.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentDef.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/observers/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Observer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/SettingsLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/CameraComponents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/CameraComponents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/LoadableComponents.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,8 +170,6 @@
     "code.cleanup.on.save": "true",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "massive-refactoriing",
-    "idea.background.editor": "/home/livefish/Downloads/1671748368_kalix-club-p-zakat-piksel-art-instagram-6.jpg,10,tile,bottom_left",
-    "idea.background.frame": "/home/livefish/Downloads/1671748368_kalix-club-p-zakat-piksel-art-instagram-6.jpg,10,tile,center",
     "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -222,7 +180,7 @@
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.deploy.options",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "structure.view.defaults.are.configured": "true",
     "update.copyright.on.save": "true",
     "vue.rearranger.settings.migration": "true"

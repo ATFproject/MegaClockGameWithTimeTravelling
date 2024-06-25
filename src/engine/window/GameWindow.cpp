@@ -6,7 +6,7 @@
 #include "GameWindow.h"
 
 namespace window {
-    GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _gui(*window), _isActive(false) {
+    GameWindow::GameWindow(sf::RenderWindow *window) : _isActive(false), _win(window), _gui(*window) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
         _game.addObserver(this);
