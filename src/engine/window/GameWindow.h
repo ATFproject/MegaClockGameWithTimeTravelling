@@ -7,13 +7,10 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWINDOW_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWINDOW_H
 
-#include "observers/Subject.h"
-#include "game/Game.h"
-#include "components/ComponentInterface.h"
-#include "Events.h"
+#include "game/GameObject.h"
 
 namespace window {
-    class GameWindow : public engine::Subject, public engine::Observer {
+    class GameWindow : public engine::Observer, public engine::Subject {
     public:
         GameWindow() = delete;
 
@@ -31,13 +28,15 @@ namespace window {
         tgui::Gui &getGui();
 
     private:
+        void handleSfmlEvents();
+
+    private:
+        bool _isActive;
+
         sf::RenderWindow *_win;
         tgui::Gui _gui;
 
         engine::game::Game _game;
-        bool _isActive;
-
-        void handleSfmlEvents();
     };
 
     struct WindowCloseEvent : public engine::Event {

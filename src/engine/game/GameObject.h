@@ -7,9 +7,8 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEOBJECT_H
 
-#include "GameDef.h"
-#include "components/EmptyComponents.h"
 #include "observers/Subject.h"
+#include "components/EmptyComponents.h"
 
 namespace engine::game {
     class GameObject : public Observer, public Subject {
@@ -28,9 +27,10 @@ namespace engine::game {
         components::PhysicsComponent *_physics = &_emptyPhysicsComponent;
         components::GraphicsComponent *_graphics = &_emptyGraphicsComponent;
 
-        static inline components::EmptyInputComponent _emptyInputComponent;
-        static inline components::EmptyGraphicsComponent _emptyGraphicsComponent;
-        static inline components::EmptyPhysicsComponent _emptyPhysicsComponent;
+    private:
+        static components::EmptyInputComponent _emptyInputComponent;
+        static components::EmptyGraphicsComponent _emptyGraphicsComponent;
+        static components::EmptyPhysicsComponent _emptyPhysicsComponent;
     };
 } // engine
 

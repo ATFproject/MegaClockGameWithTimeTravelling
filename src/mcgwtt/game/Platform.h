@@ -7,9 +7,8 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_PLATFORM_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_PLATFORM_H
 
-#include "mcgwtt/components/Box2dGraphics.h"
-
 #include "system/GameWorld.h"
+#include "Box2dGraphics.h"
 
 namespace mcgwtt {
     struct PlatformData : engine::Event {

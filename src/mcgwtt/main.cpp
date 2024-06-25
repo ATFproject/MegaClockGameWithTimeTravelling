@@ -14,7 +14,7 @@
 
 #include "window/GameWindow.h"
 
-#include "SettingsLoader.h"
+#include "settings loader/SettingsLoader.h"
 
 int main() {
     sf::RenderWindow win(
@@ -30,7 +30,7 @@ int main() {
 
     window.addGameObject(new mcgwtt::WindowController(&window), nullptr, nullptr);
 
-    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
+    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8f), 1 / 165.f, 8, 3);
     window.addGameObject(nullptr, world, nullptr);
 
     auto view = new mcgwtt::ViewController();

@@ -38,9 +38,48 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed warning D9025 on msvc">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/cmake-multi-platform.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cmake-multi-platform.yml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added msvc build on windows">
+      <change afterPath="$PROJECT_DIR$/src/engine/observers/Subject.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/engine/resources/Resources.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentDef.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/ComponentInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/components/EmptyComponents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/GameDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameDef.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/GameObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/GameObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/observers/Observer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Observer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/observers/Subject.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/observers/Subject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/SettingsLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/CameraComponents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/CameraComponents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/WindowController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/LoadableComponents.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +173,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
@@ -199,11 +238,11 @@
       <recent name="$PROJECT_DIR$/resources/tgui/forms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MegaClockGameWithTimeTravelling\src\mcgwtt\settings loader" />
+      <recent name="C:\MegaClockGameWithTimeTravelling\src\settings loader" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/components/system/scenes" />
       <recent name="$PROJECT_DIR$/src/mcgwtt/components" />
       <recent name="$PROJECT_DIR$/src/mcgwtt" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/game" />
-      <recent name="$PROJECT_DIR$/src/mcgwtt/game/camera" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -214,6 +253,11 @@
     </option>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -221,11 +265,6 @@
       </method>
     </configuration>
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -358,15 +397,8 @@
       <workItem from="1718807716769" duration="381000" />
       <workItem from="1718808111307" duration="1545000" />
       <workItem from="1719218201065" duration="2735000" />
-      <workItem from="1719299256313" duration="4067000" />
-    </task>
-    <task id="LOCAL-00056" summary="Added pre- and post- draw to graphics game object. Added 2 boxes">
-      <option name="closed" value="true" />
-      <created>1710083020489</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1710083020489</updated>
+      <workItem from="1719299256313" duration="7390000" />
+      <workItem from="1719307310436" duration="10798000" />
     </task>
     <task id="LOCAL-00057" summary="Vitman test">
       <option name="closed" value="true" />
@@ -752,7 +784,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719302979395</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Added msvc build on windows">
+      <option name="closed" value="true" />
+      <created>1719303682952</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1719303682952</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -779,7 +819,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed unnecessary self pointer to game object in physics and input tick call" />
     <MESSAGE value="Refactoring after new compiler checks" />
     <MESSAGE value="Added resources" />
     <MESSAGE value="Added pvs studio comments" />
@@ -804,7 +843,8 @@
     <MESSAGE value="Added copyright to all files" />
     <MESSAGE value="All libraries are now statically linked on windows" />
     <MESSAGE value="Removed warning D9025 on msvc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed warning D9025 on msvc" />
+    <MESSAGE value="Added msvc build on windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added msvc build on windows" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

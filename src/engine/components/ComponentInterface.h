@@ -7,31 +7,27 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_COMPONENTINTERFACE_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_COMPONENTINTERFACE_H
 
-#include "ComponentDef.h"
 #include "observers/Subject.h"
-#include "game/GameDef.h"
+#include "game/Game.h"
 
 namespace engine::components {
     class InputComponent : public Observer, public Subject {
     public:
-        virtual void init(game::Game &game) {}
-
-        virtual void tick(game::Game &game) = 0;
+        virtual void init(engine::game::Game &game) {}
+        virtual void tick(engine::game::Game &game) = 0;
         ~InputComponent() override = default;
     };
 
     class PhysicsComponent : public Observer, public Subject {
     public:
-        virtual void init(game::Game &game) {}
-
-        virtual void tick(game::Game &game) = 0;
+        virtual void init(engine::game::Game &game) {}
+        virtual void tick(engine::game::Game &game) = 0;
         ~PhysicsComponent() override = default;
     };
 
     class GraphicsComponent : public Observer, public Subject {
     public:
-        virtual void init(game::Game &game) {}
-
+        virtual void init(engine::game::Game &game) {}
         virtual void draw() = 0;
         ~GraphicsComponent() override = default;
     };

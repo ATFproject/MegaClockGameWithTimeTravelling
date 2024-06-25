@@ -7,11 +7,6 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 
-#include "system/GameWorld.h"
-#include "game/Game.h"
-
-#include "mcgwtt/components/Box2dGraphics.h"
-
 namespace mcgwtt {
     struct PlayerData : engine::Event {
         b2Body *_playerBody;
@@ -25,7 +20,7 @@ namespace mcgwtt {
     private:
         b2Body *_body{nullptr};
         float _x, _y;
-        const float _w = 0.5, _h = 1.7, _headR = 0.25;
+        const float _w = 0.5f, _h = 1.7f, _headR = 0.25f;
 
     public:
         PlayerPhysics(GameWorldPhysics *worldPh, float x, float y)
