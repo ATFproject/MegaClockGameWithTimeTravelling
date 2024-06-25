@@ -18,6 +18,7 @@
       <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="tgui" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-main" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
@@ -37,7 +38,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added copyright to all files">
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Removed warning D9025 on msvc">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/cmake-multi-platform.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cmake-multi-platform.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +76,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="restructure-res-dir" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -154,7 +156,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Debug",
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
     "CMake Debug.MegaClockGameWithTimeTravelling.executor": "Debug",
     "Makefile Target.Makefile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -168,7 +170,8 @@
     "cidr.known.project.marker": "true",
     "code.cleanup.on.save": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "massive-refactoriing",
+    "idea.background.editor": "/home/livefish/Downloads/1671748368_kalix-club-p-zakat-piksel-art-instagram-6.jpg,10,tile,bottom_left",
     "idea.background.frame": "/home/livefish/Downloads/1671748368_kalix-club-p-zakat-piksel-art-instagram-6.jpg,10,tile,center",
     "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
@@ -180,7 +183,7 @@
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settings.deploy.options",
     "structure.view.defaults.are.configured": "true",
     "update.copyright.on.save": "true",
     "vue.rearranger.settings.migration": "true"
@@ -222,12 +225,22 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="box2d" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="box2d" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="gui-builder" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="gui-builder" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="gui-builder">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sfml-main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-main" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -242,6 +255,7 @@
       <item itemvalue="CMake Application.box2d" />
       <item itemvalue="CMake Application.gui-builder" />
       <item itemvalue="CMake Application.testbed" />
+      <item itemvalue="CMake Application.sfml-main" />
       <item itemvalue="Doctest.unit_test" />
     </list>
   </component>
@@ -343,23 +357,8 @@
       <workItem from="1718806626532" duration="1068000" />
       <workItem from="1718807716769" duration="381000" />
       <workItem from="1718808111307" duration="1545000" />
-      <workItem from="1718994747426" duration="653000" />
-    </task>
-    <task id="LOCAL-00054" summary="Fixed resource system memory leak">
-      <option name="closed" value="true" />
-      <created>1710081286305</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1710081286305</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Fixed resource system memory leak">
-      <option name="closed" value="true" />
-      <created>1710081293781</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1710081293781</updated>
+      <workItem from="1719218201065" duration="2735000" />
+      <workItem from="1719299256313" duration="4067000" />
     </task>
     <task id="LOCAL-00056" summary="Added pre- and post- draw to graphics game object. Added 2 boxes">
       <option name="closed" value="true" />
@@ -737,7 +736,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718447880178</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="All libraries are now statically linked on windows">
+      <option name="closed" value="true" />
+      <created>1719301047920</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1719301047922</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Removed warning D9025 on msvc">
+      <option name="closed" value="true" />
+      <created>1719302979394</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1719302979395</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -764,8 +779,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added box2d graphics component" />
-    <MESSAGE value="Removed unnecessary self pointer to game object in draw call" />
     <MESSAGE value="Removed unnecessary self pointer to game object in physics and input tick call" />
     <MESSAGE value="Refactoring after new compiler checks" />
     <MESSAGE value="Added resources" />
@@ -789,7 +802,9 @@
     <MESSAGE value="Added spritesheet support" />
     <MESSAGE value="Restructured res dir. Added global resource load prefix" />
     <MESSAGE value="Added copyright to all files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added copyright to all files" />
+    <MESSAGE value="All libraries are now statically linked on windows" />
+    <MESSAGE value="Removed warning D9025 on msvc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed warning D9025 on msvc" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
