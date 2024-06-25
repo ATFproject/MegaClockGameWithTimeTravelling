@@ -1,5 +1,5 @@
 # Set up cmake and c++ settings
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.20)
 project(MegaClockGameWithTimeTravelling VERSION 0.0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -33,7 +33,7 @@ FetchContent_MakeAvailable(box2d)
 
 # Fetch and compile TGUI library
 set(TGUI_BACKEND "SFML_GRAPHICS")
-set(TGUI_SHARED_LIBS ON)
+set(TGUI_SHARED_LIBS OFF)
 set(TGUI_BUILD_GUI_BUILDER ON)
 
 message(STATUS "Downloading TGUI")
