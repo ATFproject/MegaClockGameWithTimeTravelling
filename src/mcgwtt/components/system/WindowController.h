@@ -8,24 +8,14 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_WINDOWCONTROLLER_H
 
 #include "components/ComponentInterface.h"
-#include "observers/Subject.h"
-
-#include "engine/window/GameWindow.h"
+#include "window/GameWindow.h"
 
 namespace mcgwtt {
     class WindowController : public engine::components::InputComponent {
     public:
-        explicit WindowController(window::GameWindow *win) {
-            this->addObserver(win);
-        }
-
-        void tick(engine::game::Game &game) override {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-                notify(window::WindowCloseEvent());
-            }
-        }
+        explicit WindowController(window::GameWindow *win);
+        void tick(engine::game::Game &game) override;
     };
 }
-// engine::components
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_WINDOWCONTROLLER_H

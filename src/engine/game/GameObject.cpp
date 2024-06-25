@@ -4,9 +4,12 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 #include "GameObject.h"
-#include "components/EmptyComponents.h"
 
 namespace engine::game {
+    components::EmptyInputComponent GameObject::_emptyInputComponent;
+    components::EmptyGraphicsComponent GameObject::_emptyGraphicsComponent;
+    components::EmptyPhysicsComponent GameObject::_emptyPhysicsComponent;
+
     void GameObject::init(Game &game) {
         _input->init(game);
         _physics->init(game);

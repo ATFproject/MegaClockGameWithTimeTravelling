@@ -8,7 +8,17 @@
 #include "window/GameWindow.h"
 
 namespace engine::game {
-    void Game::operator<<(GameObject *toAdd) {
+    Game::Game() : _resourceHandler(std::make_unique<ResourceHandler>()) {
+        resourceHandler = _resourceHandler.get();
+    }
+
+    Game::~Game() {
+        for (auto &gameObject : _gameObjects) {
+            delete gameObject;
+        }
+    }
+
+    void Game::addGameObject(GameObject *toAdd) {
         _gameObjects.push_back(toAdd);
         addObserver(toAdd);
         toAdd->init(*this);
@@ -24,6 +34,7 @@ namespace engine::game {
             _click[i] = _keys[i] && !_keysOld[i];
         }
         memcpy(_keysOld, _keys, keyboardKeyCount);
+
         for (GameObject *gameObject : _gameObjects) {
             gameObject->tick(*this);
         }
@@ -61,16 +72,6 @@ namespace engine::game {
                                memset(_click, 0, 256);
                            }
         )
-    }
-
-    Game::Game() : _resourceHandler(std::make_unique<ResourceHandler>()) {
-        resourceHandler = _resourceHandler.get();
-    }
-
-    Game::~Game() {
-        for (auto &gameObject : _gameObjects) {
-            delete gameObject;
-        }
     }
 
     sf::Vector2u Game::getSize() const {

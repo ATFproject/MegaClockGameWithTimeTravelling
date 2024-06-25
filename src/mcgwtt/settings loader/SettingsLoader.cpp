@@ -1,16 +1,11 @@
 // Copyright (c) 2024. ATF project organization!
 
 //
-// Created by Дом on 19.06.2024.
+// Created by Дом on 25.06.2024.
 //
 
-#ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_SETTINGSLOADER_H
-#define MEGACLOCKGAMEWITHTIMETRAVELLING_SETTINGSLOADER_H
-
-#include "EngineDef.h"
-
 namespace mcgwtt {
-    inline sf::ContextSettings loadContextSettings() {
+    sf::ContextSettings loadContextSettings() {
         std::ifstream f("../bin/common/settings/settings.json");
         auto context = json::parse(f)["context"];
 
@@ -25,7 +20,7 @@ namespace mcgwtt {
         return settings;
     }
 
-    inline sf::VideoMode loadVideoMode() {
+    sf::VideoMode loadVideoMode() {
         std::ifstream f("../bin/common/settings/settings.json");
         auto window = json::parse(f)["window"]["mode"];
         if (window["use fullscreen mode"]) {
@@ -39,7 +34,7 @@ namespace mcgwtt {
         return mode;
     }
 
-    inline sf::Uint32 loadWindowStyle() {
+    sf::Uint32 loadWindowStyle() {
         std::ifstream f("../bin/common/settings/settings.json");
         auto style = json::parse(f)["window"]["style"];
         if (style["None"]) {
@@ -57,17 +52,17 @@ namespace mcgwtt {
                style["Close"].get<sf::Uint32>();
     }
 
-    inline std::string loadWindowTitle() {
+    std::string loadWindowTitle() {
         std::ifstream f("../bin/common/settings/settings.json");
         return json::parse(f)["window"]["title"];
     }
 
-    inline void setWindowProperties(sf::RenderWindow &win) {
+    void setWindowProperties(sf::RenderWindow &win) {
         std::ifstream f("../bin/common/settings/settings.json");
         auto window = json::parse(f)["window"];
         sf::Image icon;
-        std::string icon_name = window["icon path"];
-        icon.loadFromFile("../bin/common/textures/" + icon_name);
+        std::string iconName = window["icon path"];
+        icon.loadFromFile("../bin/common/textures/" + iconName);
         win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
         win.setPosition(sf::Vector2i(window["position"]["x"], window["position"]["y"]));
@@ -79,5 +74,3 @@ namespace mcgwtt {
     }
 
 }
-
-#endif //MEGACLOCKGAMEWITHTIMETRAVELLING_SETTINGSLOADER_H

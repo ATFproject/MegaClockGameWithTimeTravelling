@@ -9,8 +9,6 @@
 
 #include "components/ComponentInterface.h"
 
-#include "game/Game.h"
-
 namespace mcgwtt {
     struct GamePausedEvent : public engine::Event {
         bool _paused;
@@ -18,34 +16,19 @@ namespace mcgwtt {
     };
 
     class GameWorldPhysics : public engine::components::PhysicsComponent {
+    public:
+        GameWorldPhysics(b2Vec2 gravity, float timestep, int velIters, int posIters);
+
+        void init(engine::game::Game &game) override;
+        void onNotify(const engine::Event &event) override;
+        void tick(engine::game::Game &game) override;
+
     private:
-        b2World *_world{nullptr};
+        b2World *_world;
         b2Vec2 _gravity;
         float _timestep;
         int _velIters, _posIters;
-        bool _paused{false};
-
-    public:
-        GameWorldPhysics(b2Vec2 gravity, float timestep, int velIters, int posIters)
-                : _gravity(gravity), _timestep(timestep),
-                  _velIters(velIters), _posIters(posIters) {
-        }
-
-        void init(engine::game::Game &game) override {
-            game._world.emplace(_gravity);
-            _world = &*game._world;
-        }
-
-        void onNotify(const engine::Event &event) override {
-            ENGINE_CHECK_EVENT(GamePausedEvent,
-                               _paused = e->_paused;
-            )
-        }
-
-        void tick(engine::game::Game &game) override {
-            if (!_paused)
-                _world->Step(_timestep, _velIters, _posIters);
-        }
+        bool _paused;
     };
 }
 

@@ -7,17 +7,17 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_GAME_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAME_H
 
-#include "GameDef.h"
 #include "observers/Subject.h"
+#include "resources/Resources.h"
 
 namespace engine::game {
+    class GameObject;
+
     class Game : public Observer, public Subject {
     public:
-        std::optional<b2World> _world;
-
         Game();
 
-        void operator<<(GameObject *toAdd);
+        void addGameObject(GameObject *toAdd);
         void removeGameObject(GameObject *toRemove);
         void tick();
         void draw();
@@ -30,12 +30,16 @@ namespace engine::game {
         void onNotify(const Event &event) override;
         ~Game() override;
 
+    public:
+        std::optional<b2World> _world;
+
     private:
         std::vector<GameObject *> _gameObjects;
         std::vector<GameObject *> _gameObjectsToDelete;
         sf::Vector2u _size;
         std::unique_ptr<engine::ResourceHandler> _resourceHandler;
 
+    private:
         bool _keys[256]{};
         bool _click[256]{};
         bool _keysOld[256]{};

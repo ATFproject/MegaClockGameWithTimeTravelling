@@ -8,6 +8,5 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_CAMERACOMPONENTS_H
 
 #include "camera/CameraController.h"
-#include "camera/ViewController.h"
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_CAMERACOMPONENTS_H
