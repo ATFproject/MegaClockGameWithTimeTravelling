@@ -10,6 +10,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/out)
 
 if (WIN32)
     option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+    # Remove cmake warning on windows
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+        string(REGEX REPLACE "/W[3|4]" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    endif ()
 else ()
     option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 endif ()
@@ -65,17 +69,13 @@ target_link_libraries(${PROJECT_NAME}
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
 
 # Disable all docs and example build for SFML and Box2D
-if (WIN32)
-
-else ()
-    set(BOX2D_BUILD_DOCS OFF)
-    set(BOX2D_BUILD_UNIT_TESTS OFF)
-    set(SFML_BUILD_DOC OFF)
-    set(SFML_BUILD_EXAMPLES OFF)
-    set(SFML_BUILD_TEST_SUITE OFF)
-    set(SFML_USE_SYSTEM_DEPS OFF)
-    set(SFML_USE_DRM OFF)
-endif ()
+set(BOX2D_BUILD_DOCS OFF)
+set(BOX2D_BUILD_UNIT_TESTS OFF)
+set(SFML_BUILD_DOC OFF)
+set(SFML_BUILD_EXAMPLES OFF)
+set(SFML_BUILD_TEST_SUITE OFF)
+set(SFML_USE_SYSTEM_DEPS OFF)
+set(SFML_USE_DRM OFF)
 
 # Add all possible warnings to make sure (Шура?) our code is the best!
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
