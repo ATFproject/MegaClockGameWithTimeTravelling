@@ -21,7 +21,7 @@ namespace engine {
 
         Resource();
         explicit Resource(std::string loadPath);
-        virtual ~Resource();;
+        virtual ~Resource();
 
         virtual void load() = 0;
 
