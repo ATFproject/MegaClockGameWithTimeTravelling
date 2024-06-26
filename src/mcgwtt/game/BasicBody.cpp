@@ -7,6 +7,12 @@
 #include "BasicBody.h"
 
 namespace mcgwtt {
+    BasicBody::BasicBodyData::BasicBodyData(b2Body *body, const std::vector<b2Fixture *> &fix)
+            : _body(body), _fix(fix) {}
+    BasicBody::BasicBodyData::BasicBodyData(BasicBody::bodyFixVecPair p)
+            : _body(p.first), _fix(p.second) {}
+
+
     BasicBody::BasicBodyPhysics::BasicBodyPhysics(GameWorldPhysics *worldPh,
                                                   BasicBody::physicsInitFunction &init,
                                                   BasicBody::physicsTickFunction &tick,
@@ -34,6 +40,10 @@ namespace mcgwtt {
 
     void BasicBody::BasicBodyGraphics::onNotify(const engine::Event &event) {
         ENGINE_CHECK_EVENT(BasicBodyData, std::tie(_body, _animations) = _initSprites(e);)
+    }
+
+    void BasicBody::BasicBodyGraphics::draw() {
+        BodyGraphics::draw();
     }
 
 

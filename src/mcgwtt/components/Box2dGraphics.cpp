@@ -68,6 +68,7 @@ namespace mcgwtt {
 
     void BodyGraphics::drawFixture(b2Fixture *fix) {
         sf::ConvexShape shape;
+        assert(_animations.contains(fix));
         shape.setTexture(_animations[fix].curFrame());
 
         if (fix->GetType() == b2PolygonShape::Type::e_polygon) {

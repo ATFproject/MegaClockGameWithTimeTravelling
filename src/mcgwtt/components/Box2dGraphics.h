@@ -29,14 +29,14 @@ namespace mcgwtt {
         sf::Texture *curFrame();
 
     private:
+        void nextFrame();
+
+    private:
         sf::Clock _clock;
 
         double _fps = 0;
         std::size_t _frame = 0;
         std::vector<sf::Texture *> _frames;
-
-    private:
-        void nextFrame();
     };
 
     using animationMap = std::map<b2Fixture *, Animation>;

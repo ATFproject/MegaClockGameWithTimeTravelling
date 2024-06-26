@@ -2,6 +2,7 @@
   <dictionary name="livefish">
     <words>
       <w>arialmt</w>
+      <w>basicbody</w>
       <w>cameracomponents</w>
       <w>cameracontroller</w>
       <w>componentdef</w>

@@ -18,30 +18,27 @@ namespace mcgwtt {
     private:
         float _x, _y, _w, _h;
 
-        BasicBody::physicsInitFunction _physicsInit = [this](engine::game::Game &game) -> std::vector<b2Body *> {
+        physicsInitFunction _physicsInit = [this](engine::game::Game &game) -> bodyFixVecPair {
             b2BodyDef bd;
             bd.type = b2_kinematicBody;
             bd.position.Set(_x, _y);
             bd.gravityScale = 0;
             bd.fixedRotation = true;
-            std::vector<b2Body *> bodies;
-            bodies.push_back(game._world->CreateBody(&bd));
+
+            MCGWTT_BASIC_BODY_CREATE_BODY(bd)
 
             b2PolygonShape shape;
             shape.SetAsBox(_w, _h, b2Vec2(_x, _y), 0);
-            bodies[0]->CreateFixture(&shape, 5.0f);
+            MCGWTT_BASIC_BODY_CREATE_FIXTURE(shape, 5.0f)
 
-            return bodies;
+            return res;
         };
 
-        BasicBody::physicsTickFunction _physicsTick = [](engine::game::Game &game) {};
-        BasicBody::onNotifyFunction _physicsOnNotify = [](const engine::Event &event) {};
-        BasicBody::initSpritesFunction _initSprites = [](
-                const mcgwtt::BasicBody::BasicBodyData *data) -> std::tuple<b2Body *, mcgwtt::animationMap> {
-            mcgwtt::animationMap a;
-            a[&data->_bodies[0]->GetFixtureList()[0]] = mcgwtt::Animation::getStaticAnimation(
-                    "ground/ground tile.png");
-            return std::make_tuple(data->_bodies[0], a);
+        physicsTickFunction _physicsTick = [](engine::game::Game &game) {};
+        onNotifyFunction _physicsOnNotify = [](const engine::Event &event) {};
+
+        initSpritesFunction _initSprites = [this](const BasicBodyData *data) -> std::pair<b2Body *, animationMap> {
+            return bindAnimations(data, Animation::getStaticAnimation("ground/ground tile.png"));
         };
     };
 }

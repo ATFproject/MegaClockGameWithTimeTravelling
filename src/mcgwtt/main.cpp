@@ -46,12 +46,12 @@ int main() {
     else
         window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 
-    mcgwtt::Platform platform(&win, world, 0, 6, 4, 1);
-    window.addGameObject(nullptr, platform.getPhysics(), platform.getGraphics());
+   mcgwtt::Platform platform(&win, world, 0, 6, 4, 1);
+   window.addGameObject(nullptr, platform.getPhysics(), platform.getGraphics());
 
-    window.addGameObject(nullptr,
-                         new mcgwtt::PlayerPhysics(world, 0, 0),
-                         new mcgwtt::PlayerGraphics(&win));
+    mcgwtt::Player player(&win, world, 0, 0, 0.5f, 1.7f, 0.25f);
+    window.addGameObject(nullptr, player.getPhysics(), player.getGraphics());
+
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
 
     window.startRendering();
