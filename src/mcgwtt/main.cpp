@@ -16,6 +16,8 @@
 
 #include "settings loader/SettingsLoader.h"
 
+#include "game/BasicBody.h"
+
 int main() {
     sf::RenderWindow win(
             mcgwtt::loadVideoMode(),
@@ -44,17 +46,14 @@ int main() {
     else
         window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 
+    mcgwtt::Platform platform(&win, world, 0, 6, 4, 1);
+    window.addGameObject(nullptr, platform.getPhysics(), platform.getGraphics());
+
     window.addGameObject(nullptr,
                          new mcgwtt::PlayerPhysics(world, 0, 0),
                          new mcgwtt::PlayerGraphics(&win));
-
-    window.addGameObject(nullptr,
-                         new mcgwtt::PlatformPhysics(world, 0, 6, 4, 1),
-                         new mcgwtt::PlatformGraphics(&win));
-
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
 
     window.startRendering();
-
     return 0;
 }

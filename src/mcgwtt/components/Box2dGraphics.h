@@ -7,6 +7,7 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_BOX2DGRAPHICS_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_BOX2DGRAPHICS_H
 
+#include "EngineDef.h"
 #include "components/ComponentInterface.h"
 
 namespace mcgwtt {
@@ -38,6 +39,8 @@ namespace mcgwtt {
         void nextFrame();
     };
 
+    using animationMap = std::map<b2Fixture *, Animation>;
+
     class BodyGraphics : public engine::components::GraphicsComponent {
     public:
         explicit BodyGraphics(sf::RenderWindow *win) : _win(win) {}
@@ -45,7 +48,7 @@ namespace mcgwtt {
 
     protected:
         sf::RenderWindow *_win{};
-        std::map<b2Fixture *, Animation> _animations;
+        animationMap _animations;
         b2Body *_body{};
 
     protected:

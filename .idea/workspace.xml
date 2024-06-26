@@ -18,6 +18,7 @@
       <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="tgui" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-main" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
@@ -37,9 +38,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added msvc build on windows">
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added scene.cpp">
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Platform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,9 +127,10 @@
     <setting file="file://$PROJECT_DIR$/src/mcgwtt/components/DebugComponents.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/mcgwtt/game/DrawablePhysics.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/mcgwtt/game/Platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/mcgwtt/game/Player.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/mcgwtt/main.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/mcgwtt/main.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -155,7 +164,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Debug",
     "CMake Debug.MegaClockGameWithTimeTravelling.executor": "Debug",
     "Makefile Target.Makefile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -170,6 +179,8 @@
     "code.cleanup.on.save": "true",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "massive-refactoriing",
+    "idea.background.editor": "/home/livefish/Downloads/1671748368_kalix-club-p-zakat-piksel-art-instagram-6.jpg,10,tile,bottom_left",
+    "idea.background.frame": "/home/livefish/Downloads/1671748368_kalix-club-p-zakat-piksel-art-instagram-6.jpg,10,tile,center",
     "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -180,7 +191,7 @@
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "structure.view.defaults.are.configured": "true",
     "update.copyright.on.save": "true",
     "vue.rearranger.settings.migration": "true"
@@ -211,11 +222,6 @@
     </option>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -223,6 +229,11 @@
       </method>
     </configuration>
     <configuration name="MegaClockGameWithTimeTravelling" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="MegaClockGameWithTimeTravelling" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="MegaClockGameWithTimeTravelling">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -357,6 +368,8 @@
       <workItem from="1719218201065" duration="2735000" />
       <workItem from="1719299256313" duration="7390000" />
       <workItem from="1719307310436" duration="10798000" />
+      <workItem from="1719388731723" duration="8302000" />
+      <workItem from="1719400713645" duration="1840000" />
     </task>
     <task id="LOCAL-00057" summary="Vitman test">
       <option name="closed" value="true" />
@@ -766,7 +779,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

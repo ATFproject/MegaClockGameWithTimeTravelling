@@ -7,58 +7,42 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_PLATFORM_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_PLATFORM_H
 
-#include "system/GameWorld.h"
-#include "Box2dGraphics.h"
+#include "BasicBody.h"
 
 namespace mcgwtt {
-    struct PlatformData : engine::Event {
-        b2Body *_body;
-        b2Fixture *_fixture;
-        PlatformData(b2Body *body, b2Fixture *fixture) : _body(body), _fixture(fixture) {}
-    };
-
-    class PlatformPhysics : public engine::components::PhysicsComponent {
+    class Platform : public BasicBody {
+    public:
+        Platform(sf::RenderWindow *win, GameWorldPhysics *worldPh, float x, float y, float w, float h)
+                : BasicBody(win, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
+                  _x(x), _y(y), _w(w), _h(h) {}
     private:
-        b2Body *_body{};
-        b2Fixture *_fixture{};
-
         float _x, _y, _w, _h;
 
-    public:
-        PlatformPhysics(GameWorldPhysics *worldPh, float x, float y, float w, float h) :
-                _x(x), _y(y), _w(w), _h(h) {
-            addObserver(worldPh);
-        }
-
-        void init(engine::game::Game &game) override {
+        BasicBody::physicsInitFunction _physicsInit = [this](engine::game::Game &game) -> std::vector<b2Body *> {
             b2BodyDef bd;
             bd.type = b2_kinematicBody;
             bd.position.Set(_x, _y);
             bd.gravityScale = 0;
             bd.fixedRotation = true;
-            _body = game._world->CreateBody(&bd);
+            std::vector<b2Body *> bodies;
+            bodies.push_back(game._world->CreateBody(&bd));
 
             b2PolygonShape shape;
             shape.SetAsBox(_w, _h, b2Vec2(_x, _y), 0);
-            _fixture = _body->CreateFixture(&shape, 5.0f);
-            notify(PlatformData(_body, _fixture));
-        }
+            bodies[0]->CreateFixture(&shape, 5.0f);
 
-        void tick(engine::game::Game &game) override {}
-    };
+            return bodies;
+        };
 
-    class PlatformGraphics : public BodyGraphics {
-    private:
-        void initSprites(const PlatformData *prefs) {
-            _body = prefs->_body;
-            _animations[&prefs->_body->GetFixtureList()[0]] = Animation::getStaticAnimation("ground/ground tile.png");
-        }
-    public:
-        explicit PlatformGraphics(sf::RenderWindow *win) : BodyGraphics(win) {}
-
-        void onNotify(const engine::Event &event) override {
-            ENGINE_CHECK_EVENT(PlatformData, initSprites(e);)
-        }
+        BasicBody::physicsTickFunction _physicsTick = [](engine::game::Game &game) {};
+        BasicBody::onNotifyFunction _physicsOnNotify = [](const engine::Event &event) {};
+        BasicBody::initSpritesFunction _initSprites = [](
+                const mcgwtt::BasicBody::BasicBodyData *data) -> std::tuple<b2Body *, mcgwtt::animationMap> {
+            mcgwtt::animationMap a;
+            a[&data->_bodies[0]->GetFixtureList()[0]] = mcgwtt::Animation::getStaticAnimation(
+                    "ground/ground tile.png");
+            return std::make_tuple(data->_bodies[0], a);
+        };
     };
 }
 

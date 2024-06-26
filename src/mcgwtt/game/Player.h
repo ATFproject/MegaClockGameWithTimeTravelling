@@ -7,6 +7,9 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_PLAYER_H
 
+#include "Box2dGraphics.h"
+#include "system/GameWorld.h"
+
 namespace mcgwtt {
     struct PlayerData : engine::Event {
         b2Body *_playerBody;

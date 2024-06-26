@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="CL-241.14494.288">
+  <component name="dataSourceStorageLocal" created-in="CL-233.14015.92">
     <data-source name="photoprism@localhost" uuid="4a45a6a3-7768-4875-ad5d-1ce509bcc808">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" />
       <schema-mapping />
