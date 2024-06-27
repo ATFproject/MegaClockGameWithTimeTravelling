@@ -110,8 +110,11 @@ namespace engine {
         template<typename T>
             requires std::is_base_of_v<Resource, T>
             T *addRes(const std::string &name, T *mem) {
-                _res.try_emplace(name, resourcePtr(mem));
-                return mem;
+                if (!_res.contains(name))
+                    _res.emplace(name, resourcePtr(mem));
+                else
+                    delete mem;
+                return dynamic_cast<T*>(_res[name].get());
             }
 
         template<typename T>
