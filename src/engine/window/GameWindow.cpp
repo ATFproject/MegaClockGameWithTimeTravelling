@@ -4,11 +4,9 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 #include "GameWindow.h"
-#include "game/GameObject.h"
-#include "Events.h"
 
 namespace window {
-    GameWindow::GameWindow(sf::RenderWindow *window) : _win(window), _gui(*window), _isActive(false) {
+    GameWindow::GameWindow(sf::RenderWindow *window) : _isActive(false), _win(window), _gui(*window) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
         _game.addObserver(this);
@@ -80,7 +78,7 @@ namespace window {
                                                         engine::components::PhysicsComponent *pc,
                                                         engine::components::GraphicsComponent *gc) {
         auto gameObject = new engine::game::GameObject(ic, pc, gc);
-        _game << gameObject;
+        _game.addGameObject(gameObject);
         return gameObject;
     }
 

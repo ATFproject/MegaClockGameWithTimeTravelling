@@ -86,7 +86,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
             -Wno-unused-variable -Wno-float-equal -Wno-unknown-pragmas -Wno-conversion -Wno-unused-parameter
     )
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /wd4100 /wd4068)
 endif ()
 
 # Set output file name
@@ -101,5 +101,13 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${ADDITIONAL_INCLUDE_DIRS})
 target_precompile_headers(${PROJECT_NAME}
         PUBLIC "src/engine/EngineDef.h"
 )
+
+if (WIN32 AND SFML_BUILD_AUDIO)
+    message(STATUS "Will copy openal32.dll to final output dir: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy ${FETCHCONTENT_BASE_DIR}/sfml-src/extlibs/bin/x64/openal32.dll ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+    )
+endif ()
+
 # Compile and link the app
 install(TARGETS ${PROJECT_NAME})

@@ -9,7 +9,6 @@
 
 #include "Events.h"
 
-
 /* Usage:
    ENGINE_CHECK_EVENT(PaddleMovedEvent,
                sf::Vector2f newCoords = e->newPos;

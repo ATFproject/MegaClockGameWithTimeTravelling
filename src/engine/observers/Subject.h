@@ -12,26 +12,12 @@
 namespace engine {
     class Subject {
     public:
-        void addObserver(Observer *toAdd) {
-            if (toAdd != nullptr)
-                _observers.push_back(toAdd);
-        }
-
-        void removeObserver(Observer *toRemove) {
-            _observers.erase(std::remove(_observers.begin(), _observers.end(), toRemove),
-                             _observers.end());
-        }
-
-        void removeAllObservers() {
-            _observers.clear();
-        }
+        void addObserver(Observer *toAdd);
+        void removeObserver(Observer *toRemove);
+        void removeAllObservers();
 
     protected:
-        void notify(const Event &event) {
-            for (auto &observer : _observers) {
-                observer->onNotify(event);
-            }
-        }
+        void notify(const Event &event);
 
     private:
         std::list<Observer *> _observers;

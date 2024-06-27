@@ -14,7 +14,9 @@
 
 #include "window/GameWindow.h"
 
-#include "SettingsLoader.h"
+#include "settings loader/SettingsLoader.h"
+
+#include "game/BasicBody.h"
 
 int main() {
     sf::RenderWindow win(
@@ -30,7 +32,7 @@ int main() {
 
     window.addGameObject(new mcgwtt::WindowController(&window), nullptr, nullptr);
 
-    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8), 1 / 165.f, 8, 3);
+    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8f), 1 / 165.f, 8, 3);
     window.addGameObject(nullptr, world, nullptr);
 
     auto view = new mcgwtt::ViewController();
@@ -44,17 +46,14 @@ int main() {
     else
         window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 
-    window.addGameObject(nullptr,
-                         new mcgwtt::PlayerPhysics(world, 0, 0),
-                         new mcgwtt::PlayerGraphics(&win));
+   mcgwtt::Platform platform(&win, world, 0, 6, 4, 1);
+   window.addGameObject(nullptr, platform.getPhysics(), platform.getGraphics());
 
-    window.addGameObject(nullptr,
-                         new mcgwtt::PlatformPhysics(world, 0, 6, 4, 1),
-                         new mcgwtt::PlatformGraphics(&win));
+    mcgwtt::Player player(&win, world, 0, 0, 0.5f, 1.7f, 0.25f);
+    window.addGameObject(nullptr, player.getPhysics(), player.getGraphics());
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
 
     window.startRendering();
-
     return 0;
 }

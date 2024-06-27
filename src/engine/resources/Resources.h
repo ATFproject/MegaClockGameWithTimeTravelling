@@ -9,10 +9,6 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_RESOURCES_H
 
-#include "EngineDef.h"
-
-#include <utility>
-
 namespace engine {
     template<typename T>
         std::unique_ptr<T> loadResource(const std::string &fileName);
@@ -23,145 +19,81 @@ namespace engine {
     public:
         inline static int _allocated = 0;
 
-        Resource() {
-            _path = "";
-            _allocated++;
-            std::cout << "Res created (" << _allocated << " allocated)\n";
-        }
-
-        explicit Resource(std::string loadPath) : _path(std::move(loadPath)) {
-            _allocated++;
-            std::cout << "Res created (\"" << _path << "\") (" << _allocated << " allocated)\n";
-        }
-
-        virtual ~Resource() {
-            _allocated--;
-            std::cout << "Res free (\"" << _path << "\") (" << _allocated << " allocated)\n";
-        };
+        Resource();
+        explicit Resource(std::string loadPath);
+        virtual ~Resource();
 
         virtual void load() = 0;
 
-        void setPath(const std::string &path) {
-            _path = path;
-        }
-
-        [[nodiscard]] std::string getResourcePath() const {
-            return _path;
-        }
+        void setPath(const std::string &path);
+        [[nodiscard]] std::string getResourcePath() const;
 
     protected:
         std::string _path = "Empty path";
     };
 
     class Texture : public Resource {
-    private:
-        std::unique_ptr<sf::Texture> _tex;
-
     public:
         Texture() = default;
+        explicit Texture(const std::string &fileName);
+        explicit Texture(sf::Texture *tex, const std::string &name = "");
 
-        explicit Texture(const std::string &fileName) : Resource(fileName) {
-            _tex = loadResource<sf::Texture>(fileName);
-        }
+        static Texture *loadCommon(const std::string &name);
+        void load() override;
 
-        explicit Texture(sf::Texture *tex, const std::string &name = "") : Resource(name) {
-            _tex.reset(tex);
-        }
+        [[nodiscard]] sf::Texture *getTex() const;
 
-        static Texture *loadCommon(const std::string &name) {
-            return new Texture("common/textures/" + name);
-        }
-
-        void load() override {
-            _tex = loadResource<sf::Texture>(_path);
-        }
-
-        [[nodiscard]] sf::Texture *getTex() const {
-            return _tex.get();
-        }
+    private:
+        std::unique_ptr<sf::Texture> _tex;
     };
 
     class SoundBuffer : public Resource {
-    private:
-        std::unique_ptr<sf::SoundBuffer> _soundBuffer;
-
     public:
         SoundBuffer() = default;
+        explicit SoundBuffer(const std::string &fileName);
 
-        explicit SoundBuffer(const std::string &fileName) : Resource(fileName) {
-            _soundBuffer = loadResource<sf::SoundBuffer>(fileName);
-        }
+        static SoundBuffer *loadCommon(const std::string &name);
+        void load() override;
 
-        static SoundBuffer *loadCommon(const std::string &name) {
-            return new SoundBuffer("common/sounds/" + name);
-        }
+        [[nodiscard]] const sf::SoundBuffer &getBuffer() const;
 
-        void load() override {
-            _soundBuffer = loadResource<sf::SoundBuffer>(_path);
-        }
-
-        [[nodiscard]] const sf::SoundBuffer &getBuffer() const {
-            return *_soundBuffer;
-        }
+    private:
+        std::unique_ptr<sf::SoundBuffer> _soundBuffer;
     };
 
     class Music : public Resource {
+    public:
+        Music() = default;
+        explicit Music(const std::string &fileName);
+
+        static Music *loadCommon(const std::string &name);
+        void load() override;
+
+        void play();
+        void setVolume(float volume);
+
     private:
         std::unique_ptr<sf::Music> _music;
 
-    public:
-        Music() = default;
-        explicit Music(const std::string &fileName) : Resource(fileName) {
-            _music = loadResource<sf::Music>(fileName);
-        }
-
-        static Music *loadCommon(const std::string &name) {
-            return new Music("common/music/" + name);
-        }
-
-        void load() override {
-            _music = loadResource<sf::Music>(_path);
-        }
-
-        void play() {
-            if (_music->getStatus() != sf::SoundStream::Status::Playing)
-                _music->play();
-        }
-
-        void setVolume(float volume) {
-            _music->setVolume(volume);
-        }
     };
 
     class Font : public Resource {
-    private:
-        std::unique_ptr<sf::Font> _font;
     public:
         Font() = default;
-        explicit Font(const std::string &fileName) : Resource(fileName) {
-            _font = loadResource<sf::Font>(fileName);
-        }
+        explicit Font(const std::string &fileName);
 
-        static Font *loadCommon(const std::string &name) {
-            return new Font("common/fonts/" + name);
-        }
+        static Font *loadCommon(const std::string &name);
+        void load() override;
 
-        const sf::Font &getFont() {
-            return *_font;
-        }
+        const sf::Font &getFont();
 
-        void load() override {
-            _font = loadResource<sf::Font>(_path);
-        }
+    private:
+        std::unique_ptr<sf::Font> _font;
     };
 
     using resourcePtr = std::unique_ptr<Resource>;
 
     class ResourceHandler {
-    private:
-        std::unordered_map<std::string, resourcePtr> _res;
-        std::string _loadPath;
-
     public:
         template<typename T>
             requires std::is_base_of_v<Resource, T>
@@ -201,30 +133,30 @@ namespace engine {
                 }
 
                 mem->load();
-
                 _res.try_emplace(resName, resourcePtr(mem));
-
                 return mem;
             }
 
-        void setLoadPath(const std::string &newLoadPath) {
-            _loadPath = newLoadPath;
-        }
+        void setLoadPath(const std::string &newLoadPath);
+        std::string getLoadPath();
 
-        std::string getLoadPath() {
-            return _loadPath;
-        }
+    private:
+        std::unordered_map<std::string, resourcePtr> _res;
+        std::string _loadPath;
     };
 
-    inline ResourceHandler *resourceHandler = nullptr;
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCInconsistentNamingInspection"
+    extern ResourceHandler *resourceHandler;
+#pragma clang diagnostic pop
 
     template<typename T>
         std::unique_ptr<T> loadResource(const std::string &fileName) {
             if (fileName.empty())
                 throw std::runtime_error("Empty filename for resource loading");
-            std::string addPath = fileName.starts_with("common") ? "" : resourceHandler->getLoadPath();
-            std::string folder = "../bin/" + addPath;
+            std::string folder = "../bin/" + (fileName.starts_with("common") ? "" : resourceHandler->getLoadPath());
             std::string path = folder + fileName;
+
             auto data = std::make_unique<T>();
             bool res;
 

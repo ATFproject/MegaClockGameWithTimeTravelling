@@ -7,14 +7,10 @@
 #ifndef MEGACLOCKGAMEWITHTIMETRAVELLING_SCENE_H
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_SCENE_H
 
-#include <fstream>
-#include <memory>
-
-#include "components/ComponentInterface.h"
+#include "camera/CameraController.h"
 
 namespace mcgwtt {
-    class Scene {
-    public:
+    struct Scene {
         bool _useSavedCamera{};
         std::string _name;
         std::string _dir;
@@ -22,32 +18,12 @@ namespace mcgwtt {
         std::vector<engine::game::GameObject *> _gameObjects{};
     };
 
-    inline void to_json(json &j, const Scene &s) {
-        j["name"] = s._name;
-        j["use saved camera"] = s._useSavedCamera;
-        j["camera"] = s._camera;
-    }
-
-    inline void from_json(const json &j, Scene &s) {
-        j.at("name").get_to(s._name);
-        j.at("use saved camera").get_to(s._useSavedCamera);
-        j.at("camera").get_to(s._camera);
-    }
+    void to_json(json &j, const Scene &s);
+    void from_json(const json &j, Scene &s);
 
     class SceneLoader {
     public:
-        static Scene load(const std::string &sceneDir) {
-            std::string path = "../bin/scenes/" + sceneDir + "/" + sceneDir + ".json";
-            std::ifstream f(path, std::ios::in);
-            json scene(json::parse(f));
-            Scene s;
-            scene.get_to(s);
-
-            s._dir = sceneDir;
-            std::cout << "Loading scene \"" << s._name << "\" from " << path << "\n";
-            engine::resourceHandler->setLoadPath("scenes/" + sceneDir + "/");
-            return s;
-        }
+        static Scene load(const std::string &sceneDir);
     };
 }
 
