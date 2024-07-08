@@ -1,0 +1,20 @@
+{
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "blocks": [
+    {
+      "pos": {
+        "x": 5,
+        "y": 24,
+        "w": 18,
+        "h": 7
+      },
+      "tex": "test.png",
+      "features": {
+        "solid": true
+      }
+    }
+  ]
+}
