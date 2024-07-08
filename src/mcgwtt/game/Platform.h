@@ -37,7 +37,7 @@ namespace mcgwtt {
         physicsTickFunction _physicsTick = [](engine::game::Game &game) {};
         onNotifyFunction _physicsOnNotify = [](const engine::Event &event) {};
 
-        initSpritesFunction _initSprites = [this](const BasicBodyData *data) -> std::pair<b2Body *, animationMap> {
+        initSpritesFunction _initSprites = [this](const BasicBodyData *data) -> bodyAnimPair {
             return bindAnimations(data, Animation::getStaticAnimation("ground/ground tile.png"));
         };
     };
