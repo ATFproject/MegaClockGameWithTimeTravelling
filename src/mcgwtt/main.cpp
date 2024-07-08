@@ -18,6 +18,8 @@
 
 #include "game/BasicBody.h"
 
+#include "game/rooms/Room.h"
+
 int main() {
     sf::RenderWindow win(
             mcgwtt::loadVideoMode(),
