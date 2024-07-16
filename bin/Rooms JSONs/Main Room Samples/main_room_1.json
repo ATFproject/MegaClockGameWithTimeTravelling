@@ -1,0 +1,36 @@
+{
+  "name": "main_room_1",
+  "width": 128,
+  "height": 64,
+  "numOfExits": 2,
+  "exits": [
+    {
+      "x": 0,
+      "y": 0,
+      "side": "left",
+      "type": "mb smth useful"
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "side": "wall",
+      "type": "mb smth useful"
+    }
+  ],
+  "numofblocks": 1,
+  "blocks": [
+    {
+      "x": 0,
+      "y": 14,
+      "w": 9,
+      "h": 18,
+      "tex": "texture description",
+      "features": [
+        {
+          "some feature desc (damage on contact)": 15,
+          "some other feature (fall damage enabled)": false
+        }
+      ]
+    }
+  ]
+}

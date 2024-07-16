@@ -18,6 +18,7 @@
       <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="tgui" />
+      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-main" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
@@ -37,8 +38,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed type names in function returns">
-      <change afterPath="$PROJECT_DIR$/bin/test/test room.json" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed reordering issue leading to warning">
+      <change afterPath="$PROJECT_DIR$/bin/Rooms JSONs/Main Room Samples/main_room_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,9 +81,9 @@
     <scope name="src" pattern="file[MegaClockGameWithTimeTravelling]:src//*&amp;&amp;!file[MegaClockGameWithTimeTravelling]:src/external//*||file:CMakeLists.txt||file:.gitignore||file[MegaClockGameWithTimeTravelling]:resources/*" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2iiqk3htF7IgCFza7Y1d48cm4y7" />
+  <component name="ProjectId" id="2ixYwsSx3o2QBLqZRViBLA8HNux" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -89,7 +93,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Debug",
     "CMake Debug.MegaClockGameWithTimeTravelling.executor": "Debug",
     "Makefile Target.Makefile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -114,7 +118,7 @@
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "CMakeSettings",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "structure.view.defaults.are.configured": "true",
     "update.copyright.on.save": "true",
     "vue.rearranger.settings.migration": "true"
@@ -125,7 +129,17 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\ForCLion\MegaClockGameWithTimeTravelling\bin" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -177,6 +191,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="sfml-main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="sfml-network" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-network" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -212,6 +231,7 @@
       <item itemvalue="CMake Application.sajson" />
       <item itemvalue="CMake Application.sfml-audio" />
       <item itemvalue="CMake Application.sfml-graphics" />
+      <item itemvalue="CMake Application.sfml-main" />
       <item itemvalue="CMake Application.sfml-network" />
       <item itemvalue="CMake Application.sfml-system" />
       <item itemvalue="CMake Application.sfml-window" />
@@ -319,8 +339,21 @@
       <workItem from="1719343966782" duration="1214000" />
       <workItem from="1719345908052" duration="85000" />
       <workItem from="1719424906389" duration="9692000" />
-      <workItem from="1719983889458" duration="13000" />
-      <workItem from="1720428326948" duration="1398000" />
+      <workItem from="1720433939595" duration="195000" />
+      <workItem from="1720434139331" duration="39000" />
+      <workItem from="1720434182424" duration="50000" />
+      <workItem from="1720434237093" duration="3329000" />
+      <workItem from="1720438326803" duration="7333000" />
+      <workItem from="1720464236185" duration="1816000" />
+      <workItem from="1721134242701" duration="3456000" />
+    </task>
+    <task id="LOCAL-00058" summary="Removed warnings as errors for windows">
+      <option name="closed" value="true" />
+      <created>1710106575420</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1710106575420</updated>
     </task>
     <task id="LOCAL-00059" summary="Added tgui main menu example">
       <option name="closed" value="true" />
@@ -706,15 +739,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719337819481</updated>
     </task>
-    <task id="LOCAL-00108" summary="Fixed type names in function returns">
-      <option name="closed" value="true" />
-      <created>1720431991811</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1720431991812</updated>
-    </task>
-    <option name="localTasksCounter" value="109" />
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -741,6 +766,9 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added resources" />
+    <MESSAGE value="Added pvs studio comments" />
+    <MESSAGE value="Fixed tex name" />
     <MESSAGE value="Removed unnecessary textures" />
     <MESSAGE value="Added debug grid &amp; fixed player positioning" />
     <MESSAGE value="Added player and a platform" />
@@ -763,10 +791,11 @@
     <MESSAGE value="Removed warning D9025 on msvc" />
     <MESSAGE value="Added msvc build on windows" />
     <MESSAGE value="Fixed reordering issue leading to warning" />
-    <MESSAGE value="Meow" />
-    <MESSAGE value="squash! Meow" />
-    <MESSAGE value="Fixed type names in function returns" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed type names in function returns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed reordering issue leading to warning" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
