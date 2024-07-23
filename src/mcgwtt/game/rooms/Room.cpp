@@ -39,4 +39,6 @@ bool mcgwtt::Room::add_neighbour(mcgwtt::Room *Neighbour, const int &NeighbourEx
     Exits[ExitNumToConnect].Neighbour = Neighbour;
     Exits[ExitNumToConnect].nebX = Neighbour->Exits[NeighbourExitNumToConnect].x;
     Exits[ExitNumToConnect].nebY = Neighbour->Exits[NeighbourExitNumToConnect].y;
+
+    return true;
 }

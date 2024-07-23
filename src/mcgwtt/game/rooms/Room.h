@@ -34,7 +34,7 @@ namespace mcgwtt {
         uint Width = 0, Height = 0;
 
     public:
-        uint NumOfExits = 0; // Same as "NeighbourRooms" array size
+        int NumOfExits = 0; // Same as "NeighbourRooms" array size
         RoomExit *Exits = nullptr;
         Room() = default;
         ~Room() {
