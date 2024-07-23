@@ -12,10 +12,14 @@
 
 namespace mcgwtt {
     #define MCGWTT_BASIC_BODY_CREATE_BODY(bd) \
-                bodyFixVecPair res; \
+                bodyFixVecPair res;           \
                 _body = res.first = game._world->CreateBody(&(bd));
+    #define MCGWTT_BASIC_BODY_CREATE_FIXTURE_DEF_DENS(shape) \
+                res.second.push_back(res.first->CreateFixture(&(shape), 1.0));
     #define MCGWTT_BASIC_BODY_CREATE_FIXTURE(shape, density) \
                 res.second.push_back(res.first->CreateFixture(&(shape), (density)));
+    #define MCGWTT_BASIC_BODY_CREATE_FIXTURE_FROM_DEF(def) \
+                res.second.push_back(res.first->CreateFixture(&def));
 
     class BasicBody {
     public:
@@ -83,6 +87,16 @@ namespace mcgwtt {
                 }
                 return std::make_pair(_body, a);
             }
+
+        bodyAnimPair bindAnimations(const BasicBodyData *data, const std::vector<Animation> &animations) {
+            animationMap a;
+            std::size_t i = 0;
+            for (auto &anim : animations) {
+                a[data->_fix[i++]] = anim;
+            }
+            return std::make_pair(_body, a);
+        }
+
 
     protected:
         b2Body *_body{nullptr};

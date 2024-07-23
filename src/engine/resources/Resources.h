@@ -114,7 +114,7 @@ namespace engine {
                     _res.emplace(name, resourcePtr(mem));
                 else
                     delete mem;
-                return dynamic_cast<T*>(_res[name].get());
+                return dynamic_cast<T *>(_res[name].get());
             }
 
         template<typename T>

@@ -32,7 +32,9 @@
 #include <format>
 
 #else
+
 #include <fmt/format.h>
+
 #endif
 
 #include <SFML/Graphics.hpp>

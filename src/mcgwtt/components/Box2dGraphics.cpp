@@ -7,26 +7,27 @@
 #include "Box2dGraphics.h"
 
 namespace mcgwtt {
-    Animation::Animation(double fps, const std::string &spriteSheetName, uint rows, uint columns, uint spriteCount)
+    Animation::Animation(double fps, const std::string &spriteSheetName, int rows, int columns, int spriteCount)
             : _fps(fps) {
         sf::Image spriteSheet = engine::resourceHandler->loadRes(
                 new engine::Texture(spriteSheetName))->getTex()->copyToImage();
 
-        uint x = 0, y = 0;
-        uint texW = spriteSheet.getSize().x / rows;
-        uint texH = spriteSheet.getSize().y / columns;
-        for (uint i = 0; i < spriteCount; ++i) {
+        int x = 0, y = 0,
+                sizeX = static_cast<int>(spriteSheet.getSize().x),
+                sizeY = static_cast<int>(spriteSheet.getSize().y),
+                texW = sizeX / rows,
+                texH = sizeY / columns;
+
+        for (int i = 0; i < spriteCount; ++i) {
             auto *temp = new sf::Texture;
-            temp->loadFromImage(spriteSheet, sf::IntRect(
-                    static_cast<int>(x), static_cast<int>(y), static_cast<int>(texW), static_cast<int>(texH))
-            );
+            temp->loadFromImage(spriteSheet, sf::IntRect(x, y, texW, texH));
 
             std::string name =
                     "Spritesheet \"" + spriteSheetName + "\" (" + std::to_string(x) + ", " + std::to_string(y) +
                     ")";
             _frames.push_back(engine::resourceHandler->addRes(name, new engine::Texture(temp, name))->getTex());
 
-            x = (x + texW) % spriteSheet.getSize().x;
+            x = (x + texW) % sizeX;
             if (x == 0 && i != 0)
                 y += texH;
         }
@@ -59,6 +60,11 @@ namespace mcgwtt {
 
     Animation Animation::getStaticAnimation(sf::Texture *singleTexture) {
         Animation res(1, {singleTexture});
+        return res;
+    }
+
+    Animation Animation::getStaticAnimation(const std::string &texPath) {
+        Animation res(1, {texPath});
         return res;
     }
 

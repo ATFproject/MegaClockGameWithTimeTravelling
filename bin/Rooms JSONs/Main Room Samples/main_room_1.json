@@ -1,36 +1,34 @@
 {
   "name": "main_room_1",
-  "width": 128,
-  "height": 64,
-  "numOfExits": 2,
-  "exits": [
-    {
-      "x": 0,
-      "y": 0,
-      "side": "left",
-      "type": "mb smth useful"
-    },
-    {
-      "x": 10,
-      "y": 0,
-      "side": "wall",
-      "type": "mb smth useful"
-    }
-  ],
-  "numofblocks": 1,
+  "width": 32,
+  "height": 32,
   "blocks": [
     {
-      "x": 0,
-      "y": 14,
+      "x": 1,
+      "y": 13,
       "w": 9,
       "h": 18,
-      "tex": "texture description",
-      "features": [
-        {
-          "some feature desc (damage on contact)": 15,
-          "some other feature (fall damage enabled)": false
-        }
-      ]
+      "tex": "rooms/block 2.png"
+    },
+    {
+      "x": 18,
+      "y": 19,
+      "w": 13,
+      "h": 12,
+      "tex": "rooms/block 3.png"
+    },
+    {
+      "x": 14,
+      "y": 4,
+      "w": 15,
+      "h": 8,
+      "animation": {
+        "fps": 2,
+        "spritesheet": "rooms/water.png",
+        "rows": 2,
+        "columns": 1,
+        "frames": 2
+      }
     }
   ]
 }

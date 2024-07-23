@@ -14,17 +14,14 @@ namespace mcgwtt {
     class Animation {
     public:
         Animation() = default;
-        Animation(double fps, const std::string &spriteSheetName, uint rows, uint columns, uint spriteCount);
+        Animation(double fps, const std::string &spriteSheetName, int rows, int columns, int spriteCount);
         Animation(double fps, const std::vector<std::string> &texNames);
         Animation(double fps, const std::vector<sf::Texture *> &textures);
 
         void update();
 
         static Animation getStaticAnimation(sf::Texture *singleTexture);
-        static Animation getStaticAnimation(const std::string &texPath) {
-            Animation res(1, {texPath});
-            return res;
-        }
+        static Animation getStaticAnimation(const std::string &texPath);
 
         sf::Texture *curFrame();
 

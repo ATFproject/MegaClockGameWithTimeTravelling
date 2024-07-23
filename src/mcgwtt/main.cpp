@@ -48,11 +48,11 @@ int main() {
     else
         window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 
-   mcgwtt::Platform platform(&win, world, 0, 6, 4, 1);
-   window.addGameObject(nullptr, platform.getPhysics(), platform.getGraphics());
-
-    mcgwtt::Player player(&win, world, 0, 0, 0.5f, 1.7f, 0.25f);
+    mcgwtt::Player player(&win, world, 4, -8, 0.5f, 1.7f, 0.25f);
     window.addGameObject(nullptr, player.getPhysics(), player.getGraphics());
+
+    mcgwtt::Room room(&win, world, 0, 0, "Main Room Samples/main_room_1.json");
+    window.addGameObject(nullptr, room.getPhysics(), room.getGraphics());
 
     window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
 

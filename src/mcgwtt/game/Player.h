@@ -15,7 +15,7 @@ namespace mcgwtt {
         Player(sf::RenderWindow *win, GameWorldPhysics *worldPh,
                float x, float y, float w, float h, float headR)
                 : BasicBody(win, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
-                  _x(x), _y(y), _w(w), _h(h), _headR(headR) {}
+                  _x(x), _y(y), _spawnX(x), _spawnY(y), _w(w), _h(h), _headR(headR) {}
 
     private:
         physicsInitFunction _physicsInit = [this](engine::game::Game &game) -> bodyFixVecPair {
@@ -39,13 +39,13 @@ namespace mcgwtt {
 
         physicsTickFunction _physicsTick = [this](engine::game::Game &game) {
             if (game.isKeyPressed(sf::Keyboard::Scancode::D)) {
-                _body->SetLinearVelocity(b2Vec2(2, _body->GetLinearVelocity().y));
+                _body->SetLinearVelocity(b2Vec2(3, _body->GetLinearVelocity().y));
             }
             if (game.isKeyPressed(sf::Keyboard::Scancode::A)) {
-                _body->SetLinearVelocity(b2Vec2(-2, _body->GetLinearVelocity().y));
+                _body->SetLinearVelocity(b2Vec2(-3, _body->GetLinearVelocity().y));
             }
             if (game.wasKeyClicked(sf::Keyboard::Scancode::R)) {
-                _body->SetTransform(b2Vec2(0, 0), 0);
+                _body->SetTransform(b2Vec2(_spawnX, _spawnY), 0);
                 _body->SetLinearVelocity(b2Vec2_zero);
                 _body->SetAngularVelocity(0);
             }
@@ -62,7 +62,7 @@ namespace mcgwtt {
         };
 
     private:
-        float _x, _y;
+        float _x, _y, _spawnX, _spawnY;
         const float _w, _h, _headR;
     };
 }
