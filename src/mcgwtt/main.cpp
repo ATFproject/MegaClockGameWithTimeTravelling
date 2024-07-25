@@ -7,12 +7,9 @@
 #include "DebugComponents.h"
 #include "CameraComponents.h"
 
-#include "game/Platform.h"
 #include "game/Player.h"
 
 #include "system/scenes/Scene.h"
-
-#include "window/GameWindow.h"
 
 #include "settings loader/SettingsLoader.h"
 
@@ -31,10 +28,16 @@ int main() {
     win.setActive(true);
 
     window::GameWindow window(&win);
+    mcgwtt::setGameProperties(window);
 
     window.addGameObject(new mcgwtt::WindowController(&window), nullptr, nullptr);
 
-    auto world = new mcgwtt::GameWorldPhysics(b2Vec2(0, 9.8f), 1 / 165.f, 8, 3);
+    auto world = new mcgwtt::GameWorldPhysics(
+            b2Vec2(0, window.getProperties().gravity),
+            1 / window.getProperties().targetTps,
+            8, 3
+    );
+
     window.addGameObject(nullptr, world, nullptr);
 
     auto view = new mcgwtt::ViewController();

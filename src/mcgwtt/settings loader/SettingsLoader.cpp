@@ -4,6 +4,8 @@
 // Created by Дом on 25.06.2024.
 //
 
+#include "SettingsLoader.h"
+
 namespace mcgwtt {
     sf::ContextSettings loadContextSettings() {
         std::ifstream f("../bin/common/settings/settings.json");
@@ -66,11 +68,16 @@ namespace mcgwtt {
         win.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
         win.setPosition(sf::Vector2i(window["position"]["x"], window["position"]["y"]));
-        if (window["vertical sync"]) {
-            win.setVerticalSyncEnabled(true);
-        } else {
-            win.setFramerateLimit(window["framerate limit"]);
-        }
+
+        // framerate is handled manually inside the game loop
+        win.setVerticalSyncEnabled(false);
+        win.setFramerateLimit(0);
     }
 
+    void setGameProperties(window::GameWindow &gameWin) {
+        std::ifstream f("../bin/common/settings/settings.json");
+        auto game = json::parse(f)["game"];
+        engine::game::GameProperties props = game;
+        gameWin.setProperties(props);
+    }
 }

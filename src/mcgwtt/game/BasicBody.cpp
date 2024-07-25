@@ -9,7 +9,7 @@
 namespace mcgwtt {
     BasicBody::BasicBodyData::BasicBodyData(b2Body *body, const std::vector<b2Fixture *> &fix)
             : _body(body), _fix(fix) {}
-    BasicBody::BasicBodyData::BasicBodyData(BasicBody::bodyFixVecPair p)
+    BasicBody::BasicBodyData::BasicBodyData(const BasicBody::bodyFixVecPair& p)
             : _body(p.first), _fix(p.second) {}
 
 

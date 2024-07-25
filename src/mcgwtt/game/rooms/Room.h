@@ -11,34 +11,31 @@
 
 namespace mcgwtt {
     struct BlockAnimation {
-        float _fps{};
-        std::string _spritesheetName;
-        int _rows{}, _columns{}, _frames{};
+        float fps{};
+        std::string spritesheet;
+        int rows{}, columns{}, frames{};
 
         BlockAnimation() = default;
         explicit BlockAnimation(const std::string &spritesheetName);
         [[nodiscard]] Animation toAnimation() const;
+
+        NLOHMANN_DEFINE_TYPE_INTRUSIVE(BlockAnimation, fps, spritesheet, rows, columns, frames)
     };
 
-    void to_json(json &j, const BlockAnimation &anim);
-    void from_json(const json &j, BlockAnimation &anim);
-
     struct RoomBlock {
-        float _x{}, _y{}, _w{}, _h{};
-        BlockAnimation _anim;
+        float x{}, y{}, w{}, h{};
+        BlockAnimation anim;
     };
 
     void to_json(json &j, const RoomBlock &block);
     void from_json(const json &j, RoomBlock &block);
 
     struct RoomData {
-        std::string _name;
-        float _width{}, _height{};
-        std::vector<RoomBlock> _blocks;
+        std::string name;
+        float width{}, height{};
+        std::vector<RoomBlock> blocks;
+        NLOHMANN_DEFINE_TYPE_INTRUSIVE(RoomData, name, width, height, blocks)
     };
-
-    void to_json(json &j, const RoomData &data);
-    void from_json(const json &j, RoomData &data);
 
     class Room : public BasicBody {
     public:
@@ -57,18 +54,18 @@ namespace mcgwtt {
 
             MCGWTT_BASIC_BODY_CREATE_BODY(bd)
 
-            for (auto &block : _data._blocks) {
+            for (auto &block : _data.blocks) {
                 b2PolygonShape shape;
-                shape.SetAsBox(block._w / 2, block._h / 2,
+                shape.SetAsBox(block.w / 2, block.h / 2,
                                b2Vec2(
-                                       block._x - (_data._width - block._w) / 2,
-                                       block._y - (_data._height - block._h) / 2
+                                       block.x - (_data.width - block.w) / 2,
+                                       block.y - (_data.height - block.h) / 2
                                ), 0);
                 MCGWTT_BASIC_BODY_CREATE_FIXTURE(shape, 1.0f)
             }
 
             b2PolygonShape shape;
-            shape.SetAsBox(_data._width / 2, _data._height / 2,
+            shape.SetAsBox(_data.width / 2, _data.height / 2,
                            b2Vec2(0, 0), 0);
 
             b2FixtureDef def;
@@ -85,10 +82,10 @@ namespace mcgwtt {
 
         initSpritesFunction _initSprites = [this](const BasicBodyData *data) -> bodyAnimPair {
             std::vector<Animation> animations;
-            animations.reserve(_data._blocks.size());
+            animations.reserve(_data.blocks.size());
 
-            for (auto &block : _data._blocks) {
-                animations.push_back(block._anim.toAnimation());
+            for (auto &block : _data.blocks) {
+                animations.push_back(block.anim.toAnimation());
             }
 
             animations.push_back(Animation::getStaticAnimation("rooms/border.png"));

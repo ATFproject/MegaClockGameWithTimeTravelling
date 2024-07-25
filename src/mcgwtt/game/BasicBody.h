@@ -30,7 +30,7 @@ namespace mcgwtt {
             b2Body *_body;
             std::vector<b2Fixture *> _fix;
             BasicBodyData(b2Body *body, const std::vector<b2Fixture *> &fix);
-            explicit BasicBodyData(bodyFixVecPair p);
+            explicit BasicBodyData(const bodyFixVecPair& p);
         };
 
         using physicsInitFunction = const std::function<bodyFixVecPair(engine::game::Game &)>;

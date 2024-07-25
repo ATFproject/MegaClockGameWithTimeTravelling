@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="src" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
@@ -38,11 +43,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added room drawing from json + images">
-      <change afterPath="$PROJECT_DIR$/src/engine/game/Timer.h" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added timer class to handle actions per sec (ticks, frames, etc)">
+      <change afterPath="$PROJECT_DIR$/src/engine/game/GameProperties.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/common/settings/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/common/settings/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Timer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Timer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +108,9 @@
   <component name="NamedScopeManager">
     <scope name="src" pattern="file[MegaClockGameWithTimeTravelling]:src//*&amp;&amp;!file[MegaClockGameWithTimeTravelling]:src/external//*||file:CMakeLists.txt||file:.gitignore||file[MegaClockGameWithTimeTravelling]:resources/*" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -126,7 +149,7 @@
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editing.templates",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++",
     "structure.view.defaults.are.configured": "true",
     "update.copyright.on.save": "true",
     "vue.rearranger.settings.migration": "true"
@@ -343,15 +366,7 @@
       <workItem from="1721741281023" duration="640000" />
       <workItem from="1721742199472" duration="8161000" />
       <workItem from="1721768588640" duration="12000" />
-      <workItem from="1721895518819" duration="4188000" />
-    </task>
-    <task id="LOCAL-00061" summary="Added forgotten theme files">
-      <option name="closed" value="true" />
-      <created>1710491817857</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1710491817857</updated>
+      <workItem from="1721895518819" duration="9427000" />
     </task>
     <task id="LOCAL-00062" summary="Small renaming">
       <option name="closed" value="true" />
@@ -737,7 +752,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721750297324</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Added timer class to handle actions per sec (ticks, frames, etc)">
+      <option name="closed" value="true" />
+      <created>1721899733954</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1721899733954</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -764,7 +787,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added player and a platform" />
     <MESSAGE value="Fixed rotation player works" />
     <MESSAGE value="Fixed draw method" />
     <MESSAGE value="Added view zoom and move support to camera controller" />
@@ -789,7 +811,8 @@
     <MESSAGE value="Fixed type names in function returns" />
     <MESSAGE value="Fixed mimin typos" />
     <MESSAGE value="Added room drawing from json + images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added room drawing from json + images" />
+    <MESSAGE value="Added timer class to handle actions per sec (ticks, frames, etc)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added timer class to handle actions per sec (ticks, frames, etc)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

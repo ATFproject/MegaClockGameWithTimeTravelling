@@ -27,7 +27,7 @@ namespace engine {
             }
 
             if (_actionMeasureClock.getElapsedTime().asSeconds() >= _measureInterval) {
-                _measuredActionsPerSec = _actions * 1.F / _actionMeasureClock.getElapsedTime().asSeconds();
+                _measuredActionsPerSec = _actions / _actionMeasureClock.getElapsedTime().asSeconds();
                 _actions = 0;
                 _actionMeasureClock.restart();
             }
@@ -44,8 +44,6 @@ namespace engine {
         const std::function<void()> _action;
 
         sf::Clock _actionClock, _lastTargetTimeClock, _actionMeasureClock;
-
-
     };
 }
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_TIMER_H

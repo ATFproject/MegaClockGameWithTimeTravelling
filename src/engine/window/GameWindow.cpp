@@ -14,6 +14,14 @@ namespace window {
         _game.addObserver(this);
     }
 
+    engine::game::GameProperties GameWindow::getProperties() const {
+        return _gameProperties;
+    }
+
+    void GameWindow::setProperties(const engine::game::GameProperties &newProps) {
+        _gameProperties = newProps;
+    }
+
     void GameWindow::startRendering() {
         _isActive = true;
         std::cout << "Started!" << std::endl;
@@ -23,13 +31,13 @@ namespace window {
         // Works perfectly on Linux without it :(
         notify(window::WindowResizeEvent(_win->getSize().x, _win->getSize().y));
 
-        engine::ActionPerSecond tick(165, 1, [this]() {
+        engine::ActionPerSecond tick(_gameProperties.targetTps, 1, [this]() {
             if (_isActive) {
                 _game.tick();
             }
         });
 
-        engine::ActionPerSecond drawFrame(165, 1, [this]() {
+        engine::ActionPerSecond drawFrame(_gameProperties.maxFps, 1, [this]() {
             _win->clear(sf::Color(64, 64, 64));
 
             _game.draw();
@@ -38,7 +46,7 @@ namespace window {
             _win->display();
         });
 
-        engine::ActionPerSecond output(2, 10, [&tick, &drawFrame]() {
+        engine::ActionPerSecond output(2, 0, [&tick, &drawFrame]() {
             std::cout << "TPS: " << tick.getActualActionRate() << "; FPS: " << drawFrame.getActualActionRate()
                       << std::endl;
         });

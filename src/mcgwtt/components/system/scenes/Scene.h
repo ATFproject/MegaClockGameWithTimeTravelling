@@ -15,7 +15,7 @@ namespace mcgwtt {
         std::string _name;
         std::string _dir;
         CameraController _camera{nullptr, 0};
-        std::vector<engine::game::GameObject *> _gameObjects{};
+        std::vector<engine::game::GameObject *> _gameObjects;
     };
 
     void to_json(json &j, const Scene &s);

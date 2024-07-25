@@ -28,8 +28,11 @@
       "Resize": false,
       "Close": false
     },
-    "icon path": "icon.png",
-    "framerate limit": 0,
-    "vertical sync": false
+    "icon path": "icon.png"
+  },
+  "game": {
+    "targetTps": 120,
+    "maxFps": 165,
+    "gravity": 9.8
   }
 }

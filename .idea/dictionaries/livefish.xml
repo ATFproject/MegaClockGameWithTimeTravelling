@@ -14,6 +14,8 @@
       <w>emptycomponents</w>
       <w>enginedef</w>
       <w>errorfile</w>
+      <w>extlibs</w>
+      <w>gameproperties</w>
       <w>gameworld</w>
       <w>iters</w>
       <w>mcgwtt</w>
@@ -30,6 +32,7 @@
       <w>systemcomponents</w>
       <w>tgui</w>
       <w>timestep</w>
+      <w>timmimin</w>
       <w>titlebar</w>
       <w>windowcontroller</w>
       <w>windowmovementcontroller</w>

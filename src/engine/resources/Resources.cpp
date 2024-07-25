@@ -7,12 +7,12 @@
 #include "Resources.h"
 
 namespace engine {
-    Resource::Resource() : _path("") {
+    Resource::Resource() {
         _allocated++;
         std::cout << "Res created (" << _allocated << " allocated)\n";
     }
 
-    Resource::Resource(std::string loadPath) : _path(std::move(loadPath)) {
+    Resource::Resource(const std::string &loadPath) : _path(loadPath) {
         _allocated++;
         std::cout << "Res created (\"" << _path << "\") (" << _allocated << " allocated)\n";
     }

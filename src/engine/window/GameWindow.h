@@ -8,6 +8,7 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWINDOW_H
 
 #include "game/GameObject.h"
+#include "game/GameProperties.h"
 
 namespace window {
     class GameWindow : public engine::Observer, public engine::Subject {
@@ -15,6 +16,10 @@ namespace window {
         GameWindow() = delete;
 
         explicit GameWindow(sf::RenderWindow *window);
+
+        engine::game::GameProperties getProperties() const;
+        void setProperties(const engine::game::GameProperties &newProps);
+
         void startRendering();
 
         void onNotify(const engine::Event &event) override;
@@ -35,8 +40,8 @@ namespace window {
 
         sf::RenderWindow *_win;
         tgui::Gui _gui;
-
         engine::game::Game _game;
+        engine::game::GameProperties _gameProperties{};
     };
 
     struct WindowCloseEvent : public engine::Event {

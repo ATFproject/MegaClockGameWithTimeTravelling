@@ -8,6 +8,7 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_SETTINGSLOADER_H
 
 #include "EngineDef.h"
+#include "window/GameWindow.h"
 
 namespace mcgwtt {
     sf::ContextSettings loadContextSettings();
@@ -16,6 +17,7 @@ namespace mcgwtt {
     std::string loadWindowTitle();
 
     void setWindowProperties(sf::RenderWindow &win);
+    void setGameProperties(window::GameWindow &gameWin);
 }
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_SETTINGSLOADER_H

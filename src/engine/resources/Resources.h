@@ -20,7 +20,7 @@ namespace engine {
         inline static int _allocated = 0;
 
         Resource();
-        explicit Resource(std::string loadPath);
+        explicit Resource(const std::string &loadPath);
         virtual ~Resource();
 
         virtual void load() = 0;
