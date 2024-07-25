@@ -25,6 +25,8 @@ namespace mcgwtt {
 
             MCGWTT_BASIC_BODY_CREATE_BODY(bd)
 
+            _body->GetUserData();
+
             b2PolygonShape shapeBody;
             shapeBody.SetAsBox(_w, _h - _headR * 2, b2Vec2(_x, _y + _h), 0);
             MCGWTT_BASIC_BODY_CREATE_FIXTURE(shapeBody, 5.0f)
@@ -45,13 +47,13 @@ namespace mcgwtt {
                 _body->SetLinearVelocity(b2Vec2(-3, _body->GetLinearVelocity().y));
             }
             if (game.wasKeyClicked(sf::Keyboard::Scancode::R)) {
-                _body->SetTransform(b2Vec2(_spawnX, _spawnY), 0);
-                _body->SetLinearVelocity(b2Vec2_zero);
-                _body->SetAngularVelocity(0);
+                respawn();
             }
         };
 
-        onNotifyFunction _physicsOnNotify = [](const engine::Event &event) {};
+        onNotifyFunction _physicsOnNotify = [this](const engine::Event &event) {
+        };
+
 
         initSpritesFunction _initSprites = [this](const BasicBodyData *data) -> bodyAnimPair {
             return bindAnimations(
@@ -60,6 +62,13 @@ namespace mcgwtt {
                     Animation::getStaticAnimation("player/player head.png")
             );
         };
+
+
+        MCGWTT_IF_LOCKED_CALL_NEXT_TICK(respawn, {
+            _body->SetTransform(b2Vec2(_spawnX, _spawnY), 0);
+            _body->SetLinearVelocity(b2Vec2_zero);
+            _body->SetAngularVelocity(0);
+        })
 
     private:
         float _x, _y, _spawnX, _spawnY;

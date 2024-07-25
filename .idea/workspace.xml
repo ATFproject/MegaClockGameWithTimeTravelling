@@ -43,26 +43,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added timer class to handle actions per sec (ticks, frames, etc)">
-      <change afterPath="$PROJECT_DIR$/src/engine/game/GameProperties.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added game properties loading from settings.json">
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListenerAdder.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListenerAdder.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/common/settings/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/common/settings/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/game/Timer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Timer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/settings loader/SettingsLoader.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +69,7 @@
     <option name="indexingThreadsNum" value="7" />
     <option name="indexerStaticOnly" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -87,7 +80,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="guns" />
+        <entry key="$PROJECT_DIR$" value="room-drawing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,7 +117,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Debug",
     "CMake Debug.MegaClockGameWithTimeTravelling.executor": "Debug",
     "Makefile Target.Makefile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -138,8 +131,8 @@
     "cidr.known.project.marker": "true",
     "code.cleanup.on.save": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "room-drawing",
-    "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src",
+    "git-widget-placeholder": "contact-listener",
+    "last_opened_file_path": "/home/livefish/Development/ATFproject/MegaClockGameWithTimeTravelling/src/mcgwtt/game/ContactListener",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -149,7 +142,7 @@
     "nodejs_package_manager_path": "npm",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++",
+    "settings.editor.selected.configurable": "inlay.hints",
     "structure.view.defaults.are.configured": "true",
     "update.copyright.on.save": "true",
     "vue.rearranger.settings.migration": "true"
@@ -160,6 +153,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/mcgwtt/game/ContactListener" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
@@ -366,15 +364,8 @@
       <workItem from="1721741281023" duration="640000" />
       <workItem from="1721742199472" duration="8161000" />
       <workItem from="1721768588640" duration="12000" />
-      <workItem from="1721895518819" duration="9427000" />
-    </task>
-    <task id="LOCAL-00062" summary="Small renaming">
-      <option name="closed" value="true" />
-      <created>1710519977582</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1710519977583</updated>
+      <workItem from="1721895518819" duration="9578000" />
+      <workItem from="1721909223602" duration="12666000" />
     </task>
     <task id="LOCAL-00063" summary="Removed cppcheck because it is unnecessary">
       <option name="closed" value="true" />
@@ -760,7 +751,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721899733954</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Added game properties loading from settings.json">
+      <option name="closed" value="true" />
+      <created>1721905106969</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1721905106969</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -787,7 +786,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed rotation player works" />
     <MESSAGE value="Fixed draw method" />
     <MESSAGE value="Added view zoom and move support to camera controller" />
     <MESSAGE value="Restructured components to separate dirs" />
@@ -812,7 +810,8 @@
     <MESSAGE value="Fixed mimin typos" />
     <MESSAGE value="Added room drawing from json + images" />
     <MESSAGE value="Added timer class to handle actions per sec (ticks, frames, etc)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added timer class to handle actions per sec (ticks, frames, etc)" />
+    <MESSAGE value="Added game properties loading from settings.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added game properties loading from settings.json" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

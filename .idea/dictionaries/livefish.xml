@@ -6,6 +6,8 @@
       <w>cameracomponents</w>
       <w>cameracontroller</w>
       <w>componentdef</w>
+      <w>contactlistener</w>
+      <w>contactlisteneradder</w>
       <w>debugcamera</w>
       <w>debugcomponents</w>
       <w>debuggrid</w>

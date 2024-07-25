@@ -15,6 +15,9 @@ namespace mcgwtt {
     void GameWorldPhysics::init(engine::game::Game &game) {
         game._world.emplace(_gravity);
         _world = &*game._world;
+
+        ContactListenerAdder(*this);
+        _world->SetContactListener(&_contactListener);
     }
 
     void GameWorldPhysics::onNotify(const engine::Event &event) {

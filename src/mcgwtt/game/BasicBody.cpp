@@ -9,7 +9,7 @@
 namespace mcgwtt {
     BasicBody::BasicBodyData::BasicBodyData(b2Body *body, const std::vector<b2Fixture *> &fix)
             : _body(body), _fix(fix) {}
-    BasicBody::BasicBodyData::BasicBodyData(const BasicBody::bodyFixVecPair& p)
+    BasicBody::BasicBodyData::BasicBodyData(const BasicBody::bodyFixVecPair &p)
             : _body(p.first), _fix(p.second) {}
 
 
@@ -26,6 +26,11 @@ namespace mcgwtt {
     }
 
     void BasicBody::BasicBodyPhysics::tick(engine::game::Game &game) {
+        for (auto &func : _onNextTick) {
+            func();
+        }
+        _onNextTick.clear();
+
         _tick(game);
     }
 
@@ -51,7 +56,13 @@ namespace mcgwtt {
                          BasicBody::physicsTickFunction &physicsTick, BasicBody::onNotifyFunction &physicsOnNotify,
                          BasicBody::initSpritesFunction &initSprites)
             : _physics(new BasicBodyPhysics(worldPh, physicsInit, physicsTick, physicsOnNotify)),
-              _graphics(new BasicBodyGraphics(win, initSprites)) {}
+              _graphics(new BasicBodyGraphics(win, initSprites)) {
+        worldPh->addObserver(this);
+    }
+
+    void BasicBody::doOnNextTick(const std::function<void()> &function) {
+        _physics->_onNextTick.push_back(function);
+    }
 
     engine::components::PhysicsComponent *BasicBody::getPhysics() {
         return _physics;

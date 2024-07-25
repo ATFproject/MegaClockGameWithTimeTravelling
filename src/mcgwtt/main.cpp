@@ -7,14 +7,10 @@
 #include "DebugComponents.h"
 #include "CameraComponents.h"
 
-#include "game/Player.h"
-
+#include "settings loader/SettingsLoader.h"
 #include "system/scenes/Scene.h"
 
-#include "settings loader/SettingsLoader.h"
-
-#include "game/BasicBody.h"
-
+#include "game/Player.h"
 #include "game/rooms/Room.h"
 
 int main() {

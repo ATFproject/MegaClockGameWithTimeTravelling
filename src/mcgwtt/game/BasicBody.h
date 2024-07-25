@@ -11,9 +11,13 @@
 #include "system/GameWorld.h"
 
 namespace mcgwtt {
+    class ContactListener;
+
     #define MCGWTT_BASIC_BODY_CREATE_BODY(bd) \
                 bodyFixVecPair res;           \
-                _body = res.first = game._world->CreateBody(&(bd));
+                _body = res.first = game._world->CreateBody(&(bd)); \
+                _body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
+
     #define MCGWTT_BASIC_BODY_CREATE_FIXTURE_DEF_DENS(shape) \
                 res.second.push_back(res.first->CreateFixture(&(shape), 1.0));
     #define MCGWTT_BASIC_BODY_CREATE_FIXTURE(shape, density) \
@@ -21,7 +25,32 @@ namespace mcgwtt {
     #define MCGWTT_BASIC_BODY_CREATE_FIXTURE_FROM_DEF(def) \
                 res.second.push_back(res.first->CreateFixture(&def));
 
-    class BasicBody {
+
+    // It was the only solution, I promise. Don't kick my ass for this
+    #define MCGWTT_IF_LOCKED_CALL_NEXT_TICK_FUNCTION(name, func)  \
+            void name() {                                         \
+                if (_body->GetWorld()->IsLocked())                \
+                    doOnNextTick(_##name);                        \
+                else                                              \
+                    _##name();                                    \
+            }
+    #define MCGWTT_IF_LOCKED_CALL_NEXT_TICK_LAMBDA(name, func)    \
+            std::function<void()> _##name = [this]() {            \
+                func                                              \
+            };                                                    \
+
+    #define MCGWTT_IF_LOCKED_CALL_NEXT_TICK(name, func)           \
+        MCGWTT_IF_LOCKED_CALL_NEXT_TICK_LAMBDA(name,func)         \
+        MCGWTT_IF_LOCKED_CALL_NEXT_TICK_FUNCTION(name,func)
+
+    #define MCGWTT_IF_LOCKED_CALL_NEXT_TICK_PUBLIC(name, func)    \
+        private:                                                  \
+            MCGWTT_IF_LOCKED_CALL_NEXT_TICK_LAMBDA(name,func)     \
+        public:                                                   \
+            MCGWTT_IF_LOCKED_CALL_NEXT_TICK_FUNCTION(name,func)
+
+
+    class BasicBody : public engine::Observer, public engine::Subject {
     public:
         using bodyFixVecPair = std::pair<b2Body *, std::vector<b2Fixture *>>;
         using bodyAnimPair = std::pair<b2Body *, animationMap>;
@@ -30,7 +59,7 @@ namespace mcgwtt {
             b2Body *_body;
             std::vector<b2Fixture *> _fix;
             BasicBodyData(b2Body *body, const std::vector<b2Fixture *> &fix);
-            explicit BasicBodyData(const bodyFixVecPair& p);
+            explicit BasicBodyData(const bodyFixVecPair &p);
         };
 
         using physicsInitFunction = const std::function<bodyFixVecPair(engine::game::Game &)>;
@@ -54,6 +83,11 @@ namespace mcgwtt {
             physicsInitFunction &_init;
             physicsTickFunction &_tick;
             onNotifyFunction &_onNotify;
+
+        private:
+            friend class BasicBody;
+
+            std::vector<std::function<void()>> _onNextTick;
         };
 
         class BasicBodyGraphics : public BodyGraphics {
@@ -69,6 +103,8 @@ namespace mcgwtt {
 
         engine::components::PhysicsComponent *getPhysics();
         engine::components::GraphicsComponent *getGraphics();
+
+        void doOnNextTick(const std::function<void()> &function);
 
     protected:
         BasicBody(sf::RenderWindow *win, GameWorldPhysics *worldPh,
@@ -101,10 +137,13 @@ namespace mcgwtt {
     protected:
         b2Body *_body{nullptr};
 
+        friend class mcgwtt::ContactListener;
+
     private:
         BasicBodyPhysics *_physics;
         BasicBodyGraphics *_graphics;
     };
+
 }
 
 #endif //MEGACLOCKGAMEWITHTIMETRAVELLING_BASICBODY_H

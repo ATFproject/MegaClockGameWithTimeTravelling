@@ -8,6 +8,7 @@
 #define MEGACLOCKGAMEWITHTIMETRAVELLING_GAMEWORLD_H
 
 #include "components/ComponentInterface.h"
+#include "mcgwtt/game/ContactListener/ContactListenerAdder.h"
 
 namespace mcgwtt {
     struct GamePausedEvent : public engine::Event {
@@ -22,6 +23,9 @@ namespace mcgwtt {
         void init(engine::game::Game &game) override;
         void onNotify(const engine::Event &event) override;
         void tick(engine::game::Game &game) override;
+
+    public:
+        ContactListener _contactListener;
 
     private:
         b2World *_world;
