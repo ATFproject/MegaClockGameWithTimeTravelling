@@ -5,6 +5,8 @@
 
 #include "GameWindow.h"
 
+#include "game/Timer.h"
+
 namespace window {
     GameWindow::GameWindow(sf::RenderWindow *window) : _isActive(false), _win(window), _gui(*window) {
         std::cout << "Window created!" << std::endl;
@@ -18,20 +20,36 @@ namespace window {
 
         // Fix for windows: explicit game resize on program start
         // Without this line the game will have (0, 0) size
-        // Works perfectly on LInux without it :(
+        // Works perfectly on Linux without it :(
         notify(window::WindowResizeEvent(_win->getSize().x, _win->getSize().y));
 
-        while (_win->isOpen()) {
-            _win->clear(sf::Color(64, 64, 64));
-            handleSfmlEvents();
-
+        engine::ActionPerSecond tick(165, 1, [this]() {
             if (_isActive) {
                 _game.tick();
             }
+        });
+
+        engine::ActionPerSecond drawFrame(165, 1, [this]() {
+            _win->clear(sf::Color(64, 64, 64));
+
             _game.draw();
             _gui.draw();
 
             _win->display();
+        });
+
+        engine::ActionPerSecond output(2, 10, [&tick, &drawFrame]() {
+            std::cout << "TPS: " << tick.getActualActionRate() << "; FPS: " << drawFrame.getActualActionRate()
+                      << std::endl;
+        });
+
+
+        while (_win->isOpen()) {
+            handleSfmlEvents();
+
+            tick.tryAction();
+            drawFrame.tryAction();
+            output.tryAction();
         }
     }
 

@@ -38,25 +38,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Fixed mimin typos">
-      <change afterPath="$PROJECT_DIR$/bin/scenes/test/rooms/block 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/scenes/test/rooms/block 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/scenes/test/rooms/block 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/scenes/test/rooms/border.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/scenes/test/rooms/water.png" afterDir="false" />
+    <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added room drawing from json + images">
+      <change afterPath="$PROJECT_DIR$/src/engine/game/Timer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Rooms JSONs/Main Room Samples/main_room_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Rooms JSONs/Main Room Samples/main_room_1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/test/test room.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/test/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/EngineDef.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/EngineDef.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/resources/Resources.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/resources/Resources.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/Box2dGraphics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/rooms/Room.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/common/settings/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/common/settings/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +56,7 @@
     <option name="indexingThreadsNum" value="7" />
     <option name="indexerStaticOnly" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -355,15 +341,9 @@
       <workItem from="1720428326948" duration="1398000" />
       <workItem from="1721739181399" duration="2050000" />
       <workItem from="1721741281023" duration="640000" />
-      <workItem from="1721742199472" duration="8066000" />
-    </task>
-    <task id="LOCAL-00060" summary="Merged GitHub workflow file">
-      <option name="closed" value="true" />
-      <created>1710491024596</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1710491024597</updated>
+      <workItem from="1721742199472" duration="8161000" />
+      <workItem from="1721768588640" duration="12000" />
+      <workItem from="1721895518819" duration="4188000" />
     </task>
     <task id="LOCAL-00061" summary="Added forgotten theme files">
       <option name="closed" value="true" />
@@ -749,7 +729,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721738881732</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Added room drawing from json + images">
+      <option name="closed" value="true" />
+      <created>1721750297323</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1721750297324</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -776,7 +764,6 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added debug grid &amp; fixed player positioning" />
     <MESSAGE value="Added player and a platform" />
     <MESSAGE value="Fixed rotation player works" />
     <MESSAGE value="Fixed draw method" />
@@ -801,7 +788,8 @@
     <MESSAGE value="squash! Meow" />
     <MESSAGE value="Fixed type names in function returns" />
     <MESSAGE value="Fixed mimin typos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed mimin typos" />
+    <MESSAGE value="Added room drawing from json + images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added room drawing from json + images" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

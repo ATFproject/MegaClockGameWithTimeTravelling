@@ -29,7 +29,7 @@
       "Close": false
     },
     "icon path": "icon.png",
-    "framerate limit": 165,
+    "framerate limit": 0,
     "vertical sync": false
   }
 }
