@@ -56,8 +56,8 @@ namespace mcgwtt {
         using bodyAnimPair = std::pair<b2Body *, animationMap>;
 
         struct BasicBodyData : engine::Event {
-            b2Body *_body;
-            std::vector<b2Fixture *> _fix;
+            b2Body *body;
+            std::vector<b2Fixture *> fix;
             BasicBodyData(b2Body *body, const std::vector<b2Fixture *> &fix);
             explicit BasicBodyData(const bodyFixVecPair &p);
         };
@@ -119,7 +119,7 @@ namespace mcgwtt {
                 animationMap a;
                 std::size_t i = 0;
                 for (auto &anim : {animations...}) {
-                    a[data->_fix[i++]] = anim;
+                    a[data->fix[i++]] = anim;
                 }
                 return std::make_pair(_body, a);
             }
@@ -128,7 +128,7 @@ namespace mcgwtt {
             animationMap a;
             std::size_t i = 0;
             for (auto &anim : animations) {
-                a[data->_fix[i++]] = anim;
+                a[data->fix[i++]] = anim;
             }
             return std::make_pair(_body, a);
         }

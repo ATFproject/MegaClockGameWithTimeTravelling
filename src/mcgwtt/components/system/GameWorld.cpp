@@ -22,7 +22,7 @@ namespace mcgwtt {
 
     void GameWorldPhysics::onNotify(const engine::Event &event) {
         ENGINE_CHECK_EVENT(GamePausedEvent,
-                           _paused = e->_paused;
+                           _paused = e->paused;
         )
     }
 

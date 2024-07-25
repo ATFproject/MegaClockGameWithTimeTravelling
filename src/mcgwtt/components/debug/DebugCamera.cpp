@@ -12,7 +12,7 @@ namespace mcgwtt {
 
     void DebugCamera::onNotify(const engine::Event &event) {
         ENGINE_CHECK_EVENT(engine::game::GameResizeEvent,
-                           resize(static_cast<float>(e->_newSize.x), static_cast<float>(e->_newSize.y));)
+                           resize(static_cast<float>(e->newSize.x), static_cast<float>(e->newSize.y));)
     }
 
     void DebugCamera::draw() {

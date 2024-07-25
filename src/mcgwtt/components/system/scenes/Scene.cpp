@@ -8,15 +8,15 @@
 
 namespace mcgwtt {
     void to_json(json &j, const Scene &s) {
-        j["name"] = s._name;
-        j["use saved camera"] = s._useSavedCamera;
-        j["camera"] = s._camera;
+        j["name"] = s.name;
+        j["use saved camera"] = s.useSavedCamera;
+        j["camera"] = s.camera;
     }
 
     void from_json(const json &j, Scene &s) {
-        j.at("name").get_to(s._name);
-        j.at("use saved camera").get_to(s._useSavedCamera);
-        j.at("camera").get_to(s._camera);
+        j.at("name").get_to(s.name);
+        j.at("use saved camera").get_to(s.useSavedCamera);
+        j.at("camera").get_to(s.camera);
     }
 
     Scene SceneLoader::load(const std::string &sceneDir) {
@@ -26,8 +26,8 @@ namespace mcgwtt {
         Scene s;
         scene.get_to(s);
 
-        s._dir = sceneDir;
-        std::cout << "Loading scene \"" << s._name << "\" from " << path << "\n";
+        s.dir = sceneDir;
+        std::cout << "Loading scene \"" << s.name << "\" from " << path << "\n";
         engine::resourceHandler->setLoadPath("scenes/" + sceneDir + "/");
         return s;
     }

@@ -20,19 +20,15 @@ namespace mcgwtt {
 
     class ContactListener : public b2ContactListener {
     public:
-        void BeginContact(b2Contact *contact) override {
-            auto functionsAndTypes = getContactFunctionsAndTypes(contact);
-            auto function = functionsAndTypes.second.first;
-            if (function)
-                function(functionsAndTypes.first.first, functionsAndTypes.first.second);
-        }
+        void BeginContact(b2Contact *contact) override;
+        void EndContact(b2Contact *contact) override;
 
-        void EndContact(b2Contact *contact) override {
-            auto functionsAndTypes = getContactFunctionsAndTypes(contact);
-            auto function = functionsAndTypes.second.second;
-            if (function)
-                function(functionsAndTypes.first.first, functionsAndTypes.first.second);
-        }
+        // ORDER OF TypeA and TypeB MUST MATCH THE PARAMETER ORDER IN beginContact AND endContact FUNCTIONS!
+        template<class TypeA, class TypeB>
+            requires (std::is_base_of_v<BasicBody, TypeA>, std::is_base_of_v<BasicBody, TypeB>)
+            void addContactFunctions(const beginContactFunction &beginContact) {
+                addContactFunctions<TypeA, TypeB>(beginContact, []() {});
+            }
 
         // ORDER OF TypeA and TypeB MUST MATCH THE PARAMETER ORDER IN beginContact AND endContact FUNCTIONS!
         template<class TypeA, class TypeB>

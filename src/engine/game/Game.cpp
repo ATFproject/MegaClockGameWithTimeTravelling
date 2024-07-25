@@ -57,16 +57,16 @@ namespace engine::game {
         ENGINE_CHECK_EVENT(window::WindowViewChangedEvent, notify(*e);)
 
         ENGINE_CHECK_EVENT(window::WindowResizeEvent,
-                           notify(GameResizeEvent(e->_newSize));
+                           notify(GameResizeEvent(e->newSize));
         )
         ENGINE_CHECK_EVENT(window::KeyPressedEvent,
-                           _keys[e->_keyEvent.scancode] = true;
+                           _keys[e->keyEvent.scancode] = true;
         )
         ENGINE_CHECK_EVENT(window::KeyReleasedEvent,
-                           _keys[e->_keyEvent.scancode] = false;
+                           _keys[e->keyEvent.scancode] = false;
         )
         ENGINE_CHECK_EVENT(window::WindowFocusChangeEvent,
-                           if (!e->_inFocus) {
+                           if (!e->inFocus) {
                                memset(_keys, 0, 256);
                                memset(_keysOld, 0, 256);
                                memset(_click, 0, 256);

@@ -48,28 +48,28 @@ namespace window {
     };
 
     struct WindowResizeEvent : public engine::Event {
-        const sf::Vector2u _newSize;
-        explicit WindowResizeEvent(uint x, uint y) : _newSize(sf::Vector2u(x, y)) {}
+        const sf::Vector2u newSize;
+        explicit WindowResizeEvent(uint x, uint y) : newSize(sf::Vector2u(x, y)) {}
     };
 
     struct WindowFocusChangeEvent : public engine::Event {
-        bool _inFocus;
-        explicit WindowFocusChangeEvent(bool inFocus) : _inFocus(inFocus) {}
+        bool inFocus;
+        explicit WindowFocusChangeEvent(bool inFocus) : inFocus(inFocus) {}
     };
 
     struct WindowViewChangedEvent : public engine::Event {
-        sf::View _newView;
-        explicit WindowViewChangedEvent(const sf::View &newView) : _newView(newView) {}
+        sf::View newView;
+        explicit WindowViewChangedEvent(const sf::View &newView) : newView(newView) {}
     };
 
     struct KeyPressedEvent : public engine::Event {
-        sf::Event::KeyEvent _keyEvent;
-        explicit KeyPressedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
+        sf::Event::KeyEvent keyEvent;
+        explicit KeyPressedEvent(const sf::Event::KeyEvent &keyEvent) : keyEvent(keyEvent) {}
     };
 
     struct KeyReleasedEvent : public engine::Event {
-        sf::Event::KeyEvent _keyEvent;
-        explicit KeyReleasedEvent(const sf::Event::KeyEvent &keyEvent) : _keyEvent(keyEvent) {}
+        sf::Event::KeyEvent keyEvent;
+        explicit KeyReleasedEvent(const sf::Event::KeyEvent &keyEvent) : keyEvent(keyEvent) {}
     };
 }
 

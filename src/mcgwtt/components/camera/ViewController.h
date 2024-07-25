@@ -19,8 +19,8 @@ namespace mcgwtt {
     };
 
     struct SetViewEvent : engine::Event {
-        sf::View _view;
-        explicit SetViewEvent(const sf::View &view) : _view(view) {}
+        sf::View view;
+        explicit SetViewEvent(const sf::View &view) : view(view) {}
     };
 
     class ViewController : public engine::components::GraphicsComponent {

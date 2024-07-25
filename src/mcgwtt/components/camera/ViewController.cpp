@@ -13,10 +13,10 @@ namespace mcgwtt {
     }
 
     void ViewController::onNotify(const engine::Event &event) {
-        ENGINE_CHECK_EVENT(engine::game::GameResizeEvent, _size = e->_newSize;)
+        ENGINE_CHECK_EVENT(engine::game::GameResizeEvent, _size = e->newSize;)
         ENGINE_CHECK_EVENT(PushViewEvent, pushView();)
         ENGINE_CHECK_EVENT(PopViewEvent, popView();)
-        ENGINE_CHECK_EVENT(SetViewEvent, setView(e->_view);)
+        ENGINE_CHECK_EVENT(SetViewEvent, setView(e->view);)
         ENGINE_CHECK_EVENT(SetFullScreenViewEvent, setFullScreenView();)
 
     }

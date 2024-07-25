@@ -11,11 +11,11 @@
 
 namespace mcgwtt {
     struct Scene {
-        bool _useSavedCamera{};
-        std::string _name;
-        std::string _dir;
-        CameraController _camera{nullptr, 0};
-        std::vector<engine::game::GameObject *> _gameObjects;
+        bool useSavedCamera{};
+        std::string name;
+        std::string dir;
+        CameraController camera{nullptr, 0};
+        std::vector<engine::game::GameObject *> gameObjects;
     };
 
     void to_json(json &j, const Scene &s);

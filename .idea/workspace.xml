@@ -23,7 +23,6 @@
       <config projectName="MegaClockGameWithTimeTravelling" targetName="unit_test" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-network" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="tgui" />
-      <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-main" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="sfml-audio" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="MegaClockGameWithTimeTravelling" />
       <config projectName="MegaClockGameWithTimeTravelling" targetName="glfw" />
@@ -44,17 +43,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="185a32a1-7928-40c9-847f-6547a335ce1f" name="Changes" comment="Added game properties loading from settings.json">
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListenerAdder.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListenerAdder.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/livefish.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/window/GameWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/window/GameWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/CameraController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/camera/ViewController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugCamera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/debug/DebugGrid.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/GameWorld.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/components/system/scenes/Scene.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/BasicBody.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/game/ContactListener/ContactListener.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mcgwtt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/mcgwtt/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +90,18 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Rooms classes added, first implementation." />
+        <option name="rewordedMessage" value="Rooms classes added, first implementation." />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="094b67d6a39776dc3895c105896233ec623222d7" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/engine/game/Game.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -117,7 +135,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Debug",
+    "CMake Application.MegaClockGameWithTimeTravelling.executor": "Run",
     "CMake Debug.MegaClockGameWithTimeTravelling.executor": "Debug",
     "Makefile Target.Makefile.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -159,6 +177,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MegaClockGameWithTimeTravelling">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="unit_test" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="unit_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MegaClockGameWithTimeTravelling" RUN_TARGET_NAME="unit_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -210,11 +233,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sfml-main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="sfml-network" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MegaClockGameWithTimeTravelling" TARGET_NAME="sfml-network" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -250,7 +268,6 @@
       <item itemvalue="CMake Application.sajson" />
       <item itemvalue="CMake Application.sfml-audio" />
       <item itemvalue="CMake Application.sfml-graphics" />
-      <item itemvalue="CMake Application.sfml-main" />
       <item itemvalue="CMake Application.sfml-network" />
       <item itemvalue="CMake Application.sfml-system" />
       <item itemvalue="CMake Application.sfml-window" />

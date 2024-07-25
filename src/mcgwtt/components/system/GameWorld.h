@@ -12,8 +12,8 @@
 
 namespace mcgwtt {
     struct GamePausedEvent : public engine::Event {
-        bool _paused;
-        explicit GamePausedEvent(bool paused) : _paused(paused) {}
+        bool paused;
+        explicit GamePausedEvent(bool paused) : paused(paused) {}
     };
 
     class GameWorldPhysics : public engine::components::PhysicsComponent {

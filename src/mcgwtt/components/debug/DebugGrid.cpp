@@ -14,7 +14,7 @@ namespace mcgwtt {
         game.addObserver(this);
     }
     void DebugGridGraphics::onNotify(const engine::Event &event) {
-        ENGINE_CHECK_EVENT(engine::game::GameResizeEvent, resizeAxis(sf::Vector2f(e->_newSize));)
+        ENGINE_CHECK_EVENT(engine::game::GameResizeEvent, resizeAxis(sf::Vector2f(e->newSize));)
     }
     void DebugGridGraphics::draw() {
         notify(PushViewEvent());

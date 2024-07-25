@@ -117,7 +117,7 @@ namespace window {
                            _win->close();
         )
         ENGINE_CHECK_EVENT(WindowViewChangedEvent,
-                           _win->setView(e->_newView);
+                           _win->setView(e->newView);
         )
     }
 
