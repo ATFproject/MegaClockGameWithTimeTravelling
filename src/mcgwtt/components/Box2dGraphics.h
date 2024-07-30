@@ -40,11 +40,11 @@ namespace mcgwtt {
 
     class BodyGraphics : public engine::components::GraphicsComponent {
     public:
-        explicit BodyGraphics(sf::RenderWindow *win) : _win(win) {}
+        explicit BodyGraphics(sf::RenderTarget *target) : _target(target) {}
         void draw() override;
 
     protected:
-        sf::RenderWindow *_win{};
+        sf::RenderTarget *_target{};
         animationMap _animations;
         b2Body *_body{};
 

@@ -42,8 +42,8 @@ namespace mcgwtt {
             j.at("animation").get_to(block.anim);
     }
 
-    Room::Room(sf::RenderWindow *win, GameWorldPhysics *worldPh, float x, float y, const std::string &jsonFilename)
-            : BasicBody(win, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
+    Room::Room(sf::RenderTarget *target, GameWorldPhysics *worldPh, float x, float y, const std::string &jsonFilename)
+            : BasicBody(target, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
               _x(x), _y(y), _filename(jsonFilename) {
         std::ifstream f("../bin/rooms/" + _filename);
         json::parse(f).get_to(_data);

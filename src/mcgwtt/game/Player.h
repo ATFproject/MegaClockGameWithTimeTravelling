@@ -12,9 +12,9 @@
 namespace mcgwtt {
     class Player : public BasicBody {
     public:
-        Player(sf::RenderWindow *win, GameWorldPhysics *worldPh,
+        Player(sf::RenderTarget *target, GameWorldPhysics *worldPh,
                float x, float y, float w, float h, float headR)
-                : BasicBody(win, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
+                : BasicBody(target, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
                   _x(x), _y(y), _spawnX(x), _spawnY(y), _w(w), _h(h), _headR(headR) {}
 
     private:

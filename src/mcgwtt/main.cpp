@@ -43,6 +43,7 @@ int main() {
     mcgwtt::Player player(&win, world, 4, -8, 0.5f, 1.7f, 0.25f);
     mcgwtt::Room room(&win, world, 0, 0, "main room/main room.json");
 
+    window._gui.loadWidgetsFromFile("../bin/rooms/main room/form.txt");
 
     player.addToGameWindow(window);
     room.addToGameWindow(window);

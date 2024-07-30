@@ -39,8 +39,8 @@ namespace mcgwtt {
     }
 
 
-    BasicBody::BasicBodyGraphics::BasicBodyGraphics(sf::RenderWindow *win, BasicBody::initSpritesFunction &initSprites)
-            : BodyGraphics(win), _initSprites(initSprites) {
+    BasicBody::BasicBodyGraphics::BasicBodyGraphics(sf::RenderTarget *target, BasicBody::initSpritesFunction &initSprites)
+            : BodyGraphics(target), _initSprites(initSprites) {
     }
 
     void BasicBody::BasicBodyGraphics::onNotify(const engine::Event &event) {
@@ -52,11 +52,11 @@ namespace mcgwtt {
     }
 
 
-    BasicBody::BasicBody(sf::RenderWindow *win, GameWorldPhysics *worldPh, BasicBody::physicsInitFunction &physicsInit,
+    BasicBody::BasicBody(sf::RenderTarget *target, GameWorldPhysics *worldPh, BasicBody::physicsInitFunction &physicsInit,
                          BasicBody::physicsTickFunction &physicsTick, BasicBody::onNotifyFunction &physicsOnNotify,
                          BasicBody::initSpritesFunction &initSprites)
             : _physics(new BasicBodyPhysics(worldPh, physicsInit, physicsTick, physicsOnNotify)),
-              _graphics(new BasicBodyGraphics(win, initSprites)) {
+              _graphics(new BasicBodyGraphics(target, initSprites)) {
         worldPh->addObserver(this);
     }
 

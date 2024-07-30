@@ -94,7 +94,7 @@ namespace mcgwtt {
 
         class BasicBodyGraphics : public BodyGraphics {
         public:
-            BasicBodyGraphics(sf::RenderWindow *win, initSpritesFunction &initSprites);
+            BasicBodyGraphics(sf::RenderTarget *target, BasicBody::initSpritesFunction &initSprites);
 
             void onNotify(const engine::Event &event) override;
             void draw() override;
@@ -110,11 +110,11 @@ namespace mcgwtt {
         void addToGameWindow(window::GameWindow &window);
 
     protected:
-        BasicBody(sf::RenderWindow *win, GameWorldPhysics *worldPh,
-                  physicsInitFunction &physicsInit,
-                  physicsTickFunction &physicsTick,
-                  onNotifyFunction &physicsOnNotify,
-                  initSpritesFunction &initSprites
+        BasicBody(sf::RenderTarget *target, GameWorldPhysics *worldPh,
+                  BasicBody::physicsInitFunction &physicsInit,
+                  BasicBody::physicsTickFunction &physicsTick,
+                  BasicBody::onNotifyFunction &physicsOnNotify,
+                  BasicBody::initSpritesFunction &initSprites
         );
 
         template<typename... Animations>

@@ -28,6 +28,7 @@ namespace window {
                            engine::components::PhysicsComponent *pc,
                            engine::components::GraphicsComponent *gc);
 
+        tgui::Gui _gui;
     private:
         void handleSfmlEvents();
 

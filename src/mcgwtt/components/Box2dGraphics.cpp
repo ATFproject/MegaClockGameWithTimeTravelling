@@ -97,7 +97,7 @@ namespace mcgwtt {
         }
         shape.setPosition(_body->GetPosition().x, _body->GetPosition().y);
         shape.setRotation(_body->GetAngle() / b2_pi * 180.0f);
-        _win->draw(shape);
+        _target->draw(shape);
 
         _animations[fix].update();
     }

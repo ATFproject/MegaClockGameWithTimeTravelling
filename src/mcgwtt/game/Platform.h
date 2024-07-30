@@ -12,8 +12,8 @@
 namespace mcgwtt {
     class Platform : public BasicBody {
     public:
-        Platform(sf::RenderWindow *win, GameWorldPhysics *worldPh, float x, float y, float w, float h)
-                : BasicBody(win, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
+        Platform(sf::RenderTarget *target, GameWorldPhysics *worldPh, float x, float y, float w, float h)
+                : BasicBody(target, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
                   _x(x), _y(y), _w(w), _h(h) {}
     private:
         float _x, _y, _w, _h;

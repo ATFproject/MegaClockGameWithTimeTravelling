@@ -5,47 +5,53 @@ project(MegaClockGameWithTimeTravelling VERSION 0.0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Link all libraries directly to executable for portability
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+
 # Set output directory for the binary and disable shared library building
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/out)
 
-if (WIN32)
-    option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
-    # Remove cmake warning on windows
-    if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-        string(REGEX REPLACE "/W[3|4]" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-    endif ()
-else ()
-    option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+# Remove cmake warning on windows
+if (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    string(REGEX REPLACE "/W[3|4]" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 endif ()
 
 # Include tool for content fetching
 include(FetchContent REQUIRED)
 
-# Fetch and compile SFML library
+# Disable all docs and example build for SFML
+set(SFML_BUILD_DOC OFF)
+set(SFML_BUILD_EXAMPLES OFF)
+set(SFML_BUILD_TEST_SUITE OFF)
+set(SFML_USE_SYSTEM_DEPS OFF)
+set(SFML_USE_DRM OFF)
+
+# Download SFML library
 message(STATUS "Downloading SFML")
 FetchContent_Declare(SFML SYSTEM
         GIT_REPOSITORY https://github.com/SFML/SFML.git
         GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-# Fetch and compile Box2D library
+# Download Box2D library
 message(STATUS "Downloading Box2D")
 FetchContent_Declare(box2d SYSTEM
         GIT_REPOSITORY https://github.com/erincatto/box2d.git
         GIT_TAG v2.4.1)
 FetchContent_MakeAvailable(box2d)
 
-# Fetch and compile TGUI library
+# Tell TGUI to use SFML backend
 set(TGUI_BACKEND "SFML_GRAPHICS")
 set(TGUI_SHARED_LIBS OFF)
-set(TGUI_BUILD_GUI_BUILDER ON)
 
+# Download TGUI library
 message(STATUS "Downloading TGUI")
 FetchContent_Declare(tgui SYSTEM
         GIT_REPOSITORY https://github.com/texus/TGUI.git
         GIT_TAG v1.1.0)
 FetchContent_MakeAvailable(tgui)
 
+# Download json library
 message(STATUS "Downloading nlohmann/json")
 FetchContent_Declare(json SYSTEM
         GIT_REPOSITORY https://github.com/nlohmann/json.git
@@ -62,20 +68,11 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME}
         PRIVATE sfml-graphics
         PRIVATE sfml-audio
+        PRIVATE sfml-network
         PRIVATE box2d
         PRIVATE tgui
         PRIVATE nlohmann_json::nlohmann_json
 )
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
-
-# Disable all docs and example build for SFML and Box2D
-set(BOX2D_BUILD_DOCS OFF)
-set(BOX2D_BUILD_UNIT_TESTS OFF)
-set(SFML_BUILD_DOC OFF)
-set(SFML_BUILD_EXAMPLES OFF)
-set(SFML_BUILD_TEST_SUITE OFF)
-set(SFML_USE_SYSTEM_DEPS OFF)
-set(SFML_USE_DRM OFF)
 
 # Add all possible warnings to make sure (Шура?) our code is the best!
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
@@ -94,13 +91,10 @@ set(OUT_FILE_NAME ${PROJECT_NAME}-${CMAKE_BUILD_TYPE})
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${OUT_FILE_NAME})
 
 # Add header dirs for easier usage
-# EXAMPLE: set(ADDITIONAL_INCLUDE_DIRS "src/engine" "src/window")
 set(ADDITIONAL_INCLUDE_DIRS "src" "src/engine" "src/mcgwtt/components")
 target_include_directories(${PROJECT_NAME} PRIVATE ${ADDITIONAL_INCLUDE_DIRS})
 
-target_precompile_headers(${PROJECT_NAME}
-        PUBLIC "src/engine/EngineDef.h"
-)
+target_precompile_headers(${PROJECT_NAME} PUBLIC "src/engine/EngineDef.h")
 
 if (WIN32 AND SFML_BUILD_AUDIO)
     message(STATUS "Will copy openal32.dll to final output dir: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
@@ -108,6 +102,3 @@ if (WIN32 AND SFML_BUILD_AUDIO)
             COMMAND ${CMAKE_COMMAND} -E copy ${FETCHCONTENT_BASE_DIR}/sfml-src/extlibs/bin/x64/openal32.dll ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
     )
 endif ()
-
-# Compile and link the app
-install(TARGETS ${PROJECT_NAME})

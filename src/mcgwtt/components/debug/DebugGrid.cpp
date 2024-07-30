@@ -7,8 +7,8 @@
 #include "DebugGrid.h"
 
 namespace mcgwtt {
-    DebugGridGraphics::DebugGridGraphics(sf::RenderWindow *win, ViewController *viewController)
-            : AbleToControlViewComponent(viewController), _win(win) {}
+    DebugGridGraphics::DebugGridGraphics(sf::RenderTarget *target, ViewController *viewController)
+            : AbleToControlViewComponent(viewController), _target(target) {}
 
     void DebugGridGraphics::init(engine::game::Game &game) {
         game.addObserver(this);
@@ -21,10 +21,10 @@ namespace mcgwtt {
         notify(SetFullScreenViewEvent());
 
         for (auto &p : _points)
-            _win->draw(p);
+            _target->draw(p);
 
-        _win->draw(_xAxis);
-        _win->draw(_yAxis);
+        _target->draw(_xAxis);
+        _target->draw(_yAxis);
 
         notify(PopViewEvent());
     }
@@ -38,7 +38,7 @@ namespace mcgwtt {
         _yAxis.setPosition(newSize.x / 2.0f - _lineWidth / 2, 0);
         _yAxis.setFillColor(sf::Color::Red);
 
-        float zoom = newSize.x / _win->getView().getSize().x;
+        float zoom = newSize.x / _target->getView().getSize().x;
         _points.clear();
         for (float i = 0; i < newSize.x; i += zoom) {
             sf::RectangleShape shape(sf::Vector2f(_lineWidth, newSize.y));

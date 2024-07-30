@@ -39,7 +39,7 @@ namespace mcgwtt {
 
     class Room : public BasicBody {
     public:
-        Room(sf::RenderWindow *win, GameWorldPhysics *worldPh, float x, float y, const std::string &jsonFilename);
+        Room(sf::RenderTarget *target, GameWorldPhysics *worldPh, float x, float y, const std::string &jsonFilename);
 
     private:
         float _x, _y;

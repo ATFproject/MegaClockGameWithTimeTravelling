@@ -8,7 +8,7 @@
 #include "game/Timer.h"
 
 namespace window {
-    GameWindow::GameWindow(sf::RenderWindow *window) : _isActive(false), _win(window) {
+    GameWindow::GameWindow(sf::RenderWindow *window) : _gui(*window), _isActive(false), _win(window) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
         _game.addObserver(this);
@@ -39,13 +39,17 @@ namespace window {
 
         engine::ActionPerSecond drawFrame(_gameProperties.maxFps, 1, [this]() {
             _win->clear(sf::Color(64, 64, 64));
+
             _game.draw();
+            _gui.draw();
+
             _win->display();
         });
 
-        engine::ActionPerSecond output(2, 0, [&tick, &drawFrame]() {
-            std::cout << "TPS: " << tick.getActualActionRate() << "; FPS: " << drawFrame.getActualActionRate()
-                      << std::endl;
+        engine::ActionPerSecond output(2, 0, [&tick, &drawFrame, this]() {
+            std::string text = "TPS: " + std::to_string(tick.getActualActionRate()) + "; FPS: " +
+                               std::to_string(drawFrame.getActualActionRate());
+            _gui.get<tgui::Label>("Status")->setText(text);
         });
 
 
@@ -62,6 +66,8 @@ namespace window {
         sf::Event event{};
 
         while (_win->pollEvent(event)) {
+            _gui.handleEvent(event);
+
             switch (event.type) {
                 case sf::Event::Closed:
                     _win->close();
@@ -96,8 +102,8 @@ namespace window {
     }
 
     void GameWindow::addGameObject(engine::components::InputComponent *ic,
-                                                        engine::components::PhysicsComponent *pc,
-                                                        engine::components::GraphicsComponent *gc) {
+                                   engine::components::PhysicsComponent *pc,
+                                   engine::components::GraphicsComponent *gc) {
         _game.addGameObject(std::make_unique<engine::game::GameObject>(ic, pc, gc));
     }
 

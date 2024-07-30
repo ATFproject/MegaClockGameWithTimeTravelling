@@ -12,7 +12,7 @@
 namespace mcgwtt {
     class DebugGridGraphics : public AbleToControlViewComponent {
     public:
-        DebugGridGraphics(sf::RenderWindow *win, ViewController *viewController);
+        DebugGridGraphics(sf::RenderTarget *target, ViewController *viewController);
 
         void init(engine::game::Game &game) override;
         void onNotify(const engine::Event &event) override;
@@ -24,7 +24,7 @@ namespace mcgwtt {
     private:
         sf::RectangleShape _xAxis, _yAxis;
         std::vector<sf::RectangleShape> _points;
-        sf::RenderWindow *_win;
+        sf::RenderTarget *_target;
         const float _lineWidth = 1;
     };
 }
