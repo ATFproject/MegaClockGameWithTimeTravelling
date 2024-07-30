@@ -8,7 +8,7 @@
 #include "game/Timer.h"
 
 namespace window {
-    GameWindow::GameWindow(sf::RenderWindow *window) : _isActive(false), _win(window), _gui(*window) {
+    GameWindow::GameWindow(sf::RenderWindow *window) : _isActive(false), _win(window) {
         std::cout << "Window created!" << std::endl;
         addObserver(&_game);
         _game.addObserver(this);
@@ -39,10 +39,7 @@ namespace window {
 
         engine::ActionPerSecond drawFrame(_gameProperties.maxFps, 1, [this]() {
             _win->clear(sf::Color(64, 64, 64));
-
             _game.draw();
-            _gui.draw();
-
             _win->display();
         });
 
@@ -65,8 +62,6 @@ namespace window {
         sf::Event event{};
 
         while (_win->pollEvent(event)) {
-            _gui.handleEvent(event);
-
             switch (event.type) {
                 case sf::Event::Closed:
                     _win->close();
@@ -100,16 +95,10 @@ namespace window {
         }
     }
 
-    engine::game::GameObject *GameWindow::addGameObject(engine::components::InputComponent *ic,
+    void GameWindow::addGameObject(engine::components::InputComponent *ic,
                                                         engine::components::PhysicsComponent *pc,
                                                         engine::components::GraphicsComponent *gc) {
-        auto gameObject = new engine::game::GameObject(ic, pc, gc);
-        _game.addGameObject(gameObject);
-        return gameObject;
-    }
-
-    void GameWindow::removeGameObject(engine::game::GameObject *obj) {
-        _game.removeGameObject(obj);
+        _game.addGameObject(std::make_unique<engine::game::GameObject>(ic, pc, gc));
     }
 
     void GameWindow::onNotify(const engine::Event &event) {
@@ -119,9 +108,5 @@ namespace window {
         ENGINE_CHECK_EVENT(WindowViewChangedEvent,
                            _win->setView(e->newView);
         )
-    }
-
-    tgui::Gui &GameWindow::getGui() {
-        return _gui;
     }
 }

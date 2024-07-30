@@ -24,13 +24,9 @@ namespace window {
 
         void onNotify(const engine::Event &event) override;
 
-        engine::game::GameObject *addGameObject(engine::components::InputComponent *ic,
-                                                engine::components::PhysicsComponent *pc,
-                                                engine::components::GraphicsComponent *gc);
-
-        void removeGameObject(engine::game::GameObject *obj);
-
-        tgui::Gui &getGui();
+        void addGameObject(engine::components::InputComponent *ic,
+                           engine::components::PhysicsComponent *pc,
+                           engine::components::GraphicsComponent *gc);
 
     private:
         void handleSfmlEvents();
@@ -39,7 +35,6 @@ namespace window {
         bool _isActive;
 
         sf::RenderWindow *_win;
-        tgui::Gui _gui;
         engine::game::Game _game;
         engine::game::GameProperties _gameProperties{};
     };

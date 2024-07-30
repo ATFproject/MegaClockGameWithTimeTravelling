@@ -17,8 +17,7 @@ namespace engine::game {
     public:
         Game();
 
-        void addGameObject(GameObject *toAdd);
-        void removeGameObject(GameObject *toRemove);
+        void addGameObject(std::unique_ptr<GameObject>);
         void tick();
         void draw();
 
@@ -28,14 +27,12 @@ namespace engine::game {
         [[nodiscard]] sf::Vector2u getSize() const;
 
         void onNotify(const Event &event) override;
-        ~Game() override;
 
     public:
         std::optional<b2World> _world;
 
     private:
-        std::vector<GameObject *> _gameObjects;
-        std::vector<GameObject *> _gameObjectsToDelete;
+        std::vector<std::unique_ptr<GameObject>> _gameObjects;
         sf::Vector2u _size;
         std::unique_ptr<engine::ResourceHandler> _resourceHandler;
 

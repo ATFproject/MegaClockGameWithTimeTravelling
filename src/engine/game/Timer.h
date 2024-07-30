@@ -12,30 +12,9 @@
 namespace engine {
     class ActionPerSecond {
     public:
-        ActionPerSecond(float targetTimesPerSec, float measureInterval, const std::function<void()> &action)
-                : _targetTimesPerSec(targetTimesPerSec), _measureInterval(measureInterval), _action(action) {}
-
-        void tryAction() {
-            if (_actionClock.getElapsedTime().asSeconds() + _lastTargetTime >= 1.0 / _targetTimesPerSec) {
-                _lastTargetTimeClock.restart();
-                _action();
-
-                _actions++;
-
-                _actionClock.restart();
-                _lastTargetTime = _lastTargetTimeClock.getElapsedTime().asSeconds();
-            }
-
-            if (_actionMeasureClock.getElapsedTime().asSeconds() >= _measureInterval) {
-                _measuredActionsPerSec = _actions / _actionMeasureClock.getElapsedTime().asSeconds();
-                _actions = 0;
-                _actionMeasureClock.restart();
-            }
-        }
-
-        [[nodiscard]] float getActualActionRate() const {
-            return _measuredActionsPerSec;
-        }
+        ActionPerSecond(float targetTimesPerSec, float measureInterval, const std::function<void()> &action);
+        void tryAction();
+        [[nodiscard]] float getActualActionRate() const;
 
     private:
         float _targetTimesPerSec, _actions = 0, _measuredActionsPerSec = 0;

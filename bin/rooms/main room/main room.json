@@ -1,5 +1,5 @@
 {
-  "name": "main_room_1",
+  "name": "main room",
   "width": 32,
   "height": 32,
   "blocks": [
@@ -8,14 +8,14 @@
       "y": 13,
       "w": 9,
       "h": 18,
-      "tex": "rooms/block 2.png"
+      "tex": "block 2.png"
     },
     {
       "x": 18,
       "y": 19,
       "w": 13,
       "h": 12,
-      "tex": "rooms/block 3.png"
+      "tex": "block 3.png"
     },
     {
       "x": 14,
@@ -24,7 +24,7 @@
       "h": 8,
       "animation": {
         "fps": 2,
-        "spritesheet": "rooms/water.png",
+        "spritesheet": "water.png",
         "rows": 2,
         "columns": 1,
         "frames": 2

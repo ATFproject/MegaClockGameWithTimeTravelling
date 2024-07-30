@@ -8,7 +8,6 @@
 #include "CameraComponents.h"
 
 #include "settings loader/SettingsLoader.h"
-#include "system/scenes/Scene.h"
 
 #include "game/Player.h"
 #include "game/rooms/Room.h"
@@ -33,27 +32,20 @@ int main() {
             1 / window.getProperties().targetTps,
             8, 3
     );
-
     window.addGameObject(nullptr, world, nullptr);
 
     auto view = new mcgwtt::ViewController();
     window.addGameObject(nullptr, nullptr, view);
+    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
+    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
 
-    auto scene = mcgwtt::SceneLoader::load("test");
-    scene.camera.setViewController(view);
-
-    if (scene.useSavedCamera)
-        window.addGameObject(nullptr, nullptr, new mcgwtt::CameraController(scene.camera));
-    else
-        window.addGameObject(nullptr, nullptr, new mcgwtt::DebugCamera(view, 30));
 
     mcgwtt::Player player(&win, world, 4, -8, 0.5f, 1.7f, 0.25f);
-    window.addGameObject(nullptr, player.getPhysics(), player.getGraphics());
+    mcgwtt::Room room(&win, world, 0, 0, "main room/main room.json");
 
-    mcgwtt::Room room(&win, world, 0, 0, "Main Room Samples/main_room_1.json");
-    window.addGameObject(nullptr, room.getPhysics(), room.getGraphics());
 
-    window.addGameObject(nullptr, nullptr, new mcgwtt::DebugGridGraphics(&win, view));
+    player.addToGameWindow(window);
+    room.addToGameWindow(window);
 
     window.startRendering();
     return 0;

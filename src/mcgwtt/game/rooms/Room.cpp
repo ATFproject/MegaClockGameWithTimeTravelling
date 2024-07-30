@@ -10,10 +10,11 @@ namespace mcgwtt {
     BlockAnimation::BlockAnimation(const std::string &spritesheetName) :
             fps(1), spritesheet(spritesheetName), rows(1), columns(1), frames(1) {}
 
-    Animation BlockAnimation::toAnimation() const {
+    Animation BlockAnimation::toAnimation(const std::string &roomPath) const {
+        std::string path = "rooms/" + roomPath + "/" + spritesheet;
         if (frames == 1)
-            return Animation::getStaticAnimation(spritesheet);
-        return {fps, spritesheet, rows, columns, frames};
+            return Animation::getStaticAnimation(path);
+        return {fps, path, rows, columns, frames};
     }
 
 
@@ -44,7 +45,7 @@ namespace mcgwtt {
     Room::Room(sf::RenderWindow *win, GameWorldPhysics *worldPh, float x, float y, const std::string &jsonFilename)
             : BasicBody(win, worldPh, _physicsInit, _physicsTick, _physicsOnNotify, _initSprites),
               _x(x), _y(y), _filename(jsonFilename) {
-        std::ifstream f("../bin/Rooms JSONs/" + _filename);
+        std::ifstream f("../bin/rooms/" + _filename);
         json::parse(f).get_to(_data);
     }
 }

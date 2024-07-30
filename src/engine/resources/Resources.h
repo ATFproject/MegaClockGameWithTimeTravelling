@@ -157,8 +157,8 @@ namespace engine {
         std::unique_ptr<T> loadResource(const std::string &fileName) {
             if (fileName.empty())
                 throw std::runtime_error("Empty filename for resource loading");
-            std::string folder = "../bin/" + (fileName.starts_with("common") ? "" : resourceHandler->getLoadPath());
-            std::string path = folder + fileName;
+
+            std::string path = "../bin/" + fileName;
 
             auto data = std::make_unique<T>();
             bool res;

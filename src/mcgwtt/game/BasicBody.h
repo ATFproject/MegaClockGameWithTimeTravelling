@@ -10,6 +10,8 @@
 #include "Box2dGraphics.h"
 #include "system/GameWorld.h"
 
+#include "window/GameWindow.h"
+
 namespace mcgwtt {
     class ContactListener;
 
@@ -105,6 +107,7 @@ namespace mcgwtt {
         engine::components::GraphicsComponent *getGraphics();
 
         void doOnNextTick(const std::function<void()> &function);
+        void addToGameWindow(window::GameWindow &window);
 
     protected:
         BasicBody(sf::RenderWindow *win, GameWorldPhysics *worldPh,

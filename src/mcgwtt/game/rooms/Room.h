@@ -17,7 +17,7 @@ namespace mcgwtt {
 
         BlockAnimation() = default;
         explicit BlockAnimation(const std::string &spritesheetName);
-        [[nodiscard]] Animation toAnimation() const;
+        [[nodiscard]] Animation toAnimation(const std::string &roomPath) const;
 
         NLOHMANN_DEFINE_TYPE_INTRUSIVE(BlockAnimation, fps, spritesheet, rows, columns, frames)
     };
@@ -81,14 +81,16 @@ namespace mcgwtt {
         onNotifyFunction _physicsOnNotify = [](const engine::Event &event) {};
 
         initSpritesFunction _initSprites = [this](const BasicBodyData *data) -> bodyAnimPair {
+            std::string roomPath = _filename.substr(0, _filename.find_last_of('/'));
+
             std::vector<Animation> animations;
             animations.reserve(_data.blocks.size());
 
             for (auto &block : _data.blocks) {
-                animations.push_back(block.anim.toAnimation());
+                animations.push_back(block.anim.toAnimation(roomPath));
             }
 
-            animations.push_back(Animation::getStaticAnimation("rooms/border.png"));
+            animations.push_back(Animation::getStaticAnimation("rooms/" + roomPath + "/border.png"));
 
             return bindAnimations(data, animations);
         };

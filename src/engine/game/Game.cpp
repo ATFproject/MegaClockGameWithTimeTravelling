@@ -12,20 +12,10 @@ namespace engine::game {
         resourceHandler = _resourceHandler.get();
     }
 
-    Game::~Game() {
-        for (auto &gameObject : _gameObjects) {
-            delete gameObject;
-        }
-    }
-
-    void Game::addGameObject(GameObject *toAdd) {
-        _gameObjects.push_back(toAdd);
-        addObserver(toAdd);
+    void Game::addGameObject(std::unique_ptr<GameObject> toAdd) {
+        addObserver(toAdd.get());
         toAdd->init(*this);
-    }
-
-    void Game::removeGameObject(GameObject *toRemove) {
-        _gameObjectsToDelete.push_back(toRemove);
+        _gameObjects.push_back(std::move(toAdd));
     }
 
     void Game::tick() {
@@ -35,20 +25,13 @@ namespace engine::game {
         }
         memcpy(_keysOld, _keys, keyboardKeyCount);
 
-        for (GameObject *gameObject : _gameObjects) {
+        for (auto &gameObject : _gameObjects) {
             gameObject->tick(*this);
         }
-
-        for (auto &toDelete : _gameObjectsToDelete) {
-            _gameObjects.erase(std::find(_gameObjects.begin(), _gameObjects.end(), toDelete));
-            removeObserver(toDelete);
-            delete toDelete;
-        }
-        _gameObjectsToDelete.clear();
     }
 
     void Game::draw() {
-        for (GameObject *gameObject : _gameObjects) {
+        for (auto &gameObject : _gameObjects) {
             gameObject->draw();
         }
     }

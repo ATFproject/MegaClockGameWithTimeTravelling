@@ -58,8 +58,8 @@ namespace mcgwtt {
         initSpritesFunction _initSprites = [this](const BasicBodyData *data) -> bodyAnimPair {
             return bindAnimations(
                     data,
-                    Animation(3, "player/player body.png", 4, 2, 6),
-                    Animation::getStaticAnimation("player/player head.png")
+                    Animation(3, "common/textures/player/player body.png", 4, 2, 6),
+                    Animation::getStaticAnimation("common/textures/player/player head.png")
             );
         };
 

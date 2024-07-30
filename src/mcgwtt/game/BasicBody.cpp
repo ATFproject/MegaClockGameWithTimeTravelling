@@ -64,6 +64,10 @@ namespace mcgwtt {
         _physics->_onNextTick.push_back(function);
     }
 
+    void BasicBody::addToGameWindow(window::GameWindow &window) {
+        window.addGameObject(nullptr, _physics, _graphics);
+    }
+
     engine::components::PhysicsComponent *BasicBody::getPhysics() {
         return _physics;
     }
